@@ -14,8 +14,8 @@
 
 <body>
   <div id="warpper" class="nav-fixed">
-    <nav class="topnav shadow navbar-light bg-white d-flex">
-      <div class="navbar-brand"><a href="?">ADMIN</a></div>
+    <nav class="topnav shadow navbar-light bg-warning d-flex">
+      <div class="navbar-brand"><a href="?">WATCH STORE ADMIN</a></div>
       <div class="nav-right ">
         <div class="btn-group mr-auto">
           <button type="button" class="btn dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -96,9 +96,9 @@
             </a>
             <i class="arrow fas fa-angle-down"></i>
             <ul class="sub-menu">
-              <li><a href="{{url('admin/product/add')}}">Thêm mới</a></li>
               <li><a href="{{url('admin/product/list')}}">Danh sách</a></li>
               <li><a href="{{url('admin/product/cat/list')}}">Danh mục</a></li>
+              <li><a href="{{url('admin/product/add')}}">Thêm mới</a></li>
             </ul>
           </li>
           <li class="nav-link">

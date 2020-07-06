@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 <div class="container-fluid py-5">
-  <div class="row">
+  {{-- <div class="row">
     <div class="col">
       <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
         <div class="card-header">ĐƠN HÀNG THÀNH CÔNG</div>
@@ -39,7 +39,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> --}}
   <!-- end analytic  -->
   <div class="card">
     <div class="card-header font-weight-bold">

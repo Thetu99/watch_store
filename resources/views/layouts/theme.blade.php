@@ -48,7 +48,7 @@
     <div class="header-body">
       <div class="container beta-relative">
         <div class="pull-left">
-          <a href="index.html" id="logo"><img src="{{asset('assets/dest/images/watch_logo.png')}}" width="200px"
+          <a href="index.html" id="logo"><img src="{{asset('assets/dest/images/logo_watch.png')}}" width="200px"
               alt=""/></a>
         </div>
         <div class="pull-right beta-components space-left ov">
@@ -136,12 +136,12 @@
             <li>
               <a href="#">Thương hiệu</a>
               <ul class="sub-menu">
-                <li><a href="{{url('brand')}}">Orient</a></li>
-                <li><a href="{{url('brand')}}">Citizen</a></li>
-                <li><a href="{{url('brand')}}">Seiko</a></li>
-                <li><a href="{{url('brand')}}">Bentley</a></li>
-                <li><a href="{{url('brand')}}">Ogival</a></li>
-                <li><a href="{{url('brand')}}">Freelook</a></li>
+                <li><a href="{{url('brand/orient')}}">Orient</a></li>
+                <li><a href="{{url('brand/citizen')}}">Citizen</a></li>
+                <li><a href="{{url('brand/seiko')}}">Seiko</a></li>
+                <li><a href="{{url('brand/bentley')}}">Bentley</a></li>
+                <li><a href="{{url('brand/ogival')}}">Ogival</a></li>
+                <li><a href="{{url('brand/freelook')}}">Freelook</a></li>
               </ul>
             </li>
             <li><a href="{{url('about')}}">Giới thiệu</a></li>
@@ -238,10 +238,9 @@
     <div class="container">
       <p class="pull-left">Privacy policy. &copy; 2020</p>
       <p class="pull-right pay-options">
-        <a href="#"><img src="{{asset('assets/dest/images/pay/master.jpg')}}" alt="" /></a>
-        <a href="#"><img src="{{asset('assets/dest/images/pay/pay.jpg')}}" alt="" /></a>
-        <a href="#"><img src="{{asset('assets/dest/images/pay/visa.jpg')}}" alt="" /></a>
-        <a href="#"><img src="{{asset('assets/dest/images/pay/paypal.jpg')}}" alt="" /></a>
+        <a href="#"><img src="{{asset('assets/dest/images/pay/master.png')}}" alt="" /></a>
+        <a href="#"><img src="{{asset('assets/dest/images/pay/visa.png')}}" alt="" /></a>
+        <a href="#"><img src="{{asset('assets/dest/images/pay/paypal.png')}}" alt="" /></a>
       </p>
       <div class="clearfix"></div>
     </div>

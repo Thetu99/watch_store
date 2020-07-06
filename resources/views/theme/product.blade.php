@@ -35,50 +35,22 @@
             <div class="clearfix"></div>
             <div class="space20">&nbsp;</div>
 
-            <div class="single-item-desc">
-              <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo ms id quod maxime
-                placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem
-                quibusdam et aut officiis debitis aut rerum necessitatibus saepe.</p>
+            <div class="single-item-desc">              
+              <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+              <span>Cho vào giỏ hàng</span>
             </div>
             <div class="space20">&nbsp;</div>
 
-            <p>Options:</p>
-            <div class="single-item-options">
-              <select class="wc-select" name="size">
-                <option>Size</option>
-                <option value="XS">XS</option>
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-              </select>
-              <select class="wc-select" name="color">
-                <option>Color</option>
-                <option value="Red">Red</option>
-                <option value="Green">Green</option>
-                <option value="Yellow">Yellow</option>
-                <option value="Black">Black</option>
-                <option value="White">White</option>
-              </select>
-              <select class="wc-select" name="color">
-                <option>Qty</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
-              <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-              <div class="clearfix"></div>
-            </div>
+            
+            <div class="clearfix"></div>
           </div>
         </div>
 
         <div class="space40">&nbsp;</div>
         <div class="woocommerce-tabs">
           <ul class="tabs">
-            <li><a href="#tab-description">Description</a></li>
-            <li><a href="#tab-reviews">Reviews (0)</a></li>
+            <li><a href="#tab-description">Mô tả</a></li>
+            <li><a href="#tab-reviews">Đánh giá (0)</a></li>
           </ul>
 
           <div class="panel" id="tab-description">
@@ -113,7 +85,8 @@
                 </div>
                 <div class="single-item-caption">
                   <a class="add-to-cart pull-left" href="{{url('product/$id')}}"><i class="fa fa-shopping-cart"></i></a>
-                  <a class="beta-btn primary" href="{{url('product/$id')}}">Details <i class="fa fa-chevron-right"></i></a>
+                  <a class="beta-btn primary" href="{{url('product/$id')}}">Details <i
+                      class="fa fa-chevron-right"></i></a>
                   <div class="clearfix"></div>
                 </div>
               </div>
@@ -131,7 +104,8 @@
                 </div>
                 <div class="single-item-caption">
                   <a class="add-to-cart pull-left" href="{{url('product/$id')}}"><i class="fa fa-shopping-cart"></i></a>
-                  <a class="beta-btn primary" href="{{url('product/$id')}}">Details <i class="fa fa-chevron-right"></i></a>
+                  <a class="beta-btn primary" href="{{url('product/$id')}}">Details <i
+                      class="fa fa-chevron-right"></i></a>
                   <div class="clearfix"></div>
                 </div>
               </div>
@@ -168,28 +142,32 @@
           <div class="widget-body">
             <div class="beta-sales beta-lists">
               <div class="media beta-sales-item">
-                <a class="pull-left" href="{{url('product/$id')}}"><img src="{{asset('assets/dest/images/products/sales/1.png')}}" alt=""></a>
+                <a class="pull-left" href="{{url('product/$id')}}"><img
+                    src="{{asset('assets/dest/images/products/sales/1.png')}}" alt=""></a>
                 <div class="media-body">
                   Sample Woman Top
                   <span class="beta-sales-price">$34.55</span>
                 </div>
               </div>
               <div class="media beta-sales-item">
-                <a class="pull-left" href="{{url('product/$id')}}"><img src="{{asset('assets/dest/images/products/sales/2.png')}}" alt=""></a>
+                <a class="pull-left" href="{{url('product/$id')}}"><img
+                    src="{{asset('assets/dest/images/products/sales/2.png')}}" alt=""></a>
                 <div class="media-body">
                   Sample Woman Top
                   <span class="beta-sales-price">$34.55</span>
                 </div>
               </div>
               <div class="media beta-sales-item">
-                <a class="pull-left" href="{{url('product/$id')}}"><img src="{{asset('assets/dest/images/products/sales/3.png')}}" alt=""></a>
+                <a class="pull-left" href="{{url('product/$id')}}"><img
+                    src="{{asset('assets/dest/images/products/sales/3.png')}}" alt=""></a>
                 <div class="media-body">
                   Sample Woman Top
                   <span class="beta-sales-price">$34.55</span>
                 </div>
               </div>
               <div class="media beta-sales-item">
-                <a class="pull-left" href="{{url('product/$id')}}"><img src="{{asset('assets/dest/images/products/sales/4.png')}}" alt=""></a>
+                <a class="pull-left" href="{{url('product/$id')}}"><img
+                    src="{{asset('assets/dest/images/products/sales/4.png')}}" alt=""></a>
                 <div class="media-body">
                   Sample Woman Top
                   <span class="beta-sales-price">$34.55</span>
@@ -203,28 +181,32 @@
           <div class="widget-body">
             <div class="beta-sales beta-lists">
               <div class="media beta-sales-item">
-                <a class="pull-left" href="{{url('product/$id')}}"><img src="{{asset('assets/dest/images/products/sales/1.png')}}" alt=""></a>
+                <a class="pull-left" href="{{url('product/$id')}}"><img
+                    src="{{asset('assets/dest/images/products/sales/1.png')}}" alt=""></a>
                 <div class="media-body">
                   Sample Woman Top
                   <span class="beta-sales-price">$34.55</span>
                 </div>
               </div>
               <div class="media beta-sales-item">
-                <a class="pull-left" href="{{url('product/$id')}}"><img src="{{asset('assets/dest/images/products/sales/2.png')}}" alt=""></a>
+                <a class="pull-left" href="{{url('product/$id')}}"><img
+                    src="{{asset('assets/dest/images/products/sales/2.png')}}" alt=""></a>
                 <div class="media-body">
                   Sample Woman Top
                   <span class="beta-sales-price">$34.55</span>
                 </div>
               </div>
               <div class="media beta-sales-item">
-                <a class="pull-left" href="{{url('product/$id')}}"><img src="{{asset('assets/dest/images/products/sales/3.png')}}" alt=""></a>
+                <a class="pull-left" href="{{url('product/$id')}}"><img
+                    src="{{asset('assets/dest/images/products/sales/3.png')}}" alt=""></a>
                 <div class="media-body">
                   Sample Woman Top
                   <span class="beta-sales-price">$34.55</span>
                 </div>
               </div>
               <div class="media beta-sales-item">
-                <a class="pull-left" href="{{url('product/$id')}}"><img src="{{asset('assets/dest/images/products/sales/4.png')}}" alt=""></a>
+                <a class="pull-left" href="{{url('product/$id')}}"><img
+                    src="{{asset('assets/dest/images/products/sales/4.png')}}" alt=""></a>
                 <div class="media-body">
                   Sample Woman Top
                   <span class="beta-sales-price">$34.55</span>

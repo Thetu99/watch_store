@@ -48,9 +48,8 @@
         </div>
         <div class="col-sm-9">
           <div class="beta-products-list">
-            <h4>New Products</h4>
+            <h4>Sản phẩm mới</h4>
             <div class="beta-products-details">
-              <p class="pull-left">438 styles found</p>
               <div class="clearfix"></div>
             </div>
 
@@ -115,7 +114,7 @@
           <div class="space50">&nbsp;</div>
 
           <div class="beta-products-list">
-            <h4>Top Products</h4>
+            <h4>Sản phẩm bán chạy</h4>
             <div class="beta-products-details">
               <p class="pull-left">438 styles found</p>
               <div class="clearfix"></div>
