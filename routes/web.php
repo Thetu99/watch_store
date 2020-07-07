@@ -29,6 +29,8 @@ Route::middleware('auth')->group(function () {
   Route::get('admin/user/add', 'AdminUserController@add');
   Route::post('admin/user/store', 'AdminUserController@store');
   Route::get('admin/user/delete/{id}', 'AdminUserController@delete')->name('delete_user');
+  Route::get('admin/user/edit/{id}', 'AdminUserController@edit')->name('user.edit');
+  Route::post('admin/user/update/{id}', 'AdminUserController@update')->name('user.update');
   Route::get('admin/user/action', 'AdminUserController@action');
 
   Route::get('admin/product/list', 'AdminProductController@list');
@@ -41,5 +43,6 @@ Route::middleware('auth')->group(function () {
 Route::get('/', 'HomeController@show');
 Route::view('about', 'theme/about');
 Route::get('brand/{name}', 'BrandController@show');
+Route::get('cart', 'CartController@show');
 Route::get('cart/add/{id}', 'CartController@add');
 Route::get('product/{name}', 'ProductController@show');

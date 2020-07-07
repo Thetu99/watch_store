@@ -1,5 +1,10 @@
 a {
-    color: #787272;
+    /* color: #787272; */
+    color: #e5e9f0;
+}
+
+.navbar-brand a, #productName {
+    color: black;
 }
 
 a:hover {
@@ -29,7 +34,8 @@ a:hover {
 
 .plus-icon {
     font-size: 25px;
-    color: #8f8f8f;
+    /* color: #8f8f8f */;
+    color: black;
 }
 
 .nav-right {
@@ -39,7 +45,7 @@ a:hover {
 }
 
 #sidebar {
-    width: 15rem;
+    width: 13rem;
     height: 100vh;
     z-index: 500;
     padding-top: 3.625rem;
@@ -53,7 +59,7 @@ a:hover {
     /* height: calc(100vh - 58px); */
     min-height: 100vh;
     padding-top: 3.625rem;
-    padding-left: 15rem;
+    padding-left: 13rem;
 }
 
 #content {
@@ -79,7 +85,7 @@ ul#sidebar-menu * {
 }
 
 #sidebar-menu {
-    padding: 20px 15px;
+    padding: 15px 15px;
 }
 
 .nav-link {
@@ -90,7 +96,8 @@ ul#sidebar-menu * {
 
 .nav-link.active>a,
 .nav-link:hover>li>a {
-    color: #0061f2;
+    /* color: #0061f2; */
+    color: darkorange;
 }
 
 .nav-link>li>a>i {
@@ -117,15 +124,17 @@ ul#sidebar-menu * {
 }
 
 #page-body {
-    background-color: #e5e9f0;
+    /* background-color: #e5e9f0; */
+    background-color: darkseagreen;
 }
 
 .form-search {
     width: 300px;
 }
 
-.table tr td {
+.table tr td, .table th {
     vertical-align: middle;
+    font-size: 1rem;
 }
 
 .table-checkall input[type="checkbox"] {

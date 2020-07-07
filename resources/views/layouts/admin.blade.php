@@ -15,7 +15,7 @@
 <body>
   <div id="warpper" class="nav-fixed">
     <nav class="topnav shadow navbar-light bg-warning d-flex">
-      <div class="navbar-brand"><a href="?">WATCH STORE ADMIN</a></div>
+      <div class="navbar-brand"><a href="{{url('admin')}}">WATCH STORE ADMIN</a></div>
       <div class="nav-right ">
         <div class="btn-group mr-auto">
           <button type="button" class="btn dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -30,7 +30,7 @@
         <div class="btn-group">
           <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
-            {{Auth::user()->name}}
+            <b>{{Auth::user()->name}}</b>
           </button>
           <div class="dropdown-menu dropdown-menu-right">
             <a class="dropdown-item" href="#">Tài khoản</a>
@@ -48,7 +48,7 @@
     </nav>
     <!-- end nav  -->
     <div id="page-body" class="d-flex">
-      <div id="sidebar" class="bg-white">
+      <div id="sidebar" class="bg-dark">
         <ul id="sidebar-menu">
           <li class="nav-link">
             <a href="{{url('dashboard')}}">
@@ -101,7 +101,7 @@
               <li><a href="{{url('admin/product/add')}}">Thêm mới</a></li>
             </ul>
           </li>
-          <li class="nav-link">
+          <li class="nav-link active">
             <a href="{{url('admin/order/list')}}">
               <div class="nav-link-icon d-inline-flex">
                 <i class="far fa-folder"></i>
@@ -113,7 +113,7 @@
               <li><a href="{{url('admin/order/list')}}">Đơn hàng</a></li>
             </ul>
           </li>
-          <li class="nav-link">
+          <li class="nav-link active">
             <a href="{{url('admin/user/list')}}">
               <div class="nav-link-icon d-inline-flex">
                 <i class="far fa-folder"></i>

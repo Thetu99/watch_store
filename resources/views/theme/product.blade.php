@@ -22,7 +22,7 @@
 
         <div class="row">
           <div class="col-sm-4">
-            <img src="{{asset($products->thumbnail)}}" alt="">
+            <img src="{{asset("$products->thumbnail")}}" alt="">
           </div>
           <div class="col-sm-8">
             <div class="single-item-body">

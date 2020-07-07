@@ -45,7 +45,7 @@
               <th scope="col">Mô tả</th>
               <th scope="col">Giá tiền</th>
               <th scope="col">Ảnh</th>
-              <th scope="col">Tác vụ</th>
+              <th scope="col" style="width: 100px">Tác vụ</th>
             </tr>
           </thead>
           <tbody>
@@ -67,7 +67,7 @@
               <td>{{number_format($p->price,0,'','.')}}đ</td>
               <td><img src="{{asset($p->thumbnail)}}" width="50px" /></td>
               <td>
-                <a href="#" class="btn btn-success btn-sm rounded-0 text-white" type="button" data-toggle="tooltip"
+                <a href="#" class="btn btn-primary btn-sm rounded-0 text-white" type="button" data-toggle="tooltip"
                   data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
 
                 <a href="{{route('delete_product', $p->id)}}" onclick="return confirm('Bạn có chắc chắn muốn xóa?')"

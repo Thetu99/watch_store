@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-<div id="content" class="container-fluid bg-dark">
+<div id="content" class="container-fluid">
   <div class="card">
     <div class="card-header font-weight-bold">
       Thêm sản phẩm
@@ -17,7 +17,7 @@
         </div>
         <div class="form-group">
           <label for="content">Mô tả</label>
-          <textarea class="form-control" name="content" id="content" rows="10"></textarea>
+          <textarea class="form-control" name="content" id="content" rows="5"></textarea>
           @error('content')
           <small class="text-danger">{{$message}}</small>
           @enderror

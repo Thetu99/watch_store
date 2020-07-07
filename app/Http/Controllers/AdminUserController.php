@@ -74,6 +74,39 @@ class AdminUserController extends Controller
     return redirect('admin/user/list')->with('status', 'Đã thêm thành viên thành công');
   }
 
+  function edit($id)
+  {
+    $user = User::find($id);
+    return view('admin.user.edit', compact('user'));
+  }
+
+  function update(Request $request, $id)
+  {
+    $request->validate(
+      [
+        'name' => 'required|string|max:255',
+        'password' => 'required|string|min:8|confirmed'
+      ],
+      [
+        'required' => ':attribute không được để trống',
+        'min' => ':attribute có độ dài ít nhất :min ký tự',
+        'max' => ':attribute có độ dài tối đa :max ký tự',
+        'confirmed' => 'Xác nhận mật khẩu không thành công'
+      ],
+      [
+        'name' => 'Tên người dùng',
+        'password' => 'Mật khẩu'
+      ]
+    );
+
+    User::where('id', $id)->update([
+      'name' => $request->input('name'),
+      'password' => Hash::make($request->input('password'))
+    ]);
+
+    return redirect('admin/user/list')->with('status', 'Cập nhật thành viên thành công');
+  }
+
   function delete($id)
   {
     if (Auth::id() != $id) {
