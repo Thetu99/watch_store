@@ -96,36 +96,6 @@
                   "></div>
               </div>
             </li>
-
-            {{-- <li data-transition="boxfade" data-slotamount="20" class="active-revslide current-sr-slide-visible" style="
-                width: 100%;
-                height: 100%;
-                overflow: hidden;
-                visibility: inherit;
-                opacity: 1;
-                z-index: 20;
-              ">
-              <div class="slotholder" style="width: 100%; height: 100%;" data-duration="undefined"
-                data-zoomstart="undefined" data-zoomend="undefined" data-rotationstart="undefined"
-                data-rotationend="undefined" data-ease="undefined" data-bgpositionend="undefined"
-                data-bgposition="undefined" data-kenburns="undefined" data-easeme="undefined" data-bgfit="undefined"
-                data-bgfitend="undefined" data-owidth="undefined" data-oheight="undefined">
-                <div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover"
-                  data-bgposition="center center" data-bgrepeat="no-repeat" data-lazydone="undefined"
-                  src="{{asset('assets/dest/images/thumbs/3.png')}}"
-                  data-src="{{asset('assets/dest/images/thumbs/3.png')}}" style="
-                    background-color: rgba(0, 0, 0, 0);
-                    background-repeat: no-repeat;
-                    background-image: url('{{asset('assets/dest/images/thumbs/3.png')}}');
-                    background-size: cover;
-                    background-position: center center;
-                    width: 100%;
-                    height: 100%;
-                    opacity: 1;
-                    visibility: inherit;
-                  "></div>
-              </div>
-            </li> --}}
           </ul>
         </div>
       </div>
@@ -153,7 +123,7 @@
               <div class="col-sm-3">
                 <div class="single-item">
                   <div class="single-item-header">
-                  <a href="{{url("product/$p->id")}}"><img src="{{asset("$p->thumbnail")}}" alt="" /></a>
+                  <a href="{{url("product/$p->id")}}"><img src="{{asset("image/product/$p->thumbnail")}}" alt="" /></a>
                   </div>
                   <div class="single-item-body">
                     <p class="single-item-title">{{$p->name}}</p>
@@ -186,7 +156,7 @@
               <div class="col-sm-3">
                 <div class="single-item">
                   <div class="single-item-header">
-                  <a href="{{url("product/$r->id")}}"><img src="{{asset($r->thumbnail)}}" alt="" /></a>
+                  <a href="{{url("product/$r->id")}}"><img src="{{asset("image/product/$r->thumbnail")}}" alt="" /></a>
                   </div>
                   <div class="single-item-body">
                     <p class="single-item-title">{{$r->name}}</p>
@@ -211,7 +181,7 @@
               <div class="col-sm-3">
                 <div class="single-item">
                   <div class="single-item-header">
-                  <a href="{{url("product/$r->id")}}"><img src="{{asset($r->thumbnail)}}" alt="" /></a>
+                  <a href="{{url("product/$r->id")}}"><img src="{{asset("image/product/$r->thumbnail")}}" alt="" /></a>
                   </div>
                   <div class="single-item-body">
                     <p class="single-item-title">{{$r->name}}</p>

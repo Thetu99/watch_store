@@ -23,6 +23,7 @@ class HomeController extends Controller
     $products = Product::all();
     $random_1 = Product::inRandomOrder()->get();
     $random_2 = Product::inRandomOrder()->get();
+    
     return view('theme.home', compact('products', 'random_1', 'random_2'));
   }
 }

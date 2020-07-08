@@ -133,13 +133,13 @@
           <li><a href="{{url('/')}}">Trang chủ</a></li>
           <li>
             <a href="#">Thương hiệu</a>
+            @php
+            $products=DB::table('products')->distinct()->get(['brand']);
+            @endphp
             <ul class="sub-menu">
-              <li><a href="{{url('brand/orient')}}">Orient</a></li>
-              <li><a href="{{url('brand/citizen')}}">Citizen</a></li>
-              <li><a href="{{url('brand/seiko')}}">Seiko</a></li>
-              <li><a href="{{url('brand/bentley')}}">Bentley</a></li>
-              <li><a href="{{url('brand/ogival')}}">Ogival</a></li>
-              <li><a href="{{url('brand/freelook')}}">Freelook</a></li>
+              @foreach ($products as $p)
+              <li><a href="{{url("brand/$p->brand")}}">{{$p->brand}}</a></li>
+              @endforeach
             </ul>
           </li>
           <li><a href="{{url('about')}}">Giới thiệu</a></li>
