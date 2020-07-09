@@ -119,11 +119,18 @@
             </div>
 
             <div class="row">
+              @php
+              $i=0;
+              @endphp
               @foreach ($products as $p)
+              @php
+              $i++;
+              @endphp
               <div class="col-sm-3">
                 <div class="single-item">
                   <div class="single-item-header">
-                  <a href="{{url("product/$p->id")}}"><img src="{{asset("image/product/$p->thumbnail")}}" alt="" /></a>
+                    <a href="{{url("product/$p->id")}}"><img src="{{asset("image/product/$p->thumbnail")}}"
+                        alt="" /></a>
                   </div>
                   <div class="single-item-body">
                     <p class="single-item-title">{{$p->name}}</p>
@@ -133,11 +140,15 @@
                   </div>
                   <div class="single-item-caption">
                     <a class="add-to-cart pull-left" href="{{url('cart')}}"><i class="fa fa-shopping-cart"></i></a>
-                    <a class="beta-btn primary" href="{{url("product/$p->id")}}">Chi tiết<i class="fa fa-chevron-right"></i></a>
+                    <a class="beta-btn primary" href="{{url("product/$p->id")}}">Chi tiết<i
+                        class="fa fa-chevron-right"></i></a>
                     <div class="clearfix"></div>
                   </div>
                 </div>
               </div>
+              @if ($i==4)
+              <div class="space40">&nbsp;</div>
+              @endif
               @endforeach
             </div>
           </div>
@@ -151,12 +162,19 @@
               {{-- <p class="pull-left">438 styles found</p> --}}
               <div class="clearfix"></div>
             </div>
-            <div class="row">            
-              @foreach ($random_1 as $r)
+            <div class="row">
+              @php
+              $i=0;
+              @endphp
+              @foreach ($randoms as $r)
+              @php
+              $i++;
+              @endphp
               <div class="col-sm-3">
                 <div class="single-item">
                   <div class="single-item-header">
-                  <a href="{{url("product/$r->id")}}"><img src="{{asset("image/product/$r->thumbnail")}}" alt="" /></a>
+                    <a href="{{url("product/$r->id")}}"><img src="{{asset("image/product/$r->thumbnail")}}"
+                        alt="" /></a>
                   </div>
                   <div class="single-item-body">
                     <p class="single-item-title">{{$r->name}}</p>
@@ -166,46 +184,50 @@
                   </div>
                   <div class="single-item-caption">
                     <a class="add-to-cart pull-left" href="{{url('cart')}}"><i class="fa fa-shopping-cart"></i></a>
-                    <a class="beta-btn primary" href="{{url("product/$r->id")}}">Chi tiết<i class="fa fa-chevron-right"></i></a>
+                    <a class="beta-btn primary" href="{{url("product/$r->id")}}">Chi tiết<i
+                        class="fa fa-chevron-right"></i></a>
                     <div class="clearfix"></div>
                   </div>
                 </div>
               </div>
+              @if ($i==4)
+              <div class="space40">&nbsp;</div>
+              @endif
               @endforeach
             </div>
 
-            <div class="space40">&nbsp;</div>
 
-            <div class="row">
+
+            {{-- <div class="row">
               @foreach ($random_2 as $r)
               <div class="col-sm-3">
                 <div class="single-item">
                   <div class="single-item-header">
                   <a href="{{url("product/$r->id")}}"><img src="{{asset("image/product/$r->thumbnail")}}" alt="" /></a>
-                  </div>
-                  <div class="single-item-body">
-                    <p class="single-item-title">{{$r->name}}</p>
-                    <p class="single-item-price">
-                      <span>{{number_format($r->price, 0, '', '.')}}đ</span>
-                    </p>
-                  </div>
-                  <div class="single-item-caption">
-                    <a class="add-to-cart pull-left" href="{{url('cart')}}"><i class="fa fa-shopping-cart"></i></a>
-                    <a class="beta-btn primary" href="{{url("product/$r->id")}}">Chi tiết<i class="fa fa-chevron-right"></i></a>
-                    <div class="clearfix"></div>
-                  </div>
-                </div>
-              </div>
-              @endforeach
-            </div>
           </div>
-          <!-- .beta-products-list -->
+          <div class="single-item-body">
+            <p class="single-item-title">{{$r->name}}</p>
+            <p class="single-item-price">
+              <span>{{number_format($r->price, 0, '', '.')}}đ</span>
+            </p>
+          </div>
+          <div class="single-item-caption">
+            <a class="add-to-cart pull-left" href="{{url('cart')}}"><i class="fa fa-shopping-cart"></i></a>
+            <a class="beta-btn primary" href="{{url("product/$r->id")}}">Chi tiết<i class="fa fa-chevron-right"></i></a>
+            <div class="clearfix"></div>
+          </div>
         </div>
       </div>
-      <!-- end section with sidebar and main content -->
-    </div>
-    <!-- .main-content -->
+      @endforeach
+    </div> --}}
   </div>
-  <!-- #content -->
+  <!-- .beta-products-list -->
+</div>
+</div>
+<!-- end section with sidebar and main content -->
+</div>
+<!-- .main-content -->
+</div>
+<!-- #content -->
 </div>
 @endsection

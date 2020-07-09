@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\Http\Request;
-use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -49,6 +48,7 @@ class AdminProductController extends Controller
     $request->validate(
       [
         'name' => 'required',
+        'brand' => 'required',
         'content' => 'required',
         'price' => 'required',
         'thumbnail' => 'required',
@@ -58,6 +58,7 @@ class AdminProductController extends Controller
       ],
       [
         'name' => 'Tên sản phẩm',
+        'brand' => 'Thương hiệu',
         'content' => 'Mô tả',
         'price' => 'Giá tiền',
         'thumbnail' => 'Ảnh sản phẩm'
@@ -68,13 +69,54 @@ class AdminProductController extends Controller
     $file = $request->file('thumbnail');
     $fileName = $file->getClientOriginalName();
     $file->move('public/image/product/', $fileName);
-    $path = 'image/product/' . $fileName;
-    
-    $input['thumbnail'] = $path;
+    $input['thumbnail'] = $fileName;
 
+    //return $input;
     Product::create($input);
-
     return redirect('admin/product/list')->with('status', 'Đã thêm sản phẩm thành công');
+  }
+
+  function edit($id)
+  {
+    $product = Product::find($id);
+    return view('admin.product.edit', compact('product'));
+  }
+
+  function update(Request $request, $id)
+  {
+    $request->validate(
+      [
+        'name' => 'required',
+        'brand' => 'required',
+        'content' => 'required',
+        'price' => 'required',
+        'thumbnail' => 'required',
+      ],
+      [
+        'required' => ':attribute không được để trống'
+      ],
+      [
+        'name' => 'Tên sản phẩm',
+        'brand' => 'Thương hiệu',
+        'content' => 'Mô tả',
+        'price' => 'Giá tiền',
+        'thumbnail' => 'Ảnh sản phẩm'
+      ]
+    );
+
+    $file = $request->file('thumbnail');
+    $fileName = $file->getClientOriginalName();
+    $file->move('public/image/product/', $fileName);
+    $request['thumbnail'] = $fileName;
+
+    Product::where('id', $id)->update([
+      'name' => $request->input('name'),
+      'brand' => $request->input('brand'),
+      'content' => $request->input('content'),
+      'price' => $request->input('price'),
+      'thumbnail' => $request->input('thumbnail')
+    ]);
+    return redirect('admin/product/list')->with('status', 'Cập nhật sản phẩm thành công');
   }
 
   function delete($id)

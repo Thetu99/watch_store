@@ -40,8 +40,9 @@
           <thead>
             <tr>
               <th><input type="checkbox" name="checkall"></th>
-              <th scope="col">#</th>
+              <th scope="col">STT</th>
               <th scope="col">Tên</th>
+              <th scope="col">Thương hiệu</th>
               <th scope="col">Mô tả</th>
               <th scope="col">Giá tiền</th>
               <th scope="col">Ảnh</th>
@@ -63,11 +64,12 @@
               </td>
               <td scope="row">{{$t}}</td>
               <td>{{$p->name}}</td>
-              <td>{{$p->email}}</td>
+              <td>{{$p->brand}}</td>
+              <td><textarea cols="40" rows="5">{{$p->content}}</textarea></td>
               <td>{{number_format($p->price,0,'','.')}}đ</td>
-              <td><img src="{{asset($p->thumbnail)}}" width="50px" /></td>
+              <td><img src="{{asset("image/product/$p->thumbnail")}}" width="50px" /></td>
               <td>
-                <a href="#" class="btn btn-primary btn-sm rounded-0 text-white" type="button" data-toggle="tooltip"
+                <a href="{{route('edit_product', $p->id)}}" class="btn btn-success btn-sm rounded-0 text-white" type="button" data-toggle="tooltip"
                   data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
 
                 <a href="{{route('delete_product', $p->id)}}" onclick="return confirm('Bạn có chắc chắn muốn xóa?')"
