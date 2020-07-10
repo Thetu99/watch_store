@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 09, 2020 lúc 06:50 AM
+-- Thời gian đã tạo: Th7 10, 2020 lúc 06:23 PM
 -- Phiên bản máy phục vụ: 10.3.16-MariaDB
 -- Phiên bản PHP: 7.3.7
 
@@ -94,14 +94,13 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `brand`, `name`, `content`, `price`, `thumbnail`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'orient', 'orient-FAC0A005T0', '', 6810000, 'orient-FAC0A005T0.jpg', NULL, '2020-07-05 19:57:20', NULL),
-(2, 'orient', 'orient-FAG03001D0', '', 7990000, 'orient-FAG03001D0.jpg', NULL, '2020-07-05 19:57:20', NULL),
-(3, 'casio', 'orient-FAG02003W0', '', 6260000, 'orient-FAG02003W0.jpg', NULL, '2020-07-05 19:57:20', NULL),
-(4, 'tissot', 'ORIENT RA-AP0003S10B', '', 6900000, 'orient-RA-AP0003S10B.jpg', NULL, '2020-07-05 19:57:20', NULL),
 (21, 'Tissot', 'NEWMEN F580', 'Lấy cảm hứng từ vẻ đẹp cổ điển ở các tạp chí thời trang thuộc những năm 1930 – 1950, những mẫu thiết kế đồng hồ tinh tế đầy nét hoài cổ đã được đông đảo người dùng đón nhận. Không phải là xưa cũ, giá trị mà Fossil chọn để tạo dựng thương hiệu cho mình chính là sự vững chắc. Từ những thiết kế “retro” cho đồng hồ, họ tin rằng những sản phẩm “thời gian” đó sẽ không bao giờ có dấu hiệu thoái trào. Nói một cách đơn giản, đó là lời cam kết giữa thiết kế trường tồn và chất lượng bền bỉ.', 1790000, 'Fossil-FS5580.png', '2020-07-08 07:25:48', '2020-07-08 08:21:38', NULL),
-(22, 'Casio', 'dfdfs', 'sadsadsa', 379000, 'orient-FAG03001D0.jpg', '2020-07-08 08:13:47', '2020-07-08 08:13:57', '2020-07-08 08:13:57'),
-(23, 'Orient', 'Thành Nguyễn', 'Lấy cảm hứng từ vẻ đẹp cổ điển ở các tạp chí thời trang thuộc những năm 1930 – 1950, những mẫu thiết kế đồng hồ tinh tế đầy nét hoài cổ đã được đông đảo người dùng đón nhận. Không phải là xưa cũ, giá trị mà Fossil chọn để tạo dựng thương hiệu cho mình chính là sự vững chắc. Từ những thiết kế “retro” cho đồng hồ, họ tin rằng những sản phẩm “thời gian” đó sẽ không bao giờ có dấu hiệu thoái trào. Nói một cách đơn giản, đó là lời cam kết giữa thiết kế trường tồn và chất lượng bền bỉ.\r\n\r\nLấy cảm hứng từ vẻ đẹp cổ điển ở các tạp chí thời trang thuộc những năm 1930 – 1950, những mẫu thiết kế đồng hồ tinh tế đầy nét hoài cổ đã được đông đảo người dùng đón nhận. Không phải là xưa cũ, giá trị mà Fossil chọn để tạo dựng thương hiệu cho mình chính là sự vững chắc. Từ những thiết kế “retro” cho đồng hồ, họ tin rằng những sản phẩm “thời gian” đó sẽ không bao giờ có dấu hiệu thoái trào. Nói một cách đơn giản, đó là lời cam kết giữa thiết kế trường tồn và chất lượng bền bỉ.\r\n\r\nLấy cảm hứng từ vẻ đẹp cổ điển ở các tạp chí thời trang thuộc những năm 1930 – 1950, những mẫu thiết kế đồng hồ tinh tế đầy nét hoài cổ đã được đông đảo người dùng đón nhận. Không phải là xưa cũ, giá trị mà Fossil chọn để tạo dựng thương hiệu cho mình chính là sự vững chắc. Từ những thiết kế “retro” cho đồng hồ, họ tin rằng những sản phẩm “thời gian” đó sẽ không bao giờ có dấu hiệu thoái trào. Nói một cách đơn giản, đó là lời cam kết giữa thiết kế trường tồn và chất lượng bền bỉ.\r\n\r\nLấy cảm hứng từ vẻ đẹp cổ điển ở các tạp chí thời trang thuộc những năm 1930 – 1950, những mẫu thiết kế đồng hồ tinh tế đầy nét hoài cổ đã được đông đảo người dùng đón nhận. Không phải là xưa cũ, giá trị mà Fossil chọn để tạo dựng thương hiệu cho mình chính là sự vững chắc. Từ những thiết kế “retro” cho đồng hồ, họ tin rằng những sản phẩm “thời gian” đó sẽ không bao giờ có dấu hiệu thoái trào. Nói một cách đơn giản, đó là lời cam kết giữa thiết kế trường tồn và chất lượng bền bỉ.', 379000, 'orient-FEV0V003DH.jpg', '2020-07-08 09:13:38', '2020-07-08 09:17:32', '2020-07-08 09:17:32'),
-(24, 'Obaku', 'Obaku V130LCIRB', 'Đồng hồ Obaku có được tỉ lệ vàng là bởi vì được sáng lập bởi 2 kiến trúc sư đại tài cách đây 50 năm. Cũng vì có mắt thẩm mỹ cao và sự tài tình, tỉ mỉ của họ mà những chiếc đồng hồ Obaku luôn luôn được đánh giá rất cao. Vẻ đẹp luôn luôn khiến người khác phải ấn tượng khi tận mắt nhìn thấy chiếc đồng hồ này và càng làm tôn lên vẻ đẹp của người sử dụng.', 3144000, 'Obaku-V130LCIRB.png', '2020-07-08 21:38:54', '2020-07-08 21:38:54', NULL);
+(24, 'Obaku', 'Obaku V130LCIRB', 'Đồng hồ Obaku có được tỉ lệ vàng là bởi vì được sáng lập bởi 2 kiến trúc sư đại tài cách đây 50 năm. Cũng vì có mắt thẩm mỹ cao và sự tài tình, tỉ mỉ của họ mà những chiếc đồng hồ Obaku luôn luôn được đánh giá rất cao. Vẻ đẹp luôn luôn khiến người khác phải ấn tượng khi tận mắt nhìn thấy chiếc đồng hồ này và càng làm tôn lên vẻ đẹp của người sử dụng.', 3144000, 'Obaku-V130LCIRB.png', '2020-07-08 21:38:54', '2020-07-08 21:38:54', NULL),
+(25, 'Casio', 'Casio MTP-1335D-9AVDF', 'Thương hiệu đồng hồ nổi tiếng đến từ Nhật Bản không ngừng cải tiến và cho ra mắt những dòng sản phẩm chất lượng phù hợp với nhiều đối tượng khách hàng. Những dòng sản phẩm nổi tiếng của Casio là: G-Shock với thiết kế mạnh mẽ cùng độ bền cao, Edifice thiết kế hiện đại cùng nhiều tính năng vượt trội, Sheen với thiết kế cổ điển và sang trọng,…', 1090000, 'Casio MTP-1335D-9AVDF.png', '2020-07-10 14:01:21', '2020-07-10 14:01:21', NULL),
+(26, 'Casio', 'Casio MTP-X300L-1AVDF', 'Thương hiệu đồng hồ nổi tiếng đến từ Nhật Bản không ngừng cải tiến và cho ra mắt những dòng sản phẩm chất lượng phù hợp với nhiều đối tượng khách hàng. Những dòng sản phẩm nổi tiếng của Casio là: G-Shock với thiết kế mạnh mẽ cùng độ bền cao, Edifice thiết kế hiện đại cùng nhiều tính năng vượt trội, Sheen với thiết kế cổ điển và sang trọng,…', 1936000, 'Casio MTP-X300L-1AVDF.png', '2020-07-10 14:05:39', '2020-07-10 14:05:39', NULL),
+(27, 'Casio', 'Casio LTP-E143DBL-3ADR', 'Thương hiệu đồng hồ nổi tiếng đến từ Nhật Bản không ngừng cải tiến và cho ra mắt những dòng sản phẩm chất lượng phù hợp với nhiều đối tượng khách hàng. Những dòng sản phẩm nổi tiếng của Casio là: G-Shock với thiết kế mạnh mẽ cùng độ bền cao, Edifice thiết kế hiện đại cùng nhiều tính năng vượt trội, Sheen với thiết kế cổ điển và sang trọng,…', 1480000, 'Casio LTP-E143DBL-3ADR.png', '2020-07-10 14:08:03', '2020-07-10 14:08:03', NULL),
+(28, 'Orient', 'Orient RA-AA0C06E19B', 'Đồng hồ Orient đem đến những sản phẩm ấn tượng chinh phục người nhìn một cách nhanh chóng. Đồng hồ Orient với những chất liệu cao cấp bóng bẩy nâng tầm đẳng cấp cho người sở hữu, phù hợp với doanh nhân thành đạt, dân văn phòng hay các giám đốc công ty. Phong cách thời thượng, sang trọng đầy sức thu hút đến từ đồng hồ Orient chắc chắn sẽ khiến bạn luôn hãnh diện với những người xung quanh.', 2413000, 'orient-FAC0A005T0.jpg', '2020-07-10 14:10:07', '2020-07-10 14:10:07', NULL),
+(29, 'Casio', 'Casio LA680WEGB', 'Thương hiệu đồng hồ nổi tiếng đến từ Nhật Bản không ngừng cải tiến và cho ra mắt những dòng sản phẩm chất lượng phù hợp với nhiều đối tượng khách hàng. Những dòng sản phẩm nổi tiếng của Casio là: G-Shock với thiết kế mạnh mẽ cùng độ bền cao, Edifice thiết kế hiện đại cùng nhiều tính năng vượt trội, Sheen với thiết kế cổ điển và sang trọng,…', 1790000, 'Casio LA680WEGB.png', '2020-07-10 14:48:30', '2020-07-10 14:48:30', NULL);
 
 -- --------------------------------------------------------
 
@@ -126,7 +125,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Lưu Chương', 'luubi@gmail.com', NULL, '$2y$10$Fqy5zIX8X2mxoIqYfHTwu.uhcq3YUW6oRNPc.Wgyq6H5X0jnB1DM2', NULL, '2020-07-03 00:42:41', '2020-07-06 07:12:00', NULL),
+(1, 'Lưu Bị', 'luubi@gmail.com', NULL, '$2y$10$V9UlSODkbfBsEjC7EZuMK.ZisxuCYHtuCdDIARxuAYWXZQpHm05ta', NULL, '2020-07-03 00:42:41', '2020-07-09 13:46:49', NULL),
 (3, 'Quan Vũ', 'quanvu@gmail.com', NULL, '$2y$10$mVffROPnzx7uEfB7BWt.AeuAn/G86l6oYitMTDtLjq9fjvRUlRzQy', NULL, '2020-07-03 04:00:45', '2020-07-05 08:04:32', NULL),
 (4, 'Trương Phi', 'truongphi@gmail.com', NULL, '$2y$10$BMm1jDWLnWKyMSsDgXtVluGwxHqtWoPRkBRmp.KZwvSh5bs5Y2v0K', NULL, '2020-07-05 07:42:57', '2020-07-05 08:04:32', NULL);
 
@@ -185,7 +184,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
