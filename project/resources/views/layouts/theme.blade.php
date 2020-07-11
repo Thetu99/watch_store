@@ -62,7 +62,7 @@
 
           <div class="beta-comp">
             <div class="cart">
-              <a href="{{url('cart')}}"><i class="fa fa-shopping-cart"></i>Giỏ hàng (Trống)</a>
+              <a href="{{url('cart')}}"><i class="fa fa-shopping-cart"></i>Giỏ hàng (<b style="color: red"> {{Cart::count()}} </b>)</a>
               {{-- <i class="fa fa-chevron-down"></i> --}}
 
               {{-- <div class="beta-dropdown cart-body">

@@ -29,6 +29,7 @@
         @csrf
         @if (Cart::count()>0)
         <table class="shop_table beta-shopping-cart-table" cellspacing="0">
+
           <thead>
             <tr>
               <th>STT</th>
@@ -61,8 +62,10 @@
               <td><span class="amount">{{number_format($row->price,0,'','.')}}đ</span></td>
 
               <td class="product-quantity">
-                <span class="amount"><input type="number" min="1" name="qty[{{$row->rowId}}]" value="{{$row->qty}}"
-                    style="width: 50px; text-align: center"></span>
+                <span class="amount">
+                  <input type="number" min="1" name="qty[{{$row->rowId}}]" value="{{$row->qty}}"
+                    style="width: 50px; text-align: center">
+                </span>
               </td>
 
               <td class="product-subtotal">
@@ -80,32 +83,26 @@
           <tfoot>
             <tr>
               <td colspan="6" class="actions">
-
-                {{-- <div class="coupon">
-                <label for="coupon_code">Coupon</label>
-                <input type="text" name="coupon_code" value="" placeholder="Coupon code">
-                <button type="submit" class="beta-btn primary" name="apply_coupon">Apply Coupon <i
-                    class="fa fa-chevron-right"></i></button>
-              </div> --}}
-
                 <input type="submit" class="beta-btn primary" name="update_cart" value="Cập nhật giỏ hàng">
-                
-      <a href="{{url('/')}}" class="beta-btn primary" name="proceed">Tiếp tục mua hàng <i
-          class="fa fa-chevron-right"></i></a>
-      <div class="cart-totals pull-right">
-        <div class="cart-totals-row">
-          <h5>Tổng</h5>
-        </div>
-        <div class="cart-totals-row">
-          <p class="amount">{{Cart::total()}}đ</p>
-          <a href="{{url('checkout')}}" class="beta-btn primary">Mua hàng</a>
-        </div>
-      </div>
-      </td>
-      </tr>
-      </tfoot>
-      </table>
-      @endif
+
+                <a href="javascript:history.back()" class="beta-btn primary" name="proceed">
+                  Tiếp tục mua hàng
+                  <i class="fa fa-chevron-right"></i>
+                </a>
+                <div class="cart-totals pull-right">
+                  <div class="cart-totals-row">
+                    <h5>Tổng</h5>
+                  </div>
+                  <div class="cart-totals-row">
+                    <p class="amount">{{Cart::total()}}đ</p>
+                    <a href="{{url('checkout')}}" class="beta-btn primary">Thanh toán</a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+        @endif
       </form>
       <!-- End of Shop Table Products -->
     </div>

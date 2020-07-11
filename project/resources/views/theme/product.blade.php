@@ -36,7 +36,7 @@
             <div class="space20">&nbsp;</div>
 
             <div class="single-item-desc">
-              <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+              <a class="add-to-cart" href="{{route('cart.add', $products->id)}}"><i class="fa fa-shopping-cart"></i></a>
               <span>Cho vào giỏ hàng</span>
             </div>
             <div class="space20">&nbsp;</div>
@@ -57,7 +57,7 @@
             <p>{{$products->content}}</p>
           </div>
           <div class="panel" id="tab-reviews">
-            <p>No Reviews</p>
+            <p>Không có đánh giá</p>
           </div>
         </div>
         <div class="space50">&nbsp;</div>
@@ -69,7 +69,7 @@
             <div class="col-sm-4">
               <div class="single-item">
                 <div class="single-item-header">
-                  <a href="{{url('product/$id')}}"><img src="{{asset("image/product/{$r->thumbnail}")}}"></a>
+                  <a href="{{route('product.show', $r->id)}}"><img src="{{asset("image/product/{$r->thumbnail}")}}"></a>
                 </div>
                 <div class="single-item-body">
                   <p class="single-item-title">{{$r->name}}</p>
@@ -78,8 +78,9 @@
                   </p>
                 </div>
                 <div class="single-item-caption">
-                  <a class="add-to-cart pull-left" href="{{url('product/$id')}}"><i class="fa fa-shopping-cart"></i></a>
-                  <a class="beta-btn primary" href="{{url('product/$id')}}">Chi tiết <i
+                  <a class="add-to-cart pull-left" href="{{route('cart.add', $r->id)}}"><i
+                      class="fa fa-shopping-cart"></i></a>
+                  <a class="beta-btn primary" href="{{route('product.show', $r->id)}}">Chi tiết<i
                       class="fa fa-chevron-right"></i></a>
                   <div class="clearfix"></div>
                 </div>
@@ -97,7 +98,7 @@
             <div class="beta-sales beta-lists">
               @foreach ($randoms as $r)
               <div class="media beta-sales-item">
-                <a class="pull-left" href="{{url('product/$id')}}"><img
+                <a class="pull-left" href="{{route('product.show', $r->id)}}"><img
                     src="{{asset("image/product/{$r->thumbnail}")}}"></a>
                 <div class="media-body">
                   Sample Woman Top
@@ -114,7 +115,7 @@
             <div class="beta-sales beta-lists">
               @foreach ($news as $n)
               <div class="media beta-sales-item">
-                <a class="pull-left" href="{{url('product/$id')}}"><img
+                <a class="pull-left" href="{{route('product.show', $n->id)}}"><img
                     src="{{asset("image/product/{$n->thumbnail}")}}"></a>
                 <div class="media-body">
                   {{$n->name}}

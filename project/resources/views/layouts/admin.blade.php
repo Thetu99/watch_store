@@ -102,7 +102,7 @@
             </ul>
           </li>
           <li class="nav-link active">
-            <a href="{{url('admin/order/list')}}">
+            <a href="{{url('admin')}}">
               <div class="nav-link-icon d-inline-flex">
                 <i class="far fa-folder"></i>
               </div>
@@ -110,7 +110,7 @@
             </a>
             <i class="arrow fas fa-angle-right"></i>
             <ul class="sub-menu">
-              <li><a href="{{url('admin/order/list')}}">Đơn hàng</a></li>
+              <li><a href="{{url('admin')}}">Đơn hàng</a></li>
             </ul>
           </li>
           <li class="nav-link active">

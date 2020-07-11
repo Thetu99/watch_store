@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 
 class CheckOutController extends Controller
 {
-  function show(){
-    return view('theme.checkout');
+  function show()
+  {
+    $products = Cart::content();
+    return view('theme.checkout', compact('products'));
   }
 }

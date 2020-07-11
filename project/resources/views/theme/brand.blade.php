@@ -58,7 +58,7 @@
               <div class="col-sm-4">
                 <div class="single-item">
                   <div class="single-item-header">
-                    <a href="product.html"><img src="{{asset("image/product/{$b->thumbnail}")}}" alt=""></a>
+                    <a href="{{route('product.show', $b->id)}}"><img src="{{asset("image/product/{$b->thumbnail}")}}" alt=""></a>
                   </div>
                   <div class="single-item-body">
                     <p class="single-item-title">{{$b->name}}</p>
@@ -67,8 +67,8 @@
                     </p>
                   </div>
                   <div class="single-item-caption">
-                    <a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
-                    <a class="beta-btn primary" href="product.html">Chi tiết <i class="fa fa-chevron-right"></i></a>
+                    <a class="add-to-cart pull-left" href="{{route('cart.add', $b->id)}}"><i class="fa fa-shopping-cart"></i></a>
+                    <a class="beta-btn primary" href="{{route('product.show', $b->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
                     <div class="clearfix"></div>
                   </div>
                 </div>
@@ -86,7 +86,7 @@
               <div class="col-sm-4">
                 <div class="single-item">
                   <div class="single-item-header">
-                    <a href="product.html"><img src="{{asset("image/product/{$r->thumbnail}")}}"></a>
+                    <a href="{{route('product.show', $r->id)}}"><img src="{{asset("image/product/{$r->thumbnail}")}}"></a>
                   </div>
                   <div class="single-item-body">
                     <p class="single-item-title">{{$r->name}}</p>
@@ -95,8 +95,8 @@
                     </p>
                   </div>
                   <div class="single-item-caption">
-                    <a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
-                    <a class="beta-btn primary" href="product.html">Chi tiết <i class="fa fa-chevron-right"></i></a>
+                    <a class="add-to-cart pull-left" href="{{route('cart.add', $r->id)}}"><i class="fa fa-shopping-cart"></i></a>
+                    <a class="beta-btn primary" href="{{route('product.show', $r->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
                     <div class="clearfix"></div>
                   </div>
                 </div>
