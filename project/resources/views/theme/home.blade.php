@@ -133,9 +133,9 @@
                         alt="" /></a>
                   </div>
                   <div class="single-item-body">
-                    <p class="single-item-title">{{$p->name}}</p>
+                    <p class="single-item-title"><b>{{$p->name}}</b></p>
                     <p class="single-item-price">
-                      <span>{{number_format($p->price, 0, '', '.')}}đ</span>
+                      <span class="color-gray">{{number_format($p->price, 0, '', '.')}}đ</span>
                     </p>
                   </div>
                   <div class="single-item-caption">
@@ -177,9 +177,9 @@
                         alt="" /></a>
                   </div>
                   <div class="single-item-body">
-                    <p class="single-item-title">{{$r->name}}</p>
+                    <p class="single-item-title"><b>{{$r->name}}</b></p>
                     <p class="single-item-price">
-                      <span>{{number_format($r->price, 0, '', '.')}}đ</span>
+                      <span class="color-gray">{{number_format($r->price, 0, '', '.')}}đ</span>
                     </p>
                   </div>
                   <div class="single-item-caption">
