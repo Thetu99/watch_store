@@ -97,7 +97,6 @@
             <i class="arrow fas fa-angle-down"></i>
             <ul class="sub-menu">
               <li><a href="{{url('admin/product/list')}}">Danh sách</a></li>
-              <li><a href="{{url('admin/product/cat/list')}}">Danh mục</a></li>
               <li><a href="{{url('admin/product/add')}}">Thêm mới</a></li>
             </ul>
           </li>

@@ -62,7 +62,6 @@
         </thead>
         <tbody>
           @php
-          $orders=DB::table('orders')->paginate(5);
           $i=0;
           @endphp
           @foreach ($orders as $o)
