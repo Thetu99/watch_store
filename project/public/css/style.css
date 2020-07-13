@@ -3,7 +3,8 @@ a {
     color: #e5e9f0;
 }
 
-.navbar-brand a, #productName {
+.navbar-brand a,
+#productName {
     color: black;
 }
 
@@ -34,7 +35,8 @@ a:hover {
 
 .plus-icon {
     font-size: 25px;
-    /* color: #8f8f8f */;
+    /* color: #8f8f8f */
+    ;
     color: black;
 }
 
@@ -132,7 +134,8 @@ ul#sidebar-menu * {
     width: 300px;
 }
 
-.table tr td, .table th {
+.table tr td,
+.table th {
     vertical-align: middle;
     font-size: 1rem;
 }

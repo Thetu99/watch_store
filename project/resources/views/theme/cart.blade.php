@@ -85,7 +85,7 @@
               <td colspan="6" class="actions">
                 <input type="submit" class="beta-btn primary" name="update_cart" value="Cập nhật giỏ hàng">
 
-                <a href="javascript:history.back()" class="beta-btn primary" name="proceed">
+                <a href="{{url('/')}}" class="beta-btn primary" name="proceed">
                   Tiếp tục mua hàng
                   <i class="fa fa-chevron-right"></i>
                 </a>

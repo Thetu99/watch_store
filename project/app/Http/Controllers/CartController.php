@@ -13,7 +13,7 @@ class CartController extends Controller
     return view('theme.cart');
   }
 
-  function add(Request $request, $id)
+  function add($id)
   {
     /* Cart::destroy(); */
     $product = Product::find($id);

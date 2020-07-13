@@ -51,3 +51,4 @@ Route::get('cart/remove/{rowId}', 'CartController@remove')->name('cart.remove');
 Route::post('cart/update', 'CartController@update');
 Route::get('product/{name}', 'ProductController@show')->name('product.show');
 Route::get('checkout', 'CheckOutController@show');
+Route::post('checkout/order', 'CheckOutController@order');

@@ -17,15 +17,16 @@
 
 <div class="container">
   <div id="content">
-    <form action="#" method="post" class="beta-form-checkout">
+    <form action="{{url('checkout/order')}}" method="post" class="beta-form-checkout">
+      @csrf
       <div class="row">
         <div class="col-sm-6">
           <h4>Đặt hàng</h4>
           <div class="space20">&nbsp;</div>
-          
+
           <div class="form-block">
             <label for="name">Họ tên*</label>
-            <input type="text" id="name" required>
+            <input type="text" name="name" id="name" required>
           </div>
           <div class="form-block">
             <label>Giới tính </label>
@@ -37,23 +38,23 @@
 
           <div class="form-block">
             <label for="email">Email*</label>
-            <input type="email" id="email" required>
+            <input type="email" name="email" id="email" required>
           </div>
 
           <div class="form-block">
-            <label for="adress">Địa chỉ*</label>
-            <input type="text" id="adress" required>
+            <label for="address">Địa chỉ*</label>
+            <input type="text" name="address" id="adress" required>
           </div>
 
 
           <div class="form-block">
             <label for="phone">Điện thoại*</label>
-            <input type="text" id="phone" required>
+            <input type="text" name="phone" id="phone" required>
           </div>
 
           <div class="form-block">
-            <label for="notes">Ghi chú</label>
-            <textarea id="notes"></textarea>
+            <label for="note">Ghi chú</label>
+            <textarea name="note" id="note"></textarea>
           </div>
         </div>
         <div class="col-sm-6">
@@ -119,9 +120,7 @@
             </div>
 
             <div class="text-center">
-              <a class="beta-btn primary" href="#">
-                Đặt hàng<i class="fa fa-chevron-right"></i>
-              </a>
+              <input type="submit" name="btn-submit" value="Đặt hàng" class="beta-btn primary">
             </div>
           </div> <!-- .your-order -->
         </div>
