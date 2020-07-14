@@ -54,7 +54,7 @@
           </ul>
 
           <div class="panel" id="tab-description">
-            <p>{{$products->content}}</p>
+            {!!$products->content!!}
           </div>
           <div class="panel" id="tab-reviews">
             <p>Không có đánh giá</p>

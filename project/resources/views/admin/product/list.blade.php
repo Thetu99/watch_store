@@ -65,9 +65,9 @@
                 <input type="checkbox" name="list_check[]" value="{{$p->id}}">
               </td>
               <td scope="row">{{$t}}</td>
-              <td><textarea cols="10" rows="5" style="border: none">{{$p->name}}</textarea></td>
+              <td>{{$p->name}}</td>
               <td>{{$p->brand}}</td>
-              <td><textarea cols="20" rows="5" style="border: none">{{$p->content}}</textarea></td>
+              <td>{!!$p->content!!}</td>
               <td>{{number_format($p->price,0,'','.')}}đ</td>
               <td><a href="{{asset("image/product/$p->thumbnail")}}" target="_blank"><img src="{{asset("image/product/$p->thumbnail")}}" width="50px"/></a></td>
               <td>{{date("G:i j-n-Y", strtotime($p->created_at))}}</td>

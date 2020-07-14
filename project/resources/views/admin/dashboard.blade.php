@@ -75,7 +75,7 @@
             <td>{{$o->phone}}</td>
             <td>{{$o->email}}</td>
             <td>{{$o->address}}</td>
-            <td><textarea name="" cols="20" rows="3" style="border: none">{{$o->note}}</textarea></td>
+            <td>{{$o->note}}</td>
             <td>{{date("G:i j-n-Y", strtotime($o->created_at))}}</td>
             <td>
               <a href="#" class="btn btn-success btn-sm rounded-0 text-white" type="button" data-toggle="tooltip"

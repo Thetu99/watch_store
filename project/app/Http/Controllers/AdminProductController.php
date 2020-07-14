@@ -90,7 +90,6 @@ class AdminProductController extends Controller
         'brand' => 'required',
         'content' => 'required',
         'price' => 'required',
-        'thumbnail' => 'required',
       ],
       [
         'required' => ':attribute không được để trống'
@@ -100,21 +99,14 @@ class AdminProductController extends Controller
         'brand' => 'Thương hiệu',
         'content' => 'Mô tả',
         'price' => 'Giá tiền',
-        'thumbnail' => 'Ảnh sản phẩm'
       ]
     );
-
-    $file = $request->file('thumbnail');
-    $fileName = $file->getClientOriginalName();
-    $file->move('public/image/product/', $fileName);
-    $request['thumbnail'] = $fileName;
 
     Product::where('id', $id)->update([
       'name' => $request->input('name'),
       'brand' => $request->input('brand'),
       'content' => $request->input('content'),
       'price' => $request->input('price'),
-      'thumbnail' => $request->input('thumbnail')
     ]);
     return redirect('admin/product/list')->with('status', 'Cập nhật sản phẩm thành công');
   }

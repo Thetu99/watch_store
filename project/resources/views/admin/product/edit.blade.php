@@ -34,7 +34,7 @@
         </div>
         <div class="form-group">
           <label for="content">Mô tả</label>
-          <textarea class="form-control" name="content" id="content" rows="5">{{$product->content}}</textarea>
+          <textarea class="form-control" name="content" id="content">{{$product->content}}</textarea>
           @error('content')
           <small class="text-danger">{{$message}}</small>
           @enderror
@@ -43,13 +43,6 @@
           <label for="price">Giá tiền</label>
           <input class="form-control" type="text" name="price" id="price" value="{{$product->price}}">
           @error('price')
-          <small class="text-danger">{{$message}}</small>
-          @enderror
-        </div>
-        <div class="form-group">
-          <label for="thumbnail">Ảnh</label>
-          <input class="form-control-file" type="file" name="thumbnail" id="thumbnail">
-          @error('thumbnail')
           <small class="text-danger">{{$message}}</small>
           @enderror
         </div>
