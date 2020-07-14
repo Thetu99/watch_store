@@ -21,18 +21,18 @@
       <div class="space35">&nbsp;</div>
       <h3>GIỚI THIỆU VỀ CÔNG TY Wach Store</h3>
 
-      <p>Tên đầy đủ: Công ty TNHH xuất nhập khẩu phân phối Trần Đức.
+      <p>Tên đầy đủ: Công ty TNHH xuất nhập khẩu phân phối Watch Store </p>
 
-        MSST: 0314336787
+       <p> MSST: 0363907265 -  0965593225</p>
         
-        Địa chỉ công ty: 830/11A2 sư vạn hạnh, phường 13, quận 10, Tp. Hồ Chí Minh.</p>
+       <p> Địa chỉ công ty:  Số 92A - Lê Thanh Nghị – Hai Bà Trưng – Hà Nội</p>
 
       <p>Được thành lập bởi tập đoàn Norbreeze vào năm 2014 tại Singapore, với cam kết mang đến trải nghiệm mua sắm trực
         tuyến cho bạn cùng sự lựa chọn đa dạng từ những thương hiệu chính hãng. Hiện Cocomi đã có mặt tại Malaisia và
         Úc.</p>
       <img src="{{asset('assets/dest/images/logo_watch.png')}}" alt="" width="500px" class="text-center">
       <p>Chính thức ra mắt tại Việt Nam vào tháng 5/2020, với các thương hiệu nổi tiếng thế giới như trang sức Pandora,
-        đồng hồ BERING, Olivia Burton, PAUL HEWITT, August Berg. Cocomi.vn chắc chắn sẽ là điểm mua sắm trực tuyến cho
+        đồng hồ BERING, Olivia Burton, PAUL HEWITT, August Berg. WATCH STORE chắc chắn sẽ là điểm mua sắm trực tuyến cho
         các tín đồ đam mê phụ kiện thời trang để bạn thể hiện phong cách riêng của mình một cách thật duy mỹ!</p>
 
       <p>Chúng tôi tin rằng phong cách và thời trang là có thể tiếp cận đến với mỗi cá nhân để bạn hoàn thiện và luôn
