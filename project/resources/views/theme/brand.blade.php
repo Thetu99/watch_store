@@ -61,9 +61,9 @@
                     <a href="{{route('product.show', $b->id)}}"><img src="{{asset("image/product/{$b->thumbnail}")}}" alt=""></a>
                   </div>
                   <div class="single-item-body">
-                    <p class="single-item-title">{{$b->name}}</p>
+                    <p class="single-item-title"><b>{{$b->name}}</b></p>
                     <p class="single-item-price">
-                      <span>{{number_format($b->price,0,'','.')}}đ</span>
+                      <span class="color-gray">{{number_format($b->price,0,'','.')}}đ</span>
                     </p>
                   </div>
                   <div class="single-item-caption">
@@ -89,9 +89,9 @@
                     <a href="{{route('product.show', $r->id)}}"><img src="{{asset("image/product/{$r->thumbnail}")}}"></a>
                   </div>
                   <div class="single-item-body">
-                    <p class="single-item-title">{{$r->name}}</p>
+                    <p class="single-item-title"><b>{{$r->name}}</b></p>
                     <p class="single-item-price">
-                      <span>{{number_format($r->price,0,'','.')}}đ</span>
+                      <span class="color-gray">{{number_format($r->price,0,'','.')}}đ</span>
                     </p>
                   </div>
                   <div class="single-item-caption">
