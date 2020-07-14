@@ -27,7 +27,7 @@
               <a href=""><i class="fa fa-home"></i>Số 92A - Lê Thanh Nghị – Hai Bà Trưng – Hà Nội</a>
             </li>
             <li>
-              <a href=""><i class="fa fa-phone"></i>0363907265</a>
+              <a href=""><i class="fa fa-phone"></i>0363907265 - 0965593225</a>
             </li>
           </ul>
         </div>
