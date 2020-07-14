@@ -35,7 +35,7 @@
             <div class="clearfix"></div>
             <div class="space20">&nbsp;</div>
 
-            <div class="single-item-desc">
+            <div class="single-item">
               <a class="add-to-cart" href="{{route('cart.add', $products->id)}}"><i class="fa fa-shopping-cart"></i></a>
               <span>Cho vào giỏ hàng</span>
             </div>
