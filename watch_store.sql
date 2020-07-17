@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 13, 2020 lúc 08:47 AM
+-- Thời gian đã tạo: Th7 17, 2020 lúc 05:18 AM
 -- Phiên bản máy phục vụ: 10.3.16-MariaDB
 -- Phiên bản PHP: 7.3.7
 
@@ -85,7 +85,8 @@ CREATE TABLE `orders` (
 
 INSERT INTO `orders` (`id`, `name`, `gender`, `email`, `address`, `phone`, `note`, `created_at`, `updated_at`) VALUES
 (1, 'Thành Nguyễn', 'Nam', 'thanhnv.hn110@gmail.com', 'ha noi', '0363907265', 'khong', '2020-07-13 04:28:45', '2020-07-13 04:28:45'),
-(2, 'Ngô Lan', 'Nữ', 'ngolan@gmail.com', 'Lạng Sơn', '97534554', 'Chỉ nhận hàng buổi sáng, giao hàng kín', '2020-07-13 05:05:13', '2020-07-13 05:05:13');
+(2, 'Ngô Lan', 'Nữ', 'ngolan@gmail.com', 'Lạng Sơn', '97534554', 'Chỉ nhận hàng buổi sáng, giao hàng kín', '2020-07-13 05:05:13', '2020-07-13 05:05:13'),
+(3, 'Nguyễn Thế Tú', 'Nam', 'thetu@gmail.com', 'Hà Nội', '0123455465', 'Giao hàng buổi tốivbcvbcvbcdf', '2020-07-17 02:40:23', '2020-07-17 02:40:23');
 
 -- --------------------------------------------------------
 
@@ -122,12 +123,11 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `brand`, `name`, `content`, `price`, `thumbnail`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(21, 'Tissot', 'NEWMEN F580', 'Lấy cảm hứng từ vẻ đẹp cổ điển ở các tạp chí thời trang thuộc những năm 1930 – 1950, những mẫu thiết kế đồng hồ tinh tế đầy nét hoài cổ đã được đông đảo người dùng đón nhận. Không phải là xưa cũ, giá trị mà Fossil chọn để tạo dựng thương hiệu cho mình chính là sự vững chắc. Từ những thiết kế “retro” cho đồng hồ, họ tin rằng những sản phẩm “thời gian” đó sẽ không bao giờ có dấu hiệu thoái trào. Nói một cách đơn giản, đó là lời cam kết giữa thiết kế trường tồn và chất lượng bền bỉ.', 1790000, 'Fossil-FS5580.png', '2020-07-08 07:25:48', '2020-07-08 08:21:38', NULL),
-(24, 'Obaku', 'Obaku V130LCIRB', 'Đồng hồ Obaku có được tỉ lệ vàng là bởi vì được sáng lập bởi 2 kiến trúc sư đại tài cách đây 50 năm. Cũng vì có mắt thẩm mỹ cao và sự tài tình, tỉ mỉ của họ mà những chiếc đồng hồ Obaku luôn luôn được đánh giá rất cao. Vẻ đẹp luôn luôn khiến người khác phải ấn tượng khi tận mắt nhìn thấy chiếc đồng hồ này và càng làm tôn lên vẻ đẹp của người sử dụng.', 3144000, 'Obaku-V130LCIRB.png', '2020-07-08 21:38:54', '2020-07-08 21:38:54', NULL),
+(24, 'Obaku', 'Obaku V130LCIRB', '<p>Đồng hồ Obaku c&oacute; được tỉ lệ v&agrave;ng l&agrave; bởi v&igrave; được s&aacute;ng lập bởi 2 kiến tr&uacute;c sư đại t&agrave;i c&aacute;ch đ&acirc;y 50 năm. Cũng v&igrave; c&oacute; mắt thẩm mỹ cao v&agrave; sự t&agrave;i t&igrave;nh, tỉ mỉ của họ m&agrave; những chiếc đồng hồ Obaku lu&ocirc;n lu&ocirc;n được đ&aacute;nh gi&aacute; rất cao. Vẻ đẹp lu&ocirc;n lu&ocirc;n khiến người kh&aacute;c phải ấn tượng khi tận mắt nh&igrave;n thấy chiếc đồng hồ n&agrave;y v&agrave; c&agrave;ng l&agrave;m t&ocirc;n l&ecirc;n vẻ đẹp của người sử dụng.</p>', 3144000, 'Obaku-V130LCIRB.png', '2020-07-08 21:38:54', '2020-07-14 14:33:56', NULL),
 (25, 'Casio', 'Casio MTP-1335D-9AVDF', 'Thương hiệu đồng hồ nổi tiếng đến từ Nhật Bản không ngừng cải tiến và cho ra mắt những dòng sản phẩm chất lượng phù hợp với nhiều đối tượng khách hàng. Những dòng sản phẩm nổi tiếng của Casio là: G-Shock với thiết kế mạnh mẽ cùng độ bền cao, Edifice thiết kế hiện đại cùng nhiều tính năng vượt trội, Sheen với thiết kế cổ điển và sang trọng,…', 1090000, 'Casio MTP-1335D-9AVDF.png', '2020-07-10 14:01:21', '2020-07-10 14:01:21', NULL),
 (26, 'Casio', 'Casio MTP-X300L-1AVDF', 'Thương hiệu đồng hồ nổi tiếng đến từ Nhật Bản không ngừng cải tiến và cho ra mắt những dòng sản phẩm chất lượng phù hợp với nhiều đối tượng khách hàng. Những dòng sản phẩm nổi tiếng của Casio là: G-Shock với thiết kế mạnh mẽ cùng độ bền cao, Edifice thiết kế hiện đại cùng nhiều tính năng vượt trội, Sheen với thiết kế cổ điển và sang trọng,…', 1936000, 'Casio MTP-X300L-1AVDF.png', '2020-07-10 14:05:39', '2020-07-10 14:05:39', NULL),
-(27, 'Casio', 'Casio LTP-E143DBL-3ADR', 'Thương hiệu đồng hồ nổi tiếng đến từ Nhật Bản không ngừng cải tiến và cho ra mắt những dòng sản phẩm chất lượng phù hợp với nhiều đối tượng khách hàng. Những dòng sản phẩm nổi tiếng của Casio là: G-Shock với thiết kế mạnh mẽ cùng độ bền cao, Edifice thiết kế hiện đại cùng nhiều tính năng vượt trội, Sheen với thiết kế cổ điển và sang trọng,…', 1480000, 'Casio LTP-E143DBL-3ADR.png', '2020-07-10 14:08:03', '2020-07-10 14:08:03', NULL),
-(28, 'Orient', 'Orient RA-AA0C06E19B', 'Đồng hồ Orient đem đến những sản phẩm ấn tượng chinh phục người nhìn một cách nhanh chóng. Đồng hồ Orient với những chất liệu cao cấp bóng bẩy nâng tầm đẳng cấp cho người sở hữu, phù hợp với doanh nhân thành đạt, dân văn phòng hay các giám đốc công ty. Phong cách thời thượng, sang trọng đầy sức thu hút đến từ đồng hồ Orient chắc chắn sẽ khiến bạn luôn hãnh diện với những người xung quanh.', 2413000, 'orient-FAC0A005T0.jpg', '2020-07-10 14:10:07', '2020-07-10 14:10:07', NULL),
+(27, 'Casio', 'Casio LTP-E143DBL-3ADR', '<p><span style=\"background-color: #ced4d9;\"><em><strong>Thương hiệu đồng hồ nổi tiếng đến từ Nhật Bản kh&ocirc;ng ngừng cải tiến v&agrave; cho ra mắt những d&ograve;ng sản phẩm chất lượng ph&ugrave; hợp với nhiều đối tượng kh&aacute;ch h&agrave;ng. Những d&ograve;ng sản phẩm nổi tiếng của Casio l&agrave;: G-Shock với thiết kế mạnh mẽ c&ugrave;ng độ bền cao, Edifice thiết kế hiện đại c&ugrave;ng nhiều t&iacute;nh năng vượt trội, Sheen với thiết kế cổ điển v&agrave; sang trọng,&hellip;</strong></em></span></p>', 1480000, 'Casio LTP-E143DBL-3ADR.png', '2020-07-10 14:08:03', '2020-07-14 14:42:06', NULL),
+(28, 'Orient', 'Orient RA-AA0C06E19B', '<p><em><strong><span style=\"color: #3598db;\">Đồng hồ Orient đem đến những sản phẩm ấn tượng chinh phục người nh&igrave;n một c&aacute;ch nhanh ch&oacute;ng. Đồng hồ Orient với những chất liệu cao cấp b&oacute;ng bẩy n&acirc;ng tầm đẳng cấp cho người sở hữu, ph&ugrave; hợp với doanh nh&acirc;n th&agrave;nh đạt, d&acirc;n văn ph&ograve;ng hay c&aacute;c gi&aacute;m đốc c&ocirc;ng ty. Phong c&aacute;ch thời thượng, sang trọng đầy sức thu h&uacute;t đến từ đồng hồ Orient chắc chắn sẽ khiến bạn lu&ocirc;n h&atilde;nh diện với những người xung quanh.</span></strong></em></p>', 2413000, 'orient-FAC0A005T0.jpg', '2020-07-10 14:10:07', '2020-07-14 14:42:59', NULL),
 (29, 'Casio', 'Casio LA680WEGB', 'Thương hiệu đồng hồ nổi tiếng đến từ Nhật Bản không ngừng cải tiến và cho ra mắt những dòng sản phẩm chất lượng phù hợp với nhiều đối tượng khách hàng. Những dòng sản phẩm nổi tiếng của Casio là: G-Shock với thiết kế mạnh mẽ cùng độ bền cao, Edifice thiết kế hiện đại cùng nhiều tính năng vượt trội, Sheen với thiết kế cổ điển và sang trọng,…', 1790000, 'Casio LA680WEGB.png', '2020-07-10 14:48:30', '2020-07-10 14:48:30', NULL);
 
 -- --------------------------------------------------------
@@ -153,9 +153,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Lưu Bị', 'luubi@gmail.com', NULL, '$2y$10$V9UlSODkbfBsEjC7EZuMK.ZisxuCYHtuCdDIARxuAYWXZQpHm05ta', NULL, '2020-07-03 00:42:41', '2020-07-09 13:46:49', NULL),
-(3, 'Quan Vũ', 'quanvu@gmail.com', NULL, '$2y$10$mVffROPnzx7uEfB7BWt.AeuAn/G86l6oYitMTDtLjq9fjvRUlRzQy', NULL, '2020-07-03 04:00:45', '2020-07-05 08:04:32', NULL),
-(4, 'Trương Phi', 'truongphi@gmail.com', NULL, '$2y$10$BMm1jDWLnWKyMSsDgXtVluGwxHqtWoPRkBRmp.KZwvSh5bs5Y2v0K', NULL, '2020-07-05 07:42:57', '2020-07-05 08:04:32', NULL);
+(5, 'Thành Nguyễn', 'thanhnv.hn110@gmail.com', NULL, '$2y$10$ounyvLVjUzL3nUf6ERvoZuz1mVdiQaDf.z4.87uNuiraQXKSnjnLq', NULL, '2020-07-15 02:16:17', '2020-07-15 02:16:17', NULL);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -218,7 +216,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `products`
@@ -230,7 +228,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

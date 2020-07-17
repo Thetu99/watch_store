@@ -183,7 +183,7 @@
                     </p>
                   </div>
                   <div class="single-item-caption">
-                    <a class="add-to-cart pull-left" href="{{url('cart')}}"><i class="fa fa-shopping-cart"></i></a>
+                    <a class="add-to-cart pull-left" href="{{route('cart.add', $r->id)}}"><i class="fa fa-shopping-cart"></i></a>
                     <a class="beta-btn primary" href="{{url("product/$r->id")}}">Chi tiết<i
                         class="fa fa-chevron-right"></i></a>
                     <div class="clearfix"></div>
