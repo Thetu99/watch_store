@@ -4,11 +4,11 @@
 <div class="inner-header">
   <div class="container">
     <div class="pull-left">
-      <h6 class="inner-title">Giới thiệu</h6>
+      <h6 class="inner-title">Liên hệ</h6>
     </div>
     <div class="pull-right">
       <div class="beta-breadcrumb font-large">
-        <a href="{{url('/')}}" class="home fa fa-home"> Trang chủ</a> / <span>Giới thiệu</span>
+        <a href="{{url('/')}}" class="home fa fa-home"> Trang chủ</a> / <span>Liên hệ</span>
       </div>
     </div>
     <div class="clearfix"></div>
@@ -17,26 +17,13 @@
 <div class="container">
   <div id="content">
     <div class="our-history">
-      <h3 class="text-center">GIỚI THIỆU VỀ CÔNG TY Wach Shop</h3>
-      <div class="space35">&nbsp;</div>
 
-      <p>Tên đầy đủ: <strong>Công ty TNHH xuất nhập khẩu phân phối Watch Shop.</strong></p>
-      <p>MSST: <strong>0314336787</strong></p>
-      <p>Địa chỉ công ty: <strong>Số 92A - Lê Thanh Nghị – Hai Bà Trưng – Hà Nội.</strong></p>
-      <div class="space35">&nbsp;</div>
-
-      <p>Công ty TNHH xuất nhập khẩu phân phối Trần Đức được thành lập từ năm 2016 với mục tiêu trở thành một trong
-        những nhà nhập khẩu và phân phối các thương hiệu đồng hồ đeo tay lớn tại thị trường Việt Nam</p>
-      <p class="text-center"><img src="{{asset('assets/dest/images/big_watchshop_logo.png')}}"></p>
-      <p>Với những mục tiêu và những kế hoạch dài hạn của Ban giám đốc công ty. Chỉ trong một thời gian ngắn đã xây dựng
-        và phát triển thị trường với hơn 64 chi nhánh đại lý trên khắp cả nước.</p>
-      <div class="space35">&nbsp;</div>
-      <p>Mục tiêu của của công ty trong những năm tới không gì khác ngoài việc đưa về thị trường Việt Nam những thương
-        hiệu đồng hồ uy tín trên thế giới, phù hợp với nhu cầu và giá thành tại Việt Nam.</p>
-      <div class="space35">&nbsp;</div>
-      <p>Chúng tôi sẽ luôn cố gắng phấn đấu vì một mục tiêu đưa tới người yêu thích đồng hồ trên cả nước những thương
-        hiệu đồng hồ chất lượng cao phù hợp với nhu cầu và giá thành tại Việt Nam. Cam kết sẽ hỗ trợ hết mình chung tay
-        cùng các đại lý mở rộng và thay đổi niềm tin của người dùng đồng hồ trên cả nước.</p>
+      <p>- Chủ sở hữu website: <strong>Nguyễn Văn Thành</strong></p>
+      <p>- Tên công ty: <strong>Công ty TNHH XNK phân phối Watch Shop</strong></p>
+      <p>- Mã số doanh nghiệp: <strong>0314336787</strong></p>
+      <p>- Văn phòng giao dịch: <strong>Số 92A - Lê Thanh Nghị – Hai Bà Trưng – Hà Nội</strong></p>
+      <p>- Điện thoại liên hệ: <strong>0363907265</strong></p>
+      <p>- Email: <strong>thanhnv.hn110@gmail.com</strong></p>
     </div>
   </div> <!-- #content -->
 </div> <!-- .container -->

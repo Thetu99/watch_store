@@ -8,7 +8,7 @@
     </div>
     <div class="pull-right">
       <div class="beta-breadcrumb font-large">
-        <a href="index.html">Home</a> / <span>Product</span>
+        <a href="{{url('/')}}" class="home fa fa-home"> Trang chủ</a> / <span>Sản phẩm</span>
       </div>
     </div>
     <div class="clearfix"></div>
@@ -36,7 +36,9 @@
             <div class="space20">&nbsp;</div>
 
             <div class="single-item">
-              <a class="add-to-cart" href="{{route('cart.add', $products->id)}}"><i class="fa fa-shopping-cart"></i></a>
+              <a class="add-to-cart" href="{{route('cart.add', $products->id)}}">
+                <i class="fa fa-shopping-cart"></i>                
+              </a>
               <span>Cho vào giỏ hàng</span>
             </div>
             <div class="space20">&nbsp;</div>

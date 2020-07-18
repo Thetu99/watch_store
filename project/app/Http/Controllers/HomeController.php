@@ -20,7 +20,7 @@ class HomeController extends Controller
    */
   public function show()
   {
-    $products = Product::all()->sortByDesc('created_at');
+    $products = Product::limit(8)->orderBy('created_at', 'desc')->get();
     $randoms = Product::inRandomOrder()->limit(8)->get();
 
     return view('theme.home', compact('products', 'randoms'));

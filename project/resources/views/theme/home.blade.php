@@ -129,8 +129,9 @@
               <div class="col-sm-3">
                 <div class="single-item">
                   <div class="single-item-header">
-                    <a href="{{url("product/$p->id")}}"><img src="{{asset("image/product/$p->thumbnail")}}"
-                        alt="" /></a>
+                    <a href="{{url("product/$p->id")}}">
+                      <img src="{{asset("image/product/$p->thumbnail")}}"/>
+                    </a>
                   </div>
                   <div class="single-item-body">
                     <p class="single-item-title"><b>{{$p->name}}</b></p>

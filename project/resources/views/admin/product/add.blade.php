@@ -6,54 +6,97 @@
       Thêm sản phẩm
     </div>
     <div class="card-body">
-      <form action="{{url('admin/product/store')}}" method="POST" enctype="multipart/form-data">
-        @csrf
-        <div class="form-group">
-          <label for="name">Tên sản phẩm</label>
-          <input class="form-control" type="text" name="name" id="name">
-          @error('name')
-          <small class="text-danger">{{$message}}</small>
-          @enderror
-        </div>
-        <div class="form-group">
-          <label for="brand">Thương hiệu</label>
-          <select name="brand" id="brand" class="form-control">
-            <option value="">--Chọn--</option>
-            @php
-            $brands=['Tissot', 'Casio', 'Orient', 'Fossil', 'Obaku'];
-            @endphp
-            @foreach ($brands as $b)
-              <option value="{{$b}}">{{$b}}</option>
-            @endforeach            
-          </select>
-          @error('brand')
-          <small class="text-danger">{{$message}}</small>
-          @enderror
-        </div>
-        <div class="form-group">
-          <label for="content">Mô tả</label>
-          <textarea class="form-control" name="content" id="content" rows="5"></textarea>
-          @error('content')
-          <small class="text-danger">{{$message}}</small>
-          @enderror
-        </div>
-        <div class="form-group">
-          <label for="price">Giá tiền</label>
-          <input class="form-control" type="text" name="price" id="price">
-          @error('price')
-          <small class="text-danger">{{$message}}</small>
-          @enderror
-        </div>
-        <div class="form-group">
-          <label for="thumbnail">Ảnh</label>
-          <input class="form-control-file" type="file" name="thumbnail" id="thumbnail">
-          @error('thumbnail')
-          <small class="text-danger">{{$message}}</small>
-          @enderror
-        </div>
 
-        <button type="submit" name="btn-add" value="Thêm mới" class="btn btn-primary">Thêm mới</button>
-      </form>
+      {!! Form::open(['url'=>'admin/product/store', 'method'=>'post', 'files'=> true, 'autocomplete'=>'off']) !!}
+
+      <div class="form-group">
+        {!! Form::label('name', 'Tên sản phẩm') !!}
+        {!! Form::text('name', '', ['class'=>'form-control', 'required']) !!}
+      </div>
+
+      <div class="form-group">
+        {!! Form::label('', 'Thương hiệu') !!}<br>
+        {!! Form::radio('brand', 'Orient', '', ['id'=>'Orient', 'required']) !!}
+        {!! Form::label('Orient', 'Orient') !!} &nbsp;
+        {!! Form::radio('brand', 'Casio', '', ['id'=>'Casio', 'required']) !!}
+        {!! Form::label('Casio', 'Casio') !!} &nbsp;
+        {!! Form::radio('brand', 'Obaku', '', ['id'=>'Obaku', 'required']) !!}
+        {!! Form::label('Obaku', 'Obaku') !!} &nbsp;
+        {!! Form::radio('brand', 'Tissot', '', ['id'=>'Tissot', 'required']) !!}
+        {!! Form::label('Tissot', 'Tissot') !!} &nbsp;
+        {!! Form::radio('brand', 'Fossil', '', ['id'=>'Fossil', 'required']) !!}
+        {!! Form::label('Fossil', 'Fossil') !!}
+      </div>
+
+      <div class="form-group">
+        {!! Form::label('price', 'Giá tiền') !!}
+        {!! Form::text('price', '', ['class'=>'form-control', 'required']) !!}
+      </div>
+
+      <div class="form-group">
+        {!! Form::label('Mô tả') !!}<br>
+        {!! Form::textarea('content', '', ['class'=>'form-control']) !!}
+      </div>
+      @error('content')
+      <small class="text-danger">{{$message}}</small>
+      @enderror
+
+      <div class="form-group">
+        {!! Form::label('Ảnh') !!}<br>
+        {!! Form::file('thumbnail', ['class'=>'form-control-file', 'type'=>'file']) !!}
+      </div>
+
+      {!! Form::submit('Thêm mới', ['class'=> 'btn btn-primary']) !!}
+
+      {!! Form::close() !!}
+      {{-- <form action="{{url('admin/product/store')}}" method="POST" enctype="multipart/form-data">
+      @csrf
+      <div class="form-group">
+        <label for="name">Tên sản phẩm</label>
+        <input class="form-control" type="text" name="name" id="name">
+        @error('name')
+        <small class="text-danger">{{$message}}</small>
+        @enderror
+      </div>
+      <div class="form-group">
+        <label for="brand">Thương hiệu</label>
+        <select name="brand" id="brand" class="form-control">
+          @php
+          $brands=['Tissot', 'Casio', 'Orient', 'Fossil', 'Obaku'];
+          @endphp
+          @foreach ($brands as $b)
+          <option>{{$b}}
+          </option>
+          @endforeach
+        </select>
+        @error('brand')
+        <small class="text-danger">{{$message}}</small>
+        @enderror
+      </div>
+      <div class="form-group">
+        <label for="content">Mô tả</label>
+        <textarea class="form-control" name="content" id="content" rows="5"></textarea>
+        @error('content')
+        <small class="text-danger">{{$message}}</small>
+        @enderror
+      </div>
+      <div class="form-group">
+        <label for="price">Giá tiền</label>
+        <input class="form-control" type="text" name="price" id="price">
+        @error('price')
+        <small class="text-danger">{{$message}}</small>
+        @enderror
+      </div>
+      <div class="form-group">
+        <label for="thumbnail">Ảnh</label>
+        <input class="form-control-file" type="file" name="thumbnail" id="thumbnail">
+        @error('thumbnail')
+        <small class="text-danger">{{$message}}</small>
+        @enderror
+      </div>
+
+      <button type="submit" name="btn-add" value="Thêm mới" class="btn btn-primary">Thêm mới</button>
+      </form> --}}
     </div>
   </div>
 </div>

@@ -24,10 +24,10 @@
         <div class="pull-left auto-width-left">
           <ul class="top-menu menu-beta l-inline">
             <li>
-              <a href=""><i class="fa fa-home"></i>Số 92A - Lê Thanh Nghị – Hai Bà Trưng – Hà Nội</a>
+              <a href="#"><i class="fa fa-home"></i>Số 92A - Lê Thanh Nghị – Hai Bà Trưng – Hà Nội</a>
             </li>
             <li>
-              <a href=""><i class="fa fa-phone"></i>0363907265</a>
+              <a href="#"><i class="fa fa-phone"></i>0363907265</a>
             </li>
           </ul>
         </div>
@@ -134,7 +134,7 @@
           <li>
             <a href="#">Thương hiệu</a>
             @php
-            $products=DB::table('products')->distinct()->get(['brand']);
+            $products=App\Product::distinct()->get('brand');
             @endphp
             <ul class="sub-menu">
               @foreach ($products as $p)

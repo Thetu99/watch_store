@@ -44,6 +44,7 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/', 'HomeController@show');
 Route::view('about', 'theme/about');
+Route::view('contact', 'theme/contact');
 Route::get('brand/{name}', 'BrandController@show')->name('brand');
 Route::get('cart', 'CartController@show');
 Route::get('cart/add/{id}', 'CartController@add')->name('cart.add');

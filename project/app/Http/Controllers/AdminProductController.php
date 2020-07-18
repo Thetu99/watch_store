@@ -45,33 +45,13 @@ class AdminProductController extends Controller
 
   function store(Request $request)
   {
-    $request->validate(
-      [
-        'name' => 'required',
-        'brand' => 'required',
-        'content' => 'required',
-        'price' => 'required',
-        'thumbnail' => 'required',
-      ],
-      [
-        'required' => ':attribute không được để trống'
-      ],
-      [
-        'name' => 'Tên sản phẩm',
-        'brand' => 'Thương hiệu',
-        'content' => 'Mô tả',
-        'price' => 'Giá tiền',
-        'thumbnail' => 'Ảnh sản phẩm'
-      ]
-    );
     $input = $request->all();
-
+    
     $file = $request->file('thumbnail');
     $fileName = $file->getClientOriginalName();
     $file->move('public/image/product/', $fileName);
     $input['thumbnail'] = $fileName;
-
-    //return $input;
+    
     Product::create($input);
     return redirect('admin/product/list')->with('status', 'Đã thêm sản phẩm thành công');
   }
@@ -84,24 +64,6 @@ class AdminProductController extends Controller
 
   function update(Request $request, $id)
   {
-    $request->validate(
-      [
-        'name' => 'required',
-        'brand' => 'required',
-        'content' => 'required',
-        'price' => 'required',
-      ],
-      [
-        'required' => ':attribute không được để trống'
-      ],
-      [
-        'name' => 'Tên sản phẩm',
-        'brand' => 'Thương hiệu',
-        'content' => 'Mô tả',
-        'price' => 'Giá tiền',
-      ]
-    );
-
     Product::where('id', $id)->update([
       'name' => $request->input('name'),
       'brand' => $request->input('brand'),

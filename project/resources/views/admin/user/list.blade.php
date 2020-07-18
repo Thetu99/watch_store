@@ -40,7 +40,7 @@
           <thead>
             <tr>
               <th><input type="checkbox" name="checkall"></th>
-              <th scope="col">#</th>
+              <th scope="col">STT</th>
               <th scope="col">Họ tên</th>
               <th scope="col">Email</th>
               <th scope="col">Quyền</th>
@@ -51,18 +51,12 @@
           </thead>
           <tbody>
             @if ($users->total()>0)
-            @php
-            $t=0;
-            @endphp
-            @foreach ($users as $user)
-            @php
-            $t++;
-            @endphp
+            @foreach ($users as $key => $user)
             <tr>
               <td>
                 <input type="checkbox" name="list_check[]" value="{{$user->id}}">
               </td>
-              <td scope="row">{{$t}}</td>
+              <td scope="row">{{$users->firstItem() + $key}}</td>
               <td>{{$user->name}}</td>
               <td>{{$user->email}}</td>
               <td>Admintrator</td>

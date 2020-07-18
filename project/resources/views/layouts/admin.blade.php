@@ -37,7 +37,7 @@
 <body>
   <div id="warpper" class="nav-fixed">
     <nav class="topnav shadow navbar-light bg-warning d-flex">
-      <div class="navbar-brand"><a href="{{url('admin')}}">WATCH STORE ADMIN</a></div>
+      <div class="navbar-brand"><a href="{{url('admin')}}">WATCH SHOP ADMIN</a></div>
       <div class="nav-right ">
         <div class="btn-group mr-auto">
           <button type="button" class="btn dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -139,7 +139,7 @@
               <div class="nav-link-icon d-inline-flex">
                 <i class="far fa-folder"></i>
               </div>
-              Users
+              Quản trị viên
             </a>
             <i class="arrow fas fa-angle-right"></i>
 

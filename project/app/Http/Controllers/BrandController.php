@@ -10,9 +10,9 @@ class BrandController extends Controller
 {
   function show($brand)
   {
-    $brand = Product::where('brand', 'like', "%{$brand}%")->limit(3)->get()->sortByDesc('created_at');
-    $randoms = Product::inRandomOrder()->limit(3)->get();
+    $brands = Product::where('brand', 'like', "%{$brand}%")->limit(3)->get()->sortByDesc('created_at');
+    $randoms = Product::where('brand', 'like', "%{$brand}%")->inRandomOrder()->limit(3)->get();
     /* return $randoms; */
-    return view('theme.brand', compact('brand', 'randoms'));
+    return view('theme.brand', compact('brands', 'randoms'));
   }
 }

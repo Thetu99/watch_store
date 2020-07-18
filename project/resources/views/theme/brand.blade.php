@@ -8,7 +8,7 @@
     </div>
     <div class="pull-right">
       <div class="beta-breadcrumb font-large">
-        <a href="index.html">Home</a> / <span>Sản phẩm</span>
+        <a href="{{url('/')}}" class="home fa fa-home"> Trang chủ</a> / <span>Thương hiệu</span>
       </div>
     </div>
     <div class="clearfix"></div>
@@ -54,7 +54,7 @@
             </div>
 
             <div class="row">
-              @foreach ($brand as $b)
+              @foreach ($brands as $b)
               <div class="col-sm-4">
                 <div class="single-item">
                   <div class="single-item-header">

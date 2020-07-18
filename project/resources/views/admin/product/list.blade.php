@@ -53,18 +53,12 @@
           </thead>
           <tbody>
             @if ($products->total()>0)
-            @php
-            $t=0;
-            @endphp
-            @foreach ($products as $p)
-            @php
-            $t++;
-            @endphp
+            @foreach ($products as $key => $p)
             <tr>
               <td>
                 <input type="checkbox" name="list_check[]" value="{{$p->id}}">
               </td>
-              <td scope="row">{{$t}}</td>
+              <td>{{$products->firstItem() + $key}}</td>
               <td>{{$p->name}}</td>
               <td>{{$p->brand}}</td>
               <td>{!!$p->content!!}</td>

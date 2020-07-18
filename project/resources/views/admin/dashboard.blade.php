@@ -61,15 +61,9 @@
           </tr>
         </thead>
         <tbody>
-          @php
-          $i=0;
-          @endphp
-          @foreach ($orders as $o)
-          @php
-          $i++;
-          @endphp
+          @foreach ($orders as $key => $o)
           <tr>
-            <th scope="row">{{$i}}</th>
+            <th scope="row">{{$orders->firstItem() + $key}}</th>
             <td>{{$o->name}}</td>
             <td>{{$o->gender}}</td>
             <td>{{$o->phone}}</td>
