@@ -236,9 +236,9 @@
     <div class="container">
       <p class="pull-left">Privacy policy. &copy; 2020</p>
       <p class="pull-right pay-options">
-        <a href="#"><img src="{{asset('assets/dest/images/pay/master.png')}}" alt="" /></a>
-        <a href="#"><img src="{{asset('assets/dest/images/pay/visa.png')}}" alt="" /></a>
-        <a href="#"><img src="{{asset('assets/dest/images/pay/paypal.png')}}" alt="" /></a>
+        <a href="#"><img src="{{asset('assets/dest/images/pay/master.png')}}"></a>
+        <a href="#"><img src="{{asset('assets/dest/images/pay/visa.png')}}"></a>
+        <a href="#"><img src="{{asset('assets/dest/images/pay/paypal.png')}}"></a>
       </p>
       <div class="clearfix"></div>
     </div>

@@ -36,6 +36,7 @@
           </select>
           <input type="submit" name="btn-search" value="Áp dụng" class="btn btn-primary">
         </div>
+        {{$products->links()}}
         <table class="table table-striped table-checkall">
           <thead>
             <tr>
@@ -63,12 +64,13 @@
               <td>{{$p->brand}}</td>
               <td>{!!$p->content!!}</td>
               <td>{{number_format($p->price,0,'','.')}}đ</td>
-              <td><a href="{{asset("image/product/$p->thumbnail")}}" target="_blank"><img src="{{asset("image/product/$p->thumbnail")}}" width="50px"/></a></td>
+              <td><a href="{{asset("image/product/$p->thumbnail")}}" target="_blank"><img
+                    src="{{asset("image/product/$p->thumbnail")}}" width="50px" /></a></td>
               <td>{{date("G:i j-n-Y", strtotime($p->created_at))}}</td>
               <td>{{date("G:i j-n-Y", strtotime($p->updated_at))}}</td>
               <td>
-                <a href="{{route('edit_product', $p->id)}}" class="btn btn-success btn-sm rounded-0 text-white" type="button" data-toggle="tooltip"
-                  data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
+                <a href="{{route('edit_product', $p->id)}}" class="btn btn-success btn-sm rounded-0 text-white"
+                  type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
 
                 <a href="{{route('delete_product', $p->id)}}" onclick="return confirm('Bạn có chắc chắn muốn xóa?')"
                   class="btn btn-danger btn-sm rounded-0 text-white" type="button" data-toggle="tooltip"

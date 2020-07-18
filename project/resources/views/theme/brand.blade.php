@@ -81,6 +81,10 @@
 
           <div class="beta-products-list">
             <h4>Sản phẩm bán chạy</h4>
+            <div class="beta-products-details">
+              <div class="clearfix"></div>
+            </div>
+            
             <div class="row">
               @foreach ($randoms as $r)
               <div class="col-sm-4">
