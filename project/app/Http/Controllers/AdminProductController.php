@@ -14,7 +14,7 @@ class AdminProductController extends Controller
     $status = $request->input('status');
 
     $list_act = [
-      'delete' => 'Xóa tạm thời'
+      'delete' => 'Xóa'
     ];
 
     if ($status == 'trash') {
