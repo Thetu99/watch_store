@@ -75,7 +75,6 @@ class AdminProductController extends Controller
 
   function delete($id)
   {
-
     $products = Product::find($id);
     $products->delete();
     return redirect('admin/product/list')->with('status', 'Đã xóa sản phẩm thành công');

@@ -24,6 +24,7 @@ Route::get('home', 'HomeController@index')->name('home');
 Route::middleware('auth')->group(function () {
   Route::get('dashboard', 'DashboardController@show');
   Route::get('admin', 'DashboardController@show');
+  Route::get('admin/order/delete/{id}', 'DashboardController@delete')->name('order.delete');
 
   Route::get('admin/user/list', 'AdminUserController@list');
   Route::get('admin/user/add', 'AdminUserController@add');
@@ -45,12 +46,17 @@ Route::middleware('auth')->group(function () {
 Route::get('/', 'HomeController@show');
 Route::view('about', 'theme/about');
 Route::view('contact', 'theme/contact');
+Route::get('search', 'SearchController@search');
+
 Route::get('brand/{name}', 'BrandController@show')->name('brand');
+
 Route::get('cart', 'CartController@show');
 Route::get('cart/add/{id}', 'CartController@add')->name('cart.add');
 Route::get('cart/remove/{rowId}', 'CartController@remove')->name('cart.remove');
 Route::post('cart/update', 'CartController@update');
+
 Route::get('product/{name}', 'ProductController@show')->name('product.show');
+
 Route::get('checkout', 'CheckOutController@show');
 Route::post('checkout/order', 'CheckOutController@order');
-Route::get('search', 'SearchController@search');
+
