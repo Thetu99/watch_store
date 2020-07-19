@@ -1069,7 +1069,9 @@ sub {
 }
 
 .color-gray {
-    color: orangered
+    color: red;
+    font-weight: bold;
+    font-size: medium;
 }
 
 .color-black {

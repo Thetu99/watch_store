@@ -37,7 +37,7 @@
 
             <div class="single-item">
               <a class="add-to-cart" href="{{route('cart.add', $products->id)}}">
-                <i class="fa fa-shopping-cart"></i>                
+                <i class="fa fa-shopping-cart"></i>
               </a>
               <span>Cho vào giỏ hàng</span>
             </div>
@@ -142,8 +142,8 @@
       $(".main-menu a").each(function() {
           // checks if its the same on the address bar
           if (url == (this.href)) {
-              $(this).closest("li").addClass("active");
-      $(this).parents('li').addClass('parent-active');
+            $(this).closest("li").addClass("active");
+            $(this).parents('li').addClass('parent-active');
           }
       });
   });

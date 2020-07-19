@@ -7,11 +7,10 @@
       <div class="col-12">
         <h3>Giỏ hàng</h3>
 
-
       </div>
       <div class="pull-right">
         <div class="beta-breadcrumb font-large">
-          <a href="index.html">Home</a> / <span>Shopping Cart</span>
+          <a href="{{url('/')}}" class="home fa fa-home"> Trang chủ</a> / <span>Giỏ hàng</span>
         </div>
       </div>
       <div class="clearfix"></div>
