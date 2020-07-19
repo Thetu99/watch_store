@@ -36,10 +36,11 @@
             <div class="space20">&nbsp;</div>
 
             <div class="single-item">
-              <a class="add-to-cart" href="<?php echo e(route('cart.add', $products->id)); ?>">
-                <i class="fa fa-shopping-cart"></i>                
+              <a class="add-to-cart pull-left" href="<?php echo e(route('cart.add', $products->id)); ?>">
+                <i class="fa fa-shopping-cart"></i>
+                <a class="beta-btn primary" href="<?php echo e(route('cart.add', $products->id)); ?>">Cho vào giỏ hàng</a>
               </a>
-              <span>Cho vào giỏ hàng</span>
+              
             </div>
             <div class="space20">&nbsp;</div>
 
@@ -105,7 +106,7 @@
                     src="<?php echo e(asset("image/product/{$r->thumbnail}")); ?>"></a>
                 <div class="media-body">
                   <b><?php echo e($r->name); ?></b>
-                  <span class="beta-sales-price"><?php echo e(number_format($r->price,0,'','.')); ?>đ</span>
+                  <span class="color-gray"><?php echo e(number_format($r->price,0,'','.')); ?>đ</span>
                 </div>
               </div>
               <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -122,7 +123,7 @@
                     src="<?php echo e(asset("image/product/{$n->thumbnail}")); ?>"></a>
                 <div class="media-body">
                   <b><?php echo e($n->name); ?></b>
-                  <span class="beta-sales-price"><?php echo e(number_format($n->price,0,'','.')); ?>đ</span>
+                  <span class="color-gray"><?php echo e(number_format($n->price,0,'','.')); ?>đ</span>
                 </div>
               </div>
               <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -144,7 +145,7 @@
           // checks if its the same on the address bar
           if (url == (this.href)) {
               $(this).closest("li").addClass("active");
-      $(this).parents('li').addClass('parent-active');
+            $(this).parents('li').addClass('parent-active');
           }
       });
   });

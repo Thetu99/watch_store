@@ -36,10 +36,11 @@
             <div class="space20">&nbsp;</div>
 
             <div class="single-item">
-              <a class="add-to-cart" href="{{route('cart.add', $products->id)}}">
+              <a class="add-to-cart pull-left" href="{{route('cart.add', $products->id)}}">
                 <i class="fa fa-shopping-cart"></i>
+                <a class="beta-btn primary" href="{{route('cart.add', $products->id)}}">Cho vào giỏ hàng</a>
               </a>
-              <span>Cho vào giỏ hàng</span>
+              
             </div>
             <div class="space20">&nbsp;</div>
 
@@ -104,7 +105,7 @@
                     src="{{asset("image/product/{$r->thumbnail}")}}"></a>
                 <div class="media-body">
                   <b>{{$r->name}}</b>
-                  <span class="beta-sales-price">{{number_format($r->price,0,'','.')}}đ</span>
+                  <span class="color-gray">{{number_format($r->price,0,'','.')}}đ</span>
                 </div>
               </div>
               @endforeach
@@ -121,7 +122,7 @@
                     src="{{asset("image/product/{$n->thumbnail}")}}"></a>
                 <div class="media-body">
                   <b>{{$n->name}}</b>
-                  <span class="beta-sales-price">{{number_format($n->price,0,'','.')}}đ</span>
+                  <span class="color-gray">{{number_format($n->price,0,'','.')}}đ</span>
                 </div>
               </div>
               @endforeach
@@ -142,7 +143,7 @@
       $(".main-menu a").each(function() {
           // checks if its the same on the address bar
           if (url == (this.href)) {
-            $(this).closest("li").addClass("active");
+              $(this).closest("li").addClass("active");
             $(this).parents('li').addClass('parent-active');
           }
       });

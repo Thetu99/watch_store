@@ -7,7 +7,6 @@
       <div class="col-12">
         <h3>Giỏ hàng</h3>
 
-
       </div>
       <div class="pull-right">
         <div class="beta-breadcrumb font-large">
