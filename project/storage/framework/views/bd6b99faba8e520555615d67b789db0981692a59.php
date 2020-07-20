@@ -78,38 +78,12 @@
               <div class="nav-link-icon d-inline-flex">
                 <i class="far fa-folder"></i>
               </div>
-              Dashboard
+              Bảng điều khiển
             </a>
             <i class="arrow fas fa-angle-right"></i>
           </li>
-          <li class="nav-link">
-            <a href="<?php echo e(url('admin/page/list')); ?>">
-              <div class="nav-link-icon d-inline-flex">
-                <i class="far fa-folder"></i>
-              </div>
-              Trang
-            </a>
-            <i class="arrow fas fa-angle-right"></i>
-
-            <ul class="sub-menu">
-              <li><a href="<?php echo e(url('admin/page/add')); ?>">Thêm mới</a></li>
-              <li><a href="<?php echo e(url('admin/page/list')); ?>">Danh sách</a></li>
-            </ul>
-          </li>
-          <li class="nav-link">
-            <a href="<?php echo e(url('admin/post/list')); ?>">
-              <div class="nav-link-icon d-inline-flex">
-                <i class="far fa-folder"></i>
-              </div>
-              Bài viết
-            </a>
-            <i class="arrow fas fa-angle-right"></i>
-            <ul class="sub-menu">
-              <li><a href="<?php echo e(url('admin/post/add')); ?>">Thêm mới</a></li>
-              <li><a href="<?php echo e(url('admin/post/list')); ?>">Danh sách</a></li>
-              <li><a href="<?php echo e(url('admin/post/cat/list')); ?>">Danh mục</a></li>
-            </ul>
-          </li>
+          
+          
           <li class="nav-link active">
             <a href="<?php echo e(url('admin/product/list')); ?>">
               <div class="nav-link-icon d-inline-flex">

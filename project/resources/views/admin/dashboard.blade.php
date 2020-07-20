@@ -61,23 +61,23 @@
           </tr>
         </thead>
         <tbody>
-          @foreach ($orders as $key => $o)
+          @foreach ($customers as $key => $c)
           <tr>
-            <th scope="row">{{$orders->firstItem() + $key}}</th>
-            <td>{{$o->name}}</td>
-            <td>{{$o->gender}}</td>
-            <td>{{$o->phone}}</td>
-            <td>{{$o->email}}</td>
-            <td>{{$o->address}}</td>
-            <td>{{$o->note}}</td>
-            <td>{{date("G:i j-n-Y", strtotime($o->created_at))}}</td>
+            <th scope="row">{{$customers->firstItem() + $key}}</th>
+            <td>{{$c->name}}</td>
+            <td>{{$c->gender}}</td>
+            <td>{{$c->phone}}</td>
+            <td>{{$c->email}}</td>
+            <td>{{$c->address}}</td>
+            <td>{{$c->note}}</td>
+            <td>{{date("G:i j-n-Y", strtotime($c->created_at))}}</td>
             <td>
-              <a href="{{route('order.detail', $o->id)}}" class="btn btn-success btn-sm rounded-0 text-white" type="button" data-toggle="tooltip"
+              <a href="{{route('order.detail', $c->id)}}" class="btn btn-success btn-sm rounded-0 text-white" type="button" data-toggle="tooltip"
                 data-placement="top" title="Chi tiết">
                 <i class="fa fa-file-alt"></i>
               </a>
 
-              <a href="{{route('order.delete', $o->id)}}" onclick="return confirm('Bạn có chắc chắn muốn xóa?')"
+              <a href="{{route('order.delete', $c->id)}}" onclick="return confirm('Bạn có chắc chắn muốn xóa?')"
                 class="btn btn-danger btn-sm rounded-0 text-white" type="button" data-toggle="tooltip"
                 data-placement="top" title="Xóa">
                 <i class="fa fa-trash"></i>
@@ -108,7 +108,7 @@
           </li>
         </ul>
       </nav> --}}
-      {{$orders->links()}}
+      {{$customers->links()}}
     </div>
   </div>
 

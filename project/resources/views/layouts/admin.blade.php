@@ -77,12 +77,12 @@
               <div class="nav-link-icon d-inline-flex">
                 <i class="far fa-folder"></i>
               </div>
-              Dashboard
+              Bảng điều khiển
             </a>
             <i class="arrow fas fa-angle-right"></i>
           </li>
-          <li class="nav-link">
-            <a href="{{url('admin/page/list')}}">
+          {{-- <li class="nav-link">
+            <a href="#">
               <div class="nav-link-icon d-inline-flex">
                 <i class="far fa-folder"></i>
               </div>
@@ -91,12 +91,12 @@
             <i class="arrow fas fa-angle-right"></i>
 
             <ul class="sub-menu">
-              <li><a href="{{url('admin/page/add')}}">Thêm mới</a></li>
-              <li><a href="{{url('admin/page/list')}}">Danh sách</a></li>
+              <li><a href="#">Thêm mới</a></li>
+              <li><a href="#">Danh sách</a></li>
             </ul>
-          </li>
-          <li class="nav-link">
-            <a href="{{url('admin/post/list')}}">
+          </li> --}}
+          {{-- <li class="nav-link">
+            <a href="#">
               <div class="nav-link-icon d-inline-flex">
                 <i class="far fa-folder"></i>
               </div>
@@ -104,11 +104,11 @@
             </a>
             <i class="arrow fas fa-angle-right"></i>
             <ul class="sub-menu">
-              <li><a href="{{url('admin/post/add')}}">Thêm mới</a></li>
-              <li><a href="{{url('admin/post/list')}}">Danh sách</a></li>
-              <li><a href="{{url('admin/post/cat/list')}}">Danh mục</a></li>
+              <li><a href="#">Thêm mới</a></li>
+              <li><a href="#">Danh sách</a></li>
+              <li><a href="#">Danh mục</a></li>
             </ul>
-          </li>
+          </li> --}}
           <li class="nav-link active">
             <a href="{{url('admin/product/list')}}">
               <div class="nav-link-icon d-inline-flex">

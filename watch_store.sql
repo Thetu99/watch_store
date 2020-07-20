@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 18, 2020 lúc 12:15 PM
+-- Thời gian đã tạo: Th7 20, 2020 lúc 01:39 PM
 -- Phiên bản máy phục vụ: 10.3.16-MariaDB
 -- Phiên bản PHP: 7.3.7
 
@@ -21,6 +21,32 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `watch_store`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `customers`
+--
+
+CREATE TABLE `customers` (
+  `id` int(10) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gender` enum('Nam','Nữ') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `note` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `customers`
+--
+
+INSERT INTO `customers` (`id`, `name`, `gender`, `email`, `address`, `phone`, `note`, `created_at`, `updated_at`) VALUES
+(28, 'Thành Văn Nguyễn', 'Nam', 'thanh@gmail.com', 'hà nội', '01456787645', 'dsfsdgdfhgfbncbv', '2020-07-20 10:54:55', '2020-07-20 10:54:55'),
+(29, 'Đào Thùy Linh', 'Nữ', 'linhdao@gmail.com', '77 hàng đào', '015645666', 'nhận hàng trong 40 ngày nữa', '2020-07-20 11:25:14', '2020-07-20 11:25:14');
 
 -- --------------------------------------------------------
 
@@ -59,7 +85,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2020_07_02_110922_add_soft_delete_to_users', 1),
 (6, '2020_07_11_133604_create_customers_table', 2),
-(7, '2020_07_13_105948_create_orders_table', 2);
+(7, '2020_07_13_105948_create_orders_table', 2),
+(8, '2020_07_20_154808_create_orders_table', 3);
 
 -- --------------------------------------------------------
 
@@ -68,13 +95,12 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 --
 
 CREATE TABLE `orders` (
-  `id` int(10) NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gender` enum('Nam','Nữ') COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `note` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `customer_id` int(11) DEFAULT NULL,
+  `product_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `product_qty` int(11) NOT NULL,
+  `product_price` int(11) NOT NULL,
+  `product_thumbnail` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -83,10 +109,15 @@ CREATE TABLE `orders` (
 -- Đang đổ dữ liệu cho bảng `orders`
 --
 
-INSERT INTO `orders` (`id`, `name`, `gender`, `email`, `address`, `phone`, `note`, `created_at`, `updated_at`) VALUES
-(1, 'Thành Nguyễn', 'Nam', 'thanhnv.hn110@gmail.com', 'ha noi', '0363907265', 'khong', '2020-07-13 04:28:45', '2020-07-13 04:28:45'),
-(2, 'Ngô Lan', 'Nữ', 'ngolan@gmail.com', 'Lạng Sơn', '97534554', 'Chỉ nhận hàng buổi sáng, giao hàng kín', '2020-07-13 05:05:13', '2020-07-13 05:05:13'),
-(3, 'Nguyễn Thế Tú', 'Nam', 'thetu@gmail.com', 'Hà Nội', '0123455465', 'Giao hàng buổi tốivbcvbcvbcdf', '2020-07-17 02:40:23', '2020-07-17 02:40:23');
+INSERT INTO `orders` (`id`, `customer_id`, `product_name`, `product_qty`, `product_price`, `product_thumbnail`, `created_at`, `updated_at`) VALUES
+(5, 28, 'Obaku V219GXBIRZ', 1, 4157000, 'Obaku V219GXBIRZ.png', '2020-07-20 10:54:55', '2020-07-20 10:54:55'),
+(6, 28, 'Obaku V146LGBMG2', 1, 3451000, 'Obaku V146LGBMG2.png', '2020-07-20 10:54:55', '2020-07-20 10:54:55'),
+(7, 29, 'Obaku V219GXBIRZ', 3, 4157000, 'Obaku V219GXBIRZ.png', '2020-07-20 11:25:14', '2020-07-20 11:25:14'),
+(8, 29, 'Obaku V146LGIRR', 4, 2451000, 'Obaku V146LGIRR.png', '2020-07-20 11:25:14', '2020-07-20 11:25:14'),
+(9, 29, 'Fossil FS5305', 2, 2631000, 'Fossil FS5305.png', '2020-07-20 11:25:14', '2020-07-20 11:25:14'),
+(10, 29, 'Fossil ES4722', 1, 2146000, 'Fossil ES4722.png', '2020-07-20 11:25:14', '2020-07-20 11:25:14'),
+(11, 29, 'Fossil ES3546', 1, 4576000, 'Fossil ES3546.png', '2020-07-20 11:25:14', '2020-07-20 11:25:14'),
+(12, 29, 'Casio LA680WEGB', 8, 1790000, 'Casio LA680WEGB.png', '2020-07-20 11:25:14', '2020-07-20 11:25:14');
 
 -- --------------------------------------------------------
 
@@ -173,6 +204,12 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 --
 
 --
+-- Chỉ mục cho bảng `customers`
+--
+ALTER TABLE `customers`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -188,7 +225,8 @@ ALTER TABLE `migrations`
 -- Chỉ mục cho bảng `orders`
 --
 ALTER TABLE `orders`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `orders_customer_id_foreign` (`customer_id`);
 
 --
 -- Chỉ mục cho bảng `password_resets`
@@ -214,6 +252,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT cho bảng `customers`
+--
+ALTER TABLE `customers`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
+--
 -- AUTO_INCREMENT cho bảng `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -223,13 +267,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT cho bảng `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT cho bảng `products`
@@ -242,6 +286,16 @@ ALTER TABLE `products`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- Các ràng buộc cho các bảng đã đổ
+--
+
+--
+-- Các ràng buộc cho bảng `orders`
+--
+ALTER TABLE `orders`
+  ADD CONSTRAINT `orders_customer_id_foreign` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

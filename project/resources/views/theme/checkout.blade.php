@@ -17,7 +17,7 @@
 
 <div class="container">
   <div id="content">
-    <form action="{{url('checkout/order')}}" method="post" class="beta-form-checkout">
+    <form action="{{url('checkout/order')}}" method="post" class="beta-form-checkout" autocomplete="off">
       @csrf
       <div class="row">
         <div class="col-sm-6">

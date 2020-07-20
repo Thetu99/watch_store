@@ -2,26 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use App\Customer;
 use App\Order;
 
 class DashboardController extends Controller
 {
   function show()
   {
-    $orders = Order::paginate(5);
-    return view('admin.dashboard', compact('orders'));
+    $customers = Customer::paginate(5);
+    return view('admin.dashboard', compact('customers'));
   }
 
   function detail($id)
   {
-    $orders = Order::find($id);
-    return view('admin.order.detail', compact('orders'));
+    $customers = Customer::find($id);
+    $orders = Order::where('customer_id', $id)->paginate(5);
+    return view('admin.order.detail', compact('customers', 'orders'));
   }
 
   function delete($id)
   {
-    $order = Order::find($id);
-    $order->delete();
+    $customer = Customer::find($id);
+    $customer->delete();
     return redirect('admin')->with('status', 'Xóa đơn hàng thành công');
   }
 }

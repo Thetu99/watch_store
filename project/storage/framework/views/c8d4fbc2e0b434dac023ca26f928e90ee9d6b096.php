@@ -23,23 +23,23 @@
           </tr>
         </thead>
         <tbody>
-          <?php $__currentLoopData = $orders; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $o): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+          <?php $__currentLoopData = $customers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $c): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
           <tr>
-            <th scope="row"><?php echo e($orders->firstItem() + $key); ?></th>
-            <td><?php echo e($o->name); ?></td>
-            <td><?php echo e($o->gender); ?></td>
-            <td><?php echo e($o->phone); ?></td>
-            <td><?php echo e($o->email); ?></td>
-            <td><?php echo e($o->address); ?></td>
-            <td><?php echo e($o->note); ?></td>
-            <td><?php echo e(date("G:i j-n-Y", strtotime($o->created_at))); ?></td>
+            <th scope="row"><?php echo e($customers->firstItem() + $key); ?></th>
+            <td><?php echo e($c->name); ?></td>
+            <td><?php echo e($c->gender); ?></td>
+            <td><?php echo e($c->phone); ?></td>
+            <td><?php echo e($c->email); ?></td>
+            <td><?php echo e($c->address); ?></td>
+            <td><?php echo e($c->note); ?></td>
+            <td><?php echo e(date("G:i j-n-Y", strtotime($c->created_at))); ?></td>
             <td>
-              <a href="<?php echo e(route('order.detail', $o->id)); ?>" class="btn btn-success btn-sm rounded-0 text-white" type="button" data-toggle="tooltip"
+              <a href="<?php echo e(route('order.detail', $c->id)); ?>" class="btn btn-success btn-sm rounded-0 text-white" type="button" data-toggle="tooltip"
                 data-placement="top" title="Chi tiết">
                 <i class="fa fa-file-alt"></i>
               </a>
 
-              <a href="<?php echo e(route('order.delete', $o->id)); ?>" onclick="return confirm('Bạn có chắc chắn muốn xóa?')"
+              <a href="<?php echo e(route('order.delete', $c->id)); ?>" onclick="return confirm('Bạn có chắc chắn muốn xóa?')"
                 class="btn btn-danger btn-sm rounded-0 text-white" type="button" data-toggle="tooltip"
                 data-placement="top" title="Xóa">
                 <i class="fa fa-trash"></i>
@@ -52,7 +52,7 @@
         </tbody>
       </table>
       
-      <?php echo e($orders->links()); ?>
+      <?php echo e($customers->links()); ?>
 
     </div>
   </div>
