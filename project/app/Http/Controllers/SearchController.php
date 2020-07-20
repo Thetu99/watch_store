@@ -12,6 +12,6 @@ class SearchController extends Controller
     $products = Product::where('name', 'like', '%' . $request->key . '%')
       ->orWhere('price', $request->key)
       ->get();
-    return view('theme.timkiem', compact('products'));
+    return view('theme.search', compact('products'));
   }
 }

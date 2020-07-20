@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Order;
-use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
@@ -12,10 +12,16 @@ class DashboardController extends Controller
     return view('admin.dashboard', compact('orders'));
   }
 
+  function detail($id)
+  {
+    $orders = Order::find($id);
+    return view('admin.order.detail', compact('orders'));
+  }
+
   function delete($id)
   {
-    $products = Order::find($id);
-    $products->delete();
+    $order = Order::find($id);
+    $order->delete();
     return redirect('admin')->with('status', 'Xóa đơn hàng thành công');
   }
 }

@@ -70,8 +70,9 @@
                   <img width="50px" src="<?php echo e(asset("image/product/{$p->options->thumbnail}")); ?>" class="pull-left">
                   <div class="media-body">
                     <p class="font-large"><b><?php echo e($p->name); ?></b></p>
-                    <span class="color-gray your-order-info">Giá tiền: <?php echo e($p->price); ?></span>
-                    <span class="color-gray your-order-info">Số lượng: <?php echo e($p->qty); ?></span>
+                    Giá tiền: <span class="color-gray"><?php echo e(number_format($p->price,0,'','.')); ?>đ</span><br>
+                    Số lượng: <?php echo e($p->qty); ?>
+
                   </div>
                 </div>
                 <!-- end one item -->

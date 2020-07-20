@@ -24,6 +24,8 @@ Route::get('home', 'HomeController@index')->name('home');
 Route::middleware('auth')->group(function () {
   Route::get('dashboard', 'DashboardController@show');
   Route::get('admin', 'DashboardController@show');
+
+  Route::get('admin/order/detail/{id}', 'DashboardController@detail')->name('order.detail');
   Route::get('admin/order/delete/{id}', 'DashboardController@delete')->name('order.delete');
 
   Route::get('admin/user/list', 'AdminUserController@list');
@@ -59,4 +61,3 @@ Route::get('product/{name}', 'ProductController@show')->name('product.show');
 
 Route::get('checkout', 'CheckOutController@show');
 Route::post('checkout/order', 'CheckOutController@order');
-

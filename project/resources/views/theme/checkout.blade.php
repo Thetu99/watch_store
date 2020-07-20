@@ -70,8 +70,8 @@
                   <img width="50px" src="{{asset("image/product/{$p->options->thumbnail}")}}" class="pull-left">
                   <div class="media-body">
                     <p class="font-large"><b>{{$p->name}}</b></p>
-                    <span class="color-gray your-order-info">Giá tiền: {{$p->price}}</span>
-                    <span class="color-gray your-order-info">Số lượng: {{$p->qty}}</span>
+                    Giá tiền: <span class="color-gray">{{number_format($p->price,0,'','.')}}đ</span><br>
+                    Số lượng: {{$p->qty}}
                   </div>
                 </div>
                 <!-- end one item -->

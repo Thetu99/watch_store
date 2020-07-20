@@ -43,50 +43,57 @@
   <!-- end analytic  -->
   <div class="card">
     <div class="card-header font-weight-bold">
-      ĐƠN HÀNG MỚI
+      CHI TIẾT ĐƠN HÀNG
     </div>
     <div class="card-body">
       <table class="table table-striped">
         <thead>
           <tr>
-            <th scope="col">STT</th>
-            <th scope="col">Khách hàng</th>
-            <th scope="col">Giới tính</th>
-            <th scope="col">Số điện thoại</th>
-            <th scope="col">Email</th>
-            <th scope="col">Địa chỉ</th>
-            <th scope="col">Ghi chú</th>
-            <th scope="col">Thời gian</th>
-            <th scope="col" style="width: 100px">Tác vụ</th>
+            <th colspan="2">Thông tin khách hàng</th>
           </tr>
         </thead>
         <tbody>
-          @foreach ($orders as $key => $o)
           <tr>
-            <th scope="row">{{$orders->firstItem() + $key}}</th>
-            <td>{{$o->name}}</td>
-            <td>{{$o->gender}}</td>
-            <td>{{$o->phone}}</td>
-            <td>{{$o->email}}</td>
-            <td>{{$o->address}}</td>
-            <td>{{$o->note}}</td>
-            <td>{{date("G:i j-n-Y", strtotime($o->created_at))}}</td>
-            <td>
-              <a href="{{route('order.detail', $o->id)}}" class="btn btn-success btn-sm rounded-0 text-white" type="button" data-toggle="tooltip"
-                data-placement="top" title="Chi tiết">
-                <i class="fa fa-file-alt"></i>
-              </a>
-
-              <a href="{{route('order.delete', $o->id)}}" onclick="return confirm('Bạn có chắc chắn muốn xóa?')"
-                class="btn btn-danger btn-sm rounded-0 text-white" type="button" data-toggle="tooltip"
-                data-placement="top" title="Xóa">
-                <i class="fa fa-trash"></i>
-              </a>
-            </td>
+            <td>Tên khách hàng</td>
+            <td>{{$orders->name}}</td>
           </tr>
-          @endforeach
+          <tr>
+            <td>Giới tính</td>
+            <td>{{$orders->gender}}</td>
+          </tr>
+          <tr>
+            <td>Ngày đặt hàng</td>
+            <td>{{date("G:i j-n-Y", strtotime($orders->created_at))}}</td>
+          </tr>
+          <tr>
+            <td>Số điện thoại</td>
+            <td>{{$orders->phone}}</td>
+          </tr>
+          <tr>
+            <td>Địa chỉ</td>
+            <td>{{$orders->address}}</td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td>{{$orders->email}}</td>
+          </tr>
+          <tr>
+            <td>Ghi chú</td>
+            <td>{{$orders->note}}</td>
+          </tr>
+        </tbody>
+      </table>
 
-
+      <table class="table table-striped">
+        <thead>
+          <th>STT</th>
+          <th>Tên sản phẩm</th>
+          <th>Hình ảnh</th>
+          <th>Số lượng</th>
+          <th>Giá tiền</th>
+        </thead>
+        <tbody>
+          <td></td>
         </tbody>
       </table>
       {{-- <nav aria-label="Page navigation example">
@@ -108,7 +115,6 @@
           </li>
         </ul>
       </nav> --}}
-      {{$orders->links()}}
     </div>
   </div>
 
