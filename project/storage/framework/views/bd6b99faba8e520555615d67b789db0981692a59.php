@@ -40,9 +40,7 @@
       <div class="navbar-brand"><a href="<?php echo e(url('admin')); ?>">WATCH SHOP ADMIN</a></div>
       <div class="nav-right ">
         <div class="btn-group mr-auto">
-          <button type="button" class="btn dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="plus-icon fas fa-plus-circle"></i>
-          </button>
+          
           <div class="dropdown-menu">
             <a class="dropdown-item" href="<?php echo e(url('admin/post/add')); ?>">Thêm bài viết</a>
             <a class="dropdown-item" href="<?php echo e(url('admin/product/add')); ?>">Thêm sản phẩm</a>

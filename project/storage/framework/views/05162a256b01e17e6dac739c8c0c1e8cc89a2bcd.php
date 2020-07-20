@@ -74,8 +74,6 @@
           </tr>
         </tbody>
       </table>
-      <?php echo e($orders->links()); ?>
-
       
     </div>
   </div>

@@ -16,7 +16,7 @@ class DashboardController extends Controller
   function detail($id)
   {
     $customers = Customer::find($id);
-    $orders = Order::where('customer_id', $id)->paginate(5);
+    $orders = Order::where('customer_id', $id)->paginate();
     return view('admin.order.detail', compact('customers', 'orders'));
   }
 
