@@ -61,3 +61,4 @@ Route::get('product/{name}', 'ProductController@show')->name('product.show');
 
 Route::get('checkout', 'CheckOutController@show');
 Route::post('checkout/order', 'CheckOutController@order');
+Route::view('checkout/success', 'theme/success');

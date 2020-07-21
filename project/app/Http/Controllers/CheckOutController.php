@@ -18,12 +18,7 @@ class CheckOutController extends Controller
   }
 
   function order(Request $request)
-  {
-    
-    
-    /* echo "<pre>";
-    echo print_r($customer_id);
-    echo "</pre>"; */
+  {    
     Customer::create([
       'name' => $request->input('name'),
       'gender' => $request->input('gender'),
@@ -47,6 +42,6 @@ class CheckOutController extends Controller
 
     Cart::destroy();
     
-    return redirect('/');
+    return redirect('checkout/success');
   }
 }
