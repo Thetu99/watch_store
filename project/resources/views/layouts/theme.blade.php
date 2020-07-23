@@ -55,7 +55,7 @@
           <div class="space10">&nbsp;</div>
           <div class="beta-comp">
             <form role="search" method="get" id="searchform" autocomplete="off" action="{{url('search')}}">
-              <input type="text" value="" name="key" id="s" placeholder="Nhập từ khóa..." />
+              <input type="text" value="" name="key" id="s" placeholder="Nhập tên sản phẩm..." />
               <button class="fa fa-search" type="submit" id="searchsubmit"></button>
             </form>
           </div>
@@ -134,11 +134,11 @@
           <li>
             <a href="#">Thương hiệu</a>
             @php
-            $products=App\Product::distinct()->get('brand');
+            $brands=App\Brand::all();
             @endphp
             <ul class="sub-menu">
-              @foreach ($products as $p)
-              <li><a href="{{url("brand/$p->brand")}}">{{$p->brand}}</a></li>
+              @foreach ($brands as $b)
+              <li><a href="{{url("brand/$b->name")}}">{{$b->name}}</a></li>
               @endforeach
             </ul>
           </li>
@@ -269,6 +269,9 @@
           } else {
             $(".header-bottom").removeClass("fixNav");
           }
+        });
+
+        $("input[type='number']").click(function(){
         });
       });
   </script>

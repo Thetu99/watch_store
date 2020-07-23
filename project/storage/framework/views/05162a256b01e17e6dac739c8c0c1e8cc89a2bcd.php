@@ -60,7 +60,7 @@
           <tr>
             <td><?php echo e($orders->firstItem() + $key); ?></td>
             <td><?php echo e($o->product_name); ?></td>
-            <td><img src="<?php echo e(asset("image/product/$o->product_thumbnail")); ?>" width="50px"></td>
+            <td><a target="blank" href="<?php echo e(asset("image/product/$o->product_thumbnail")); ?>"><img src="<?php echo e(asset("image/product/$o->product_thumbnail")); ?>" width="50px"></a></td>
             <td><?php echo e($o->product_qty); ?></td>
             <td><?php echo e(number_format($o->product_price, 0, '', '.')); ?>đ</td>
           </tr>

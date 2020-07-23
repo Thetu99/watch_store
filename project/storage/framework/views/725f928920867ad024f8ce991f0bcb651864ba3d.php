@@ -47,7 +47,7 @@
           <div class="space10">&nbsp;</div>
           <div class="beta-comp">
             <form role="search" method="get" id="searchform" autocomplete="off" action="<?php echo e(url('search')); ?>">
-              <input type="text" value="" name="key" id="s" placeholder="Nhập từ khóa..." />
+              <input type="text" value="" name="key" id="s" placeholder="Nhập tên sản phẩm..." />
               <button class="fa fa-search" type="submit" id="searchsubmit"></button>
             </form>
           </div>
@@ -78,11 +78,11 @@
           <li>
             <a href="#">Thương hiệu</a>
             <?php
-            $products=App\Product::distinct()->get('brand');
+            $brands=App\Brand::all();
             ?>
             <ul class="sub-menu">
-              <?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $p): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-              <li><a href="<?php echo e(url("brand/$p->brand")); ?>"><?php echo e($p->brand); ?></a></li>
+              <?php $__currentLoopData = $brands; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $b): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+              <li><a href="<?php echo e(url("brand/$b->name")); ?>"><?php echo e($b->name); ?></a></li>
               <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </ul>
           </li>
@@ -139,6 +139,9 @@
           } else {
             $(".header-bottom").removeClass("fixNav");
           }
+        });
+
+        $("input[type='number']").click(function(){
         });
       });
   </script>

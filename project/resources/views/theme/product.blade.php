@@ -30,6 +30,7 @@
               <p class="single-item-price">
                 <span class="color-gray">{{number_format($products->price,0,'','.')}}đ</span>
               </p>
+              <p class="single-item-title"><b>{{$products->status}}</b></p>
             </div>
 
             <div class="clearfix"></div>

@@ -49,6 +49,7 @@
               <th scope="col">Mô tả</th>
               <th scope="col">Giá tiền</th>
               <th scope="col">Ảnh</th>
+              <th scope="col">Tình trạng</th>
               <th scope="col">Ngày thêm</th>
               <th scope="col">Ngày cập nhật</th>
               <th scope="col" style="width: 100px">Tác vụ</th>
@@ -66,8 +67,12 @@
               <td><?php echo e($p->brand); ?></td>
               <td><?php echo $p->content; ?></td>
               <td><?php echo e(number_format($p->price,0,'','.')); ?>đ</td>
-              <td><a href="<?php echo e(asset("image/product/$p->thumbnail")); ?>" target="_blank"><img
-                    src="<?php echo e(asset("image/product/$p->thumbnail")); ?>" width="50px" /></a></td>
+              <td>
+                <a href="<?php echo e(asset("image/product/$p->thumbnail")); ?>" target="_blank">
+                  <img src="<?php echo e(asset("image/product/$p->thumbnail")); ?>" width="50px" />
+                </a>
+              </td>
+              <td><?php echo e($p->status); ?></td>
               <td><?php echo e(date("G:i j-n-Y", strtotime($p->created_at))); ?></td>
               <td><?php echo e(date("G:i j-n-Y", strtotime($p->updated_at))); ?></td>
               <td>

@@ -4,7 +4,9 @@
 <div class="inner-header">
   <div class="container">
     <div class="pull-left">
-      <h6 class="inner-title">Thương hiệu </h6>
+    <h6 class="inner-title">Thương hiệu @foreach ($brands as $b)
+        
+    @endforeach{{$b->name}}</h6>
     </div>
     <div class="pull-right">
       <div class="beta-breadcrumb font-large">
@@ -54,21 +56,21 @@
             </div>
 
             <div class="row">
-              @foreach ($brands as $b)
+              @foreach ($news as $n)
               <div class="col-sm-4">
                 <div class="single-item">
                   <div class="single-item-header">
-                    <a href="{{route('product.show', $b->id)}}"><img src="{{asset("image/product/{$b->thumbnail}")}}" alt=""></a>
+                    <a href="{{route('product.show', $n->id)}}"><img src="{{asset("image/product/{$n->thumbnail}")}}" alt=""></a>
                   </div>
                   <div class="single-item-body">
-                    <p class="single-item-title"><b>{{$b->name}}</b></p>
+                    <p class="single-item-title"><b>{{$n->name}}</b></p>
                     <p class="single-item-price">
-                      <span class="color-gray">{{number_format($b->price,0,'','.')}}đ</span>
+                      <span class="color-gray">{{number_format($n->price,0,'','.')}}đ</span>
                     </p>
                   </div>
                   <div class="single-item-caption">
-                    <a class="add-to-cart pull-left" href="{{route('cart.add', $b->id)}}"><i class="fa fa-shopping-cart"></i></a>
-                    <a class="beta-btn primary" href="{{route('product.show', $b->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
+                    <a class="add-to-cart pull-left" href="{{route('cart.add', $n->id)}}"><i class="fa fa-shopping-cart"></i></a>
+                    <a class="beta-btn primary" href="{{route('product.show', $n->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
                     <div class="clearfix"></div>
                   </div>
                 </div>
@@ -80,7 +82,7 @@
           <div class="space50">&nbsp;</div>
 
           <div class="beta-products-list">
-            <h4>Sản phẩm bán chạy</h4>
+            <h4>Sản phẩm nổi bật</h4>
             <div class="beta-products-details">
               <div class="clearfix"></div>
             </div>

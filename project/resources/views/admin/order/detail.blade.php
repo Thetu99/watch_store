@@ -60,7 +60,7 @@
           <tr>
             <td>{{$orders->firstItem() + $key}}</td>
             <td>{{$o->product_name}}</td>
-            <td><img src="{{asset("image/product/$o->product_thumbnail")}}" width="50px"></td>
+            <td><a target="blank" href="{{asset("image/product/$o->product_thumbnail")}}"><img src="{{asset("image/product/$o->product_thumbnail")}}" width="50px"></a></td>
             <td>{{$o->product_qty}}</td>
             <td>{{number_format($o->product_price, 0, '', '.')}}đ</td>
           </tr>

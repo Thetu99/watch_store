@@ -47,6 +47,7 @@
               <th scope="col">Mô tả</th>
               <th scope="col">Giá tiền</th>
               <th scope="col">Ảnh</th>
+              <th scope="col">Tình trạng</th>
               <th scope="col">Ngày thêm</th>
               <th scope="col">Ngày cập nhật</th>
               <th scope="col" style="width: 100px">Tác vụ</th>
@@ -64,8 +65,12 @@
               <td>{{$p->brand}}</td>
               <td>{!!$p->content!!}</td>
               <td>{{number_format($p->price,0,'','.')}}đ</td>
-              <td><a href="{{asset("image/product/$p->thumbnail")}}" target="_blank"><img
-                    src="{{asset("image/product/$p->thumbnail")}}" width="50px" /></a></td>
+              <td>
+                <a href="{{asset("image/product/$p->thumbnail")}}" target="_blank">
+                  <img src="{{asset("image/product/$p->thumbnail")}}" width="50px" />
+                </a>
+              </td>
+              <td>{{$p->status}}</td>
               <td>{{date("G:i j-n-Y", strtotime($p->created_at))}}</td>
               <td>{{date("G:i j-n-Y", strtotime($p->updated_at))}}</td>
               <td>

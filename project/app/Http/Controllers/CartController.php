@@ -15,21 +15,25 @@ class CartController extends Controller
 
   function add($id)
   {
-    /* Cart::destroy(); */
     $product = Product::find($id);
-    Cart::add([
-      'id' => $product->id,
-      'name' => $product->name,
-      'qty' => 1,
-      'price' => $product->price,
-      'options' => [
-        'thumbnail' => $product->thumbnail
-      ]
-    ]);
-    /* echo "<pre>";
-    print_r(Cart::content());
-    echo "</pre>"; */
-    return redirect('cart');
+
+    if ($product->status == 'Còn hàng') {      
+      Cart::add([
+        'id' => $product->id,
+        'name' => $product->name,
+        'qty' => 1,
+        'price' => $product->price,
+        'options' => ['thumbnail' => $product->thumbnail]
+      ]);
+      
+      return redirect('cart');
+    }
+    else{
+      echo "<script>alert('Sản phẩm tạm thời hết hàng')</script>";
+      echo "<script>window.history.back()</script>";
+    }
+
+    
   }
 
   function remove($rowId)
@@ -40,7 +44,7 @@ class CartController extends Controller
 
   function update(Request $request)
   {
-    $data = $request->get('qty');
+    $data = $request->qty;
     foreach ($data as $k => $v) {
       Cart::update($k, $v);
     }

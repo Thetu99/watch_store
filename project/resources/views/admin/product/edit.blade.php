@@ -7,7 +7,7 @@
     </div>
     <div class="card-body">
 
-      {!! Form::open(['route'=> ['update_product', $product->id], 'method'=>'post', 'files'=> true,
+      {{-- {!! Form::open(['route'=> ['update_product', $product->id], 'method'=>'post', 'files'=> true,
       'autocomplete'=>'off']) !!}
 
       <div class="form-group">
@@ -18,23 +18,7 @@
       <div class="form-group">
         {!! Form::label('', 'Thương hiệu') !!}<br>
 
-        {!! Form::radio('brand', $product->brand, true, ['id'=> $product->brand, 'required']) !!}
-        {!! Form::label($product->brand, $product->brand) !!} &nbsp;
-
-        {!! Form::radio('brand', 'Orient', '', ['id'=>'orient', 'required']) !!}
-        {!! Form::label('orient', 'Orient') !!} &nbsp;
-
-        {!! Form::radio('brand', 'Casio', '', ['id'=>'casio', 'required']) !!}
-        {!! Form::label('casio', 'Casio') !!} &nbsp;
-
-        {!! Form::radio('brand', 'Obaku', '', ['id'=>'obaku', 'required']) !!}
-        {!! Form::label('obaku', 'Obaku') !!} &nbsp;
-
-        {!! Form::radio('brand', 'Tissot', '', ['id'=>'tissot', 'required']) !!}
-        {!! Form::label('tissot', 'Tissot') !!} &nbsp;
-
-        {!! Form::radio('brand', 'Fossil', '', ['id'=>'fossil', 'required']) !!}
-        {!! Form::label('fossil', 'Fossil') !!}
+        {!! Form::select('brand', $brand, isset($product->brand) ? $product->brand : null, ['class'=>'form-control']) !!}
       </div>
 
       <div class="form-group">
@@ -50,52 +34,66 @@
       <small class="text-danger">{{$message}}</small>
       @enderror
 
+      <div class="form-group">
+        {!! Form::label('', 'Tình trạng') !!}<br>
+
+        {!! Form::radio('status', 'Còn hàng', isset($product->status) ? $product->status : null, ['id'=>'Còn hàng',
+        'required']) !!}
+        {!! Form::label('Còn hàng', 'Còn hàng') !!} &nbsp;
+
+        {!! Form::radio('status', 'Hết hàng', isset($product->status) ? $product->status : null, ['id'=>'Hết hàng',
+        'required']) !!}
+        {!! Form::label('Hết hàng', 'Hết hàng') !!} &nbsp;
+      </div>
+
       {!! Form::submit('Cập nhật', ['class'=> 'btn btn-primary']) !!}
 
-      {!! Form::close() !!}
-      {{-- <form action="{{route('update_product', $product->id)}}" method="POST" enctype="multipart/form-data">
-      @csrf
-      <div class="form-group">
-        <label for="name">Tên sản phẩm</label>
-        <input class="form-control" type="text" name="name" id="name" value="{{$product->name}}">
-        @error('name')
-        <small class="text-danger">{{$message}}</small>
-        @enderror
-      </div>
-      <div class="form-group">
-        <label for="brand">Thương hiệu</label>
-        <select name="brand" id="brand" class="form-control">
-          @php
-          $brands=['Tissot', 'Casio', 'Orient', 'Fossil', 'Obaku'];
-          @endphp
-          @foreach ($brands as $b)
-          <option value="{{$b}}" @if ($b==$product->brand)
-            {{'selected'}}
-            @endif>{{$b}}
-          </option>
-          @endforeach
-        </select>
-        @error('brand')
-        <small class="text-danger">{{$message}}</small>
-        @enderror
-      </div>
-      <div class="form-group">
-        <label for="content">Mô tả</label>
-        <textarea class="form-control" name="content" id="content">{{$product->content}}</textarea>
-        @error('content')
-        <small class="text-danger">{{$message}}</small>
-        @enderror
-      </div>
-      <div class="form-group">
-        <label for="price">Giá tiền</label>
-        <input class="form-control" type="text" name="price" id="price" value="{{$product->price}}">
-        @error('price')
-        <small class="text-danger">{{$message}}</small>
-        @enderror
-      </div>
+      {!! Form::close() !!} --}}
+      <form action="{{route('update_product', $product->id)}}" method="POST" enctype="multipart/form-data">
+        @csrf
+        <div class="form-group">
+          <label for="name">Tên sản phẩm</label>
+          <input class="form-control" type="text" name="name" id="name" value="{{$product->name}}" required>
+        </div>
 
-      <button type="submit" name="btn-add" value="Thêm mới" class="btn btn-primary">Cập nhật</button>
-      </form> --}}
+        <div class="form-group">
+          <label for="brand">Thương hiệu</label>
+          <select name="brand" id="brand" class="form-control">
+            @foreach ($brands as $b)
+            <option value="{{$b->name}}" @if ($b->name==$product->brand)
+              {{'selected'}}
+              @endif>{{$b->name}}
+            </option>
+            @endforeach
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="price">Giá tiền</label>
+          <input class="form-control" type="text" name="price" id="price" value="{{$product->price}}" required>
+        </div>
+
+        <div class="form-group">
+          <label for="content">Mô tả</label>
+          <textarea class="form-control" name="content" id="content" required >{{$product->content}}</textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Tình trạng</label><br>
+          
+          <input type="radio" name="status" id="conhang" value="Còn hàng" @if ($product->status=='Còn hàng')
+          checked
+          @endif>
+          <label for="conhang">Còn hàng</label>&nbsp;
+
+          <input type="radio" name="status" id="hethang" value="Hết hàng" @if ($product->status=='Hết hàng')
+          checked
+          @endif>
+          <label for="hethang">Hết hàng</label>
+        </div>
+
+        <button type="submit" name="btn-add" value="Thêm mới" class="btn btn-primary">Cập nhật</button>
+      </form>
     </div>
   </div>
 </div>

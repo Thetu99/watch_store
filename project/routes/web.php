@@ -43,6 +43,13 @@ Route::middleware('auth')->group(function () {
   Route::get('admin/product/edit/{id}', 'AdminProductController@edit')->name('edit_product');
   Route::post('admin/product/update/{id}', 'AdminProductController@update')->name('update_product');
   Route::get('admin/product/delete/{id}', 'AdminProductController@delete')->name('delete_product');
+
+  Route::get('admin/brand/list', 'BrandController@list');
+  Route::get('admin/brand/add', 'BrandController@add');
+  Route::post('admin/brand/store', 'BrandController@store');
+  Route::get('admin/brand/edit/{id}', 'BrandController@edit')->name('brand.edit');
+  Route::post('admin/brand/update/{id}', 'BrandController@update')->name('brand.update');
+  Route::get('admin/brand/delete/{id}', 'BrandController@delete')->name('brand.delete');
 });
 
 Route::get('/', 'HomeController@show');

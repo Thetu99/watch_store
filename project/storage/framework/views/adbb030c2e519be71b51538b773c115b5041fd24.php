@@ -93,7 +93,7 @@
                     <h5>Tổng</h5>
                   </div>
                   <div class="cart-totals-row">
-                    <p class="amount"><?php echo e(Cart::total()); ?>đ</p>
+                    <p class="amount color-gray"><?php echo e(Cart::total()); ?>đ</p>
                     <a href="<?php echo e(url('checkout')); ?>" class="beta-btn primary">Thanh toán</a>
                   </div>
                 </div>
@@ -105,20 +105,6 @@
       </form>
       <!-- End of Shop Table Products -->
     </div>
-
-
-    <!-- Cart Collaterals -->
-    
-
-    
-
-
-
-    
-    
-    <!-- End of Cart Collaterals -->
-    
-
   </div> <!-- #content -->
 </div> <!-- .container -->
 <?php $__env->stopSection(); ?>

@@ -81,34 +81,18 @@
             </a>
             <i class="arrow fas fa-angle-right"></i>
           </li>
-          {{-- <li class="nav-link">
-            <a href="#">
+          <li class="nav-link active">
+            <a href="{{url('admin')}}">
               <div class="nav-link-icon d-inline-flex">
                 <i class="far fa-folder"></i>
               </div>
-              Trang
-            </a>
-            <i class="arrow fas fa-angle-right"></i>
-
-            <ul class="sub-menu">
-              <li><a href="#">Thêm mới</a></li>
-              <li><a href="#">Danh sách</a></li>
-            </ul>
-          </li> --}}
-          {{-- <li class="nav-link">
-            <a href="#">
-              <div class="nav-link-icon d-inline-flex">
-                <i class="far fa-folder"></i>
-              </div>
-              Bài viết
+              Bán hàng
             </a>
             <i class="arrow fas fa-angle-right"></i>
             <ul class="sub-menu">
-              <li><a href="#">Thêm mới</a></li>
-              <li><a href="#">Danh sách</a></li>
-              <li><a href="#">Danh mục</a></li>
+              <li><a href="{{url('admin')}}">Đơn hàng</a></li>
             </ul>
-          </li> --}}
+          </li>
           <li class="nav-link active">
             <a href="{{url('admin/product/list')}}">
               <div class="nav-link-icon d-inline-flex">
@@ -123,15 +107,16 @@
             </ul>
           </li>
           <li class="nav-link active">
-            <a href="{{url('admin')}}">
+            <a href="{{url('admin/brand/list')}}">
               <div class="nav-link-icon d-inline-flex">
                 <i class="far fa-folder"></i>
               </div>
-              Bán hàng
+              Thương hiệu
             </a>
-            <i class="arrow fas fa-angle-right"></i>
+            <i class="arrow fas fa-angle-down"></i>
             <ul class="sub-menu">
-              <li><a href="{{url('admin')}}">Đơn hàng</a></li>
+              <li><a href="{{url('admin/brand/list')}}">Danh sách</a></li>
+              <li><a href="{{url('admin/brand/add')}}">Thêm mới</a></li>
             </ul>
           </li>
           <li class="nav-link active">

@@ -4,7 +4,9 @@
 <div class="inner-header">
   <div class="container">
     <div class="pull-left">
-      <h6 class="inner-title">Thương hiệu </h6>
+    <h6 class="inner-title">Thương hiệu <?php $__currentLoopData = $brands; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $b): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><?php echo e($b->name); ?></h6>
     </div>
     <div class="pull-right">
       <div class="beta-breadcrumb font-large">
@@ -54,21 +56,21 @@
             </div>
 
             <div class="row">
-              <?php $__currentLoopData = $brands; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $b): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+              <?php $__currentLoopData = $news; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $n): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
               <div class="col-sm-4">
                 <div class="single-item">
                   <div class="single-item-header">
-                    <a href="<?php echo e(route('product.show', $b->id)); ?>"><img src="<?php echo e(asset("image/product/{$b->thumbnail}")); ?>" alt=""></a>
+                    <a href="<?php echo e(route('product.show', $n->id)); ?>"><img src="<?php echo e(asset("image/product/{$n->thumbnail}")); ?>" alt=""></a>
                   </div>
                   <div class="single-item-body">
-                    <p class="single-item-title"><b><?php echo e($b->name); ?></b></p>
+                    <p class="single-item-title"><b><?php echo e($n->name); ?></b></p>
                     <p class="single-item-price">
-                      <span class="color-gray"><?php echo e(number_format($b->price,0,'','.')); ?>đ</span>
+                      <span class="color-gray"><?php echo e(number_format($n->price,0,'','.')); ?>đ</span>
                     </p>
                   </div>
                   <div class="single-item-caption">
-                    <a class="add-to-cart pull-left" href="<?php echo e(route('cart.add', $b->id)); ?>"><i class="fa fa-shopping-cart"></i></a>
-                    <a class="beta-btn primary" href="<?php echo e(route('product.show', $b->id)); ?>">Chi tiết <i class="fa fa-chevron-right"></i></a>
+                    <a class="add-to-cart pull-left" href="<?php echo e(route('cart.add', $n->id)); ?>"><i class="fa fa-shopping-cart"></i></a>
+                    <a class="beta-btn primary" href="<?php echo e(route('product.show', $n->id)); ?>">Chi tiết <i class="fa fa-chevron-right"></i></a>
                     <div class="clearfix"></div>
                   </div>
                 </div>
@@ -80,7 +82,7 @@
           <div class="space50">&nbsp;</div>
 
           <div class="beta-products-list">
-            <h4>Sản phẩm bán chạy</h4>
+            <h4>Sản phẩm nổi bật</h4>
             <div class="beta-products-details">
               <div class="clearfix"></div>
             </div>

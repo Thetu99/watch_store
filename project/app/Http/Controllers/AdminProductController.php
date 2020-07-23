@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Brand;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -40,18 +41,19 @@ class AdminProductController extends Controller
 
   function add()
   {
-    return view('admin.product.add');
+    $brands = Brand::all();
+    return view('admin.product.add', compact('brands'));
   }
 
   function store(Request $request)
   {
     $input = $request->all();
-    
+
     $file = $request->file('thumbnail');
     $fileName = $file->getClientOriginalName();
     $file->move('public/image/product/', $fileName);
     $input['thumbnail'] = $fileName;
-    
+
     Product::create($input);
     return redirect('admin/product/list')->with('status', 'Đã thêm sản phẩm thành công');
   }
@@ -59,7 +61,8 @@ class AdminProductController extends Controller
   function edit($id)
   {
     $product = Product::find($id);
-    return view('admin.product.edit', compact('product'));
+    $brands = Brand::all();
+    return view('admin.product.edit', compact('product', 'brands'));
   }
 
   function update(Request $request, $id)
@@ -69,6 +72,7 @@ class AdminProductController extends Controller
       'brand' => $request->input('brand'),
       'content' => $request->input('content'),
       'price' => $request->input('price'),
+      'status' => $request->status
     ]);
     return redirect('admin/product/list')->with('status', 'Cập nhật sản phẩm thành công');
   }

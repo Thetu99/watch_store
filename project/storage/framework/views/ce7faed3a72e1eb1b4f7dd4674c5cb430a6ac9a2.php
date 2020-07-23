@@ -7,75 +7,54 @@
     </div>
     <div class="card-body">
 
-      <?php echo Form::open(['route'=> ['update_product', $product->id], 'method'=>'post', 'files'=> true,
-      'autocomplete'=>'off']); ?>
-
-
-      <div class="form-group">
-        <?php echo Form::label('name', 'Tên sản phẩm'); ?>
-
-        <?php echo Form::text('name', $product->name, ['class'=>'form-control', 'required']); ?>
-
-      </div>
-
-      <div class="form-group">
-        <?php echo Form::label('', 'Thương hiệu'); ?><br>
-
-        <?php echo Form::radio('brand', $product->brand, true, ['id'=> $product->brand, 'required']); ?>
-
-        <?php echo Form::label($product->brand, $product->brand); ?> &nbsp;
-
-        <?php echo Form::radio('brand', 'Orient', '', ['id'=>'orient', 'required']); ?>
-
-        <?php echo Form::label('orient', 'Orient'); ?> &nbsp;
-
-        <?php echo Form::radio('brand', 'Casio', '', ['id'=>'casio', 'required']); ?>
-
-        <?php echo Form::label('casio', 'Casio'); ?> &nbsp;
-
-        <?php echo Form::radio('brand', 'Obaku', '', ['id'=>'obaku', 'required']); ?>
-
-        <?php echo Form::label('obaku', 'Obaku'); ?> &nbsp;
-
-        <?php echo Form::radio('brand', 'Tissot', '', ['id'=>'tissot', 'required']); ?>
-
-        <?php echo Form::label('tissot', 'Tissot'); ?> &nbsp;
-
-        <?php echo Form::radio('brand', 'Fossil', '', ['id'=>'fossil', 'required']); ?>
-
-        <?php echo Form::label('fossil', 'Fossil'); ?>
-
-      </div>
-
-      <div class="form-group">
-        <?php echo Form::label('price', 'Giá tiền'); ?>
-
-        <?php echo Form::text('price', $product->price, ['class'=>'form-control', 'required']); ?>
-
-      </div>
-
-      <div class="form-group">
-        <?php echo Form::label('Mô tả'); ?><br>
-        <?php echo Form::textarea('content', $product->content, ['class'=>'form-control']); ?>
-
-      </div>
-      <?php $__errorArgs = ['content'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-      <small class="text-danger"><?php echo e($message); ?></small>
-      <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-
-      <?php echo Form::submit('Cập nhật', ['class'=> 'btn btn-primary']); ?>
-
-
-      <?php echo Form::close(); ?>
-
       
+      <form action="<?php echo e(route('update_product', $product->id)); ?>" method="POST" enctype="multipart/form-data">
+        <?php echo csrf_field(); ?>
+        <div class="form-group">
+          <label for="name">Tên sản phẩm</label>
+          <input class="form-control" type="text" name="name" id="name" value="<?php echo e($product->name); ?>" required>
+        </div>
+
+        <div class="form-group">
+          <label for="brand">Thương hiệu</label>
+          <select name="brand" id="brand" class="form-control">
+            <?php $__currentLoopData = $brands; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $b): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <option value="<?php echo e($b->name); ?>" <?php if($b->name==$product->brand): ?>
+              <?php echo e('selected'); ?>
+
+              <?php endif; ?>><?php echo e($b->name); ?>
+
+            </option>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="price">Giá tiền</label>
+          <input class="form-control" type="text" name="price" id="price" value="<?php echo e($product->price); ?>" required>
+        </div>
+
+        <div class="form-group">
+          <label for="content">Mô tả</label>
+          <textarea class="form-control" name="content" id="content" required ><?php echo e($product->content); ?></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Tình trạng</label><br>
+          
+          <input type="radio" name="status" id="conhang" value="Còn hàng" <?php if($product->status=='Còn hàng'): ?>
+          checked
+          <?php endif; ?>>
+          <label for="conhang">Còn hàng</label>&nbsp;
+
+          <input type="radio" name="status" id="hethang" value="Hết hàng" <?php if($product->status=='Hết hàng'): ?>
+          checked
+          <?php endif; ?>>
+          <label for="hethang">Hết hàng</label>
+        </div>
+
+        <button type="submit" name="btn-add" value="Thêm mới" class="btn btn-primary">Cập nhật</button>
+      </form>
     </div>
   </div>
 </div>

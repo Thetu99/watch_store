@@ -7,71 +7,44 @@
     </div>
     <div class="card-body">
 
-      <?php echo Form::open(['url'=>'admin/product/store', 'method'=>'post', 'files'=> true, 'autocomplete'=>'off']); ?>
-
-
-      <div class="form-group">
-        <?php echo Form::label('name', 'Tên sản phẩm'); ?>
-
-        <?php echo Form::text('name', '', ['class'=>'form-control', 'required']); ?>
-
-      </div>
-
-      <div class="form-group">
-        <?php echo Form::label('', 'Thương hiệu'); ?><br>
-        <?php echo Form::radio('brand', 'Orient', '', ['id'=>'Orient', 'required']); ?>
-
-        <?php echo Form::label('Orient', 'Orient'); ?> &nbsp;
-        <?php echo Form::radio('brand', 'Casio', '', ['id'=>'Casio', 'required']); ?>
-
-        <?php echo Form::label('Casio', 'Casio'); ?> &nbsp;
-        <?php echo Form::radio('brand', 'Obaku', '', ['id'=>'Obaku', 'required']); ?>
-
-        <?php echo Form::label('Obaku', 'Obaku'); ?> &nbsp;
-        <?php echo Form::radio('brand', 'Tissot', '', ['id'=>'Tissot', 'required']); ?>
-
-        <?php echo Form::label('Tissot', 'Tissot'); ?> &nbsp;
-        <?php echo Form::radio('brand', 'Fossil', '', ['id'=>'Fossil', 'required']); ?>
-
-        <?php echo Form::label('Fossil', 'Fossil'); ?>
-
-      </div>
-
-      <div class="form-group">
-        <?php echo Form::label('price', 'Giá tiền'); ?>
-
-        <?php echo Form::text('price', '', ['class'=>'form-control', 'required']); ?>
-
-      </div>
-
-      <div class="form-group">
-        <?php echo Form::label('Mô tả'); ?><br>
-        <?php echo Form::textarea('content', '', ['class'=>'form-control']); ?>
-
-      </div>
-      <?php $__errorArgs = ['content'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-      <small class="text-danger"><?php echo e($message); ?></small>
-      <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-
-      <div class="form-group">
-        <?php echo Form::label('Ảnh'); ?><br>
-        <?php echo Form::file('thumbnail', ['class'=>'form-control-file', 'type'=>'file']); ?>
-
-      </div>
-
-      <?php echo Form::submit('Thêm mới', ['class'=> 'btn btn-primary']); ?>
-
-
-      <?php echo Form::close(); ?>
-
       
+      <form action="<?php echo e(url('admin/product/store')); ?>" method="POST" enctype="multipart/form-data" autocomplete="off">
+      <?php echo csrf_field(); ?>
+      <div class="form-group">
+        <label for="name">Tên sản phẩm</label>
+        <input class="form-control" type="text" name="name" id="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="brand">Thương hiệu</label>
+        <select name="brand" id="brand" class="form-control" required>
+          <option value="" disabled selected>--Chọn--</option>
+          <?php $__currentLoopData = $brands; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $b): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+          <option value="<?php echo e($b->name); ?>">
+            <?php echo e($b->name); ?>
+
+          </option>
+          <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="price">Giá tiền</label>
+        <input class="form-control" type="text" name="price" id="price" required>
+      </div>
+
+      <div class="form-group">
+        <label for="content">Mô tả</label>
+        <textarea class="form-control" name="content" id="content" rows="5"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="thumbnail">Ảnh</label>
+        <input class="form-control-file" type="file" name="thumbnail" id="thumbnail" required>
+      </div>
+      
+      <button type="submit" name="btn-add" value="Thêm mới" class="btn btn-primary">Thêm mới</button>
+      </form>
     </div>
   </div>
 </div>

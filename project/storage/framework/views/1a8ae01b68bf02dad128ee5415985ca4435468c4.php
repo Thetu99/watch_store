@@ -30,6 +30,7 @@
               <p class="single-item-price">
                 <span class="color-gray"><?php echo e(number_format($products->price,0,'','.')); ?>đ</span>
               </p>
+              <p class="single-item-title"><b><?php echo e($products->status); ?></b></p>
             </div>
 
             <div class="clearfix"></div>
