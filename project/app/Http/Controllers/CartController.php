@@ -30,7 +30,7 @@ class CartController extends Controller
     }
     else{
       echo "<script>alert('Sản phẩm tạm thời hết hàng')</script>";
-      echo "<script>window.history.back()</script>";
+      return "<script>window.history.back()</script>";
     }
 
     

@@ -55,7 +55,9 @@ Route::middleware('auth')->group(function () {
 Route::get('/', 'HomeController@show');
 Route::view('about', 'theme/about');
 Route::view('contact', 'theme/contact');
+
 Route::get('search', 'SearchController@search');
+Route::get('filter/{id}', 'SearchController@filter')->name('filter');
 
 Route::get('brand/{name}', 'BrandController@show')->name('brand');
 

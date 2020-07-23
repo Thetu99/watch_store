@@ -111,6 +111,19 @@
       <div class="space60">&nbsp;</div>
       <div class="row">
         <div class="col-sm-12">
+          <div class="filter">
+            <h6>Chọn mức giá:</h6>
+            <a href="{{route('filter', '<1m')}}">Dưới 1 triệu</a>&nbsp;
+            <a href="{{route('filter', '1m-3m')}}">Từ 1-3 triệu</a>&nbsp;
+            <a href="{{route('filter', '3m-5m')}}">Từ 3-5 triệu</a>&nbsp;
+            <a href="{{route('filter', '>5m')}}">Trên 5 triệu</a>
+          </div>
+
+        </div>
+      </div>
+      <div class="space60">&nbsp;</div>
+      <div class="row">
+        <div class="col-sm-12">
           <div class="beta-products-list">
             <h4>Sản phẩm mới</h4>
             <div class="beta-products-details">
@@ -130,7 +143,7 @@
                 <div class="single-item">
                   <div class="single-item-header">
                     <a href="{{url("product/$p->id")}}">
-                      <img src="{{asset("image/product/$p->thumbnail")}}"/>
+                      <img src="{{asset("image/product/$p->thumbnail")}}" />
                     </a>
                   </div>
                   <div class="single-item-body">
@@ -140,7 +153,8 @@
                     </p>
                   </div>
                   <div class="single-item-caption">
-                    <a class="add-to-cart pull-left" href="{{route('cart.add', $p->id)}}"><i class="fa fa-shopping-cart"></i></a>
+                    <a class="add-to-cart pull-left" href="{{route('cart.add', $p->id)}}"><i
+                        class="fa fa-shopping-cart"></i></a>
                     <a class="beta-btn primary" href="{{url("product/$p->id")}}">Chi tiết<i
                         class="fa fa-chevron-right"></i></a>
                     <div class="clearfix"></div>
@@ -184,14 +198,15 @@
                     </p>
                   </div>
                   <div class="single-item-caption">
-                    <a class="add-to-cart pull-left" href="{{route('cart.add', $r->id)}}"><i class="fa fa-shopping-cart"></i></a>
+                    <a class="add-to-cart pull-left" href="{{route('cart.add', $r->id)}}"><i
+                        class="fa fa-shopping-cart"></i></a>
                     <a class="beta-btn primary" href="{{url("product/$r->id")}}">Chi tiết<i
                         class="fa fa-chevron-right"></i></a>
                     <div class="clearfix"></div>
                   </div>
                 </div>
               </div>
-              @if ($i==4)
+              @if ($i%4==0)
               <div class="space40">&nbsp;</div>
               @endif
               @endforeach

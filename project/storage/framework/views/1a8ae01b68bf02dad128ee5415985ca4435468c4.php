@@ -29,14 +29,14 @@
               <p class="single-item-title"><b><?php echo e($products->name); ?></b></p>
               <p class="single-item-price">
                 <span class="color-gray"><?php echo e(number_format($products->price,0,'','.')); ?>đ</span>
-              </p>
-              <p class="single-item-title"><b><?php echo e($products->status); ?></b></p>
+              </p>              
             </div>
 
             <div class="clearfix"></div>
             <div class="space20">&nbsp;</div>
 
             <div class="single-item">
+              <p class="single-item-title"><b><?php echo e($products->status); ?></b></p>
               <a class="add-to-cart pull-left" href="<?php echo e(route('cart.add', $products->id)); ?>">
                 <i class="fa fa-shopping-cart"></i>
                 <a class="beta-btn primary" href="<?php echo e(route('cart.add', $products->id)); ?>">Cho vào giỏ hàng</a>

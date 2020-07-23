@@ -7,11 +7,37 @@ use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
-  public function search(Request $request)
+  function search(Request $request)
   {
     $products = Product::where('name', 'like', '%' . $request->key . '%')
       ->orWhere('price', $request->key)
       ->get();
     return view('theme.search', compact('products'));
+  }
+
+  function filter($id)
+  {
+    $title = [];
+    if ($id == '<1m') {
+      $title[] = "Sản phẩm có giá dưới 1 triệu đồng";
+      $filter = Product::where('price', '<', 1000000)->paginate();
+    }
+
+    if ($id == '1m-3m') {
+      $title[] = "Sản phẩm có giá từ 1-3 triệu đồng";
+      $filter = Product::whereBetween('price', [1000000, 3000000])->paginate();
+    }
+
+    if ($id == '3m-5m') {
+      $title[] = "Sản phẩm có giá từ 3-5 triệu đồng";
+      $filter = Product::whereBetween('price', [3000000, 5000000])->paginate();
+    }
+
+    if ($id == '>5m') {
+      $title[] = "Sản phẩm có giá trên 5 triệu đồng";
+      $filter = Product::where('price', '>', 5000000)->paginate();
+    }
+    /* return $title; */
+    return view('theme.filter', compact('filter', 'title'));
   }
 }

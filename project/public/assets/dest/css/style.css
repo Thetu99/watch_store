@@ -6102,9 +6102,21 @@ a.home:hover {
   color: white;
   padding-top: 30px;
 }
-#inform h6{
-  
-}
 #inform a{
   font-size: medium;
+}
+
+.filter{
+  display: inline;
+}
+.filter a{
+  font-size: medium;
+  color: #288ad6;
+  padding-right: 10px;
+}
+.filter p{
+  text-align: center;
+  font-size: medium;
+  font-weight: bold;
+  color: red;
 }
