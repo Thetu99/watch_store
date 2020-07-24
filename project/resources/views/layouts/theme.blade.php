@@ -31,15 +31,6 @@
             </li>
           </ul>
         </div>
-        {{-- <div class="pull-right auto-width-right">
-          <ul class="top-details menu-beta l-inline">
-            <li>
-              <a href="#"><i class="fa fa-user"></i>Tài khoản</a>
-            </li>
-            <li><a href="#">Đăng kí</a></li>
-            <li><a href="#">Đăng nhập</a></li>
-          </ul>
-        </div> --}}
         <div class="clearfix"></div>
       </div>
       <!-- .container -->
@@ -62,95 +53,47 @@
 
           <div class="beta-comp">
             <div class="cart">
-              <a href="{{url('cart')}}"><i class="fa fa-shopping-cart"></i>Giỏ hàng (<b style="color: red"> {{Cart::count()}} </b>)</a>
-              {{-- <i class="fa fa-chevron-down"></i> --}}
-
-              {{-- <div class="beta-dropdown cart-body">
-
-                <div class="cart-item">
-                  <div class="media">
-                    <a class="pull-left" href="#"><img src="{{asset('assets/dest/images/products/cart/1.png')}}"
-              alt="" /></a>
-              <div class="media-body">
-                <span class="cart-item-title">Sample Woman Top</span>
-                <span class="cart-item-options">Size: XS; Colar: Navy</span>
-                <span class="cart-item-amount">1*<span>$49.50</span></span>
-              </div>
+              <a href="{{url('cart')}}"><i class="fa fa-shopping-cart"></i>Giỏ hàng (<b style="color: red">
+                  {{Cart::count()}} </b>)</a>
             </div>
+            <!-- .cart -->
           </div>
-
-          <div class="cart-item">
-            <div class="media">
-              <a class="pull-left" href="#"><img src="{{asset('assets/dest/images/products/cart/2.png')}}" alt="" /></a>
-              <div class="media-body">
-                <span class="cart-item-title">Sample Woman Top</span>
-                <span class="cart-item-options">Size: XS; Colar: Navy</span>
-                <span class="cart-item-amount">1*<span>$49.50</span></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="cart-item">
-            <div class="media">
-              <a class="pull-left" href="#"><img src="{{asset('assets/dest/images/products/cart/3.png')}}" alt="" /></a>
-              <div class="media-body">
-                <span class="cart-item-title">Sample Woman Top</span>
-                <span class="cart-item-options">Size: XS; Colar: Navy</span>
-                <span class="cart-item-amount">1*<span>$49.50</span></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="cart-caption">
-            <div class="cart-total text-right">
-              Tổng tiền: <span class="cart-total-value">$34.55</span>
-            </div>
-            <div class="clearfix"></div>
-
-            <div class="center">
-              <div class="space10">&nbsp;</div>
-              <a href="checkout.html" class="beta-btn primary text-center">Đặt hàng <i
-                  class="fa fa-chevron-right"></i></a>
-            </div>
-          </div>
-        </div> --}}
-      </div>
-      <!-- .cart -->
-    </div>
-  </div>
-  <div class="clearfix"></div>
-  </div>
-  <!-- .container -->
-  </div>
-  <!-- .header-body -->
-  <div class="header-bottom" style="background-color: #0277b8;">
-    <div class="container">
-      <a class="visible-xs beta-menu-toggle pull-right" href="#"><span class="beta-menu-toggle-text">Menu</span>
-        <i class="fa fa-bars"></i></a>
-      <div class="visible-xs clearfix"></div>
-      <nav class="main-menu">
-        <ul class="l-inline ov">
-          <li><a href="{{url('/')}}">Trang chủ</a></li>
-          <li>
-            <a href="#">Thương hiệu</a>
-            @php
-            $brands=App\Brand::all();
-            @endphp
-            <ul class="sub-menu">
-              @foreach ($brands as $b)
-              <li><a href="{{url("brand/$b->name")}}">{{$b->name}}</a></li>
-              @endforeach
-            </ul>
-          </li>
-          <li><a href="{{url('about')}}">Giới thiệu</a></li>
-          <li><a href="{{url('contact')}}">Liên hệ</a></li>
-        </ul>
+        </div>
         <div class="clearfix"></div>
-      </nav>
+      </div>
+      <!-- .container -->
     </div>
-    <!-- .container -->
-  </div>
-  <!-- .header-bottom -->
+    <!-- .header-body -->
+    <div class="header-bottom" style="background-color: #0277b8;">
+      <div class="container">
+        <a class="visible-xs beta-menu-toggle pull-right" href="#"><span class="beta-menu-toggle-text">Menu</span>
+          <i class="fa fa-bars"></i></a>
+        <div class="visible-xs clearfix"></div>
+        <nav class="main-menu">
+          <ul class="l-inline ov">
+            <li><a href="{{url('/')}}">Trang chủ</a></li>
+            <li>
+              <a href="#">Thương hiệu</a>
+              <ul class="sub-menu">
+                @php
+                $brands = App\Brand::all();
+                @endphp
+                @foreach ($brands as $b)
+                <li>
+                  <a href="{{url("brand/$b->name")}}">{{$b->name}}</a>
+                </li>
+                @endforeach
+              </ul>
+            </li>
+            <li><a href="{{url('about')}}">Giới thiệu</a></li>
+            <li><a href="{{url('contact')}}">Liên hệ</a></li>
+          </ul>
+          <div class="clearfix"></div>
+        </nav>
+      </div>
+      <!-- .container -->
+    </div>
+    <!-- .header-bottom -->
   </div>
   <!-- #header -->
   @yield('content')
@@ -232,7 +175,7 @@
     <!-- .container -->
   </div> --}}
   <!-- #footer -->
-  <div class="copyright footer fixed-bottom">
+  <div class="copyright">
     <div class="container">
       <p class="pull-left">Privacy policy. &copy; 2020</p>
       <p class="pull-right pay-options">
@@ -249,7 +192,9 @@
   <!-- include js files -->
   <script src="{{asset('assets/dest/js/jquery.js')}}"></script>
   <script src="{{asset('assets/dest/vendors/jqueryui/jquery-ui-1.10.4.custom.min.js')}}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+  <script src="js/bootstrap-dropdownhover.min.js"></script>
   <script src="{{asset('assets/dest/vendors/bxslider/jquery.bxslider.min.js')}}"></script>
   <script src="{{asset('assets/dest/vendors/colorbox/jquery.colorbox-min.js')}}"></script>
   <script src="{{asset('assets/dest/vendors/animo/Animo.js')}}"></script>
@@ -271,6 +216,11 @@
           }
         });
 
+        var title = $("h6").text();
+        if(title=="Giỏ hàng" || title=="Liên hệ"){
+          $("body").css({"display" : "flex", "flex-direction" : "column"});
+        }
+        
         $("input[type='number']").click(function(){
         });
       });

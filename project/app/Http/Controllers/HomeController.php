@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Banner;
+use App\Brand;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -20,9 +22,10 @@ class HomeController extends Controller
    */
   public function show()
   {
+    $banners = Banner::all();    
     $products = Product::limit(8)->orderBy('created_at', 'desc')->get();
     $randoms = Product::inRandomOrder()->limit(8)->get();
 
-    return view('theme.home', compact('products', 'randoms'));
+    return view('theme.home', compact('banners', 'products', 'randoms'));
   }
 }

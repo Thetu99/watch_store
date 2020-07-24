@@ -50,6 +50,13 @@ Route::middleware('auth')->group(function () {
   Route::get('admin/brand/edit/{id}', 'BrandController@edit')->name('brand.edit');
   Route::post('admin/brand/update/{id}', 'BrandController@update')->name('brand.update');
   Route::get('admin/brand/delete/{id}', 'BrandController@delete')->name('brand.delete');
+
+  Route::get('admin/banner/list', 'BannerController@list');
+  Route::get('admin/banner/add', 'BannerController@add');
+  Route::post('admin/banner/store', 'BannerController@store');
+  Route::get('admin/banner/edit/{id}', 'BannerController@edit')->name('banner.edit');
+  Route::post('admin/banner/update/{id}', 'BannerController@update')->name('banner.update');
+  Route::get('admin/banner/delete/{id}', 'BannerController@delete')->name('banner.delete');
 });
 
 Route::get('/', 'HomeController@show');

@@ -5,7 +5,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h3>Giỏ hàng</h3>
+        <h6>Giỏ hàng</h6>
 
       </div>
       <div class="pull-right">

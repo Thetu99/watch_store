@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 23, 2020 lúc 07:30 AM
+-- Thời gian đã tạo: Th7 24, 2020 lúc 07:51 AM
 -- Phiên bản máy phục vụ: 10.3.16-MariaDB
 -- Phiên bản PHP: 7.3.7
 
@@ -21,6 +21,29 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `watch_store`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `banners`
+--
+
+CREATE TABLE `banners` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `thumbnail` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `banners`
+--
+
+INSERT INTO `banners` (`id`, `name`, `thumbnail`, `created_at`, `updated_at`) VALUES
+(1, 'Ngày đẹp tháng 7', 'banner 1.png', '2020-07-24 04:06:11', '2020-07-24 04:06:11'),
+(3, 'Sale 50% đồng hồ thời trang', 'banner 3.png', '2020-07-24 04:20:29', '2020-07-24 04:20:29'),
+(4, 'Đồng hồ độc quyền', 'banner 2.png', '2020-07-24 04:40:54', '2020-07-24 04:40:54');
 
 -- --------------------------------------------------------
 
@@ -44,8 +67,7 @@ INSERT INTO `brands` (`id`, `name`, `thumbnail`, `created_at`, `updated_at`) VAL
 (8, 'Fossil', 'fossil-logo.png', '2020-07-23 04:24:53', '2020-07-23 04:24:53'),
 (9, 'Casio', 'casio-logo.jpg', '2020-07-23 04:38:20', '2020-07-23 04:38:20'),
 (10, 'Orient', 'orient-logo.png', '2020-07-23 04:39:53', '2020-07-23 04:39:53'),
-(11, 'Obaku', 'obaku-logo.png', '2020-07-23 04:41:10', '2020-07-23 04:41:10'),
-(12, 'Tissot', 'tissot-logo.jpg', '2020-07-23 04:42:38', '2020-07-23 04:42:38');
+(11, 'Obaku', 'obaku-logo.png', '2020-07-23 04:41:10', '2020-07-23 04:41:10');
 
 -- --------------------------------------------------------
 
@@ -112,7 +134,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (6, '2020_07_11_133604_create_customers_table', 2),
 (7, '2020_07_13_105948_create_orders_table', 2),
 (8, '2020_07_20_154808_create_orders_table', 3),
-(9, '2020_07_22_211733_create_brands_table', 4);
+(9, '2020_07_22_211733_create_brands_table', 4),
+(10, '2020_07_24_104545_create_banners_table', 5);
 
 -- --------------------------------------------------------
 
@@ -183,7 +206,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `brand`, `name`, `content`, `price`, `thumbnail`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(24, 'Obaku', 'Obaku V130LCIRB', '<p>Đồng hồ Obaku c&oacute; được tỉ lệ v&agrave;ng l&agrave; bởi v&igrave; được s&aacute;ng lập bởi 2 kiến tr&uacute;c sư đại t&agrave;i c&aacute;ch đ&acirc;y 50 năm. Cũng v&igrave; c&oacute; mắt thẩm mỹ cao v&agrave; sự t&agrave;i t&igrave;nh, tỉ mỉ của họ m&agrave; những chiếc đồng hồ Obaku lu&ocirc;n lu&ocirc;n được đ&aacute;nh gi&aacute; rất cao. Vẻ đẹp lu&ocirc;n lu&ocirc;n khiến người kh&aacute;c phải ấn tượng khi tận mắt nh&igrave;n thấy chiếc đồng hồ n&agrave;y v&agrave; c&agrave;ng l&agrave;m t&ocirc;n l&ecirc;n vẻ đẹp của người sử dụng.</p>', 3469000, 'Obaku-V130LCIRB.png', 'Hết hàng', '2020-07-08 21:38:54', '2020-07-22 11:50:31', NULL),
+(24, 'Obaku', 'Obaku V130LCIRB', '<p>Đồng hồ Obaku c&oacute; được tỉ lệ v&agrave;ng l&agrave; bởi v&igrave; được s&aacute;ng lập bởi 2 kiến tr&uacute;c sư đại t&agrave;i c&aacute;ch đ&acirc;y 50 năm. Cũng v&igrave; c&oacute; mắt thẩm mỹ cao v&agrave; sự t&agrave;i t&igrave;nh, tỉ mỉ của họ m&agrave; những chiếc đồng hồ Obaku lu&ocirc;n lu&ocirc;n được đ&aacute;nh gi&aacute; rất cao. Vẻ đẹp lu&ocirc;n lu&ocirc;n khiến người kh&aacute;c phải ấn tượng khi tận mắt nh&igrave;n thấy chiếc đồng hồ n&agrave;y v&agrave; c&agrave;ng l&agrave;m t&ocirc;n l&ecirc;n vẻ đẹp của người sử dụng.</p>', 3469000, 'Obaku-V130LCIRB.png', 'Hết hàng', '2020-07-08 21:38:54', '2020-07-23 15:09:37', NULL),
 (25, 'Casio', 'Casio MTP-1335D-9AVDF', '<p>Thương hiệu đồng hồ nổi tiếng đến từ Nhật Bản kh&ocirc;ng ngừng cải tiến v&agrave; cho ra mắt những d&ograve;ng sản phẩm chất lượng ph&ugrave; hợp với nhiều đối tượng kh&aacute;ch h&agrave;ng. Những d&ograve;ng sản phẩm nổi tiếng của Casio l&agrave;: G-Shock với thiết kế mạnh mẽ c&ugrave;ng độ bền cao, Edifice thiết kế hiện đại c&ugrave;ng nhiều t&iacute;nh năng vượt trội, Sheen với thiết kế cổ điển v&agrave; sang trọng,&hellip;</p>', 1090000, 'Casio MTP-1335D-9AVDF.png', 'Hết hàng', '2020-07-10 14:01:21', '2020-07-22 15:21:03', NULL),
 (26, 'Casio', 'Casio MTP-X300L-1AVDF', '<p>Thương hiệu đồng hồ nổi tiếng đến từ Nhật Bản kh&ocirc;ng ngừng cải tiến v&agrave; cho ra mắt những d&ograve;ng sản phẩm chất lượng ph&ugrave; hợp với nhiều đối tượng kh&aacute;ch h&agrave;ng. Những d&ograve;ng sản phẩm nổi tiếng của Casio l&agrave;: G-Shock với thiết kế mạnh mẽ c&ugrave;ng độ bền cao, Edifice thiết kế hiện đại c&ugrave;ng nhiều t&iacute;nh năng vượt trội, Sheen với thiết kế cổ điển v&agrave; sang trọng,&hellip;</p>', 1936000, 'Casio MTP-X300L-1AVDF.png', 'Còn hàng', '2020-07-10 14:05:39', '2020-07-22 15:58:18', NULL),
 (27, 'Casio', 'Casio LTP-E143DBL-3ADR', '<p><span style=\"background-color: #ced4d9;\"><em><strong>Thương hiệu đồng hồ nổi tiếng đến từ Nhật Bản kh&ocirc;ng ngừng cải tiến v&agrave; cho ra mắt những d&ograve;ng sản phẩm chất lượng ph&ugrave; hợp với nhiều đối tượng kh&aacute;ch h&agrave;ng. Những d&ograve;ng sản phẩm nổi tiếng của Casio l&agrave;: G-Shock với thiết kế mạnh mẽ c&ugrave;ng độ bền cao, Edifice thiết kế hiện đại c&ugrave;ng nhiều t&iacute;nh năng vượt trội, Sheen với thiết kế cổ điển v&agrave; sang trọng,&hellip;</strong></em></span></p>', 1480000, 'Casio LTP-E143DBL-3ADR.png', 'Còn hàng', '2020-07-10 14:08:03', '2020-07-14 14:42:06', NULL),
@@ -233,6 +256,12 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 --
 -- Chỉ mục cho các bảng đã đổ
 --
+
+--
+-- Chỉ mục cho bảng `banners`
+--
+ALTER TABLE `banners`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Chỉ mục cho bảng `brands`
@@ -289,6 +318,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT cho bảng `banners`
+--
+ALTER TABLE `banners`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT cho bảng `brands`
 --
 ALTER TABLE `brands`
@@ -310,7 +345,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT cho bảng `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT cho bảng `orders`

@@ -60,14 +60,13 @@ html {
 html,
 body {
     height: 100%;
-    -webkit-font-smoothing: antialiased;    
+    -webkit-font-smoothing: antialiased;
 }
 
 body {
     font: 13px/20px "Open Sans", sans-serif;
     color: black;
     background: #fff;
-    font-weight: 300;
 }
 
 div,
@@ -4526,7 +4525,8 @@ tfoot td a i {
     height: 50px;
     color: #fff;
     line-height: 50px;
-    overflow: hidden
+    overflow: hidden;
+    margin-top: auto;
 }
 
 .pay-options a {
@@ -6090,33 +6090,38 @@ a.home:hover {
     text-decoration: none;
 }
 
-#inform{
-  background-color: #3cb371;
-  margin: auto;
-  text-align: center;
-  width: 400px;
-  height: 150px;  
-  border-radius: 20px;
-}
-#inform h6, #inform a{
-  color: white;
-  padding-top: 30px;
-}
-#inform a{
-  font-size: medium;
+#inform {
+    background-color: #3cb371;
+    margin: auto;
+    text-align: center;
+    width: 400px;
+    height: 150px;
+    border-radius: 20px;
 }
 
-.filter{
-  display: inline;
+#inform h6,
+#inform a {
+    color: white;
+    padding-top: 30px;
 }
-.filter a{
-  font-size: medium;
-  color: #288ad6;
-  padding-right: 10px;
+
+#inform a {
+    font-size: medium;
 }
-.filter p{
-  text-align: center;
-  font-size: medium;
-  font-weight: bold;
-  color: red;
+
+.filter {
+    display: inline;
+}
+
+.filter a {
+    font-size: medium;
+    color: #288ad6;
+    padding-right: 10px;
+}
+
+.filter p {
+    text-align: center;
+    font-size: medium;
+    font-weight: bold;
+    color: red;
 }

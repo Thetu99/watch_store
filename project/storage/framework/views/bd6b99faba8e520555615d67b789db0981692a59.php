@@ -80,7 +80,7 @@
             </a>
             <i class="arrow fas fa-angle-right"></i>
           </li>
-          <li class="nav-link active">
+          <li class="nav-link">
             <a href="<?php echo e(url('admin')); ?>">
               <div class="nav-link-icon d-inline-flex">
                 <i class="far fa-folder"></i>
@@ -92,7 +92,20 @@
               <li><a href="<?php echo e(url('admin')); ?>">Đơn hàng</a></li>
             </ul>
           </li>
-          <li class="nav-link active">
+          <li class="nav-link">
+            <a href="<?php echo e(url('admin/banner/list')); ?>">
+              <div class="nav-link-icon d-inline-flex">
+                <i class="far fa-folder"></i>
+              </div>
+              Quảng cáo
+            </a>
+            <i class="arrow fas fa-angle-down"></i>
+            <ul class="sub-menu">
+              <li><a href="<?php echo e(url('admin/banner/list')); ?>">Danh sách</a></li>
+              <li><a href="<?php echo e(url('admin/banner/add')); ?>">Thêm mới</a></li>
+            </ul>
+          </li>
+          <li class="nav-link">
             <a href="<?php echo e(url('admin/product/list')); ?>">
               <div class="nav-link-icon d-inline-flex">
                 <i class="far fa-folder"></i>
@@ -105,7 +118,7 @@
               <li><a href="<?php echo e(url('admin/product/add')); ?>">Thêm mới</a></li>
             </ul>
           </li>
-          <li class="nav-link active">
+          <li class="nav-link">
             <a href="<?php echo e(url('admin/brand/list')); ?>">
               <div class="nav-link-icon d-inline-flex">
                 <i class="far fa-folder"></i>
@@ -118,7 +131,7 @@
               <li><a href="<?php echo e(url('admin/brand/add')); ?>">Thêm mới</a></li>
             </ul>
           </li>
-          <li class="nav-link active">
+          <li class="nav-link">
             <a href="<?php echo e(url('admin/user/list')); ?>">
               <div class="nav-link-icon d-inline-flex">
                 <i class="far fa-folder"></i>

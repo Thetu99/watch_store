@@ -31,7 +31,6 @@
             </li>
           </ul>
         </div>
-        
         <div class="clearfix"></div>
       </div>
       <!-- .container -->
@@ -54,47 +53,47 @@
 
           <div class="beta-comp">
             <div class="cart">
-              <a href="<?php echo e(url('cart')); ?>"><i class="fa fa-shopping-cart"></i>Giỏ hàng (<b style="color: red"> <?php echo e(Cart::count()); ?> </b>)</a>
-              
-
-              
-      </div>
-      <!-- .cart -->
-    </div>
-  </div>
-  <div class="clearfix"></div>
-  </div>
-  <!-- .container -->
-  </div>
-  <!-- .header-body -->
-  <div class="header-bottom" style="background-color: #0277b8;">
-    <div class="container">
-      <a class="visible-xs beta-menu-toggle pull-right" href="#"><span class="beta-menu-toggle-text">Menu</span>
-        <i class="fa fa-bars"></i></a>
-      <div class="visible-xs clearfix"></div>
-      <nav class="main-menu">
-        <ul class="l-inline ov">
-          <li><a href="<?php echo e(url('/')); ?>">Trang chủ</a></li>
-          <li>
-            <a href="#">Thương hiệu</a>
-            <?php
-            $brands=App\Brand::all();
-            ?>
-            <ul class="sub-menu">
-              <?php $__currentLoopData = $brands; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $b): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-              <li><a href="<?php echo e(url("brand/$b->name")); ?>"><?php echo e($b->name); ?></a></li>
-              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-            </ul>
-          </li>
-          <li><a href="<?php echo e(url('about')); ?>">Giới thiệu</a></li>
-          <li><a href="<?php echo e(url('contact')); ?>">Liên hệ</a></li>
-        </ul>
+              <a href="<?php echo e(url('cart')); ?>"><i class="fa fa-shopping-cart"></i>Giỏ hàng (<b style="color: red">
+                  <?php echo e(Cart::count()); ?> </b>)</a>
+            </div>
+            <!-- .cart -->
+          </div>
+        </div>
         <div class="clearfix"></div>
-      </nav>
+      </div>
+      <!-- .container -->
     </div>
-    <!-- .container -->
-  </div>
-  <!-- .header-bottom -->
+    <!-- .header-body -->
+    <div class="header-bottom" style="background-color: #0277b8;">
+      <div class="container">
+        <a class="visible-xs beta-menu-toggle pull-right" href="#"><span class="beta-menu-toggle-text">Menu</span>
+          <i class="fa fa-bars"></i></a>
+        <div class="visible-xs clearfix"></div>
+        <nav class="main-menu">
+          <ul class="l-inline ov">
+            <li><a href="<?php echo e(url('/')); ?>">Trang chủ</a></li>
+            <li>
+              <a href="#">Thương hiệu</a>
+              <ul class="sub-menu">
+                <?php
+                $brands = App\Brand::all();
+                ?>
+                <?php $__currentLoopData = $brands; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $b): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <li>
+                  <a href="<?php echo e(url("brand/$b->name")); ?>"><?php echo e($b->name); ?></a>
+                </li>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+              </ul>
+            </li>
+            <li><a href="<?php echo e(url('about')); ?>">Giới thiệu</a></li>
+            <li><a href="<?php echo e(url('contact')); ?>">Liên hệ</a></li>
+          </ul>
+          <div class="clearfix"></div>
+        </nav>
+      </div>
+      <!-- .container -->
+    </div>
+    <!-- .header-bottom -->
   </div>
   <!-- #header -->
   <?php echo $__env->yieldContent('content'); ?>
@@ -102,7 +101,7 @@
 
   
   <!-- #footer -->
-  <div class="copyright footer fixed-bottom">
+  <div class="copyright">
     <div class="container">
       <p class="pull-left">Privacy policy. &copy; 2020</p>
       <p class="pull-right pay-options">
@@ -119,7 +118,9 @@
   <!-- include js files -->
   <script src="<?php echo e(asset('assets/dest/js/jquery.js')); ?>"></script>
   <script src="<?php echo e(asset('assets/dest/vendors/jqueryui/jquery-ui-1.10.4.custom.min.js')); ?>"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+  <script src="js/bootstrap-dropdownhover.min.js"></script>
   <script src="<?php echo e(asset('assets/dest/vendors/bxslider/jquery.bxslider.min.js')); ?>"></script>
   <script src="<?php echo e(asset('assets/dest/vendors/colorbox/jquery.colorbox-min.js')); ?>"></script>
   <script src="<?php echo e(asset('assets/dest/vendors/animo/Animo.js')); ?>"></script>
@@ -141,6 +142,11 @@
           }
         });
 
+        var title = $("h6").text();
+        if(title=="Giỏ hàng" || title=="Liên hệ"){
+          $("body").css({"display" : "flex", "flex-direction" : "column"});
+        }
+        
         $("input[type='number']").click(function(){
         });
       });
