@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 24, 2020 lúc 07:51 AM
+-- Thời gian đã tạo: Th7 24, 2020 lúc 06:24 PM
 -- Phiên bản máy phục vụ: 10.3.16-MariaDB
 -- Phiên bản PHP: 7.3.7
 
@@ -72,6 +72,37 @@ INSERT INTO `brands` (`id`, `name`, `thumbnail`, `created_at`, `updated_at`) VAL
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `comments`
+--
+
+CREATE TABLE `comments` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `comments`
+--
+
+INSERT INTO `comments` (`id`, `product_id`, `name`, `content`, `created_at`, `updated_at`) VALUES
+(1, 44, 'sdas', 'dsadasdsa', '2020-07-24 11:02:31', '2020-07-24 11:02:31'),
+(2, 27, 'Hoàng Mai', 'Đồng hồ gọn nhẹ, tinh xảo', '2020-07-24 11:09:40', '2020-07-24 11:09:40'),
+(3, 42, 'Lê Văn Đạt', 'Đồng hồ đơn giản, nam tính, 2 màu đỏ đen tạo sự bí ẩn', '2020-07-24 11:10:59', '2020-07-24 11:10:59'),
+(4, 43, 'Lê Thị Oanh', 'đồng hồ dành cho các quý bà sang trọng, đeo lên làm nổi bật hẳn', '2020-07-24 11:13:04', '2020-07-24 11:13:04'),
+(5, 26, 'fdsfsd', 'cxvxcvxc', '2020-07-24 11:13:27', '2020-07-24 11:13:27'),
+(6, 26, 'dsfdsfdsf', 'vcvxcvxcv', '2020-07-24 11:13:33', '2020-07-24 11:13:33'),
+(7, 26, 'Hoàng Trung Thông', 'Giá cả phải chăng', '2020-07-24 11:14:03', '2020-07-24 11:14:03'),
+(8, 26, 'Lê ngọc Phượng', 'Mình vừa mua cho chồng mình chiếc này, ảnh rất thích', '2020-07-24 11:14:55', '2020-07-24 11:14:55'),
+(9, 26, 'Đặng Hoàng Sáng', 'Đồng hồ tốt nhưng giá hơi chát', '2020-07-24 11:16:11', '2020-07-24 11:16:11'),
+(10, 26, 'Huỳnh Đức Trân', 'Quá rẻ, quá đẹp, quá chất', '2020-07-24 11:16:49', '2020-07-24 11:16:49');
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `customers`
 --
 
@@ -135,7 +166,11 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (7, '2020_07_13_105948_create_orders_table', 2),
 (8, '2020_07_20_154808_create_orders_table', 3),
 (9, '2020_07_22_211733_create_brands_table', 4),
-(10, '2020_07_24_104545_create_banners_table', 5);
+(10, '2020_07_24_104545_create_banners_table', 5),
+(11, '2020_07_24_145539_create_comments_table', 6),
+(12, '2020_07_24_172719_add_product_id_to_comments', 7),
+(13, '2020_07_24_173141_add_product_id_to_comments', 8),
+(14, '2020_07_24_175539_create_comments_table', 9);
 
 -- --------------------------------------------------------
 
@@ -270,6 +305,13 @@ ALTER TABLE `brands`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `comments_product_id_foreign` (`product_id`);
+
+--
 -- Chỉ mục cho bảng `customers`
 --
 ALTER TABLE `customers`
@@ -330,6 +372,12 @@ ALTER TABLE `brands`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
+-- AUTO_INCREMENT cho bảng `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- AUTO_INCREMENT cho bảng `customers`
 --
 ALTER TABLE `customers`
@@ -345,7 +393,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT cho bảng `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT cho bảng `orders`
@@ -368,6 +416,12 @@ ALTER TABLE `users`
 --
 -- Các ràng buộc cho các bảng đã đổ
 --
+
+--
+-- Các ràng buộc cho bảng `comments`
+--
+ALTER TABLE `comments`
+  ADD CONSTRAINT `comments_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE;
 
 --
 -- Các ràng buộc cho bảng `orders`

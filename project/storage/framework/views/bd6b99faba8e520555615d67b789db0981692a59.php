@@ -90,6 +90,7 @@
             <i class="arrow fas fa-angle-right"></i>
             <ul class="sub-menu">
               <li><a href="<?php echo e(url('admin')); ?>">Đơn hàng</a></li>
+              <li><a href="<?php echo e(url('admin/comment/list')); ?>">Bình luận</a></li>
             </ul>
           </li>
           <li class="nav-link">
@@ -145,26 +146,11 @@
               <li><a href="<?php echo e(url('admin/user/add')); ?>">Thêm mới</a></li>
             </ul>
           </li>
-
-          <!-- <li class="nav-link"><a>Bài viết</a>
-                        <ul class="sub-menu">
-                            <li><a>Thêm mới</a></li>
-                            <li><a>Danh sách</a></li>
-                            <li><a>Thêm danh mục</a></li>
-                            <li><a>Danh sách danh mục</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-link"><a>Sản phẩm</a></li>
-                    <li class="nav-link"><a>Đơn hàng</a></li>
-                    <li class="nav-link"><a>Hệ thống</a></li> -->
-
         </ul>
       </div>
       <div id="wp-content">
         <?php echo $__env->yieldContent('content'); ?>
       </div>
-
-
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

@@ -12,4 +12,8 @@ class Product extends Model
   protected $fillable = [
     'name', 'brand', 'content', 'price', 'thumbnail'
   ];
+
+  function comment(){
+    return $this->hasMany('App\Comment');
+  }
 }

@@ -72,7 +72,7 @@
               </td>
 
               <td class="product-remove">
-                <a href="{{route('cart.remove', $row->rowId)}}" class="remove" title="Remove this item"><i
+                <a href="{{route('cart.remove', $row->rowId)}}" class="remove" title="Xóa sản phẩm này"><i
                     class="fa fa-trash-o"></i></a>
               </td>
             </tr>

@@ -5,8 +5,8 @@
   <div class="container">
     <div class="pull-left">
     <h6 class="inner-title">Thương hiệu @foreach ($brands as $b)
-        
-    @endforeach{{$b->name}}</h6>
+        {{$b->name}}
+    @endforeach</h6>
     </div>
     <div class="pull-right">
       <div class="beta-breadcrumb font-large">

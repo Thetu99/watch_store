@@ -22,14 +22,14 @@
 
         <div class="row">
           <div class="col-sm-4">
-            <img src="<?php echo e(asset("image/product/{$products->thumbnail}")); ?>" alt="">
+            <img src="<?php echo e(asset("image/product/$products->thumbnail")); ?>">
           </div>
           <div class="col-sm-8">
             <div class="single-item-body">
               <p class="single-item-title"><b><?php echo e($products->name); ?></b></p>
               <p class="single-item-price">
                 <span class="color-gray"><?php echo e(number_format($products->price,0,'','.')); ?>đ</span>
-              </p>              
+              </p>
             </div>
 
             <div class="clearfix"></div>
@@ -41,7 +41,7 @@
                 <i class="fa fa-shopping-cart"></i>
                 <a class="beta-btn primary" href="<?php echo e(route('cart.add', $products->id)); ?>">Cho vào giỏ hàng</a>
               </a>
-              
+
             </div>
             <div class="space20">&nbsp;</div>
 
@@ -54,7 +54,7 @@
         <div class="woocommerce-tabs">
           <ul class="tabs">
             <li><a href="#tab-description">Mô tả</a></li>
-            <li><a href="#tab-reviews">Đánh giá (0)</a></li>
+            <li><a href="#tab-reviews">Đánh giá (<?php echo e($comments->total()); ?>)</a></li>
           </ul>
 
           <div class="panel" id="tab-description">
@@ -62,10 +62,42 @@
 
           </div>
           <div class="panel" id="tab-reviews">
-            <p>Không có đánh giá</p>
+            <form action="<?php echo e(route('comment.store', $products->id)); ?>" method="post" autocomplete="off">
+              <?php echo csrf_field(); ?>
+              <div class="comment">
+                <label for="name">Tên:</label>
+                <input type="text" name="name" id="name" required>
+
+                <label for="content">Phản hồi:</label>
+                <textarea name="content" required></textarea>
+              </div>
+
+              <button type="submit" value="Thêm mới" class="btn btn-primary">Gửi đánh giá</button>
+            </form>
+
+            <div class="space50">&nbsp;</div>
+
+            <div class="comment">
+              <ul>
+                <?php $__currentLoopData = $comments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $c): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <li>
+                  <img width="50px" src="<?php echo e(asset("image/comment/guest-user.jpg")); ?>">
+                  <?php echo e($c->name); ?>
+
+                  <span><?php echo e(date("G:i j-n-Y", strtotime($c->created_at))); ?></span>
+                  <p><?php echo e($c->content); ?></p>
+                </li>
+                <div class="space50">&nbsp;</div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+              </ul>
+              <?php echo e($comments->links()); ?>
+
+            </div>            
           </div>
         </div>
+
         <div class="space50">&nbsp;</div>
+
         <div class="beta-products-list">
           <h4>Các sản phẩm khác</h4>
 

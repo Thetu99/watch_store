@@ -28,6 +28,8 @@ Route::middleware('auth')->group(function () {
   Route::get('admin/order/detail/{id}', 'DashboardController@detail')->name('order.detail');
   Route::get('admin/order/delete/{id}', 'DashboardController@delete')->name('order.delete');
 
+  Route::get('admin/comment/list', 'CommentController@list');
+
   Route::get('admin/user/list', 'AdminUserController@list');
   Route::get('admin/user/add', 'AdminUserController@add');
   Route::post('admin/user/store', 'AdminUserController@store');
@@ -78,3 +80,5 @@ Route::get('product/{name}', 'ProductController@show')->name('product.show');
 Route::get('checkout', 'CheckOutController@show');
 Route::post('checkout/order', 'CheckOutController@order');
 Route::view('checkout/success', 'theme/success');
+
+Route::post('comment/store/{id}', 'CommentController@store')->name('comment.store');

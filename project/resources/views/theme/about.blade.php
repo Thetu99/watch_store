@@ -23,17 +23,32 @@
       <p>Tên đầy đủ: <strong>Công ty TNHH xuất nhập khẩu phân phối Watch Shop.</strong></p>
       <p>MSST: <strong>0314336787</strong></p>
       <p>Địa chỉ công ty: <strong>Số 92A - Lê Thanh Nghị – Hai Bà Trưng – Hà Nội.</strong></p>
+
       <div class="space35">&nbsp;</div>
 
       <p>Công ty TNHH xuất nhập khẩu phân phối Trần Đức được thành lập từ năm 2016 với mục tiêu trở thành một trong
         những nhà nhập khẩu và phân phối các thương hiệu đồng hồ đeo tay lớn tại thị trường Việt Nam</p>
+
       <p class="text-center"><img src="{{asset('assets/dest/images/big_watchshop_logo.png')}}"></p>
+
       <p>Với những mục tiêu và những kế hoạch dài hạn của Ban giám đốc công ty. Chỉ trong một thời gian ngắn đã xây dựng
         và phát triển thị trường với hơn 64 chi nhánh đại lý trên khắp cả nước.</p>
+
       <div class="space35">&nbsp;</div>
+
+      <p class="text-center"><img width="700px" src="{{asset('image/about/about-1.jpg')}}"></p>
+
+      <div class="space35">&nbsp;</div>
+
       <p>Mục tiêu của của công ty trong những năm tới không gì khác ngoài việc đưa về thị trường Việt Nam những thương
         hiệu đồng hồ uy tín trên thế giới, phù hợp với nhu cầu và giá thành tại Việt Nam.</p>
+
       <div class="space35">&nbsp;</div>
+
+      <p class="text-center"><img width="" src="{{asset('image/about/about-2.jpg')}}"></p>
+
+      <div class="space35">&nbsp;</div>
+
       <p>Chúng tôi sẽ luôn cố gắng phấn đấu vì một mục tiêu đưa tới người yêu thích đồng hồ trên cả nước những thương
         hiệu đồng hồ chất lượng cao phù hợp với nhu cầu và giá thành tại Việt Nam. Cam kết sẽ hỗ trợ hết mình chung tay
         cùng các đại lý mở rộng và thay đổi niềm tin của người dùng đồng hồ trên cả nước.</p>

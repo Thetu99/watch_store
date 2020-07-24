@@ -5,8 +5,9 @@
   <div class="container">
     <div class="pull-left">
     <h6 class="inner-title">Thương hiệu <?php $__currentLoopData = $brands; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $b): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-        
-    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><?php echo e($b->name); ?></h6>
+        <?php echo e($b->name); ?>
+
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?></h6>
     </div>
     <div class="pull-right">
       <div class="beta-breadcrumb font-large">
