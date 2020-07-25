@@ -17,6 +17,7 @@ class CommentController extends Controller
     }
 
     $comments = Comment::where('name', 'like', "%{$keyword}%")->orWhere('content', 'like', "%{$keyword}%")
+      ->orderBy('created_at', 'desc')
       ->paginate(10);
 
     return view('admin.comment.list', compact('comments'));
@@ -31,5 +32,12 @@ class CommentController extends Controller
       'product_id' => $product->id
     ]);
     return redirect()->back();
+  }
+
+  function delete($id)
+  {
+    $comment = Comment::find($id);
+    $comment->delete();
+    return redirect('admin/comment/list')->with('status', 'Xóa bình luận thành công');
   }
 }

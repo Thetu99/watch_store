@@ -47,12 +47,12 @@
             </td>
             <td><?php echo e(date("G:i j-n-Y", strtotime($c->created_at))); ?></td>
             <td>
-              <a href="<?php echo e(route('order.detail', $c->id)); ?>" class="btn btn-success btn-sm rounded-0 text-white"
+              <a href="#" class="btn btn-success btn-sm rounded-0 text-white"
                 type="button" data-toggle="tooltip" data-placement="top" title="Chi tiết">
                 <i class="fa fa-file-alt"></i>
               </a>
 
-              <a href="<?php echo e(route('order.delete', $c->id)); ?>" onclick="return confirm('Bạn có chắc chắn muốn xóa?')"
+              <a href="<?php echo e(route('comment.delete', $c->id)); ?>" onclick="return confirm('Bạn có chắc chắn muốn xóa?')"
                 class="btn btn-danger btn-sm rounded-0 text-white" type="button" data-toggle="tooltip"
                 data-placement="top" title="Xóa">
                 <i class="fa fa-trash"></i>
@@ -74,7 +74,5 @@
     </div>
   </div>
 </div>
-
-
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\watch_store\project\resources\views/admin/comment/list.blade.php ENDPATH**/ ?>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 24, 2020 lúc 06:24 PM
+-- Thời gian đã tạo: Th7 25, 2020 lúc 07:22 AM
 -- Phiên bản máy phục vụ: 10.3.16-MariaDB
 -- Phiên bản PHP: 7.3.7
 
@@ -89,16 +89,16 @@ CREATE TABLE `comments` (
 --
 
 INSERT INTO `comments` (`id`, `product_id`, `name`, `content`, `created_at`, `updated_at`) VALUES
-(1, 44, 'sdas', 'dsadasdsa', '2020-07-24 11:02:31', '2020-07-24 11:02:31'),
 (2, 27, 'Hoàng Mai', 'Đồng hồ gọn nhẹ, tinh xảo', '2020-07-24 11:09:40', '2020-07-24 11:09:40'),
 (3, 42, 'Lê Văn Đạt', 'Đồng hồ đơn giản, nam tính, 2 màu đỏ đen tạo sự bí ẩn', '2020-07-24 11:10:59', '2020-07-24 11:10:59'),
 (4, 43, 'Lê Thị Oanh', 'đồng hồ dành cho các quý bà sang trọng, đeo lên làm nổi bật hẳn', '2020-07-24 11:13:04', '2020-07-24 11:13:04'),
-(5, 26, 'fdsfsd', 'cxvxcvxc', '2020-07-24 11:13:27', '2020-07-24 11:13:27'),
-(6, 26, 'dsfdsfdsf', 'vcvxcvxcv', '2020-07-24 11:13:33', '2020-07-24 11:13:33'),
 (7, 26, 'Hoàng Trung Thông', 'Giá cả phải chăng', '2020-07-24 11:14:03', '2020-07-24 11:14:03'),
 (8, 26, 'Lê ngọc Phượng', 'Mình vừa mua cho chồng mình chiếc này, ảnh rất thích', '2020-07-24 11:14:55', '2020-07-24 11:14:55'),
 (9, 26, 'Đặng Hoàng Sáng', 'Đồng hồ tốt nhưng giá hơi chát', '2020-07-24 11:16:11', '2020-07-24 11:16:11'),
-(10, 26, 'Huỳnh Đức Trân', 'Quá rẻ, quá đẹp, quá chất', '2020-07-24 11:16:49', '2020-07-24 11:16:49');
+(10, 26, 'Huỳnh Đức Trân', 'Quá rẻ, quá đẹp, quá chất', '2020-07-24 11:16:49', '2020-07-24 11:16:49'),
+(11, 26, 'Ngọc Phong', 'Hàng đẹp chất lượng, lần sau sẽ còn quay lại', '2020-07-25 05:15:27', '2020-07-25 05:15:27'),
+(12, 26, 'Lê Minh Tuấn', 'mua ủng hộ shop 2 chiếc, cảm nhận ban đầu rất tuyệt', '2020-07-25 05:17:17', '2020-07-25 05:17:17'),
+(13, 44, 'ngoc anh pham', 'chất lượng đồng hồ tương xứng vs giá tiền, quá tuyệt vời', '2020-07-25 05:21:29', '2020-07-25 05:21:29');
 
 -- --------------------------------------------------------
 
@@ -375,7 +375,7 @@ ALTER TABLE `brands`
 -- AUTO_INCREMENT cho bảng `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT cho bảng `customers`

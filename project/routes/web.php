@@ -29,6 +29,7 @@ Route::middleware('auth')->group(function () {
   Route::get('admin/order/delete/{id}', 'DashboardController@delete')->name('order.delete');
 
   Route::get('admin/comment/list', 'CommentController@list');
+  Route::get('admin/comment/delete/{id}', 'CommentController@delete')->name('comment.delete');
 
   Route::get('admin/user/list', 'AdminUserController@list');
   Route::get('admin/user/add', 'AdminUserController@add');
