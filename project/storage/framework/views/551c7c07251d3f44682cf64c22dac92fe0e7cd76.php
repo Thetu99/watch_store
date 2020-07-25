@@ -1,12 +1,26 @@
 
 <?php $__env->startSection('content'); ?>
-<div class="container-fluid py-4">
+<div id="content" class="container-fluid">
   <div class="card">
-    <div class="card-header font-weight-bold">
-      BÌNH LUẬN MỚI
+
+    <?php if(session('status')): ?>
+    <div class="alert bg-success text-white">
+      <?php echo e(session('status')); ?>
+
+    </div>
+    <?php endif; ?>
+
+    <div class="card-header font-weight-bold d-flex justify-content-between align-items-center">
+      <h5 class="m-0">BÌNH LUẬN MỚI</h5>
+      <div class="form-search form-inline">
+        <form action="" method="GET" autocomplete="off">
+          <input type="search" name="keyword" class="form-control form-search" placeholder="Tìm kiếm">
+          <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+        </form>
+      </div>
     </div>
     <div class="card-body">
-      <table class="table table-striped">
+      <table class="table table-striped table-checkall">
         <thead>
           <tr>
             <th scope="col">STT</th>
@@ -19,6 +33,7 @@
           </tr>
         </thead>
         <tbody>
+          <?php if($comments->total()>0): ?>
           <?php $__currentLoopData = $comments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $c): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
           <tr>
             <th scope="row"><?php echo e($comments->firstItem() + $key); ?></th>
@@ -32,8 +47,8 @@
             </td>
             <td><?php echo e(date("G:i j-n-Y", strtotime($c->created_at))); ?></td>
             <td>
-              <a href="<?php echo e(route('order.detail', $c->id)); ?>" class="btn btn-success btn-sm rounded-0 text-white" type="button" data-toggle="tooltip"
-                data-placement="top" title="Chi tiết">
+              <a href="<?php echo e(route('order.detail', $c->id)); ?>" class="btn btn-success btn-sm rounded-0 text-white"
+                type="button" data-toggle="tooltip" data-placement="top" title="Chi tiết">
                 <i class="fa fa-file-alt"></i>
               </a>
 
@@ -45,14 +60,21 @@
             </td>
           </tr>
           <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+          <?php else: ?>
+          <tr>
+            <td colspan="7" class="bg-white">Không tìm thấy bản ghi</td>
+          </tr>
+          <?php endif; ?>
 
         </tbody>
       </table>
+      </form>
       <?php echo e($comments->links()); ?>
 
     </div>
   </div>
-
 </div>
+
+
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\watch_store\project\resources\views/admin/comment/list.blade.php ENDPATH**/ ?>
