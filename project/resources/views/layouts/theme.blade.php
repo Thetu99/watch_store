@@ -8,7 +8,8 @@
   <link href="http://fonts.googleapis.com/css?family=Dosis:300,400" rel="stylesheet" type="text/css" />
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="{{asset('assets/dest/css/font-awesome.min.css')}}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/solid.min.css">
   <link rel="stylesheet" href="{{asset('assets/dest/vendors/colorbox/example3/colorbox.css')}}" />
   <link rel="stylesheet" href="{{asset('assets/dest/rs-plugin/css/settings.css')}}" />
   <link rel="stylesheet" href="{{asset('assets/dest/rs-plugin/css/responsive.css')}}" />
@@ -39,7 +40,7 @@
     <div class="header-body">
       <div class="container beta-relative">
         <div class="pull-left">
-          <a href="{{url('/')}}" id="logo"><img src="{{asset('assets/dest/images/logo_watch.png')}}" width="200px"
+          <a href="{{url('home')}}" id="logo"><img src="{{asset('assets/dest/images/logo_watch.png')}}" width="200px"
               alt="" /></a>
         </div>
         <div class="pull-right beta-components space-left ov">
@@ -71,7 +72,7 @@
         <div class="visible-xs clearfix"></div>
         <nav class="main-menu">
           <ul class="l-inline ov">
-            <li><a href="{{url('/')}}">Trang chủ</a></li>
+            <li><a href="{{url('home')}}">Trang chủ</a></li>
             <li>
               <a href="#">Thương hiệu</a>
               <ul class="sub-menu">
@@ -194,7 +195,6 @@
   <script src="{{asset('assets/dest/vendors/jqueryui/jquery-ui-1.10.4.custom.min.js')}}"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-  <script src="js/bootstrap-dropdownhover.min.js"></script>
   <script src="{{asset('assets/dest/vendors/bxslider/jquery.bxslider.min.js')}}"></script>
   <script src="{{asset('assets/dest/vendors/colorbox/jquery.colorbox-min.js')}}"></script>
   <script src="{{asset('assets/dest/vendors/animo/Animo.js')}}"></script>

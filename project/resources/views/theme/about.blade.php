@@ -8,7 +8,7 @@
     </div>
     <div class="pull-right">
       <div class="beta-breadcrumb font-large">
-        <a href="{{url('/')}}" class="home fa fa-home"> Trang chủ</a> / <span>Giới thiệu</span>
+        <a href="{{url('home')}}" class="home fa fa-home"> Trang chủ</a> / <span>Giới thiệu</span>
       </div>
     </div>
     <div class="clearfix"></div>

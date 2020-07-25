@@ -10,7 +10,7 @@
       </div>
       <div class="pull-right">
         <div class="beta-breadcrumb font-large">
-          <a href="{{url('/')}}" class="home fa fa-home"> Trang chủ</a> / <span>Giỏ hàng</span>
+          <a href="{{url('home')}}" class="home fa fa-home"> Trang chủ</a> / <span>Giỏ hàng</span>
         </div>
       </div>
       <div class="clearfix"></div>
@@ -84,7 +84,7 @@
               <td colspan="6" class="actions">
                 <input type="submit" class="beta-btn primary" name="update_cart" value="Cập nhật giỏ hàng">
 
-                <a href="{{url('/')}}" class="beta-btn primary" name="proceed">
+                <a href="{{url('home')}}" class="beta-btn primary" name="proceed">
                   Tiếp tục mua hàng
                   <i class="fa fa-chevron-right"></i>
                 </a>
