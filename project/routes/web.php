@@ -65,6 +65,7 @@ Route::middleware('auth')->group(function () {
   Route::get('admin/banner/delete/{id}', 'BannerController@delete')->name('banner.delete');
 });
 
+Route::get('/', 'HomeController@show');
 Route::get('home', 'HomeController@show');
 Route::view('about', 'theme/about');
 Route::view('contact', 'theme/contact');
