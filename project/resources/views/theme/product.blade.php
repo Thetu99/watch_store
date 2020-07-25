@@ -36,7 +36,7 @@
             <div class="space20">&nbsp;</div>
 
             <div class="single-item">
-              <p class="single-item-title"><b>{{$products->status}}</b></p>
+              <p class="single-item-title"><b style="color: green">{{$products->status}}</b></p>
               <a class="add-to-cart pull-left" href="{{route('cart.add', $products->id)}}">
                 <i class="fa fa-shopping-cart"></i>
                 <a class="beta-btn primary" href="{{route('cart.add', $products->id)}}">Cho vào giỏ hàng</a>

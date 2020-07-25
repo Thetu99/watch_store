@@ -92,6 +92,7 @@
                     <p class="single-item-price">
                       <span class="color-gray">{{number_format($p->price, 0, '', '.')}}đ</span>
                     </p>
+                    <p class="single-item-title"><b style="color: green">{{$p->status}}</b></p>
                   </div>
                   <div class="single-item-caption">
                     <a class="add-to-cart pull-left" href="{{route('cart.add', $p->id)}}"><i
@@ -137,6 +138,7 @@
                     <p class="single-item-price">
                       <span class="color-gray">{{number_format($r->price, 0, '', '.')}}đ</span>
                     </p>
+                    <p class="single-item-title"><b style="color: green">{{$p->status}}</b></p>
                   </div>
                   <div class="single-item-caption">
                     <a class="add-to-cart pull-left" href="{{route('cart.add', $r->id)}}"><i
