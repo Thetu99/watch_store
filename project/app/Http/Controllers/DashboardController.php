@@ -4,12 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Customer;
 use App\Order;
+use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-  function show()
+  function show(Request $request)
   {
-    $customers = Customer::paginate(5);
+    $keyword = "";
+
+    if ($request->keyword) {
+      $keyword = $request->keyword;
+    }
+
+    $customers = Customer::where('name', 'like', "%{$keyword}%")
+      ->orderBy('created_at', 'desc')
+      ->paginate(10);
     return view('admin.dashboard', compact('customers'));
   }
 

@@ -40,12 +40,15 @@ Route::middleware('auth')->group(function () {
   Route::get('admin/user/action', 'AdminUserController@action');
 
   Route::get('admin/product/list', 'AdminProductController@list');
-  Route::get('admin/product/action', 'AdminProductController@action');
   Route::get('admin/product/add', 'AdminProductController@add');
   Route::post('admin/product/store', 'AdminProductController@store');
   Route::get('admin/product/edit/{id}', 'AdminProductController@edit')->name('edit_product');
   Route::post('admin/product/update/{id}', 'AdminProductController@update')->name('update_product');
   Route::get('admin/product/delete/{id}', 'AdminProductController@delete')->name('delete_product');
+
+  Route::get('admin/product/hot/list', 'AdminProductController@hotList');
+  Route::get('admin/product/hot/add', 'AdminProductController@hotAdd');
+  Route::get('admin/product/hot/delete/{id}', 'AdminProductController@hotDelete')->name('hotProduct.delete');
 
   Route::get('admin/brand/list', 'BrandController@list');
   Route::get('admin/brand/add', 'BrandController@add');
@@ -80,6 +83,6 @@ Route::get('product/{name}', 'ProductController@show')->name('product.show');
 
 Route::get('checkout', 'CheckOutController@show');
 Route::post('checkout/order', 'CheckOutController@order');
-Route::view('checkout/success', 'theme/success');
+Route::get('checkout/success', 'CheckOutController@success');
 
 Route::post('comment/store/{id}', 'CommentController@store')->name('comment.store');

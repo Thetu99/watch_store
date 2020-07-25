@@ -114,7 +114,7 @@
           <div class="space50">&nbsp;</div>
 
           <div class="beta-products-list">
-            <h4>Sản phẩm bán chạy</h4>
+            <h4>Sản phẩm nổi bật</h4>
             <div class="beta-products-details">
               {{-- <p class="pull-left">438 styles found</p> --}}
               <div class="clearfix"></div>
@@ -138,7 +138,7 @@
                     <p class="single-item-price">
                       <span class="color-gray">{{number_format($r->price, 0, '', '.')}}đ</span>
                     </p>
-                    <p class="single-item-title"><b style="color: green">{{$p->status}}</b></p>
+                    <p class="single-item-title"><b style="color: green">{{$r->status}}</b></p>
                   </div>
                   <div class="single-item-caption">
                     <a class="add-to-cart pull-left" href="{{route('cart.add', $r->id)}}"><i

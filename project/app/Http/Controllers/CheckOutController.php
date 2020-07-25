@@ -18,7 +18,7 @@ class CheckOutController extends Controller
   }
 
   function order(Request $request)
-  {    
+  {
     Customer::create([
       'name' => $request->input('name'),
       'gender' => $request->input('gender'),
@@ -26,6 +26,7 @@ class CheckOutController extends Controller
       'address' => $request->input('address'),
       'phone' => $request->input('phone'),
       'note' => $request->input('note'),
+      'payment_method' => $request->payment_method
     ]);
 
     $customer_id = Customer::where('email', $request->email)->first();
@@ -36,12 +37,17 @@ class CheckOutController extends Controller
         'customer_id' => $customer_id->id,
         'product_qty' => $cart->qty,
         'product_price' => $cart->price,
-        'product_thumbnail' => $cart->options->thumbnail,
+        'product_thumbnail' => $cart->options->thumbnail
       ]);
     }
 
     Cart::destroy();
-    
+
     return redirect('checkout/success');
+  }
+
+  function success()
+  {
+    return view('theme.success');
   }
 }

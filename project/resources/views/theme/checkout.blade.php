@@ -96,7 +96,7 @@
             <div class="your-order-body">
               <ul class="payment_methods methods">
                 <li class="payment_method_bacs">
-                  <input id="payment_method_bacs" type="radio" class="input-radio" name="payment_method" value="COD"
+                  <input id="payment_method_bacs" type="radio" class="input-radio" name="payment_method" value="Trực tiếp"
                     checked="checked" data-order_button_text="">
                   <label for="payment_method_bacs">Thanh toán khi nhận hàng </label>
                   <div class="payment_box payment_method_bacs" style="display: block;">
@@ -105,7 +105,7 @@
                 </li>
 
                 <li class="payment_method_cheque">
-                  <input id="payment_method_cheque" type="radio" class="input-radio" name="payment_method" value="ATM"
+                  <input id="payment_method_cheque" type="radio" class="input-radio" name="payment_method" value="Chuyển khoản"
                     data-order_button_text="">
                   <label for="payment_method_cheque">Chuyển khoản </label>
                   <div class="payment_box payment_method_cheque" style="display: none;">
@@ -115,7 +115,6 @@
                     <br>- Ngân hàng BIDV, Chi nhánh Hà Thành
                   </div>
                 </li>
-
               </ul>
             </div>
 

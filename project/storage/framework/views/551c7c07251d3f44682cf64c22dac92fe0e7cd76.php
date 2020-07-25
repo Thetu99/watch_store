@@ -36,7 +36,7 @@
           <?php if($comments->total()>0): ?>
           <?php $__currentLoopData = $comments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $c): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
           <tr>
-            <th scope="row"><?php echo e($comments->firstItem() + $key); ?></th>
+            <th><?php echo e($comments->firstItem() + $key); ?></th>
             <td><?php echo e($c->name); ?></td>
             <td><?php echo e($c->content); ?></td>
             <td><?php echo e($c->product->name); ?></td>
@@ -47,16 +47,8 @@
             </td>
             <td><?php echo e(date("G:i j-n-Y", strtotime($c->created_at))); ?></td>
             <td>
-              <a href="#" class="btn btn-success btn-sm rounded-0 text-white"
-                type="button" data-toggle="tooltip" data-placement="top" title="Chi tiết">
-                <i class="fa fa-file-alt"></i>
-              </a>
-
               <a href="<?php echo e(route('comment.delete', $c->id)); ?>" onclick="return confirm('Bạn có chắc chắn muốn xóa?')"
-                class="btn btn-danger btn-sm rounded-0 text-white" type="button" data-toggle="tooltip"
-                data-placement="top" title="Xóa">
-                <i class="fa fa-trash"></i>
-              </a>
+                class="btn btn-danger btn-sm">Xóa</a>
             </td>
           </tr>
           <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

@@ -26,7 +26,7 @@
           <th>STT</th>
           <th>Tên thương hiệu</th>
           <th>Hình ảnh</th>
-          <th style="width: 100px">Tác vụ</th>
+          <th style="width: 115px">Tác vụ</th>
         </thead>
 
         <tbody>
@@ -37,12 +37,10 @@
             <td><a target="blank" href="<?php echo e(asset("image/brand/$b->thumbnail")); ?>"><img width="200px"
                   src="<?php echo e(asset("image/brand/$b->thumbnail")); ?>"></a></td>
             <td>
-              <a href="<?php echo e(route('brand.edit', $b->id)); ?>" class="btn btn-success btn-sm rounded-0 text-white"
-                type="button" data-toggle="tooltip" data-placement="top" title="Sửa"><i class="fa fa-edit"></i></a>
+              <a href="<?php echo e(route('brand.edit', $b->id)); ?>" class="btn btn-success btn-sm">Sửa</a>
 
               <a href="<?php echo e(route('brand.delete', $b->id)); ?>" onclick="return confirm('Bạn có chắc chắn muốn xóa?')"
-                class="btn btn-danger btn-sm rounded-0 text-white" type="button" data-toggle="tooltip"
-                data-placement="top" title="Xóa"><i class="fa fa-trash"></i></a>
+                class="btn btn-danger btn-sm">Xóa</a>
             </td>
           </tr>
           <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

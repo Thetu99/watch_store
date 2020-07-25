@@ -100,7 +100,7 @@
               </div>
               Quảng cáo
             </a>
-            <i class="arrow fas fa-angle-down"></i>
+            <i class="arrow fas fa-angle-right"></i>
             <ul class="sub-menu">
               <li><a href="<?php echo e(url('admin/banner/list')); ?>">Danh sách</a></li>
               <li><a href="<?php echo e(url('admin/banner/add')); ?>">Thêm mới</a></li>
@@ -113,10 +113,10 @@
               </div>
               Sản phẩm
             </a>
-            <i class="arrow fas fa-angle-down"></i>
+            <i class="arrow fas fa-angle-right"></i>
             <ul class="sub-menu">
-              <li><a href="<?php echo e(url('admin/product/list')); ?>">Danh sách</a></li>
-              <li><a href="<?php echo e(url('admin/product/add')); ?>">Thêm mới</a></li>
+              <li><a href="<?php echo e(url('admin/product/list')); ?>">Toàn bộ</a></li>
+              <li><a href="<?php echo e(url('admin/product/hot/list')); ?>">Nổi bật</a></li>
             </ul>
           </li>
           <li class="nav-link">
@@ -126,7 +126,7 @@
               </div>
               Thương hiệu
             </a>
-            <i class="arrow fas fa-angle-down"></i>
+            <i class="arrow fas fa-angle-right"></i>
             <ul class="sub-menu">
               <li><a href="<?php echo e(url('admin/brand/list')); ?>">Danh sách</a></li>
               <li><a href="<?php echo e(url('admin/brand/add')); ?>">Thêm mới</a></li>

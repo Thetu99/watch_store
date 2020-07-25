@@ -38,6 +38,10 @@
             <td><?php echo e($customers->email); ?></td>
           </tr>
           <tr>
+            <td>Thanh toán</td>
+            <td><?php echo e($customers->payment_method); ?></td>
+          </tr>
+          <tr>
             <td>Ghi chú</td>
             <td><?php echo e($customers->note); ?></td>
           </tr>
@@ -49,8 +53,9 @@
           <th>STT</th>
           <th>Tên sản phẩm</th>
           <th>Hình ảnh</th>
+          <th>Đơn giá</th>
           <th>Số lượng</th>
-          <th>Giá tiền</th>
+          <th>Tổng tiền</th>
         </thead>
         <tbody>
           <?php
@@ -60,16 +65,21 @@
           <tr>
             <td><?php echo e($orders->firstItem() + $key); ?></td>
             <td><?php echo e($o->product_name); ?></td>
-            <td><a target="blank" href="<?php echo e(asset("image/product/$o->product_thumbnail")); ?>"><img src="<?php echo e(asset("image/product/$o->product_thumbnail")); ?>" width="50px"></a></td>
-            <td><?php echo e($o->product_qty); ?></td>
+            <td>
+              <a target="blank" href="<?php echo e(asset("image/product/$o->product_thumbnail")); ?>">
+                <img src="<?php echo e(asset("image/product/$o->product_thumbnail")); ?>" width="50px">
+              </a>
+            </td>
             <td><?php echo e(number_format($o->product_price, 0, '', '.')); ?>đ</td>
+            <td><?php echo e($o->product_qty); ?></td>
+            <td><?php echo e(number_format($o->product_price * $o->product_qty, 0, '', '.')); ?>đ</td>
           </tr>
           <?php
-            $total += $o->product_price;
+          $total += $o->product_price * $o->product_qty;
           ?>
           <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
           <tr>
-            <th colspan="4">Tổng tiền:</th>
+            <th colspan="5">Tổng đơn hàng:</th>
             <td style="color: red; font-weight: bold"><?php echo e(number_format($total, 0, '', '.')); ?>đ</td>
           </tr>
         </tbody>

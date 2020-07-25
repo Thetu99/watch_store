@@ -63,12 +63,10 @@
               <td>{{date("G:i j-n-Y", strtotime($user->created_at))}}</td>
               <td>{{date("G:i j-n-Y", strtotime($user->updated_at))}}</td>
               <td>
-                <a href="{{route('user.edit', $user->id)}}" class="btn btn-success btn-sm rounded-0 text-white"
-                  type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
+                <a href="{{route('user.edit', $user->id)}}" class="btn btn-success btn-sm">Sửa</a>
                 @if (Auth::id()!=$user->id)
                 <a href="{{route('delete_user', $user->id)}}" onclick="return confirm('Bạn có chắc chắn muốn xóa?')"
-                  class="btn btn-danger btn-sm rounded-0 text-white" type="button" data-toggle="tooltip"
-                  data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
+                  class="btn btn-danger btn-sm">Xóa</a>
                 @endif
               </td>
             </tr>

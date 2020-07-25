@@ -38,6 +38,10 @@
             <td>{{$customers->email}}</td>
           </tr>
           <tr>
+            <td>Thanh toán</td>
+            <td>{{$customers->payment_method}}</td>
+          </tr>
+          <tr>
             <td>Ghi chú</td>
             <td>{{$customers->note}}</td>
           </tr>
@@ -49,8 +53,9 @@
           <th>STT</th>
           <th>Tên sản phẩm</th>
           <th>Hình ảnh</th>
+          <th>Đơn giá</th>
           <th>Số lượng</th>
-          <th>Giá tiền</th>
+          <th>Tổng tiền</th>
         </thead>
         <tbody>
           @php
@@ -60,16 +65,21 @@
           <tr>
             <td>{{$orders->firstItem() + $key}}</td>
             <td>{{$o->product_name}}</td>
-            <td><a target="blank" href="{{asset("image/product/$o->product_thumbnail")}}"><img src="{{asset("image/product/$o->product_thumbnail")}}" width="50px"></a></td>
-            <td>{{$o->product_qty}}</td>
+            <td>
+              <a target="blank" href="{{asset("image/product/$o->product_thumbnail")}}">
+                <img src="{{asset("image/product/$o->product_thumbnail")}}" width="50px">
+              </a>
+            </td>
             <td>{{number_format($o->product_price, 0, '', '.')}}đ</td>
+            <td>{{$o->product_qty}}</td>
+            <td>{{number_format($o->product_price * $o->product_qty, 0, '', '.')}}đ</td>
           </tr>
           @php
-            $total += $o->product_price;
+          $total += $o->product_price * $o->product_qty;
           @endphp
           @endforeach
           <tr>
-            <th colspan="4">Tổng tiền:</th>
+            <th colspan="5">Tổng đơn hàng:</th>
             <td style="color: red; font-weight: bold">{{number_format($total, 0, '', '.')}}đ</td>
           </tr>
         </tbody>

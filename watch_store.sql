@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 25, 2020 lúc 07:22 AM
+-- Thời gian đã tạo: Th7 25, 2020 lúc 01:23 PM
 -- Phiên bản máy phục vụ: 10.3.16-MariaDB
 -- Phiên bản PHP: 7.3.7
 
@@ -98,7 +98,9 @@ INSERT INTO `comments` (`id`, `product_id`, `name`, `content`, `created_at`, `up
 (10, 26, 'Huỳnh Đức Trân', 'Quá rẻ, quá đẹp, quá chất', '2020-07-24 11:16:49', '2020-07-24 11:16:49'),
 (11, 26, 'Ngọc Phong', 'Hàng đẹp chất lượng, lần sau sẽ còn quay lại', '2020-07-25 05:15:27', '2020-07-25 05:15:27'),
 (12, 26, 'Lê Minh Tuấn', 'mua ủng hộ shop 2 chiếc, cảm nhận ban đầu rất tuyệt', '2020-07-25 05:17:17', '2020-07-25 05:17:17'),
-(13, 44, 'ngoc anh pham', 'chất lượng đồng hồ tương xứng vs giá tiền, quá tuyệt vời', '2020-07-25 05:21:29', '2020-07-25 05:21:29');
+(13, 44, 'ngoc anh pham', 'chất lượng đồng hồ tương xứng vs giá tiền, quá tuyệt vời', '2020-07-25 05:21:29', '2020-07-25 05:21:29'),
+(14, 24, 'Cong Danh Do', 'Bao h có hàng vậy shop?', '2020-07-25 09:42:56', '2020-07-25 09:42:56'),
+(15, 41, 'Lê Bích Hằng', 'đồng hồ này đẹp quá shop ơi, bao h có hàng tiếp ạ?', '2020-07-25 09:48:08', '2020-07-25 09:48:08');
 
 -- --------------------------------------------------------
 
@@ -112,8 +114,9 @@ CREATE TABLE `customers` (
   `gender` enum('Nam','Nữ') COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `note` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `payment_method` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -122,9 +125,9 @@ CREATE TABLE `customers` (
 -- Đang đổ dữ liệu cho bảng `customers`
 --
 
-INSERT INTO `customers` (`id`, `name`, `gender`, `email`, `address`, `phone`, `note`, `created_at`, `updated_at`) VALUES
-(29, 'Đào Thùy Linh', 'Nữ', 'linhdao@gmail.com', '77 hàng đào', '015645666', 'nhận hàng trong 40 ngày nữa', '2020-07-20 11:25:14', '2020-07-20 11:25:14'),
-(30, 'Trần Thị Kim Thoa', 'Nữ', 'kimthoa@gmail.com', '102 Mã Mây, phường Hàng Buồm, quận Hoàn Kiếm, Hà Nội', '0357892475', 'Giao hàng kín, chỉ nhận hàng buổi chiều,', '2020-07-21 09:08:30', '2020-07-21 09:08:30');
+INSERT INTO `customers` (`id`, `name`, `gender`, `email`, `address`, `phone`, `note`, `payment_method`, `created_at`, `updated_at`) VALUES
+(137, 'Đặng Đình Hùng', 'Nam', 'dinhhung@gmail.com', '67 hàng trống', '03326545', 'Giao hàng trong vòng 7 ngày', 'Chuyển khoản', '2020-07-25 10:36:45', '2020-07-25 10:36:45'),
+(138, 'Bùi Thị Nhàn', 'Nam', 'nhanbui@gmail.com', '55 trần thái tông', '034564564', 'Nhận hàng các buổi chiều trong tuần', 'Trực tiếp', '2020-07-25 10:56:09', '2020-07-25 10:56:09');
 
 -- --------------------------------------------------------
 
@@ -194,16 +197,12 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `customer_id`, `product_name`, `product_qty`, `product_price`, `product_thumbnail`, `created_at`, `updated_at`) VALUES
-(7, 29, 'Obaku V219GXBIRZ', 3, 4157000, 'Obaku V219GXBIRZ.png', '2020-07-20 11:25:14', '2020-07-20 11:25:14'),
-(8, 29, 'Obaku V146LGIRR', 4, 2451000, 'Obaku V146LGIRR.png', '2020-07-20 11:25:14', '2020-07-20 11:25:14'),
-(9, 29, 'Fossil FS5305', 2, 2631000, 'Fossil FS5305.png', '2020-07-20 11:25:14', '2020-07-20 11:25:14'),
-(10, 29, 'Fossil ES4722', 1, 2146000, 'Fossil ES4722.png', '2020-07-20 11:25:14', '2020-07-20 11:25:14'),
-(11, 29, 'Fossil ES3546', 1, 4576000, 'Fossil ES3546.png', '2020-07-20 11:25:14', '2020-07-20 11:25:14'),
-(12, 29, 'Casio LA680WEGB', 8, 1790000, 'Casio LA680WEGB.png', '2020-07-20 11:25:14', '2020-07-20 11:25:14'),
-(13, 30, 'Obaku V219GXBIRZ', 4, 4157000, 'Obaku V219GXBIRZ.png', '2020-07-21 09:08:30', '2020-07-21 09:08:30'),
-(14, 30, 'Fossil ES4722', 1, 2146000, 'Fossil ES4722.png', '2020-07-21 09:08:30', '2020-07-21 09:08:30'),
-(15, 30, 'Fossil ES3546', 3, 4576000, 'Fossil ES3546.png', '2020-07-21 09:08:30', '2020-07-21 09:08:30'),
-(16, 30, 'Casio LA680WEGB', 2, 1790000, 'Casio LA680WEGB.png', '2020-07-21 09:08:30', '2020-07-21 09:08:30');
+(28, 137, 'Obaku V146LGIRR', 2, 2451000, 'Obaku V146LGIRR.png', '2020-07-25 10:36:45', '2020-07-25 10:36:45'),
+(29, 137, 'Fossil FS5305', 3, 2631000, 'Fossil FS5305.png', '2020-07-25 10:36:45', '2020-07-25 10:36:45'),
+(30, 137, 'Fossil ES4594', 1, 1957000, 'Fossil ES4594.png', '2020-07-25 10:36:45', '2020-07-25 10:36:45'),
+(31, 137, 'Obaku V219GXBIRZ', 4, 4157000, 'Obaku V219GXBIRZ.png', '2020-07-25 10:36:45', '2020-07-25 10:36:45'),
+(32, 138, 'Fossil ES4594', 1, 1957000, 'Fossil ES4594.png', '2020-07-25 10:56:09', '2020-07-25 10:56:09'),
+(33, 138, 'Orient RA-AA0C06E19B', 2, 2413000, 'orient-FAC0A005T0.jpg', '2020-07-25 10:56:09', '2020-07-25 10:56:09');
 
 -- --------------------------------------------------------
 
@@ -244,24 +243,21 @@ INSERT INTO `products` (`id`, `brand`, `name`, `content`, `price`, `thumbnail`, 
 (24, 'Obaku', 'Obaku V130LCIRB', '<p>Đồng hồ Obaku c&oacute; được tỉ lệ v&agrave;ng l&agrave; bởi v&igrave; được s&aacute;ng lập bởi 2 kiến tr&uacute;c sư đại t&agrave;i c&aacute;ch đ&acirc;y 50 năm. Cũng v&igrave; c&oacute; mắt thẩm mỹ cao v&agrave; sự t&agrave;i t&igrave;nh, tỉ mỉ của họ m&agrave; những chiếc đồng hồ Obaku lu&ocirc;n lu&ocirc;n được đ&aacute;nh gi&aacute; rất cao. Vẻ đẹp lu&ocirc;n lu&ocirc;n khiến người kh&aacute;c phải ấn tượng khi tận mắt nh&igrave;n thấy chiếc đồng hồ n&agrave;y v&agrave; c&agrave;ng l&agrave;m t&ocirc;n l&ecirc;n vẻ đẹp của người sử dụng.</p>', 3469000, 'Obaku-V130LCIRB.png', 'Hết hàng', '2020-07-08 21:38:54', '2020-07-23 15:09:37', NULL),
 (25, 'Casio', 'Casio MTP-1335D-9AVDF', '<p>Thương hiệu đồng hồ nổi tiếng đến từ Nhật Bản kh&ocirc;ng ngừng cải tiến v&agrave; cho ra mắt những d&ograve;ng sản phẩm chất lượng ph&ugrave; hợp với nhiều đối tượng kh&aacute;ch h&agrave;ng. Những d&ograve;ng sản phẩm nổi tiếng của Casio l&agrave;: G-Shock với thiết kế mạnh mẽ c&ugrave;ng độ bền cao, Edifice thiết kế hiện đại c&ugrave;ng nhiều t&iacute;nh năng vượt trội, Sheen với thiết kế cổ điển v&agrave; sang trọng,&hellip;</p>', 1090000, 'Casio MTP-1335D-9AVDF.png', 'Hết hàng', '2020-07-10 14:01:21', '2020-07-22 15:21:03', NULL),
 (26, 'Casio', 'Casio MTP-X300L-1AVDF', '<p>Thương hiệu đồng hồ nổi tiếng đến từ Nhật Bản kh&ocirc;ng ngừng cải tiến v&agrave; cho ra mắt những d&ograve;ng sản phẩm chất lượng ph&ugrave; hợp với nhiều đối tượng kh&aacute;ch h&agrave;ng. Những d&ograve;ng sản phẩm nổi tiếng của Casio l&agrave;: G-Shock với thiết kế mạnh mẽ c&ugrave;ng độ bền cao, Edifice thiết kế hiện đại c&ugrave;ng nhiều t&iacute;nh năng vượt trội, Sheen với thiết kế cổ điển v&agrave; sang trọng,&hellip;</p>', 1936000, 'Casio MTP-X300L-1AVDF.png', 'Còn hàng', '2020-07-10 14:05:39', '2020-07-22 15:58:18', NULL),
-(27, 'Casio', 'Casio LTP-E143DBL-3ADR', '<p><span style=\"background-color: #ced4d9;\"><em><strong>Thương hiệu đồng hồ nổi tiếng đến từ Nhật Bản kh&ocirc;ng ngừng cải tiến v&agrave; cho ra mắt những d&ograve;ng sản phẩm chất lượng ph&ugrave; hợp với nhiều đối tượng kh&aacute;ch h&agrave;ng. Những d&ograve;ng sản phẩm nổi tiếng của Casio l&agrave;: G-Shock với thiết kế mạnh mẽ c&ugrave;ng độ bền cao, Edifice thiết kế hiện đại c&ugrave;ng nhiều t&iacute;nh năng vượt trội, Sheen với thiết kế cổ điển v&agrave; sang trọng,&hellip;</strong></em></span></p>', 1480000, 'Casio LTP-E143DBL-3ADR.png', 'Còn hàng', '2020-07-10 14:08:03', '2020-07-14 14:42:06', NULL),
-(28, 'Orient', 'Orient RA-AA0C06E19B', '<p><em><strong><span style=\"color: #3598db;\">Đồng hồ Orient đem đến những sản phẩm ấn tượng chinh phục người nh&igrave;n một c&aacute;ch nhanh ch&oacute;ng. Đồng hồ Orient với những chất liệu cao cấp b&oacute;ng bẩy n&acirc;ng tầm đẳng cấp cho người sở hữu, ph&ugrave; hợp với doanh nh&acirc;n th&agrave;nh đạt, d&acirc;n văn ph&ograve;ng hay c&aacute;c gi&aacute;m đốc c&ocirc;ng ty. Phong c&aacute;ch thời thượng, sang trọng đầy sức thu h&uacute;t đến từ đồng hồ Orient chắc chắn sẽ khiến bạn lu&ocirc;n h&atilde;nh diện với những người xung quanh.</span></strong></em></p>', 2413000, 'orient-FAC0A005T0.jpg', 'Còn hàng', '2020-07-10 14:10:07', '2020-07-18 02:13:39', NULL),
+(27, 'Casio', 'Casio LTP-E143DBL-3ADR', '<p><span style=\"background-color: #ffffff;\"><em><strong>Thương hiệu đồng hồ nổi tiếng đến từ Nhật Bản kh&ocirc;ng ngừng cải tiến v&agrave; cho ra mắt những d&ograve;ng sản phẩm chất lượng ph&ugrave; hợp với nhiều đối tượng kh&aacute;ch h&agrave;ng. Những d&ograve;ng sản phẩm nổi tiếng của Casio l&agrave;: G-Shock với thiết kế mạnh mẽ c&ugrave;ng độ bền cao, Edifice thiết kế hiện đại c&ugrave;ng nhiều t&iacute;nh năng vượt trội, Sheen với thiết kế cổ điển v&agrave; sang trọng,&hellip;</strong></em></span></p>', 1480000, 'Casio LTP-E143DBL-3ADR.png', 'Hết hàng', '2020-07-10 14:08:03', '2020-07-25 07:56:38', NULL),
+(28, 'Orient', 'Orient RA-AA0C06E19B', '<p><span style=\"color: #000000;\"><em><strong>Đồng hồ Orient đem đến những sản phẩm ấn tượng chinh phục người nh&igrave;n một c&aacute;ch nhanh ch&oacute;ng. Đồng hồ Orient với những chất liệu cao cấp b&oacute;ng bẩy n&acirc;ng tầm đẳng cấp cho người sở hữu, ph&ugrave; hợp với doanh nh&acirc;n th&agrave;nh đạt, d&acirc;n văn ph&ograve;ng hay c&aacute;c gi&aacute;m đốc c&ocirc;ng ty. Phong c&aacute;ch thời thượng, sang trọng đầy sức thu h&uacute;t đến từ đồng hồ Orient chắc chắn sẽ khiến bạn lu&ocirc;n h&atilde;nh diện với những người xung quanh.</strong></em></span></p>', 2413000, 'orient-FAC0A005T0.jpg', 'Còn hàng', '2020-07-10 14:10:07', '2020-07-25 07:56:53', NULL),
 (29, 'Casio', 'Casio LA680WEGB', 'Thương hiệu đồng hồ nổi tiếng đến từ Nhật Bản không ngừng cải tiến và cho ra mắt những dòng sản phẩm chất lượng phù hợp với nhiều đối tượng khách hàng. Những dòng sản phẩm nổi tiếng của Casio là: G-Shock với thiết kế mạnh mẽ cùng độ bền cao, Edifice thiết kế hiện đại cùng nhiều tính năng vượt trội, Sheen với thiết kế cổ điển và sang trọng,…', 1790000, 'Casio LA680WEGB.png', 'Còn hàng', '2020-07-10 14:48:30', '2020-07-10 14:48:30', NULL),
-(33, 'Fossil', 'Fossil', '<p>dfdssssssssssssbvccccccccbvcbcvbfdg</p>', 6780000, 'orient-FKU00006W0.jpg', 'Còn hàng', '2020-07-17 15:09:53', '2020-07-18 02:04:35', '2020-07-18 02:04:35'),
 (34, 'Orient', 'orient-FAG02003W0', '<p>Đồng hồ Orient đem đến những sản phẩm ấn tượng chinh phục người nh&igrave;n một c&aacute;ch nhanh ch&oacute;ng. Đồng hồ Orient với những chất liệu cao cấp b&oacute;ng bẩy n&acirc;ng tầm đẳng cấp cho người sở hữu, ph&ugrave; hợp với doanh nh&acirc;n th&agrave;nh đạt, d&acirc;n văn ph&ograve;ng hay c&aacute;c gi&aacute;m đốc c&ocirc;ng ty. Phong c&aacute;ch thời thượng, sang trọng đầy sức thu h&uacute;t đến từ đồng hồ Orient chắc chắn sẽ khiến bạn lu&ocirc;n h&atilde;nh diện với những người xung quanh.</p>', 5679000, 'orient-FAG02003W0.jpg', 'Còn hàng', '2020-07-18 02:32:14', '2020-07-18 02:32:14', NULL),
 (35, 'Orient', 'orient-FEV0V003DH', '<p><strong>Đồng hồ Orient đem đến những sản phẩm ấn tượng chinh phục người nh&igrave;n một c&aacute;ch nhanh ch&oacute;ng. Đồng hồ Orient với những chất liệu cao cấp b&oacute;ng bẩy n&acirc;ng tầm đẳng cấp cho người sở hữu, ph&ugrave; hợp với doanh nh&acirc;n th&agrave;nh đạt, d&acirc;n văn ph&ograve;ng hay c&aacute;c gi&aacute;m đốc c&ocirc;ng ty. Phong c&aacute;ch thời thượng, sang trọng đầy sức thu h&uacute;t đến từ đồng hồ Orient chắc chắn sẽ khiến bạn lu&ocirc;n h&atilde;nh diện với những người xung quanh.</strong></p>', 4558700, 'orient-FEV0V003DH.jpg', 'Còn hàng', '2020-07-18 02:33:24', '2020-07-18 02:33:24', NULL),
 (36, 'Orient', 'orient-FAG03001D0', '<p>Đồng hồ Orient đem đến những sản phẩm ấn tượng chinh phục người nh&igrave;n một c&aacute;ch nhanh ch&oacute;ng. Đồng hồ Orient với những chất liệu cao cấp b&oacute;ng bẩy n&acirc;ng tầm đẳng cấp cho người sở hữu, ph&ugrave; hợp với doanh nh&acirc;n th&agrave;nh đạt, d&acirc;n văn ph&ograve;ng hay c&aacute;c gi&aacute;m đốc c&ocirc;ng ty. Phong c&aacute;ch thời thượng, sang trọng đầy sức thu h&uacute;t đến từ đồng hồ Orient chắc chắn sẽ khiến bạn lu&ocirc;n h&atilde;nh diện với những người xung quanh.</p>', 1450000, 'orient-FAG03001D0.jpg', 'Còn hàng', '2020-07-18 02:34:10', '2020-07-18 02:34:10', NULL),
 (37, 'Orient', 'orient-RA-AP0003S10B', '<p>Đồng hồ Orient đem đến những sản phẩm ấn tượng chinh phục người nh&igrave;n một c&aacute;ch nhanh ch&oacute;ng. Đồng hồ Orient với những chất liệu cao cấp b&oacute;ng bẩy n&acirc;ng tầm đẳng cấp cho người sở hữu, ph&ugrave; hợp với doanh nh&acirc;n th&agrave;nh đạt, d&acirc;n văn ph&ograve;ng hay c&aacute;c gi&aacute;m đốc c&ocirc;ng ty. Phong c&aacute;ch thời thượng, sang trọng đầy sức thu h&uacute;t đến từ đồng hồ Orient chắc chắn sẽ khiến bạn lu&ocirc;n h&atilde;nh diện với những người xung quanh.</p>', 5630000, 'orient-RA-AP0003S10B.jpg', 'Còn hàng', '2020-07-18 02:36:50', '2020-07-18 02:36:50', NULL),
-(38, 'Fossil', 'Fossil ES3546', '<p>Lấy cảm hứng từ vẻ đẹp cổ điển ở c&aacute;c tạp ch&iacute; thời trang thuộc những năm 1930 &ndash; 1950, những mẫu thiết kế đồng hồ tinh tế đầy n&eacute;t ho&agrave;i cổ đ&atilde; được đ&ocirc;ng đảo người d&ugrave;ng đ&oacute;n nhận. Kh&ocirc;ng phải l&agrave; xưa cũ, gi&aacute; trị m&agrave; Fossil chọn để tạo dựng thương hiệu cho m&igrave;nh ch&iacute;nh l&agrave; sự vững chắc. Từ những thiết kế &ldquo;retro&rdquo; cho đồng hồ, họ tin rằng những sản phẩm &ldquo;thời gian&rdquo; đ&oacute; sẽ kh&ocirc;ng bao giờ c&oacute; dấu hiệu tho&aacute;i tr&agrave;o. N&oacute;i một c&aacute;ch đơn giản, đ&oacute; l&agrave; lời cam kết giữa thiết kế trường tồn v&agrave; chất lượng bền bỉ.</p>', 4576000, 'Fossil ES3546.png', 'Còn hàng', '2020-07-18 09:55:17', '2020-07-18 09:55:17', NULL),
+(38, 'Fossil', 'Fossil ES3546', '<p>Lấy cảm hứng từ vẻ đẹp cổ điển ở c&aacute;c tạp ch&iacute; thời trang thuộc những năm 1930 &ndash; 1950, những mẫu thiết kế đồng hồ tinh tế đầy n&eacute;t ho&agrave;i cổ đ&atilde; được đ&ocirc;ng đảo người d&ugrave;ng đ&oacute;n nhận. Kh&ocirc;ng phải l&agrave; xưa cũ, gi&aacute; trị m&agrave; Fossil chọn để tạo dựng thương hiệu cho m&igrave;nh ch&iacute;nh l&agrave; sự vững chắc. Từ những thiết kế &ldquo;retro&rdquo; cho đồng hồ, họ tin rằng những sản phẩm &ldquo;thời gian&rdquo; đ&oacute; sẽ kh&ocirc;ng bao giờ c&oacute; dấu hiệu tho&aacute;i tr&agrave;o. N&oacute;i một c&aacute;ch đơn giản, đ&oacute; l&agrave; lời cam kết giữa thiết kế trường tồn v&agrave; chất lượng bền bỉ.</p>', 4576000, 'Fossil ES3546.png', 'Hết hàng', '2020-07-18 09:55:17', '2020-07-25 07:55:57', NULL),
 (39, 'Fossil', 'Fossil ES4594', '<p>Lấy cảm hứng từ vẻ đẹp cổ điển ở c&aacute;c tạp ch&iacute; thời trang thuộc những năm 1930 &ndash; 1950, những mẫu thiết kế đồng hồ tinh tế đầy n&eacute;t ho&agrave;i cổ đ&atilde; được đ&ocirc;ng đảo người d&ugrave;ng đ&oacute;n nhận. Kh&ocirc;ng phải l&agrave; xưa cũ, gi&aacute; trị m&agrave; Fossil chọn để tạo dựng thương hiệu cho m&igrave;nh ch&iacute;nh l&agrave; sự vững chắc. Từ những thiết kế &ldquo;retro&rdquo; cho đồng hồ, họ tin rằng những sản phẩm &ldquo;thời gian&rdquo; đ&oacute; sẽ kh&ocirc;ng bao giờ c&oacute; dấu hiệu tho&aacute;i tr&agrave;o. N&oacute;i một c&aacute;ch đơn giản, đ&oacute; l&agrave; lời cam kết giữa thiết kế trường tồn v&agrave; chất lượng bền bỉ.</p>', 1957000, 'Fossil ES4594.png', 'Còn hàng', '2020-07-18 10:00:50', '2020-07-18 10:00:50', NULL),
-(40, 'Fossil', 'Fossil ES4722', '<p>Lấy cảm hứng từ vẻ đẹp cổ điển ở c&aacute;c tạp ch&iacute; thời trang thuộc những năm 1930 &ndash; 1950, những mẫu thiết kế đồng hồ tinh tế đầy n&eacute;t ho&agrave;i cổ đ&atilde; được đ&ocirc;ng đảo người d&ugrave;ng đ&oacute;n nhận. Kh&ocirc;ng phải l&agrave; xưa cũ, gi&aacute; trị m&agrave; Fossil chọn để tạo dựng thương hiệu cho m&igrave;nh ch&iacute;nh l&agrave; sự vững chắc. Từ những thiết kế &ldquo;retro&rdquo; cho đồng hồ, họ tin rằng những sản phẩm &ldquo;thời gian&rdquo; đ&oacute; sẽ kh&ocirc;ng bao giờ c&oacute; dấu hiệu tho&aacute;i tr&agrave;o. N&oacute;i một c&aacute;ch đơn giản, đ&oacute; l&agrave; lời cam kết giữa thiết kế trường tồn v&agrave; chất lượng bền bỉ.</p>', 2146000, 'Fossil ES4722.png', 'Còn hàng', '2020-07-18 10:01:26', '2020-07-18 10:01:26', NULL),
-(41, 'Fossil', 'Fossil ES4727', '<p>Lấy cảm hứng từ vẻ đẹp cổ điển ở c&aacute;c tạp ch&iacute; thời trang thuộc những năm 1930 &ndash; 1950, những mẫu thiết kế đồng hồ tinh tế đầy n&eacute;t ho&agrave;i cổ đ&atilde; được đ&ocirc;ng đảo người d&ugrave;ng đ&oacute;n nhận. Kh&ocirc;ng phải l&agrave; xưa cũ, gi&aacute; trị m&agrave; Fossil chọn để tạo dựng thương hiệu cho m&igrave;nh ch&iacute;nh l&agrave; sự vững chắc. Từ những thiết kế &ldquo;retro&rdquo; cho đồng hồ, họ tin rằng những sản phẩm &ldquo;thời gian&rdquo; đ&oacute; sẽ kh&ocirc;ng bao giờ c&oacute; dấu hiệu tho&aacute;i tr&agrave;o. N&oacute;i một c&aacute;ch đơn giản, đ&oacute; l&agrave; lời cam kết giữa thiết kế trường tồn v&agrave; chất lượng bền bỉ.</p>', 2346000, 'Fossil ES4727.png', 'Còn hàng', '2020-07-18 10:01:56', '2020-07-18 10:01:56', NULL),
+(40, 'Fossil', 'Fossil ES4722', '<p>Lấy cảm hứng từ vẻ đẹp cổ điển ở c&aacute;c tạp ch&iacute; thời trang thuộc những năm 1930 &ndash; 1950, những mẫu thiết kế đồng hồ tinh tế đầy n&eacute;t ho&agrave;i cổ đ&atilde; được đ&ocirc;ng đảo người d&ugrave;ng đ&oacute;n nhận. Kh&ocirc;ng phải l&agrave; xưa cũ, gi&aacute; trị m&agrave; Fossil chọn để tạo dựng thương hiệu cho m&igrave;nh ch&iacute;nh l&agrave; sự vững chắc. Từ những thiết kế &ldquo;retro&rdquo; cho đồng hồ, họ tin rằng những sản phẩm &ldquo;thời gian&rdquo; đ&oacute; sẽ kh&ocirc;ng bao giờ c&oacute; dấu hiệu tho&aacute;i tr&agrave;o. N&oacute;i một c&aacute;ch đơn giản, đ&oacute; l&agrave; lời cam kết giữa thiết kế trường tồn v&agrave; chất lượng bền bỉ.</p>', 2146000, 'Fossil ES4722.png', 'Hết hàng', '2020-07-18 10:01:26', '2020-07-25 07:55:45', NULL),
+(41, 'Fossil', 'Fossil ES4727', '<p>Lấy cảm hứng từ vẻ đẹp cổ điển ở c&aacute;c tạp ch&iacute; thời trang thuộc những năm 1930 &ndash; 1950, những mẫu thiết kế đồng hồ tinh tế đầy n&eacute;t ho&agrave;i cổ đ&atilde; được đ&ocirc;ng đảo người d&ugrave;ng đ&oacute;n nhận. Kh&ocirc;ng phải l&agrave; xưa cũ, gi&aacute; trị m&agrave; Fossil chọn để tạo dựng thương hiệu cho m&igrave;nh ch&iacute;nh l&agrave; sự vững chắc. Từ những thiết kế &ldquo;retro&rdquo; cho đồng hồ, họ tin rằng những sản phẩm &ldquo;thời gian&rdquo; đ&oacute; sẽ kh&ocirc;ng bao giờ c&oacute; dấu hiệu tho&aacute;i tr&agrave;o. N&oacute;i một c&aacute;ch đơn giản, đ&oacute; l&agrave; lời cam kết giữa thiết kế trường tồn v&agrave; chất lượng bền bỉ.</p>', 2346000, 'Fossil ES4727.png', 'Hết hàng', '2020-07-18 10:01:56', '2020-07-25 07:57:08', NULL),
 (42, 'Fossil', 'Fossil FS5305', '<p>Lấy cảm hứng từ vẻ đẹp cổ điển ở c&aacute;c tạp ch&iacute; thời trang thuộc những năm 1930 &ndash; 1950, những mẫu thiết kế đồng hồ tinh tế đầy n&eacute;t ho&agrave;i cổ đ&atilde; được đ&ocirc;ng đảo người d&ugrave;ng đ&oacute;n nhận. Kh&ocirc;ng phải l&agrave; xưa cũ, gi&aacute; trị m&agrave; Fossil chọn để tạo dựng thương hiệu cho m&igrave;nh ch&iacute;nh l&agrave; sự vững chắc. Từ những thiết kế &ldquo;retro&rdquo; cho đồng hồ, họ tin rằng những sản phẩm &ldquo;thời gian&rdquo; đ&oacute; sẽ kh&ocirc;ng bao giờ c&oacute; dấu hiệu tho&aacute;i tr&agrave;o. N&oacute;i một c&aacute;ch đơn giản, đ&oacute; l&agrave; lời cam kết giữa thiết kế trường tồn v&agrave; chất lượng bền bỉ.</p>', 2631000, 'Fossil FS5305.png', 'Còn hàng', '2020-07-18 10:02:24', '2020-07-18 10:02:24', NULL),
-(43, 'Obaku', 'Obaku V146LGBMG2', '<p><strong>Đồng hồ Obaku c&oacute; được tỉ lệ v&agrave;ng l&agrave; bởi v&igrave; được s&aacute;ng lập bởi 2 kiến tr&uacute;c sư đại t&agrave;i c&aacute;ch đ&acirc;y 50 năm. Cũng v&igrave; c&oacute; mắt thẩm mỹ cao v&agrave; sự t&agrave;i t&igrave;nh, tỉ mỉ của họ m&agrave; những chiếc đồng hồ Obaku lu&ocirc;n lu&ocirc;n được đ&aacute;nh gi&aacute; rất cao. Vẻ đẹp lu&ocirc;n lu&ocirc;n khiến người kh&aacute;c phải ấn tượng khi tận mắt nh&igrave;n thấy chiếc đồng hồ n&agrave;y v&agrave; c&agrave;ng l&agrave;m t&ocirc;n l&ecirc;n vẻ đẹp của người sử dụng.</strong></p>', 3451000, 'Obaku V146LGBMG2.png', 'Còn hàng', '2020-07-18 10:06:35', '2020-07-18 10:06:35', NULL),
+(43, 'Obaku', 'Obaku V146LGBMG2', '<p><strong>Đồng hồ Obaku c&oacute; được tỉ lệ v&agrave;ng l&agrave; bởi v&igrave; được s&aacute;ng lập bởi 2 kiến tr&uacute;c sư đại t&agrave;i c&aacute;ch đ&acirc;y 50 năm. Cũng v&igrave; c&oacute; mắt thẩm mỹ cao v&agrave; sự t&agrave;i t&igrave;nh, tỉ mỉ của họ m&agrave; những chiếc đồng hồ Obaku lu&ocirc;n lu&ocirc;n được đ&aacute;nh gi&aacute; rất cao. Vẻ đẹp lu&ocirc;n lu&ocirc;n khiến người kh&aacute;c phải ấn tượng khi tận mắt nh&igrave;n thấy chiếc đồng hồ n&agrave;y v&agrave; c&agrave;ng l&agrave;m t&ocirc;n l&ecirc;n vẻ đẹp của người sử dụng.</strong></p>', 3451000, 'Obaku V146LGBMG2.png', 'Hết hàng', '2020-07-18 10:06:35', '2020-07-25 07:55:31', NULL),
 (44, 'Obaku', 'Obaku V146LGIRR', '<p><strong>Đồng hồ Obaku c&oacute; được tỉ lệ v&agrave;ng l&agrave; bởi v&igrave; được s&aacute;ng lập bởi 2 kiến tr&uacute;c sư đại t&agrave;i c&aacute;ch đ&acirc;y 50 năm. Cũng v&igrave; c&oacute; mắt thẩm mỹ cao v&agrave; sự t&agrave;i t&igrave;nh, tỉ mỉ của họ m&agrave; những chiếc đồng hồ Obaku lu&ocirc;n lu&ocirc;n được đ&aacute;nh gi&aacute; rất cao. Vẻ đẹp lu&ocirc;n lu&ocirc;n khiến người kh&aacute;c phải ấn tượng khi tận mắt nh&igrave;n thấy chiếc đồng hồ n&agrave;y v&agrave; c&agrave;ng l&agrave;m t&ocirc;n l&ecirc;n vẻ đẹp của người sử dụng.</strong></p>', 2451000, 'Obaku V146LGIRR.png', 'Còn hàng', '2020-07-18 10:07:17', '2020-07-18 10:07:17', NULL),
-(45, 'Obaku', 'Obaku V219GXBIRZ', '<p>Đồng hồ Obaku c&oacute; được tỉ lệ v&agrave;ng l&agrave; bởi v&igrave; được s&aacute;ng lập bởi 2 kiến tr&uacute;c sư đại t&agrave;i c&aacute;ch đ&acirc;y 50 năm. Cũng v&igrave; c&oacute; mắt thẩm mỹ cao v&agrave; sự t&agrave;i t&igrave;nh, tỉ mỉ của họ m&agrave; những chiếc đồng hồ Obaku lu&ocirc;n lu&ocirc;n được đ&aacute;nh gi&aacute; rất cao. Vẻ đẹp lu&ocirc;n lu&ocirc;n khiến người kh&aacute;c phải ấn tượng khi tận mắt nh&igrave;n thấy chiếc đồng hồ n&agrave;y v&agrave; c&agrave;ng l&agrave;m t&ocirc;n l&ecirc;n vẻ đẹp của người sử dụng.</p>', 4157000, 'Obaku V219GXBIRZ.png', 'Còn hàng', '2020-07-18 10:07:58', '2020-07-18 10:07:58', NULL),
-(46, 'Fossil', 'fdfgfdgdfg', '<p>vxnbnvdfgưeqửewvcbvcn</p>', 4589000, 'Fossil ME3179.png', 'Hết hàng', '2020-07-23 01:57:27', '2020-07-23 01:58:34', '2020-07-23 01:58:34'),
-(47, 'Orient', 'ddsgsgds', '<p>gfdgfdgfd</p>', 3456574, 'Fossil ES4594.png', 'Còn hàng', '2020-07-23 02:17:32', '2020-07-23 02:17:47', '2020-07-23 02:17:47');
+(45, 'Obaku', 'Obaku V219GXBIRZ', '<p>Đồng hồ Obaku c&oacute; được tỉ lệ v&agrave;ng l&agrave; bởi v&igrave; được s&aacute;ng lập bởi 2 kiến tr&uacute;c sư đại t&agrave;i c&aacute;ch đ&acirc;y 50 năm. Cũng v&igrave; c&oacute; mắt thẩm mỹ cao v&agrave; sự t&agrave;i t&igrave;nh, tỉ mỉ của họ m&agrave; những chiếc đồng hồ Obaku lu&ocirc;n lu&ocirc;n được đ&aacute;nh gi&aacute; rất cao. Vẻ đẹp lu&ocirc;n lu&ocirc;n khiến người kh&aacute;c phải ấn tượng khi tận mắt nh&igrave;n thấy chiếc đồng hồ n&agrave;y v&agrave; c&agrave;ng l&agrave;m t&ocirc;n l&ecirc;n vẻ đẹp của người sử dụng.</p>', 4157000, 'Obaku V219GXBIRZ.png', 'Còn hàng', '2020-07-18 10:07:58', '2020-07-18 10:07:58', NULL);
 
 -- --------------------------------------------------------
 
@@ -375,13 +371,13 @@ ALTER TABLE `brands`
 -- AUTO_INCREMENT cho bảng `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT cho bảng `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
 
 --
 -- AUTO_INCREMENT cho bảng `failed_jobs`
@@ -399,7 +395,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT cho bảng `products`

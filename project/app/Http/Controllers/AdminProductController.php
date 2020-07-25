@@ -12,31 +12,15 @@ class AdminProductController extends Controller
 {
   function list(Request $request)
   {
-    $status = $request->input('status');
+    $keyword = "";
 
-    $list_act = [
-      'delete' => 'Xóa'
-    ];
-
-    if ($status == 'trash') {
-      $list_act = [
-        'restore' => 'Khôi phục',
-        'forceDelete' => 'Xóa vĩnh viễn'
-      ];
-      $products = Product::onlyTrashed()->paginate(5);
-    } else {
-      $keyword = "";
-      if ($request->input('keyword')) {
-        $keyword = $request->input('keyword');
-      }
-      $products = Product::where('name', 'like', "%{$keyword}%")->paginate(5);
+    if ($request->keyword) {
+      $keyword = $request->keyword;
     }
 
-    $count_product_exist = Product::count();
-    $count_product_trash = Product::onlyTrashed()->count();
-    $count = [$count_product_exist, $count_product_trash];
+    $products = Product::where('name', 'like', "%{$keyword}%")->orderBy('created_at', 'desc')->paginate(5);
 
-    return view('admin.product.list', compact('products', 'count', 'list_act'));
+    return view('admin.product.list', compact('products'));
   }
 
   function add()
@@ -84,31 +68,29 @@ class AdminProductController extends Controller
     return redirect('admin/product/list')->with('status', 'Đã xóa sản phẩm thành công');
   }
 
-  function action(Request $request)
-  {
-    $list_check = $request->input('list_check');
+  function hotList(Request $request){
+    $keyword = "";
 
-    if ($list_check) {
-      if (!empty($list_check)) {
-        $act = $request->input('act');
-        if ($act == 'delete') {
-          Product::destroy($list_check);
-          return redirect('admin/product/list')->with('status', 'Xóa thành công');
-        }
-
-        if ($act == 'restore') {
-          Product::withTrashed()->whereIn('id', $list_check)->restore();
-          return redirect('admin/product/list')->with('status', 'Khôi phục thành công');
-        }
-
-        if ($act == 'forceDelete') {
-          Product::withTrashed()->whereIn('id', $list_check)->forceDelete();
-          return redirect('admin/product/list')->with('status', 'Xóa vĩnh viễn thành công');
-        }
-      }
-      return redirect('admin/product/list')->with('status', 'Chưa chọn hành động cần thực hiện');
-    } else {
-      return redirect('admin/product/list')->with('status', 'Chưa chọn phần tử cần thực thi');
+    if ($request->keyword) {
+      $keyword = $request->keyword;
     }
+
+    $products = Product::where('name', 'like', "%{$keyword}%")->paginate(5);
+    return view('admin.product.hot.list', compact('products'));
+  }
+
+  function hotAdd(Request $request){
+    $keyword = "";
+
+    if ($request->keyword) {
+      $keyword = $request->keyword;
+    }
+
+    $products = Product::where('name', 'like', "%{$keyword}%")->paginate(5);
+    return view('admin.product.hot.add', compact('products'));
+  }
+
+  function hotDelete(){
+
   }
 }
