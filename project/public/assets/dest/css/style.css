@@ -6113,11 +6113,13 @@ a.home:hover {
 .filter {
     display: inline;
 }
+
 .filter a {
     font-size: medium;
     color: #288ad6;
     padding-right: 10px;
 }
+
 .filter p {
     text-align: center;
     font-size: medium;
@@ -6125,24 +6127,35 @@ a.home:hover {
     color: red;
 }
 
-.comment input, .comment textarea{
-  border: 1px solid ;
-  border-radius: 5px;
-  margin: 10px 0;
+.comment input,
+.comment textarea {
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 10px 0;
 }
-.comment textarea{
-  height: 100px;
+
+.comment textarea {
+    height: 100px;
 }
-.comment ul{
-  list-style-type: none;
+
+.comment ul {
+    list-style-type: none;
 }
-.comment span{
-  float: right;
+
+.comment span {
+    float: right;
 }
-.comment img{
-  float: left;
-  margin-right: 10px;
+
+.comment img {
+    float: left;
+    margin-right: 10px;
 }
-.comment p{
-  margin-top: 20px;
+
+.comment p {
+    margin-top: 20px;
+}
+
+.see-more a {
+    font-size: medium;
+    
 }

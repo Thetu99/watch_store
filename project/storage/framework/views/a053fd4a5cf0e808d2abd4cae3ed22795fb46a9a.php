@@ -68,8 +68,7 @@
           <div class="beta-products-list">
             <h4>Sản phẩm mới</h4>
             <div class="beta-products-details">
-              
-              <div class="clearfix"></div>
+              <div class="space40">&nbsp;</div>
             </div>
 
             <div class="row">
@@ -91,10 +90,11 @@
                     <p class="single-item-title"><b><?php echo e($p->name); ?></b></p>
                     <p class="single-item-price">
                       <span class="color-gray"><?php echo e(number_format($p->price, 0, '', '.')); ?>đ</span>
-                    </p>
-                    <p class="single-item-title"><b style="color: green"><?php echo e($p->status); ?></b></p>
+                    </p>                    
                   </div>
+                  <div class="space20">&nbsp;</div>
                   <div class="single-item-caption">
+                    <p class="single-item-title"><b style="color: green"><?php echo e($p->status); ?></b></p>
                     <a class="add-to-cart pull-left" href="<?php echo e(route('cart.add', $p->id)); ?>"><i
                         class="fa fa-shopping-cart"></i></a>
                     <a class="beta-btn primary" href="<?php echo e(url("product/$p->id")); ?>">Chi tiết<i
@@ -104,20 +104,20 @@
                 </div>
               </div>
               <?php if($i==4): ?>
-              <div class="space40">&nbsp;</div>
+              <div class="space80">&nbsp;</div>
               <?php endif; ?>
               <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
+            <div class="space80">&nbsp;</div>
           </div>
           <!-- .beta-products-list -->
 
           <div class="space50">&nbsp;</div>
 
           <div class="beta-products-list">
-            <h4>Sản phẩm nổi bật</h4>
+            <h4>Có thể bạn quan tâm</h4>
             <div class="beta-products-details">
-              
-              <div class="clearfix"></div>
+              <div class="space40">&nbsp;</div>
             </div>
             <div class="row">
               <?php
@@ -137,10 +137,11 @@
                     <p class="single-item-title"><b><?php echo e($r->name); ?></b></p>
                     <p class="single-item-price">
                       <span class="color-gray"><?php echo e(number_format($r->price, 0, '', '.')); ?>đ</span>
-                    </p>
-                    <p class="single-item-title"><b style="color: green"><?php echo e($r->status); ?></b></p>
+                    </p>                    
                   </div>
+                  <div class="space20">&nbsp;</div>
                   <div class="single-item-caption">
+                    <p class="single-item-title"><b style="color: green"><?php echo e($r->status); ?></b></p>
                     <a class="add-to-cart pull-left" href="<?php echo e(route('cart.add', $r->id)); ?>"><i
                         class="fa fa-shopping-cart"></i></a>
                     <a class="beta-btn primary" href="<?php echo e(url("product/$r->id")); ?>">Chi tiết<i
@@ -150,23 +151,15 @@
                 </div>
               </div>
               <?php if($i%4==0): ?>
-              <div class="space40">&nbsp;</div>
+              <div class="space80">&nbsp;</div>
               <?php endif; ?>
               <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
-
-
-
-            
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <!-- .beta-products-list -->
-</div>
-</div>
-<!-- end section with sidebar and main content -->
-</div>
-<!-- .main-content -->
-</div>
-<!-- #content -->
 </div>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.theme', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\watch_store\project\resources\views/theme/home.blade.php ENDPATH**/ ?>

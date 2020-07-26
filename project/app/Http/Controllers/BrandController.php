@@ -12,9 +12,8 @@ class BrandController extends Controller
   function show($brand)
   {
     $brands = Brand::where('name', $brand)->get();
-    $news = Product::where('brand', $brand)->limit(3)->get()->sortByDesc('created_at');
-    $randoms = Product::where('brand', $brand)->inRandomOrder()->limit(3)->get();
-    return view('theme.brand', compact('brands', 'news', 'randoms'));
+    $news = Product::where('brand', $brand)->orderBy('created_at', 'desc')->paginate(6);
+    return view('theme.brand', compact('brands', 'news'));
   }
 
   function list(Request $request)

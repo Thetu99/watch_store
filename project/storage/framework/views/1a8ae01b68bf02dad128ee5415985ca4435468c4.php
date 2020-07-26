@@ -4,7 +4,7 @@
 <div class="inner-header">
   <div class="container">
     <div class="pull-left">
-      <h6 class="inner-title">Chi tiết sản phẩm</h6>
+      <h4 class="inner-title">Chi tiết sản phẩm</h4>
     </div>
     <div class="pull-right">
       <div class="beta-breadcrumb font-large">
@@ -54,7 +54,7 @@
         <div class="woocommerce-tabs">
           <ul class="tabs">
             <li><a href="#tab-description">Mô tả</a></li>
-            <li><a href="#tab-reviews">Đánh giá (<?php echo e($comments->total()); ?>)</a></li>
+            <li><a href="#tab-reviews">Bình luận (<?php echo e($comments->total()); ?>)</a></li>
           </ul>
 
           <div class="panel" id="tab-description">
@@ -72,7 +72,7 @@
                 <textarea name="content" required></textarea>
               </div>
 
-              <button type="submit" value="Thêm mới" class="btn btn-primary">Gửi đánh giá</button>
+              <button type="submit" value="Thêm mới" class="btn btn-primary">Gửi phản hồi</button>
             </form>
 
             <div class="space50">&nbsp;</div>
@@ -92,16 +92,14 @@
               </ul>
               <?php echo e($comments->links()); ?>
 
-            </div>            
+            </div>
           </div>
         </div>
 
-        <div class="space50">&nbsp;</div>
-
         <div class="beta-products-list">
-          <h4>Các sản phẩm khác</h4>
-
           <div class="row">
+            <h4>Các sản phẩm khác</h4>
+            <div class="space50">&nbsp;</div>
             <?php $__currentLoopData = $randoms; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $r): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="col-sm-4">
               <div class="single-item">
@@ -128,9 +126,10 @@
           </div>
         </div> <!-- .beta-products-list -->
       </div>
+      
       <div class="col-sm-3 aside">
         <div class="widget">
-          <h3 class="widget-title">Đồng hồ bán chạy nhất</h3>
+          <h3 class="widget-title">Có thể bạn quan tâm</h3>
           <div class="widget-body">
             <div class="beta-sales beta-lists">
               <?php $__currentLoopData = $randoms; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $r): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -146,6 +145,7 @@
             </div>
           </div>
         </div> <!-- best sellers widget -->
+
         <div class="widget">
           <h3 class="widget-title">Đồng hồ mới</h3>
           <div class="widget-body">

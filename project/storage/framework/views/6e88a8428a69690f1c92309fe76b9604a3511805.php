@@ -26,8 +26,7 @@
 
               <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?></h4>
             <div class="beta-products-details">
-              
-              <div class="clearfix"></div>
+              <div class="space60">&nbsp;</div>
             </div>
 
             <div class="row">
@@ -51,6 +50,7 @@
                     <p class="single-item-price">
                       <span class="color-gray"><?php echo e(number_format($f->price, 0, '', '.')); ?>đ</span>
                     </p>
+                    <p class="single-item-title"><b style="color: green"><?php echo e($f->status); ?></b></p>
                   </div>
                   <div class="single-item-caption">
                     <a class="add-to-cart pull-left" href="<?php echo e(route('cart.add', $f->id)); ?>"><i
@@ -75,17 +75,12 @@
               <?php endif; ?>
             </div>
           </div>
-          <!-- .beta-products-list -->
-          <div class="space50">&nbsp;</div>
+          <div class="space40">&nbsp;</div>
         </div>
-        <!-- .beta-products-list -->
       </div>
     </div>
-    <!-- end section with sidebar and main content -->
   </div>
-  <!-- .main-content -->
 </div>
-<!-- #content -->
 </div>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.theme', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\watch_store\project\resources\views/theme/filter.blade.php ENDPATH**/ ?>

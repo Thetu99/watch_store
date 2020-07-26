@@ -68,8 +68,7 @@
           <div class="beta-products-list">
             <h4>Sản phẩm mới</h4>
             <div class="beta-products-details">
-              {{-- <p class="pull-left">438 styles found</p> --}}
-              <div class="clearfix"></div>
+              <div class="space40">&nbsp;</div>
             </div>
 
             <div class="row">
@@ -91,10 +90,11 @@
                     <p class="single-item-title"><b>{{$p->name}}</b></p>
                     <p class="single-item-price">
                       <span class="color-gray">{{number_format($p->price, 0, '', '.')}}đ</span>
-                    </p>
-                    <p class="single-item-title"><b style="color: green">{{$p->status}}</b></p>
+                    </p>                    
                   </div>
+                  <div class="space20">&nbsp;</div>
                   <div class="single-item-caption">
+                    <p class="single-item-title"><b style="color: green">{{$p->status}}</b></p>
                     <a class="add-to-cart pull-left" href="{{route('cart.add', $p->id)}}"><i
                         class="fa fa-shopping-cart"></i></a>
                     <a class="beta-btn primary" href="{{url("product/$p->id")}}">Chi tiết<i
@@ -104,20 +104,20 @@
                 </div>
               </div>
               @if ($i==4)
-              <div class="space40">&nbsp;</div>
+              <div class="space80">&nbsp;</div>
               @endif
               @endforeach
             </div>
+            <div class="space80">&nbsp;</div>
           </div>
           <!-- .beta-products-list -->
 
           <div class="space50">&nbsp;</div>
 
           <div class="beta-products-list">
-            <h4>Sản phẩm nổi bật</h4>
+            <h4>Có thể bạn quan tâm</h4>
             <div class="beta-products-details">
-              {{-- <p class="pull-left">438 styles found</p> --}}
-              <div class="clearfix"></div>
+              <div class="space40">&nbsp;</div>
             </div>
             <div class="row">
               @php
@@ -137,10 +137,11 @@
                     <p class="single-item-title"><b>{{$r->name}}</b></p>
                     <p class="single-item-price">
                       <span class="color-gray">{{number_format($r->price, 0, '', '.')}}đ</span>
-                    </p>
-                    <p class="single-item-title"><b style="color: green">{{$r->status}}</b></p>
+                    </p>                    
                   </div>
+                  <div class="space20">&nbsp;</div>
                   <div class="single-item-caption">
+                    <p class="single-item-title"><b style="color: green">{{$r->status}}</b></p>
                     <a class="add-to-cart pull-left" href="{{route('cart.add', $r->id)}}"><i
                         class="fa fa-shopping-cart"></i></a>
                     <a class="beta-btn primary" href="{{url("product/$r->id")}}">Chi tiết<i
@@ -150,43 +151,14 @@
                 </div>
               </div>
               @if ($i%4==0)
-              <div class="space40">&nbsp;</div>
+              <div class="space80">&nbsp;</div>
               @endif
               @endforeach
             </div>
-
-
-
-            {{-- <div class="row">
-              @foreach ($random_2 as $r)
-              <div class="col-sm-3">
-                <div class="single-item">
-                  <div class="single-item-header">
-                  <a href="{{url("product/$r->id")}}"><img src="{{asset("image/product/$r->thumbnail")}}" alt="" /></a>
-          </div>
-          <div class="single-item-body">
-            <p class="single-item-title">{{$r->name}}</p>
-            <p class="single-item-price">
-              <span>{{number_format($r->price, 0, '', '.')}}đ</span>
-            </p>
-          </div>
-          <div class="single-item-caption">
-            <a class="add-to-cart pull-left" href="{{url('cart')}}"><i class="fa fa-shopping-cart"></i></a>
-            <a class="beta-btn primary" href="{{url("product/$r->id")}}">Chi tiết<i class="fa fa-chevron-right"></i></a>
-            <div class="clearfix"></div>
           </div>
         </div>
       </div>
-      @endforeach
-    </div> --}}
+    </div>
   </div>
-  <!-- .beta-products-list -->
-</div>
-</div>
-<!-- end section with sidebar and main content -->
-</div>
-<!-- .main-content -->
-</div>
-<!-- #content -->
 </div>
 @endsection

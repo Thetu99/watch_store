@@ -31,7 +31,7 @@
     });
   </script>
 
-  <title>Admintrator</title>
+  <title>Trang quản trị</title>
 </head>
 
 <body>
@@ -116,7 +116,7 @@
             <i class="arrow fas fa-angle-right"></i>
             <ul class="sub-menu">
               <li><a href="<?php echo e(url('admin/product/list')); ?>">Toàn bộ</a></li>
-              <li><a href="<?php echo e(url('admin/product/hot/list')); ?>">Nổi bật</a></li>
+              
             </ul>
           </li>
           <li class="nav-link">

@@ -25,8 +25,7 @@
               {{$t}}
               @endforeach</h4>
             <div class="beta-products-details">
-              {{-- <p class="pull-left">438 styles found</p> --}}
-              <div class="clearfix"></div>
+              <div class="space60">&nbsp;</div>
             </div>
 
             <div class="row">
@@ -50,6 +49,7 @@
                     <p class="single-item-price">
                       <span class="color-gray">{{number_format($f->price, 0, '', '.')}}đ</span>
                     </p>
+                    <p class="single-item-title"><b style="color: green">{{$f->status}}</b></p>
                   </div>
                   <div class="single-item-caption">
                     <a class="add-to-cart pull-left" href="{{route('cart.add', $f->id)}}"><i
@@ -74,16 +74,11 @@
               @endif
             </div>
           </div>
-          <!-- .beta-products-list -->
-          <div class="space50">&nbsp;</div>
+          <div class="space40">&nbsp;</div>
         </div>
-        <!-- .beta-products-list -->
       </div>
     </div>
-    <!-- end section with sidebar and main content -->
   </div>
-  <!-- .main-content -->
 </div>
-<!-- #content -->
 </div>
 @endsection
