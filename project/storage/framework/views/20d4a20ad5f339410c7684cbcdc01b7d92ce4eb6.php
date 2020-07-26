@@ -8,7 +8,7 @@
     </div>
     <div class="pull-right">
       <div class="beta-breadcrumb">
-        <a href="<?php echo e(url('/')); ?>" class="home fa fa-home"> Trang chủ</a> / <span>Đặt hàng</span>
+        <a href="<?php echo e(url('home')); ?>" class="home fa fa-home"> Trang chủ</a> / <span>Đặt hàng</span>
       </div>
     </div>
     <div class="clearfix"></div>
@@ -22,7 +22,7 @@
         <div id="inform">
           <h6>Bạn đã đặt hàng thành công</h6>
           <hr>
-          <a href="<?php echo e(url('/')); ?>">Quay lại</a>
+          <a href="<?php echo e(url('home')); ?>">Quay lại</a>
         </div>
       </div>
     </div>

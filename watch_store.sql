@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 25, 2020 lúc 01:23 PM
+-- Thời gian đã tạo: Th7 26, 2020 lúc 10:07 AM
 -- Phiên bản máy phục vụ: 10.3.16-MariaDB
 -- Phiên bản PHP: 7.3.7
 
@@ -100,7 +100,10 @@ INSERT INTO `comments` (`id`, `product_id`, `name`, `content`, `created_at`, `up
 (12, 26, 'Lê Minh Tuấn', 'mua ủng hộ shop 2 chiếc, cảm nhận ban đầu rất tuyệt', '2020-07-25 05:17:17', '2020-07-25 05:17:17'),
 (13, 44, 'ngoc anh pham', 'chất lượng đồng hồ tương xứng vs giá tiền, quá tuyệt vời', '2020-07-25 05:21:29', '2020-07-25 05:21:29'),
 (14, 24, 'Cong Danh Do', 'Bao h có hàng vậy shop?', '2020-07-25 09:42:56', '2020-07-25 09:42:56'),
-(15, 41, 'Lê Bích Hằng', 'đồng hồ này đẹp quá shop ơi, bao h có hàng tiếp ạ?', '2020-07-25 09:48:08', '2020-07-25 09:48:08');
+(15, 41, 'Lê Bích Hằng', 'đồng hồ này đẹp quá shop ơi, bao h có hàng tiếp ạ?', '2020-07-25 09:48:08', '2020-07-25 09:48:08'),
+(16, 42, 'Trần Minh Hoàng', 'rất đáng mua, rất đáng tiền', '2020-07-25 16:14:19', '2020-07-25 16:14:19'),
+(17, 45, 'sdgds', 'dgdsg', '2020-07-26 04:18:59', '2020-07-26 04:18:59'),
+(18, 40, 'phan anh nguyen', 'very good', '2020-07-26 07:30:46', '2020-07-26 07:30:46');
 
 -- --------------------------------------------------------
 
@@ -127,7 +130,8 @@ CREATE TABLE `customers` (
 
 INSERT INTO `customers` (`id`, `name`, `gender`, `email`, `address`, `phone`, `note`, `payment_method`, `created_at`, `updated_at`) VALUES
 (137, 'Đặng Đình Hùng', 'Nam', 'dinhhung@gmail.com', '67 hàng trống', '03326545', 'Giao hàng trong vòng 7 ngày', 'Chuyển khoản', '2020-07-25 10:36:45', '2020-07-25 10:36:45'),
-(138, 'Bùi Thị Nhàn', 'Nam', 'nhanbui@gmail.com', '55 trần thái tông', '034564564', 'Nhận hàng các buổi chiều trong tuần', 'Trực tiếp', '2020-07-25 10:56:09', '2020-07-25 10:56:09');
+(138, 'Bùi Thị Nhàn', 'Nam', 'nhanbui@gmail.com', '55 trần thái tông', '034564564', 'Nhận hàng các buổi chiều trong tuần', 'Trực tiếp', '2020-07-25 10:56:09', '2020-07-25 10:56:09'),
+(139, 'thế tú', 'Nam', 'agdasg@gmail.com', 'sgd', 'sgdg', 'se', 'Trực tiếp', '2020-07-26 04:19:38', '2020-07-26 04:19:38');
 
 -- --------------------------------------------------------
 
@@ -202,7 +206,8 @@ INSERT INTO `orders` (`id`, `customer_id`, `product_name`, `product_qty`, `produ
 (30, 137, 'Fossil ES4594', 1, 1957000, 'Fossil ES4594.png', '2020-07-25 10:36:45', '2020-07-25 10:36:45'),
 (31, 137, 'Obaku V219GXBIRZ', 4, 4157000, 'Obaku V219GXBIRZ.png', '2020-07-25 10:36:45', '2020-07-25 10:36:45'),
 (32, 138, 'Fossil ES4594', 1, 1957000, 'Fossil ES4594.png', '2020-07-25 10:56:09', '2020-07-25 10:56:09'),
-(33, 138, 'Orient RA-AA0C06E19B', 2, 2413000, 'orient-FAC0A005T0.jpg', '2020-07-25 10:56:09', '2020-07-25 10:56:09');
+(33, 138, 'Orient RA-AA0C06E19B', 2, 2413000, 'orient-FAC0A005T0.jpg', '2020-07-25 10:56:09', '2020-07-25 10:56:09'),
+(34, 139, 'Obaku V219GXBIRZ', 1, 4157000, 'Obaku V219GXBIRZ.png', '2020-07-26 04:19:38', '2020-07-26 04:19:38');
 
 -- --------------------------------------------------------
 
@@ -359,7 +364,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `banners`
 --
 ALTER TABLE `banners`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `brands`
@@ -371,13 +376,13 @@ ALTER TABLE `brands`
 -- AUTO_INCREMENT cho bảng `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT cho bảng `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=140;
 
 --
 -- AUTO_INCREMENT cho bảng `failed_jobs`
@@ -395,7 +400,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT cho bảng `products`

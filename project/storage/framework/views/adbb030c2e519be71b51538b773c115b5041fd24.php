@@ -10,7 +10,7 @@
       </div>
       <div class="pull-right">
         <div class="beta-breadcrumb font-large">
-          <a href="<?php echo e(url('/')); ?>" class="home fa fa-home"> Trang chủ</a> / <span>Giỏ hàng</span>
+          <a href="<?php echo e(url('home')); ?>" class="home fa fa-home"> Trang chủ</a> / <span>Giỏ hàng</span>
         </div>
       </div>
       <div class="clearfix"></div>
@@ -84,7 +84,7 @@
               <td colspan="6" class="actions">
                 <input type="submit" class="beta-btn primary" name="update_cart" value="Cập nhật giỏ hàng">
 
-                <a href="<?php echo e(url('/')); ?>" class="beta-btn primary" name="proceed">
+                <a href="<?php echo e(url('home')); ?>" class="beta-btn primary" name="proceed">
                   Tiếp tục mua hàng
                   <i class="fa fa-chevron-right"></i>
                 </a>

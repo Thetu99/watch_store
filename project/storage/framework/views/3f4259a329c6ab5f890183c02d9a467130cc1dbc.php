@@ -4,10 +4,10 @@
 <div class="inner-header">
   <div class="container">
     <div class="pull-left">
-    <h6 class="inner-title">Thương hiệu <?php $__currentLoopData = $brands; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $b): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+      <h6 class="inner-title">Thương hiệu <?php $__currentLoopData = $brands; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $b): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <?php echo e($b->name); ?>
 
-    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?></h6>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?></h6>
     </div>
     <div class="pull-right">
       <div class="beta-breadcrumb font-large">
@@ -23,7 +23,24 @@
       <div class="space60">&nbsp;</div>
       <div class="row">
         <div class="col-sm-3">
-          
+          <div class="filter">            
+            <ul class="aside-menu">
+              <li><h6>Mức giá</h6></li>
+              <li>
+                <a href="<?php echo e(route('filter', '<1m')); ?>">Dưới 1 triệu</a>
+              </li>
+              <li>
+                <a href="<?php echo e(route('filter', '1m-3m')); ?>">Từ 1-3 triệu</a>
+              </li>
+              <li>
+                <a href="<?php echo e(route('filter', '3m-5m')); ?>">Từ 3-5 triệu</a>
+              </li>
+              <li>
+                <a href="<?php echo e(route('filter', '>5m')); ?>">Trên 5 triệu</a>
+              </li>
+            </ul>
+          </div>
+
         </div>
         <div class="col-sm-9">
           <div class="beta-products-list">
@@ -37,7 +54,8 @@
               <div class="col-sm-4">
                 <div class="single-item">
                   <div class="single-item-header">
-                    <a href="<?php echo e(route('product.show', $n->id)); ?>"><img src="<?php echo e(asset("image/product/{$n->thumbnail}")); ?>" alt=""></a>
+                    <a href="<?php echo e(route('product.show', $n->id)); ?>"><img src="<?php echo e(asset("image/product/{$n->thumbnail}")); ?>"
+                        alt=""></a>
                   </div>
                   <div class="single-item-body">
                     <p class="single-item-title"><b><?php echo e($n->name); ?></b></p>
@@ -47,8 +65,10 @@
                     <p class="single-item-title"><b style="color: green"><?php echo e($n->status); ?></b></p>
                   </div>
                   <div class="single-item-caption">
-                    <a class="add-to-cart pull-left" href="<?php echo e(route('cart.add', $n->id)); ?>"><i class="fa fa-shopping-cart"></i></a>
-                    <a class="beta-btn primary" href="<?php echo e(route('product.show', $n->id)); ?>">Chi tiết <i class="fa fa-chevron-right"></i></a>
+                    <a class="add-to-cart pull-left" href="<?php echo e(route('cart.add', $n->id)); ?>"><i
+                        class="fa fa-shopping-cart"></i></a>
+                    <a class="beta-btn primary" href="<?php echo e(route('product.show', $n->id)); ?>">Chi tiết <i
+                        class="fa fa-chevron-right"></i></a>
                     <div class="clearfix"></div>
                   </div>
                 </div>
@@ -64,13 +84,14 @@
             <div class="beta-products-details">
               <div class="clearfix"></div>
             </div>
-            
+
             <div class="row">
               <?php $__currentLoopData = $randoms; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $r): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
               <div class="col-sm-4">
                 <div class="single-item">
                   <div class="single-item-header">
-                    <a href="<?php echo e(route('product.show', $r->id)); ?>"><img src="<?php echo e(asset("image/product/{$r->thumbnail}")); ?>"></a>
+                    <a href="<?php echo e(route('product.show', $r->id)); ?>"><img
+                        src="<?php echo e(asset("image/product/{$r->thumbnail}")); ?>"></a>
                   </div>
                   <div class="single-item-body">
                     <p class="single-item-title"><b><?php echo e($r->name); ?></b></p>
@@ -80,8 +101,10 @@
                     <p class="single-item-title"><b style="color: green"><?php echo e($r->status); ?></b></p>
                   </div>
                   <div class="single-item-caption">
-                    <a class="add-to-cart pull-left" href="<?php echo e(route('cart.add', $r->id)); ?>"><i class="fa fa-shopping-cart"></i></a>
-                    <a class="beta-btn primary" href="<?php echo e(route('product.show', $r->id)); ?>">Chi tiết <i class="fa fa-chevron-right"></i></a>
+                    <a class="add-to-cart pull-left" href="<?php echo e(route('cart.add', $r->id)); ?>"><i
+                        class="fa fa-shopping-cart"></i></a>
+                    <a class="beta-btn primary" href="<?php echo e(route('product.show', $r->id)); ?>">Chi tiết <i
+                        class="fa fa-chevron-right"></i></a>
                     <div class="clearfix"></div>
                   </div>
                 </div>

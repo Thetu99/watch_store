@@ -1072,7 +1072,8 @@ sub {
 }
 
 .color-black {
-    color: #000
+    color: red;
+    font-weight: bold;
 }
 
 .h164 {
