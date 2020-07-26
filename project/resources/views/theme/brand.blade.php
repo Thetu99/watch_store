@@ -27,10 +27,26 @@
               <li>
                 <h6>Mức giá</h6>
               </li>
-              <li><a href="{{route('filter', '<1m')}}">Dưới 1 triệu</a></li>
-              <li><a href="{{route('filter', '1m-3m')}}">Từ 1-3 triệu</a></li>
-              <li><a href="{{route('filter', '3m-5m')}}">Từ 3-5 triệu</a> </li>
-              <li><a href="{{route('filter', '>5m')}}">Trên 5 triệu</a></li>
+              <li>
+                <input type="radio" name="filter" @if (request()->price==null) checked @endif>&nbsp;
+                <a class="filter" href="{{url("brand/$b->name")}}">Toàn bộ</a>
+              </li>
+              <li>
+                <input type="radio" name="filter" @if (request()->price=='<1') checked @endif>&nbsp;
+                  <a class="filter" href="{{url("brand/$b->name/<1")}}">Dưới 1 triệu</a>
+              </li>
+              <li>
+                <input type="radio" name="filter" @if (request()->price=='1-3') checked @endif>&nbsp;
+                <a class="filter" href="{{url("brand/$b->name/1-3")}}">Từ 1-3 triệu</a>
+              </li>
+              <li>
+                <input type="radio" name="filter" @if (request()->price=='3-5') checked @endif>&nbsp;
+                <a class="filter" href="{{url("brand/$b->name/3-5")}}">Từ 3-5 triệu</a>
+              </li>
+              <li>
+                <input type="radio" name="filter" @if (request()->price=='>5') checked @endif>&nbsp;
+                <a class="filter" href="{{url("brand/$b->name/>5")}}">Trên 5 triệu</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -41,13 +57,8 @@
             <div class="clearfix"></div>
 
             <div class="row">
-              @php
-              $i=0;
-              @endphp
+              @if ($news->total()>0)
               @foreach ($news as $n)
-              @php
-              $i++;
-              @endphp
               <div class="col-sm-4">
                 <div class="single-item">
                   <div class="single-item-header">
@@ -58,7 +69,7 @@
                     <p class="single-item-title"><b>{{$n->name}}</b></p>
                     <p class="single-item-price">
                       <span class="color-gray">{{number_format($n->price,0,'','.')}}đ</span>
-                    </p>                    
+                    </p>
                   </div>
                   <div class="space20">&nbsp;</div>
                   <div class="single-item-caption">
@@ -71,16 +82,25 @@
                   </div>
                 </div>
               </div>
-              @if ($i%3==0)
+              @if ($loop->iteration==3)
+              <div class="clearfix"></div>
               <div class="space80">&nbsp;</div>
               @endif
               @endforeach
+
+              @else
+              <div class="filter">
+                <div class="space60">&nbsp;</div>
+                <p>Không tìm thấy sản phẩm</p>
+              </div>
+              @endif
             </div>
+            <div class="space60">&nbsp;</div>
             <div class="text-center">{{$news->links()}}</div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>>
+</div>
 @endsection

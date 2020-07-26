@@ -73,7 +73,7 @@ Route::view('contact', 'theme/contact');
 Route::get('search', 'SearchController@search');
 Route::get('filter/{id}', 'SearchController@filter')->name('filter');
 
-Route::get('brand/{name}', 'BrandController@show')->name('brand');
+Route::get('brand/{name}/{price?}', 'BrandController@show')->name('brand');
 
 Route::get('cart', 'CartController@show');
 Route::get('cart/add/{id}', 'CartController@add')->name('cart.add');

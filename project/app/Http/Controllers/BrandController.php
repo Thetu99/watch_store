@@ -9,20 +9,32 @@ use Illuminate\Support\Facades\DB;
 
 class BrandController extends Controller
 {
-  function show($brand)
+  function show($brand, $price = null)
   {
     $brands = Brand::where('name', $brand)->get();
-    $news = Product::where('brand', $brand)->orderBy('created_at', 'desc')->paginate(6);
+    
+    if ($price == "<1") {
+      $news = Product::where('brand', $brand)->where('price', '<', 1000000)->paginate(6);
+    } elseif ($price == '1-3') {
+      $news = Product::where('brand', $brand)->whereBetween('price', [1000000, 3000000])->paginate(6);
+    } elseif ($price == '3-5') {
+      $news = Product::where('brand', $brand)->whereBetween('price', [3000000, 5000000])->paginate(6);
+    } elseif ($price == '>5') {
+      $news = Product::where('brand', $brand)->where('price', '>', 5000000)->paginate(6);
+    } else {
+      $news = Product::where('brand', $brand)->orderBy('created_at', 'desc')->paginate(6);
+    }
+
     return view('theme.brand', compact('brands', 'news'));
   }
 
   function list(Request $request)
   {
     $keyword = "";
-      if ($request->keyword) {
-        $keyword = $request->keyword;
-      }
-      $brands = Brand::where('name', 'like', "%{$keyword}%")->paginate();
+    if ($request->keyword) {
+      $keyword = $request->keyword;
+    }
+    $brands = Brand::where('name', 'like', "%{$keyword}%")->paginate();
     return view('admin.brand.list', compact('brands'));
   }
 

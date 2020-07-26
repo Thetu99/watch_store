@@ -54,6 +54,7 @@
         <div class="col-sm-12">
           <div class="filter">
             <h6>Chọn mức giá:</h6>
+            <div class="space20">&nbsp;</div>
             <a href="{{route('filter', '<1m')}}">Dưới 1 triệu</a>&nbsp;
             <a href="{{route('filter', '1m-3m')}}">Từ 1-3 triệu</a>&nbsp;
             <a href="{{route('filter', '3m-5m')}}">Từ 3-5 triệu</a>&nbsp;
@@ -72,13 +73,7 @@
             </div>
 
             <div class="row">
-              @php
-              $i=0;
-              @endphp
               @foreach ($products as $p)
-              @php
-              $i++;
-              @endphp
               <div class="col-sm-3">
                 <div class="single-item">
                   <div class="single-item-header">
@@ -103,7 +98,7 @@
                   </div>
                 </div>
               </div>
-              @if ($i==4)
+              @if (($loop->index+1)%4==0)
               <div class="space80">&nbsp;</div>
               @endif
               @endforeach
@@ -150,7 +145,7 @@
                   </div>
                 </div>
               </div>
-              @if ($i%4==0)
+              @if (($loop->index+1)%4==0)
               <div class="space80">&nbsp;</div>
               @endif
               @endforeach

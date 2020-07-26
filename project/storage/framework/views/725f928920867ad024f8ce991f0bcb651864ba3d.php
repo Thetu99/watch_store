@@ -146,9 +146,6 @@
         if(title=="Giỏ hàng" || title=="Liên hệ"){
           $("body").css({"display" : "flex", "flex-direction" : "column"});
         }
-        
-        $("input[type='number']").click(function(){
-        });
       });
   </script>
 </body>

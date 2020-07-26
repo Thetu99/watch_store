@@ -37,7 +37,7 @@ class SearchController extends Controller
       $title[] = "Sản phẩm có giá trên 5 triệu đồng";
       $filter = Product::where('price', '>', 5000000)->paginate();
     }
-    /* return $title; */
+    
     return view('theme.filter', compact('filter', 'title'));
   }
 }
