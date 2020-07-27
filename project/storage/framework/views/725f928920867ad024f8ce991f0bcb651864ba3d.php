@@ -147,6 +147,11 @@
         if(title=="Giỏ hàng" || title=="Liên hệ" || title=="Đặt hàng" || title=="Tìm kiếm"){
           $("body").css({"display" : "flex", "flex-direction" : "column"});
         }
+
+        $(".reply-form").hide();
+        $("span#reply").click(function(){
+          $(this).closest('tr').next().find(".reply-form").toggle();
+        });      
       });
   </script>
 </body>

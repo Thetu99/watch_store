@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 27, 2020 lúc 05:41 PM
+-- Thời gian đã tạo: Th7 27, 2020 lúc 07:53 PM
 -- Phiên bản máy phục vụ: 10.3.16-MariaDB
 -- Phiên bản PHP: 7.3.7
 
@@ -288,6 +288,14 @@ CREATE TABLE `replies` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `replies`
+--
+
+INSERT INTO `replies` (`id`, `comment_id`, `name`, `content`, `created_at`, `updated_at`) VALUES
+(1, 19, 'thanh', 'anc', '2020-07-27 17:37:43', '2020-07-27 17:37:43'),
+(2, 12, 'harry carty', 'yes i think so', '2020-07-27 17:52:16', '2020-07-27 17:52:16');
+
 -- --------------------------------------------------------
 
 --
@@ -443,7 +451,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT cho bảng `replies`
 --
 ALTER TABLE `replies`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `users`

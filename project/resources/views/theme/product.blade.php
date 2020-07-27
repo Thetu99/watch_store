@@ -78,34 +78,34 @@
 
             <div class="comment">
               <table class="table table-striped">
-                  @foreach ($comments as $c)
-                  <tr>
-                    <td>
-                      <img width="50px" src="{{asset("image/comment/guest-user.jpg")}}">
-                      {{$c->name}}
-                    </td>
-                    <td id="datetime"><span>{{date("G:i j-n-Y", strtotime($c->created_at))}}</span></td>
-                  </tr>
-                  <tr id="space">
-                    <td id="comment-content">{{$c->content}}</td>
-                    <td id="comment-reply">
-                      <a href="#">Trả lời</a>                      
-                    </td>
-                  </tr>
-                  @endforeach
-              </table>
-              {{-- <ul>
                 @foreach ($comments as $c)
-                <li>
-                  <img width="50px" src="{{asset("image/comment/guest-user.jpg")}}">
-              {{$c->name}}
-              <span>{{date("G:i j-n-Y", strtotime($c->created_at))}}</span>
-              <p>{{$c->content}}</p>
-              <span><a href="#">Trả lời</a></span>
-              </li>
-              <div class="space40">&nbsp;</div>
-              @endforeach
-              </ul> --}}
+                <tr>
+                  <td>
+                    <img width="50px" src="{{asset("image/comment/guest-user.jpg")}}">
+                    {{$c->name}}
+                  </td>
+                  <td id="datetime"><span>{{date("G:i j-n-Y", strtotime($c->created_at))}}</span></td>
+                </tr>
+                <tr>
+                  <td id="comment-content">{{$c->content}}</td>
+                  <td id="comment-reply">
+                    <span id="reply">Trả lời</span>
+                  </td>
+                </tr>
+                <tr id="space">
+                  <td colspan="2">
+                    <div class="reply-form">
+                      <form action="{{route('reply.store', $c->id)}}" method="post">
+                        @csrf
+                        <input type="text" name="name" placeholder="Tên" required>
+                        <textarea name="content" placeholder="Nội dung" required></textarea>
+                        <button type="submit" class="btn btn-primary">Trả lời</button>
+                      </form>
+                    </div>
+                  </td>
+                </tr>
+                @endforeach
+              </table>
               <div class="text-center">{{$comments->links()}}</div>
             </div>
             <div class="space20">&nbsp;</div>

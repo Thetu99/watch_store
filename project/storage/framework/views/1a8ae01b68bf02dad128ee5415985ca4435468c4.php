@@ -79,24 +79,35 @@
 
             <div class="comment">
               <table class="table table-striped">
-                  <?php $__currentLoopData = $comments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $c): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                  <tr>
-                    <td>
-                      <img width="50px" src="<?php echo e(asset("image/comment/guest-user.jpg")); ?>">
-                      <?php echo e($c->name); ?>
+                <?php $__currentLoopData = $comments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $c): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <tr>
+                  <td>
+                    <img width="50px" src="<?php echo e(asset("image/comment/guest-user.jpg")); ?>">
+                    <?php echo e($c->name); ?>
 
-                    </td>
-                    <td id="datetime"><span><?php echo e(date("G:i j-n-Y", strtotime($c->created_at))); ?></span></td>
-                  </tr>
-                  <tr id="space">
-                    <td id="comment-content"><?php echo e($c->content); ?></td>
-                    <td id="comment-reply">
-                      <a href="#">Trả lời</a>                      
-                    </td>
-                  </tr>
-                  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                  </td>
+                  <td id="datetime"><span><?php echo e(date("G:i j-n-Y", strtotime($c->created_at))); ?></span></td>
+                </tr>
+                <tr>
+                  <td id="comment-content"><?php echo e($c->content); ?></td>
+                  <td id="comment-reply">
+                    <span id="reply">Trả lời</span>
+                  </td>
+                </tr>
+                <tr id="space">
+                  <td colspan="2">
+                    <div class="reply-form">
+                      <form action="<?php echo e(route('reply.store', $c->id)); ?>" method="post">
+                        <?php echo csrf_field(); ?>
+                        <input type="text" name="name" placeholder="Tên" required>
+                        <textarea name="content" placeholder="Nội dung" required></textarea>
+                        <button type="submit" class="btn btn-primary">Trả lời</button>
+                      </form>
+                    </div>
+                  </td>
+                </tr>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
               </table>
-              
               <div class="text-center"><?php echo e($comments->links()); ?></div>
             </div>
             <div class="space20">&nbsp;</div>
