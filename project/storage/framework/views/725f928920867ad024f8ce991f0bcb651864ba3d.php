@@ -7,7 +7,8 @@
   <title>Watch Store</title>
   <link href="http://fonts.googleapis.com/css?family=Dosis:300,400" rel="stylesheet" type="text/css" />
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="<?php echo e(asset('bootstrap-4.5.0/css/bootstrap.min.css')); ?>">
+  <link rel="stylesheet" href="<?php echo e(asset('bootstrap-3.4.1/css/bootstrap.min.css')); ?>">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/solid.min.css">
   <link rel="stylesheet" href="<?php echo e(asset('assets/dest/vendors/colorbox/example3/colorbox.css')); ?>" />
@@ -104,23 +105,23 @@
   <!-- #footer -->
   <div class="copyright">
     <div class="container">
-      <p class="pull-left">Privacy policy. &copy; 2020</p>
-      <p class="pull-right pay-options">
-        <a href="#"><img src="<?php echo e(asset('assets/dest/images/pay/master.png')); ?>"></a>
-        <a href="#"><img src="<?php echo e(asset('assets/dest/images/pay/visa.png')); ?>"></a>
-        <a href="#"><img src="<?php echo e(asset('assets/dest/images/pay/paypal.png')); ?>"></a>
-      </p>
-      <div class="clearfix"></div>
-    </div>
-    <!-- .container -->
-  </div>
-  <!-- .copyright -->
+      <div class="col-sm-12">
+        <p class="pull-left">Privacy policy. &copy; 2020</p>
+        <p class="pull-right pay-options">
+          <a href="#"><img src="<?php echo e(asset('assets/dest/images/pay/master.png')); ?>"></a>
+          <a href="#"><img src="<?php echo e(asset('assets/dest/images/pay/visa.png')); ?>"></a>
+          <a href="#"><img src="<?php echo e(asset('assets/dest/images/pay/paypal.png')); ?>"></a>
+        </p>
+      </div>
+    </div><!-- .container -->
+  </div><!-- .copyright -->
 
   <!-- include js files -->
   <script src="<?php echo e(asset('assets/dest/js/jquery.js')); ?>"></script>
   <script src="<?php echo e(asset('assets/dest/vendors/jqueryui/jquery-ui-1.10.4.custom.min.js')); ?>"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <script src="<?php echo e(asset('assets/dest/vendors/bxslider/jquery.bxslider.min.js')); ?>"></script>
   <script src="<?php echo e(asset('assets/dest/vendors/colorbox/jquery.colorbox-min.js')); ?>"></script>
   <script src="<?php echo e(asset('assets/dest/vendors/animo/Animo.js')); ?>"></script>
@@ -143,7 +144,7 @@
         });
 
         var title = $("h6").text();
-        if(title=="Giỏ hàng" || title=="Liên hệ"){
+        if(title=="Giỏ hàng" || title=="Liên hệ" || title=="Tìm kiếm"){
           $("body").css({"display" : "flex", "flex-direction" : "column"});
         }
       });

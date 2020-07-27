@@ -1,8 +1,31 @@
 @extends('layouts.theme')
 
 @section('content')
+
 <div class="rev-slider">
-  <div class="fullwidthbanner-container">
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      @foreach ($banners as $b)
+      <div class="carousel-item @if ($loop->first) active @endif">
+        <img src="{{asset("image/banner/$b->thumbnail")}}" class="d-block w-100">
+      </div>
+      @endforeach
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Trước</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Sau</span>
+    </a>
+  </div>
+  {{-- <div class="fullwidthbanner-container">
     <div class="fullwidthbanner">
       <div class="bannercontainer">
         <div class="banner">
@@ -24,27 +47,28 @@
                 <div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover"
                   data-bgposition="center center" data-bgrepeat="no-repeat" data-lazydone="undefined"
                   src="{{asset("image/banner/$b->thumbnail")}}" data-src="{{asset("image/banner/$b->thumbnail")}}"
-                  style="
-                    background-color: rgba(0, 0, 0, 0);
-                    background-repeat: no-repeat;
-                    background-image: url('{{asset("image/banner/$b->thumbnail")}}');
-                    background-size: cover;
-                    background-position: center center;
-                    width: 100%;
-                    height: 100%;
-                    opacity: 1;
-                    visibility: inherit;
-                  "></div>
-              </div>
-            </li>
-            @endforeach
-          </ul>
-        </div>
-      </div>
-      <div class="tp-bannertimer"></div>
-    </div>
-  </div>
-  <!--slider-->
+  style="
+  background-color: rgba(0, 0, 0, 0);
+  background-repeat: no-repeat;
+  background-image: url('{{asset("image/banner/$b->thumbnail")}}');
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  visibility: inherit;
+  ">
+</div>
+</div>
+</li>
+@endforeach
+</ul>
+</div>
+</div>
+<div class="tp-bannertimer"></div>
+</div>
+</div> --}}
+<!--slider-->
 </div>
 <div class="container">
   <div id="content" class="space-top-none">
@@ -85,7 +109,7 @@
                     <p class="single-item-title"><b>{{$p->name}}</b></p>
                     <p class="single-item-price">
                       <span class="color-gray">{{number_format($p->price, 0, '', '.')}}đ</span>
-                    </p>                    
+                    </p>
                   </div>
                   <div class="space20">&nbsp;</div>
                   <div class="single-item-caption">
@@ -94,13 +118,10 @@
                         class="fa fa-shopping-cart"></i></a>
                     <a class="beta-btn primary" href="{{url("product/$p->id")}}">Chi tiết<i
                         class="fa fa-chevron-right"></i></a>
-                    <div class="clearfix"></div>
+                    <div class="space80">&nbsp;</div>
                   </div>
                 </div>
               </div>
-              @if (($loop->index+1)%4==0)
-              <div class="space80">&nbsp;</div>
-              @endif
               @endforeach
             </div>
             <div class="space80">&nbsp;</div>
@@ -115,13 +136,7 @@
               <div class="space40">&nbsp;</div>
             </div>
             <div class="row">
-              @php
-              $i=0;
-              @endphp
               @foreach ($randoms as $r)
-              @php
-              $i++;
-              @endphp
               <div class="col-sm-3">
                 <div class="single-item">
                   <div class="single-item-header">
@@ -132,22 +147,18 @@
                     <p class="single-item-title"><b>{{$r->name}}</b></p>
                     <p class="single-item-price">
                       <span class="color-gray">{{number_format($r->price, 0, '', '.')}}đ</span>
-                    </p>                    
+                    </p>
                   </div>
-                  <div class="space20">&nbsp;</div>
                   <div class="single-item-caption">
                     <p class="single-item-title"><b style="color: green">{{$r->status}}</b></p>
                     <a class="add-to-cart pull-left" href="{{route('cart.add', $r->id)}}"><i
                         class="fa fa-shopping-cart"></i></a>
                     <a class="beta-btn primary" href="{{url("product/$r->id")}}">Chi tiết<i
                         class="fa fa-chevron-right"></i></a>
-                    <div class="clearfix"></div>
+                    <div class="space80">&nbsp;</div>
                   </div>
                 </div>
               </div>
-              @if (($loop->index+1)%4==0)
-              <div class="space80">&nbsp;</div>
-              @endif
               @endforeach
             </div>
           </div>

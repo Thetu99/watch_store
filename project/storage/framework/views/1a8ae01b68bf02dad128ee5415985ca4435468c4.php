@@ -87,20 +87,20 @@
                   <span><?php echo e(date("G:i j-n-Y", strtotime($c->created_at))); ?></span>
                   <p><?php echo e($c->content); ?></p>
                 </li>
-                <div class="space50">&nbsp;</div>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
               </ul>
               <?php echo e($comments->links()); ?>
 
             </div>
+            <div class="space80">&nbsp;</div>
           </div>
         </div>
 
         <div class="beta-products-list">
+          <h4>Sản phẩm liên quan</h4>
+          <div class="space80">&nbsp;</div>
           <div class="row">
-            <h4>Các sản phẩm khác</h4>
-            <div class="space50">&nbsp;</div>
-            <?php $__currentLoopData = $randoms; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $r): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <?php $__currentLoopData = $relations; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $r): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="col-sm-4">
               <div class="single-item">
                 <div class="single-item-header">
@@ -117,7 +117,7 @@
                       class="fa fa-shopping-cart"></i></a>
                   <a class="beta-btn primary" href="<?php echo e(route('product.show', $r->id)); ?>">Chi tiết<i
                       class="fa fa-chevron-right"></i></a>
-                  <div class="clearfix"></div>
+                  <div class="space80">&nbsp;</div>
                 </div>
               </div>
             </div>
@@ -126,7 +126,7 @@
           </div>
         </div> <!-- .beta-products-list -->
       </div>
-      
+
       <div class="col-sm-3 aside">
         <div class="widget">
           <h3 class="widget-title">Có thể bạn quan tâm</h3>
@@ -168,6 +168,7 @@
     </div>
   </div> <!-- #content -->
 </div> <!-- .container -->
+
 <script type="text/javascript">
   $(function() {
       // this will get the full URL at the address bar
@@ -182,15 +183,10 @@
           }
       });
   });
-
 </script>
+
 <script>
   jQuery(document).ready(function($) {
-              'use strict';
-
-// color box
-
-//color
     jQuery('#style-selector').animate({
     left: '-213px'
   });

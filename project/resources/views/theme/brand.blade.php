@@ -53,9 +53,6 @@
 
         <div class="col-sm-9">
           <div class="beta-products-list">
-
-            <div class="clearfix"></div>
-
             <div class="row">
               @if ($news->total()>0)
               @foreach ($news as $n)
@@ -78,24 +75,19 @@
                         class="fa fa-shopping-cart"></i></a>
                     <a class="beta-btn primary" href="{{route('product.show', $n->id)}}">Chi tiết <i
                         class="fa fa-chevron-right"></i></a>
-                    <div class="clearfix"></div>
+                    <div class="space80">&nbsp;</div>
                   </div>
                 </div>
               </div>
-              @if ($loop->iteration==3)
-              <div class="clearfix"></div>
-              <div class="space80">&nbsp;</div>
-              @endif
               @endforeach
 
               @else
-              <div class="filter">
-                <div class="space60">&nbsp;</div>
+              <div class="space60">&nbsp;</div>
+              <div class="col-sm-12 filter">
                 <p>Không tìm thấy sản phẩm</p>
               </div>
               @endif
             </div>
-            <div class="space60">&nbsp;</div>
             <div class="text-center">{{$news->links()}}</div>
           </div>
         </div>

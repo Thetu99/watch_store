@@ -87,3 +87,5 @@ Route::post('checkout/order', 'CheckOutController@order');
 Route::get('checkout/success', 'CheckOutController@success');
 
 Route::post('comment/store/{id}', 'CommentController@store')->name('comment.store');
+
+Route::view('carousel', 'theme/carousel');

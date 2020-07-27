@@ -1,50 +1,32 @@
 
 
 <?php $__env->startSection('content'); ?>
+
 <div class="rev-slider">
-  <div class="fullwidthbanner-container">
-    <div class="fullwidthbanner">
-      <div class="bannercontainer">
-        <div class="banner">
-          <ul>
-            <?php $__currentLoopData = $banners; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $b): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <li data-transition="boxfade" data-slotamount="50" class="active-revslide" style="
-                width: 100%;
-                height: 100%;
-                overflow: hidden;
-                z-index: 18;
-                visibility: hidden;
-                opacity: 0;
-              ">
-              <div class="slotholder" style="width: 100%; height: 100%;" data-duration="undefined"
-                data-zoomstart="undefined" data-zoomend="undefined" data-rotationstart="undefined"
-                data-rotationend="undefined" data-ease="undefined" data-bgpositionend="undefined"
-                data-bgposition="undefined" data-kenburns="undefined" data-easeme="undefined" data-bgfit="undefined"
-                data-bgfitend="undefined" data-owidth="undefined" data-oheight="undefined">
-                <div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover"
-                  data-bgposition="center center" data-bgrepeat="no-repeat" data-lazydone="undefined"
-                  src="<?php echo e(asset("image/banner/$b->thumbnail")); ?>" data-src="<?php echo e(asset("image/banner/$b->thumbnail")); ?>"
-                  style="
-                    background-color: rgba(0, 0, 0, 0);
-                    background-repeat: no-repeat;
-                    background-image: url('<?php echo e(asset("image/banner/$b->thumbnail")); ?>');
-                    background-size: cover;
-                    background-position: center center;
-                    width: 100%;
-                    height: 100%;
-                    opacity: 1;
-                    visibility: inherit;
-                  "></div>
-              </div>
-            </li>
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-          </ul>
-        </div>
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <?php $__currentLoopData = $banners; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $b): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+      <div class="carousel-item <?php if($loop->first): ?> active <?php endif; ?>">
+        <img src="<?php echo e(asset("image/banner/$b->thumbnail")); ?>" class="d-block w-100">
       </div>
-      <div class="tp-bannertimer"></div>
+      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Trước</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Sau</span>
+    </a>
   </div>
-  <!--slider-->
+  
+<!--slider-->
 </div>
 <div class="container">
   <div id="content" class="space-top-none">
@@ -85,7 +67,7 @@
                     <p class="single-item-title"><b><?php echo e($p->name); ?></b></p>
                     <p class="single-item-price">
                       <span class="color-gray"><?php echo e(number_format($p->price, 0, '', '.')); ?>đ</span>
-                    </p>                    
+                    </p>
                   </div>
                   <div class="space20">&nbsp;</div>
                   <div class="single-item-caption">
@@ -94,13 +76,10 @@
                         class="fa fa-shopping-cart"></i></a>
                     <a class="beta-btn primary" href="<?php echo e(url("product/$p->id")); ?>">Chi tiết<i
                         class="fa fa-chevron-right"></i></a>
-                    <div class="clearfix"></div>
+                    <div class="space80">&nbsp;</div>
                   </div>
                 </div>
               </div>
-              <?php if(($loop->index+1)%4==0): ?>
-              <div class="space80">&nbsp;</div>
-              <?php endif; ?>
               <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
             <div class="space80">&nbsp;</div>
@@ -115,13 +94,7 @@
               <div class="space40">&nbsp;</div>
             </div>
             <div class="row">
-              <?php
-              $i=0;
-              ?>
               <?php $__currentLoopData = $randoms; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $r): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-              <?php
-              $i++;
-              ?>
               <div class="col-sm-3">
                 <div class="single-item">
                   <div class="single-item-header">
@@ -132,22 +105,18 @@
                     <p class="single-item-title"><b><?php echo e($r->name); ?></b></p>
                     <p class="single-item-price">
                       <span class="color-gray"><?php echo e(number_format($r->price, 0, '', '.')); ?>đ</span>
-                    </p>                    
+                    </p>
                   </div>
-                  <div class="space20">&nbsp;</div>
                   <div class="single-item-caption">
                     <p class="single-item-title"><b style="color: green"><?php echo e($r->status); ?></b></p>
                     <a class="add-to-cart pull-left" href="<?php echo e(route('cart.add', $r->id)); ?>"><i
                         class="fa fa-shopping-cart"></i></a>
                     <a class="beta-btn primary" href="<?php echo e(url("product/$r->id")); ?>">Chi tiết<i
                         class="fa fa-chevron-right"></i></a>
-                    <div class="clearfix"></div>
+                    <div class="space80">&nbsp;</div>
                   </div>
                 </div>
               </div>
-              <?php if(($loop->index+1)%4==0): ?>
-              <div class="space80">&nbsp;</div>
-              <?php endif; ?>
               <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
           </div>

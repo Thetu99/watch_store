@@ -3,18 +3,16 @@
 <?php $__env->startSection('content'); ?>
 <div class="inner-header">
   <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <h6>Giỏ hàng</h6>
-
-      </div>
-      <div class="pull-right">
-        <div class="beta-breadcrumb font-large">
-          <a href="<?php echo e(url('home')); ?>" class="home fa fa-home"> Trang chủ</a> / <span>Giỏ hàng</span>
-        </div>
-      </div>
-      <div class="clearfix"></div>
+    <div class="pull-left">
+      <h6 class="inner-title">Giỏ hàng</h6>
     </div>
+
+    <div class="pull-right">
+      <div class="beta-breadcrumb font-large">
+        <a href="<?php echo e(url('home')); ?>" class="home fa fa-home"> Trang chủ</a> / <span>Giỏ hàng</span>
+      </div>
+    </div>
+    <div class="clearfix"></div>
   </div>
 </div>
 

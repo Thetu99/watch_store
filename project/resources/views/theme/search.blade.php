@@ -8,7 +8,7 @@
       <div class="row">
         <div class="col-sm-12">
           <div class="beta-products-list">
-            <h4>Tìm kiếm</h4>
+            <h6>Tìm kiếm</h6>
             <div class="beta-products-details">
               <p class="pull-left"> Tìm thấy <b style="color: red">{{count($products)}}</b> sản phẩm </p>
               <div class="clearfix"></div>

@@ -54,9 +54,6 @@
 
         <div class="col-sm-9">
           <div class="beta-products-list">
-
-            <div class="clearfix"></div>
-
             <div class="row">
               <?php if($news->total()>0): ?>
               <?php $__currentLoopData = $news; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $n): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -79,24 +76,19 @@
                         class="fa fa-shopping-cart"></i></a>
                     <a class="beta-btn primary" href="<?php echo e(route('product.show', $n->id)); ?>">Chi tiết <i
                         class="fa fa-chevron-right"></i></a>
-                    <div class="clearfix"></div>
+                    <div class="space80">&nbsp;</div>
                   </div>
                 </div>
               </div>
-              <?php if($loop->iteration==3): ?>
-              <div class="clearfix"></div>
-              <div class="space80">&nbsp;</div>
-              <?php endif; ?>
               <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
               <?php else: ?>
-              <div class="filter">
-                <div class="space60">&nbsp;</div>
+              <div class="space60">&nbsp;</div>
+              <div class="col-sm-12 filter">
                 <p>Không tìm thấy sản phẩm</p>
               </div>
               <?php endif; ?>
             </div>
-            <div class="space60">&nbsp;</div>
             <div class="text-center"><?php echo e($news->links()); ?></div>
           </div>
         </div>
