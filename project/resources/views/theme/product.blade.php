@@ -85,11 +85,12 @@
                   <span>{{date("G:i j-n-Y", strtotime($c->created_at))}}</span>
                   <p>{{$c->content}}</p>
                 </li>
+                <div class="space40">&nbsp;</div>
                 @endforeach
               </ul>
-              {{$comments->links()}}
+              <div class="text-center">{{$comments->links()}}</div>
             </div>
-            <div class="space80">&nbsp;</div>
+            <div class="space20">&nbsp;</div>
           </div>
         </div>
 
@@ -109,7 +110,9 @@
                     <span class="color-gray">{{number_format($r->price,0,'','.')}}đ</span>
                   </p>
                 </div>
+                <div class="space20">&nbsp;</div>
                 <div class="single-item-caption">
+                  <p class="single-item-title"><b style="color: green">{{$r->status}}</b></p>
                   <a class="add-to-cart pull-left" href="{{route('cart.add', $r->id)}}"><i
                       class="fa fa-shopping-cart"></i></a>
                   <a class="beta-btn primary" href="{{route('product.show', $r->id)}}">Chi tiết<i
@@ -119,7 +122,6 @@
               </div>
             </div>
             @endforeach
-
           </div>
         </div> <!-- .beta-products-list -->
       </div>

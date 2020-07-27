@@ -2,32 +2,30 @@
 
 <?php $__env->startSection('content'); ?>
 
-<div class="rev-slider">
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-      <?php $__currentLoopData = $banners; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $b): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-      <div class="carousel-item <?php if($loop->first): ?> active <?php endif; ?>">
-        <img src="<?php echo e(asset("image/banner/$b->thumbnail")); ?>" class="d-block w-100">
-      </div>
-      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000" data-pause="false"">
+  <ol class="carousel-indicators">
+    <?php $__currentLoopData = $banners; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $b): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+    <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo e($loop->index); ?>" <?php if($loop->first): ?> class="active" <?php endif; ?>>
+    </li>
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+  </ol>
+  <div class="carousel-inner">
+    <?php $__currentLoopData = $banners; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $b): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+    <div class="carousel-item <?php if($loop->first): ?> active <?php endif; ?>">
+      <img src="<?php echo e(asset("image/banner/$b->thumbnail")); ?>" class="d-block w-100">
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Trước</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Sau</span>
-    </a>
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
   </div>
-  
-<!--slider-->
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Trước</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Sau</span>
+  </a>
 </div>
+
 <div class="container">
   <div id="content" class="space-top-none">
     <div class="main-content">

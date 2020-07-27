@@ -120,7 +120,7 @@
   <script src="<?php echo e(asset('assets/dest/js/jquery.js')); ?>"></script>
   <script src="<?php echo e(asset('assets/dest/vendors/jqueryui/jquery-ui-1.10.4.custom.min.js')); ?>"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="<?php echo e(asset('bootstrap-4.5.0/js/bootstrap.min.js')); ?>"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <script src="<?php echo e(asset('assets/dest/vendors/bxslider/jquery.bxslider.min.js')); ?>"></script>
   <script src="<?php echo e(asset('assets/dest/vendors/colorbox/jquery.colorbox-min.js')); ?>"></script>

@@ -54,6 +54,6 @@ class BannerController extends Controller
   {
     $banner = Banner::find($id);
     $banner->delete();
-    return redirect('admin/banner/list')->with('status', 'Đã xóa Banner thành công');
+    return redirect('admin/banner/list')->with('status', 'Xóa Banner thành công');
   }
 }

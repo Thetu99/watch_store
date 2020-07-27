@@ -2,74 +2,30 @@
 
 @section('content')
 
-<div class="rev-slider">
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-      @foreach ($banners as $b)
-      <div class="carousel-item @if ($loop->first) active @endif">
-        <img src="{{asset("image/banner/$b->thumbnail")}}" class="d-block w-100">
-      </div>
-      @endforeach
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000" data-pause="false"">
+  <ol class="carousel-indicators">
+    @foreach ($banners as $b)
+    <li data-target="#carouselExampleIndicators" data-slide-to="{{$loop->index}}" @if ($loop->first) class="active" @endif>
+    </li>
+    @endforeach
+  </ol>
+  <div class="carousel-inner">
+    @foreach ($banners as $b)
+    <div class="carousel-item @if ($loop->first) active @endif">
+      <img src="{{asset("image/banner/$b->thumbnail")}}" class="d-block w-100">
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Trước</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Sau</span>
-    </a>
+    @endforeach
   </div>
-  {{-- <div class="fullwidthbanner-container">
-    <div class="fullwidthbanner">
-      <div class="bannercontainer">
-        <div class="banner">
-          <ul>
-            @foreach ($banners as $b)
-            <li data-transition="boxfade" data-slotamount="50" class="active-revslide" style="
-                width: 100%;
-                height: 100%;
-                overflow: hidden;
-                z-index: 18;
-                visibility: hidden;
-                opacity: 0;
-              ">
-              <div class="slotholder" style="width: 100%; height: 100%;" data-duration="undefined"
-                data-zoomstart="undefined" data-zoomend="undefined" data-rotationstart="undefined"
-                data-rotationend="undefined" data-ease="undefined" data-bgpositionend="undefined"
-                data-bgposition="undefined" data-kenburns="undefined" data-easeme="undefined" data-bgfit="undefined"
-                data-bgfitend="undefined" data-owidth="undefined" data-oheight="undefined">
-                <div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover"
-                  data-bgposition="center center" data-bgrepeat="no-repeat" data-lazydone="undefined"
-                  src="{{asset("image/banner/$b->thumbnail")}}" data-src="{{asset("image/banner/$b->thumbnail")}}"
-  style="
-  background-color: rgba(0, 0, 0, 0);
-  background-repeat: no-repeat;
-  background-image: url('{{asset("image/banner/$b->thumbnail")}}');
-  background-size: cover;
-  background-position: center center;
-  width: 100%;
-  height: 100%;
-  opacity: 1;
-  visibility: inherit;
-  ">
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Trước</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Sau</span>
+  </a>
 </div>
-</div>
-</li>
-@endforeach
-</ul>
-</div>
-</div>
-<div class="tp-bannertimer"></div>
-</div>
-</div> --}}
-<!--slider-->
-</div>
+
 <div class="container">
   <div id="content" class="space-top-none">
     <div class="main-content">
