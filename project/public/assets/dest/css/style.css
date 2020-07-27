@@ -6155,6 +6155,37 @@ a.home:hover {
     margin-top: 20px;
 }
 
+
+.comment table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.comment tr#space {
+    border-bottom: 40px solid transparent;
+}
+
+td#comment-content {
+    word-wrap: break-word;
+    width: 85%;
+    padding-bottom: 10px;
+}
+
+td#datetime {
+    width: 15%;
+}
+
+td#comment-reply {
+    text-align: end;
+    vertical-align: bottom;
+}
+
+#comment-reply a{
+  font-weight: bold;
+  color: #000;
+}
+
 .see-more a {
     font-size: medium;
 }
@@ -6167,9 +6198,10 @@ a.home:hover {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f00' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
 }
 
-.carousel-indicators li{
-  background-color: black;
+.carousel-indicators li {
+    background-color: black;
 }
-.carousel-indicators li.active{
-  background-color: red;
+
+.carousel-indicators li.active {
+    background-color: red;
 }

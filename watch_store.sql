@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 27, 2020 lúc 11:18 AM
+-- Thời gian đã tạo: Th7 27, 2020 lúc 05:41 PM
 -- Phiên bản máy phục vụ: 10.3.16-MariaDB
 -- Phiên bản PHP: 7.3.7
 
@@ -77,7 +77,7 @@ INSERT INTO `brands` (`id`, `name`, `thumbnail`, `created_at`, `updated_at`) VAL
 --
 
 CREATE TABLE `comments` (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int(11) UNSIGNED NOT NULL,
   `product_id` int(11) NOT NULL,
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -104,7 +104,8 @@ INSERT INTO `comments` (`id`, `product_id`, `name`, `content`, `created_at`, `up
 (15, 41, 'Lê Bích Hằng', 'đồng hồ này đẹp quá shop ơi, bao h có hàng tiếp ạ?', '2020-07-25 09:48:08', '2020-07-25 09:48:08'),
 (16, 42, 'Trần Minh Hoàng', 'rất đáng mua, rất đáng tiền', '2020-07-25 16:14:19', '2020-07-25 16:14:19'),
 (17, 45, 'sdgds', 'dgdsg', '2020-07-26 04:18:59', '2020-07-26 04:18:59'),
-(18, 40, 'phan anh nguyen', 'very good', '2020-07-26 07:30:46', '2020-07-26 07:30:46');
+(18, 40, 'phan anh nguyen', 'very good', '2020-07-26 07:30:46', '2020-07-26 07:30:46'),
+(19, 26, 'Lâm Cao', 'sdfsdfaaaaaaaaaaaaaaaaaaâsdfsdfaaaaaaaaaaaaaaaaaaâsdfsdfaaaaaaaaaaaaaaaaaaâsdfsdfaaaaaaaaaaaaaaaaaaâsdfsdfaaaaaaaaaaaaaaaaaaâsdfsdfaaaaaaaaaaaaaaaaaaâsdfsdfaaaaaaaaaaaaaaaaaaâsdfsdfaaaaaaaaaaaaaaaaaaâsdfsdfaaaaaaaaaaaaaaaaaaâsdfsdfaaaaaaaaaaaaaaaaaaâsdfsdfaaaaaaaaaaaaaaaaaaâ', '2020-07-27 14:09:17', '2020-07-27 14:09:17');
 
 -- --------------------------------------------------------
 
@@ -132,7 +133,9 @@ CREATE TABLE `customers` (
 INSERT INTO `customers` (`id`, `name`, `gender`, `email`, `address`, `phone`, `note`, `payment_method`, `created_at`, `updated_at`) VALUES
 (137, 'Đặng Đình Hùng', 'Nam', 'dinhhung@gmail.com', '67 hàng trống', '03326545', 'Giao hàng trong vòng 7 ngày', 'Chuyển khoản', '2020-07-25 10:36:45', '2020-07-25 10:36:45'),
 (138, 'Bùi Thị Nhàn', 'Nam', 'nhanbui@gmail.com', '55 trần thái tông', '034564564', 'Nhận hàng các buổi chiều trong tuần', 'Trực tiếp', '2020-07-25 10:56:09', '2020-07-25 10:56:09'),
-(139, 'thế tú', 'Nam', 'agdasg@gmail.com', 'sgd', 'sgdg', 'se', 'Trực tiếp', '2020-07-26 04:19:38', '2020-07-26 04:19:38');
+(139, 'thế tú', 'Nam', 'agdasg@gmail.com', 'sgd', 'sgdg', 'se', 'Trực tiếp', '2020-07-26 04:19:38', '2020-07-26 04:19:38'),
+(140, 'Đoàn Mạnh Khang', 'Nam', 'doankhang@gmail.com', '37 Đội Cấn', '0344613486', 'Nhận hàng từ 8h-11h', 'Chuyển khoản', '2020-07-27 09:29:59', '2020-07-27 09:29:59'),
+(141, 'dfd', 'Nam', 'dfdsfds@gmail', 'dsfsd', 'dfsfd', 'sdfdsfds', 'Trực tiếp', '2020-07-27 09:34:56', '2020-07-27 09:34:56');
 
 -- --------------------------------------------------------
 
@@ -208,7 +211,10 @@ INSERT INTO `orders` (`id`, `customer_id`, `product_name`, `product_qty`, `produ
 (31, 137, 'Obaku V219GXBIRZ', 4, 4157000, 'Obaku V219GXBIRZ.png', '2020-07-25 10:36:45', '2020-07-25 10:36:45'),
 (32, 138, 'Fossil ES4594', 1, 1957000, 'Fossil ES4594.png', '2020-07-25 10:56:09', '2020-07-25 10:56:09'),
 (33, 138, 'Orient RA-AA0C06E19B', 2, 2413000, 'orient-FAC0A005T0.jpg', '2020-07-25 10:56:09', '2020-07-25 10:56:09'),
-(34, 139, 'Obaku V219GXBIRZ', 1, 4157000, 'Obaku V219GXBIRZ.png', '2020-07-26 04:19:38', '2020-07-26 04:19:38');
+(34, 139, 'Obaku V219GXBIRZ', 1, 4157000, 'Obaku V219GXBIRZ.png', '2020-07-26 04:19:38', '2020-07-26 04:19:38'),
+(35, 140, 'Fossil ME3172', 4, 7699000, 'Fossil ME3172.png', '2020-07-27 09:29:59', '2020-07-27 09:29:59'),
+(36, 140, 'Fossil ME3179', 3, 5299000, 'Fossil ME3179.png', '2020-07-27 09:29:59', '2020-07-27 09:29:59'),
+(37, 140, 'Obaku V219GXBIRZ', 2, 4157000, 'Obaku V219GXBIRZ.png', '2020-07-27 09:29:59', '2020-07-27 09:29:59');
 
 -- --------------------------------------------------------
 
@@ -266,6 +272,21 @@ INSERT INTO `products` (`id`, `brand`, `name`, `content`, `price`, `thumbnail`, 
 (48, 'Fossil', 'Fossil FS5580', '<p>Lấy cảm hứng từ vẻ đẹp cổ điển ở c&aacute;c tạp ch&iacute; thời trang thuộc những năm 1930 &ndash; 1950, những mẫu thiết kế đồng hồ tinh tế đầy n&eacute;t ho&agrave;i cổ đ&atilde; được đ&ocirc;ng đảo người d&ugrave;ng đ&oacute;n nhận. Kh&ocirc;ng phải l&agrave; xưa cũ, gi&aacute; trị m&agrave; Fossil chọn để tạo dựng thương hiệu cho m&igrave;nh ch&iacute;nh l&agrave; sự vững chắc. Từ những thiết kế &ldquo;retro&rdquo; cho đồng hồ, họ tin rằng những sản phẩm &ldquo;thời gian&rdquo; đ&oacute; sẽ kh&ocirc;ng bao giờ c&oacute; dấu hiệu tho&aacute;i tr&agrave;o. N&oacute;i một c&aacute;ch đơn giản, đ&oacute; l&agrave; lời cam kết giữa thiết kế trường tồn v&agrave; chất lượng bền bỉ.</p>', 899000, 'Fossil FS5580.png', 'Còn hàng', '2020-07-26 11:38:55', '2020-07-26 11:38:55'),
 (49, 'Fossil', 'Fossil ME3172', '<p>Lấy cảm hứng từ vẻ đẹp cổ điển ở c&aacute;c tạp ch&iacute; thời trang thuộc những năm 1930 &ndash; 1950, những mẫu thiết kế đồng hồ tinh tế đầy n&eacute;t ho&agrave;i cổ đ&atilde; được đ&ocirc;ng đảo người d&ugrave;ng đ&oacute;n nhận. Kh&ocirc;ng phải l&agrave; xưa cũ, gi&aacute; trị m&agrave; Fossil chọn để tạo dựng thương hiệu cho m&igrave;nh ch&iacute;nh l&agrave; sự vững chắc. Từ những thiết kế &ldquo;retro&rdquo; cho đồng hồ, họ tin rằng những sản phẩm &ldquo;thời gian&rdquo; đ&oacute; sẽ kh&ocirc;ng bao giờ c&oacute; dấu hiệu tho&aacute;i tr&agrave;o. N&oacute;i một c&aacute;ch đơn giản, đ&oacute; l&agrave; lời cam kết giữa thiết kế trường tồn v&agrave; chất lượng bền bỉ.</p>', 7699000, 'Fossil ME3172.png', 'Còn hàng', '2020-07-26 11:43:00', '2020-07-26 11:43:00'),
 (50, 'Fossil', 'Fossil ME3179', '<p>Lấy cảm hứng từ vẻ đẹp cổ điển ở c&aacute;c tạp ch&iacute; thời trang thuộc những năm 1930 &ndash; 1950, những mẫu thiết kế đồng hồ tinh tế đầy n&eacute;t ho&agrave;i cổ đ&atilde; được đ&ocirc;ng đảo người d&ugrave;ng đ&oacute;n nhận. Kh&ocirc;ng phải l&agrave; xưa cũ, gi&aacute; trị m&agrave; Fossil chọn để tạo dựng thương hiệu cho m&igrave;nh ch&iacute;nh l&agrave; sự vững chắc. Từ những thiết kế &ldquo;retro&rdquo; cho đồng hồ, họ tin rằng những sản phẩm &ldquo;thời gian&rdquo; đ&oacute; sẽ kh&ocirc;ng bao giờ c&oacute; dấu hiệu tho&aacute;i tr&agrave;o. N&oacute;i một c&aacute;ch đơn giản, đ&oacute; l&agrave; lời cam kết giữa thiết kế trường tồn v&agrave; chất lượng bền bỉ.</p>', 5299000, 'Fossil ME3179.png', 'Còn hàng', '2020-07-26 11:46:05', '2020-07-26 11:46:05');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `replies`
+--
+
+CREATE TABLE `replies` (
+  `id` int(10) NOT NULL,
+  `comment_id` int(11) UNSIGNED NOT NULL,
+  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -353,6 +374,13 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `replies`
+--
+ALTER TABLE `replies`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `replies_comment_id_foreign` (`comment_id`);
+
+--
 -- Chỉ mục cho bảng `users`
 --
 ALTER TABLE `users`
@@ -379,13 +407,13 @@ ALTER TABLE `brands`
 -- AUTO_INCREMENT cho bảng `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT cho bảng `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=140;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
 
 --
 -- AUTO_INCREMENT cho bảng `failed_jobs`
@@ -403,13 +431,19 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+
+--
+-- AUTO_INCREMENT cho bảng `replies`
+--
+ALTER TABLE `replies`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
@@ -432,6 +466,12 @@ ALTER TABLE `comments`
 --
 ALTER TABLE `orders`
   ADD CONSTRAINT `orders_customer_id_foreign` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`) ON DELETE CASCADE;
+
+--
+-- Các ràng buộc cho bảng `replies`
+--
+ALTER TABLE `replies`
+  ADD CONSTRAINT `replies_comment_id_foreign` FOREIGN KEY (`comment_id`) REFERENCES `comments` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

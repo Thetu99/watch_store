@@ -11,4 +11,8 @@ class Comment extends Model
   function product(){
     return $this->belongsTo('App\Product');
   }
+
+  function reply(){
+    return $this->hasMany('App\Reply');
+  }
 }

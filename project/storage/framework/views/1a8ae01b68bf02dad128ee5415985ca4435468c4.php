@@ -78,18 +78,25 @@
             <div class="space50">&nbsp;</div>
 
             <div class="comment">
-              <ul>
-                <?php $__currentLoopData = $comments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $c): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <li>
-                  <img width="50px" src="<?php echo e(asset("image/comment/guest-user.jpg")); ?>">
-                  <?php echo e($c->name); ?>
+              <table class="table table-striped">
+                  <?php $__currentLoopData = $comments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $c): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                  <tr>
+                    <td>
+                      <img width="50px" src="<?php echo e(asset("image/comment/guest-user.jpg")); ?>">
+                      <?php echo e($c->name); ?>
 
-                  <span><?php echo e(date("G:i j-n-Y", strtotime($c->created_at))); ?></span>
-                  <p><?php echo e($c->content); ?></p>
-                </li>
-                <div class="space40">&nbsp;</div>
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-              </ul>
+                    </td>
+                    <td id="datetime"><span><?php echo e(date("G:i j-n-Y", strtotime($c->created_at))); ?></span></td>
+                  </tr>
+                  <tr id="space">
+                    <td id="comment-content"><?php echo e($c->content); ?></td>
+                    <td id="comment-reply">
+                      <a href="#">Trả lời</a>                      
+                    </td>
+                  </tr>
+                  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+              </table>
+              
               <div class="text-center"><?php echo e($comments->links()); ?></div>
             </div>
             <div class="space20">&nbsp;</div>

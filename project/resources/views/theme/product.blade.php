@@ -77,17 +77,35 @@
             <div class="space50">&nbsp;</div>
 
             <div class="comment">
-              <ul>
+              <table class="table table-striped">
+                  @foreach ($comments as $c)
+                  <tr>
+                    <td>
+                      <img width="50px" src="{{asset("image/comment/guest-user.jpg")}}">
+                      {{$c->name}}
+                    </td>
+                    <td id="datetime"><span>{{date("G:i j-n-Y", strtotime($c->created_at))}}</span></td>
+                  </tr>
+                  <tr id="space">
+                    <td id="comment-content">{{$c->content}}</td>
+                    <td id="comment-reply">
+                      <a href="#">Trả lời</a>                      
+                    </td>
+                  </tr>
+                  @endforeach
+              </table>
+              {{-- <ul>
                 @foreach ($comments as $c)
                 <li>
                   <img width="50px" src="{{asset("image/comment/guest-user.jpg")}}">
-                  {{$c->name}}
-                  <span>{{date("G:i j-n-Y", strtotime($c->created_at))}}</span>
-                  <p>{{$c->content}}</p>
-                </li>
-                <div class="space40">&nbsp;</div>
-                @endforeach
-              </ul>
+              {{$c->name}}
+              <span>{{date("G:i j-n-Y", strtotime($c->created_at))}}</span>
+              <p>{{$c->content}}</p>
+              <span><a href="#">Trả lời</a></span>
+              </li>
+              <div class="space40">&nbsp;</div>
+              @endforeach
+              </ul> --}}
               <div class="text-center">{{$comments->links()}}</div>
             </div>
             <div class="space20">&nbsp;</div>
