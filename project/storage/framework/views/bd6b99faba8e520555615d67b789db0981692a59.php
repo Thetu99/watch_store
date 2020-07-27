@@ -129,7 +129,6 @@
             <i class="arrow fas fa-angle-right"></i>
             <ul class="sub-menu">
               <li><a href="<?php echo e(url('admin/brand/list')); ?>">Danh sách</a></li>
-              <li><a href="<?php echo e(url('admin/brand/add')); ?>">Thêm mới</a></li>
             </ul>
           </li>
           <li class="nav-link">

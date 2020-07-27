@@ -57,7 +57,7 @@
             <div class="row">
               <?php if($news->total()>0): ?>
               <?php $__currentLoopData = $news; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $n): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-              <div class="col-sm-4">
+              <div class="col-sm-3">
                 <div class="single-item">
                   <div class="single-item-header">
                     <a href="<?php echo e(route('product.show', $n->id)); ?>"><img src="<?php echo e(asset("image/product/{$n->thumbnail}")); ?>"
@@ -86,7 +86,8 @@
               <div class="space60">&nbsp;</div>
               <div class="col-sm-12 filter">
                 <p>Không tìm thấy sản phẩm</p>
-              </div>
+              </div>              
+              <div class="space80">&nbsp;</div>
               <?php endif; ?>
             </div>
             <div class="text-center"><?php echo e($news->links()); ?></div>

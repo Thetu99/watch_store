@@ -21,7 +21,7 @@
     </div>
     <div class="card-body">
       <a href="<?php echo e(url('admin/product/add')); ?>" class="btn btn-primary">Thêm mới</a>
-      <table class="table table-striped table-checkall">
+      <table class="table table-striped">
         <thead>
           <tr>
             <th>STT</th>

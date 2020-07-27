@@ -70,8 +70,15 @@
               </td>
 
               <td class="product-remove">
-                <a href="<?php echo e(route('cart.remove', $row->rowId)); ?>" class="remove" title="Xóa sản phẩm này"><i
-                    class="fa fa-trash-o"></i></a>
+                <a href="<?php echo e(route('cart.remove', $row->rowId)); ?>" class="remove" title="Xóa sản phẩm này">
+                  <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                    <path fill-rule="evenodd"
+                      d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                  </svg>
+                </a>
               </td>
             </tr>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -80,12 +87,11 @@
           <tfoot>
             <tr>
               <td colspan="6" class="actions">
-                <input type="submit" class="beta-btn primary" name="update_cart" value="Cập nhật giỏ hàng">
-
-                <a href="<?php echo e(url('home')); ?>" class="beta-btn primary" name="proceed">
+                <a href="<?php echo e(url('home')); ?>" class="beta-btn primary" name="proceed">                  
+                  <i class="fa fa-chevron-left"></i>
                   Tiếp tục mua hàng
-                  <i class="fa fa-chevron-right"></i>
                 </a>
+                <input type="submit" class="beta-btn primary" name="update_cart" value="Cập nhật giỏ hàng">
                 <div class="cart-totals pull-right">
                   <div class="cart-totals-row">
                     <h5>Tổng</h5>

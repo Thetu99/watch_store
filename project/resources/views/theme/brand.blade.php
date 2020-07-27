@@ -56,7 +56,7 @@
             <div class="row">
               @if ($news->total()>0)
               @foreach ($news as $n)
-              <div class="col-sm-4">
+              <div class="col-sm-3">
                 <div class="single-item">
                   <div class="single-item-header">
                     <a href="{{route('product.show', $n->id)}}"><img src="{{asset("image/product/{$n->thumbnail}")}}"
@@ -85,7 +85,8 @@
               <div class="space60">&nbsp;</div>
               <div class="col-sm-12 filter">
                 <p>Không tìm thấy sản phẩm</p>
-              </div>
+              </div>              
+              <div class="space80">&nbsp;</div>
               @endif
             </div>
             <div class="text-center">{{$news->links()}}</div>

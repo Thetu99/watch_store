@@ -13,14 +13,14 @@
     <div class="card-header font-weight-bold d-flex justify-content-between align-items-center">
       <h5 class="m-0">Danh sách thương hiệu</h5>
       <div class="form-search form-inline">
-        <form action="<?php echo e(url('admin/brand/list')); ?>" method="GET" autocomplete="off">
-          <input type="text" name="keyword" value="<?php echo e(request()->keyword); ?>" class="form-control form-search"
-            placeholder="Tìm kiếm">
-          <input type="submit" name="btn-search" value="Tìm kiếm" class="btn btn-primary">
+        <form method="GET" autocomplete="off">
+          <input type="search" name="keyword" class="form-control form-search" placeholder="Tìm kiếm">
+          <button type="submit" class="btn btn-primary">Tìm kiếm</button>
         </form>
       </div>
     </div>
     <div class="cart-body">
+      <a href="<?php echo e(url('admin/brand/add')); ?>" class="btn btn-primary">Thêm mới</a>
       <table class="table table-striped">
         <thead>
           <th>STT</th>
@@ -30,6 +30,7 @@
         </thead>
 
         <tbody>
+          <?php if($brands->total()>0): ?>
           <?php $__currentLoopData = $brands; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $k => $b): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
           <tr>
             <td><?php echo e($brands->firstItem() +$k); ?></td>
@@ -44,10 +45,16 @@
             </td>
           </tr>
           <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+          <?php else: ?>
+          <tr>
+            <td colspan="4" class="bg-white">Không tìm thấy bản ghi</td>
+          </tr>
+          <?php endif; ?>
         </tbody>
       </table>
-    </div>
+      <?php echo e($brands->links()); ?>
 
+    </div>
   </div>
 </div>
 <?php $__env->stopSection(); ?>

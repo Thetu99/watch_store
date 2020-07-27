@@ -217,8 +217,8 @@
           }
         });
 
-        var title = $("h6").text();
-        if(title=="Giỏ hàng" || title=="Liên hệ" || title=="Tìm kiếm"){
+        var title = $("h6.inner-title").text();
+        if(title=="Giỏ hàng" || title=="Liên hệ" || title=="Đặt hàng" || title=="Tìm kiếm"){
           $("body").css({"display" : "flex", "flex-direction" : "column"});
         }
       });
