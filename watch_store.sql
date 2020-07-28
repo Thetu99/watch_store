@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 28, 2020 lúc 12:51 PM
+-- Thời gian đã tạo: Th7 28, 2020 lúc 08:06 PM
 -- Phiên bản máy phục vụ: 10.3.16-MariaDB
 -- Phiên bản PHP: 7.3.7
 
@@ -106,7 +106,7 @@ INSERT INTO `comments` (`id`, `product_id`, `name`, `content`, `created_at`, `up
 (17, 45, 'sdgds', 'dgdsg', '2020-07-26 04:18:59', '2020-07-26 04:18:59'),
 (18, 40, 'phan anh nguyen', 'very good', '2020-07-26 07:30:46', '2020-07-26 07:30:46'),
 (20, 26, 'dfsdfds', 'aaaaaa aaaaaaaa aaaaaaaaaaaa aaaaaaaaaa aaaaaaaaaaaaaa aaaaaaaaaa aaaaaaaaaa aaaaaaa aaaa', '2020-07-28 04:37:56', '2020-07-28 04:37:56'),
-(21, 26, 'Trần Hữu Minh', 'tôi rất muốn biết tại sao rằng đồng hồ này bây giờ mới xuất hiện ở thị trường Việt Nam trong khi ở châu Âu nó đã xuất hiện vài trăm năm trước. Phải chăng chúng ta đã quá lạc hậu và đi sau thời đại nh', '2020-07-28 04:40:38', '2020-07-28 04:40:38');
+(22, 29, 'Bùi Tiến Thọ', 'chất lượng tuyệt vời, rất đáng tiền', '2020-07-28 18:02:39', '2020-07-28 18:02:39');
 
 -- --------------------------------------------------------
 
@@ -306,7 +306,7 @@ CREATE TABLE `replies` (
 INSERT INTO `replies` (`id`, `comment_id`, `name`, `content`, `created_at`, `updated_at`) VALUES
 (2, 12, 'harry carty', 'yes i think so', '2020-07-27 17:52:16', '2020-07-27 17:52:16'),
 (4, 18, 'quân trần việt', 'very very great', '2020-07-28 04:02:20', '2020-07-28 04:02:20'),
-(6, 21, 'Lê Mạnh Hùng', 'nói gì vậy?', '2020-07-28 04:41:16', '2020-07-28 04:41:16');
+(7, 22, 'Admin', 'Cảm ơn bạn đã quan tâm sản phẩm', '2020-07-28 18:03:17', '2020-07-28 18:03:17');
 
 -- --------------------------------------------------------
 
@@ -427,7 +427,7 @@ ALTER TABLE `brands`
 -- AUTO_INCREMENT cho bảng `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT cho bảng `customers`
@@ -463,7 +463,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT cho bảng `replies`
 --
 ALTER TABLE `replies`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `users`

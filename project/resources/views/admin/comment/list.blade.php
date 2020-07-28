@@ -33,6 +33,7 @@
         </thead>
         <tbody>
           @if ($comments->total()>0)
+
           @foreach ($comments as $key => $c)
           <tr>
             <th>{{$comments->firstItem() + $key}}</th>
@@ -51,6 +52,7 @@
             </td>
           </tr>
           @endforeach
+
           @else
           <tr>
             <td colspan="7" class="bg-white">Không tìm thấy bản ghi</td>

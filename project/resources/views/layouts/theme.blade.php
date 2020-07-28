@@ -222,8 +222,7 @@
 
         $(".reply-form").hide();
         $("span#reply").click(function(){
-          $(".reply-form").hide();
-          $(this).closest('tr').next().find(".reply-form").show();
+          $(this).closest('tr').next().find(".reply-form").toggle();
         });      
       });
   </script>

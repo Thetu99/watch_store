@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Comment;
 use App\Product;
+use App\Reply;
 use Illuminate\Http\Request;
 
 class CommentController extends Controller
@@ -16,7 +17,7 @@ class CommentController extends Controller
       $keyword = $request->keyword;
     }
 
-    $comments = Comment::where('name', 'like', "%{$keyword}%")->orWhere('content', 'like', "%{$keyword}%")
+    $comments = Comment::with('reply')->where('name', 'like', "%{$keyword}%")->orWhere('content', 'like', "%{$keyword}%")
       ->orderBy('created_at', 'desc')
       ->paginate(10);
 

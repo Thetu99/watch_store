@@ -34,6 +34,7 @@
         </thead>
         <tbody>
           <?php if($comments->total()>0): ?>
+
           <?php $__currentLoopData = $comments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $c): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
           <tr>
             <th><?php echo e($comments->firstItem() + $key); ?></th>
@@ -52,12 +53,12 @@
             </td>
           </tr>
           <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
           <?php else: ?>
           <tr>
             <td colspan="7" class="bg-white">Không tìm thấy bản ghi</td>
           </tr>
           <?php endif; ?>
-
         </tbody>
       </table>
       </form>
