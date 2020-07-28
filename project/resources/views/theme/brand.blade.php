@@ -69,6 +69,7 @@
                     </p>
                   </div>
                   <div class="space20">&nbsp;</div>
+
                   <div class="single-item-caption">
                     <p class="single-item-title"><b style="color: green">{{$n->status}}</b></p>
                     <a class="add-to-cart pull-left" href="{{route('cart.add', $n->id)}}"><i

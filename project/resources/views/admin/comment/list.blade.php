@@ -56,7 +56,6 @@
             <td colspan="7" class="bg-white">Không tìm thấy bản ghi</td>
           </tr>
           @endif
-
         </tbody>
       </table>
       </form>
