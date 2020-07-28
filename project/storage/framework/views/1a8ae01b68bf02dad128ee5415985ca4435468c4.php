@@ -65,11 +65,11 @@
             <form action="<?php echo e(route('comment.store', $products->id)); ?>" method="post" autocomplete="off">
               <?php echo csrf_field(); ?>
               <div class="comment">
-                <label for="name">Tên:</label>
-                <input type="text" name="name" id="name" required>
+                
+                <input type="text" name="name" id="name" placeholder="Họ tên" required>
 
-                <label for="content">Phản hồi:</label>
-                <textarea name="content" required></textarea>
+                
+                <textarea name="content" maxlength="200" placeholder="Nội dung giới hạn 200 ký tự" required></textarea>
               </div>
 
               <button type="submit" value="Thêm mới" class="btn btn-primary">Gửi phản hồi</button>
@@ -99,8 +99,8 @@
                     <div class="reply-form">
                       <form action="<?php echo e(route('reply.store', $c->id)); ?>" method="post" autocomplete="off">
                         <?php echo csrf_field(); ?>
-                        <input type="text" name="name" placeholder="Tên" required>
-                        <textarea name="content" placeholder="Nội dung" required></textarea>
+                        <input type="text" name="name" placeholder="Họ tên" required>
+                        <textarea name="content" placeholder="Nội dung giới hạn 200 ký tự" required></textarea>
                         <button type="submit" class="btn btn-primary">Trả lời</button>
                       </form>
                     </div>
