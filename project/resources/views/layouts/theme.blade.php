@@ -9,8 +9,7 @@
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="{{asset('bootstrap-4.5.0/css/bootstrap.min.css')}}">
   <link rel="stylesheet" href="{{asset('bootstrap-3.4.1/css/bootstrap.min.css')}}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/solid.min.css">
+  <link rel="stylesheet" href="{{asset('fontawesome-5.14.0/css/all.min.css')}}">
   <link rel="stylesheet" href="{{asset('assets/dest/vendors/colorbox/example3/colorbox.css')}}" />
   <link rel="stylesheet" href="{{asset('assets/dest/rs-plugin/css/settings.css')}}" />
   <link rel="stylesheet" href="{{asset('assets/dest/rs-plugin/css/responsive.css')}}" />
@@ -193,7 +192,6 @@
   <!-- include js files -->
   <script src="{{asset('assets/dest/js/jquery.js')}}"></script>
   <script src="{{asset('assets/dest/vendors/jqueryui/jquery-ui-1.10.4.custom.min.js')}}"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="{{asset('bootstrap-4.5.0/js/bootstrap.min.js')}}"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <script src="{{asset('assets/dest/vendors/bxslider/jquery.bxslider.min.js')}}"></script>

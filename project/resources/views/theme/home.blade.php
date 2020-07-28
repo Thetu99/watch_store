@@ -105,6 +105,7 @@
                       <span class="color-gray">{{number_format($r->price, 0, '', '.')}}đ</span>
                     </p>
                   </div>
+                  <div class="space20">&nbsp;</div>
                   <div class="single-item-caption">
                     <p class="single-item-title"><b style="color: green">{{$r->status}}</b></p>
                     <a class="add-to-cart pull-left" href="{{route('cart.add', $r->id)}}"><i

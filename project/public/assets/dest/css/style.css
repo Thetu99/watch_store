@@ -6155,15 +6155,18 @@ a.home:hover {
     margin-top: 20px;
 }
 
-
+/* .comment table tr td{
+  border: 1px solid;
+} */
 .comment table {
     width: 100%;
     table-layout: fixed;
     border-collapse: collapse;
+    
 }
 
 .comment tr#space {
-    border-bottom: 40px solid transparent;
+    border-top: 40px solid transparent;
 }
 
 td#comment-content {
@@ -6185,6 +6188,10 @@ td#comment-reply {
     font-weight: bold;
     color: black;
     cursor: pointer;
+}
+
+.reply-comment{
+  padding-left: 50px;
 }
 
 .see-more a {

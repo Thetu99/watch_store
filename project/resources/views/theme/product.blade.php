@@ -79,7 +79,7 @@
             <div class="comment">
               <table class="table table-striped">
                 @foreach ($comments as $c)
-                <tr>
+                <tr id="space">
                   <td>
                     <img width="50px" src="{{asset("image/comment/guest-user.jpg")}}">
                     {{$c->name}}
@@ -92,10 +92,10 @@
                     <span id="reply">Trả lời</span>
                   </td>
                 </tr>
-                <tr id="space">
+                <tr>
                   <td colspan="2">
                     <div class="reply-form">
-                      <form action="{{route('reply.store', $c->id)}}" method="post">
+                      <form action="{{route('reply.store', $c->id)}}" method="post" autocomplete="off">
                         @csrf
                         <input type="text" name="name" placeholder="Tên" required>
                         <textarea name="content" placeholder="Nội dung" required></textarea>
@@ -104,6 +104,23 @@
                     </div>
                   </td>
                 </tr>
+                @php
+                $replies = App\Reply::where('comment_id', $c->id)->orderBy('created_at', 'asc')->get();
+                @endphp
+                @foreach ($replies as $r)
+                <tr>
+                  <td>
+                    <div class="reply-comment">
+                      <img width="50px" src="{{asset("image/comment/guest-user.jpg")}}">
+                      {{$r->name}}
+                    </div>                      
+                  </td>
+                  <td id="datetime">{{date("G:i j-n-Y", strtotime($r->created_at))}}</td>
+                </tr>
+                <tr>
+                  <td id="comment-content"><div class="reply-comment">{{$r->content}}</div></td>
+                </tr>
+                @endforeach
                 @endforeach
               </table>
               <div class="text-center">{{$comments->links()}}</div>

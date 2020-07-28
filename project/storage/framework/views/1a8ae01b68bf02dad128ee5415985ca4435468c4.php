@@ -80,7 +80,7 @@
             <div class="comment">
               <table class="table table-striped">
                 <?php $__currentLoopData = $comments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $c): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <tr>
+                <tr id="space">
                   <td>
                     <img width="50px" src="<?php echo e(asset("image/comment/guest-user.jpg")); ?>">
                     <?php echo e($c->name); ?>
@@ -94,10 +94,10 @@
                     <span id="reply">Trả lời</span>
                   </td>
                 </tr>
-                <tr id="space">
+                <tr>
                   <td colspan="2">
                     <div class="reply-form">
-                      <form action="<?php echo e(route('reply.store', $c->id)); ?>" method="post">
+                      <form action="<?php echo e(route('reply.store', $c->id)); ?>" method="post" autocomplete="off">
                         <?php echo csrf_field(); ?>
                         <input type="text" name="name" placeholder="Tên" required>
                         <textarea name="content" placeholder="Nội dung" required></textarea>
@@ -106,6 +106,24 @@
                     </div>
                   </td>
                 </tr>
+                <?php
+                $replies = App\Reply::where('comment_id', $c->id)->orderBy('created_at', 'asc')->get();
+                ?>
+                <?php $__currentLoopData = $replies; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $r): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <tr>
+                  <td>
+                    <div class="reply-comment">
+                      <img width="50px" src="<?php echo e(asset("image/comment/guest-user.jpg")); ?>">
+                      <?php echo e($r->name); ?>
+
+                    </div>                      
+                  </td>
+                  <td id="datetime"><?php echo e(date("G:i j-n-Y", strtotime($r->created_at))); ?></td>
+                </tr>
+                <tr>
+                  <td id="comment-content"><div class="reply-comment"><?php echo e($r->content); ?></div></td>
+                </tr>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
               </table>
               <div class="text-center"><?php echo e($comments->links()); ?></div>
