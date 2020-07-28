@@ -148,7 +148,8 @@
 
         $(".reply-form").hide();
         $("span#reply").click(function(){
-          $(this).closest('tr').next().find(".reply-form").toggle();
+          $(".reply-form").hide();
+          $(this).closest('tr').next().find(".reply-form").show();
         });      
       });
   </script>
