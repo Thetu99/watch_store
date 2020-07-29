@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 28, 2020 lúc 08:06 PM
+-- Thời gian đã tạo: Th7 29, 2020 lúc 05:40 AM
 -- Phiên bản máy phục vụ: 10.3.16-MariaDB
 -- Phiên bản PHP: 7.3.7
 
@@ -44,7 +44,9 @@ INSERT INTO `banners` (`id`, `name`, `thumbnail`, `created_at`, `updated_at`) VA
 (1, 'Ngày đẹp tháng 7', 'banner 1.png', '2020-07-24 04:06:11', '2020-07-24 04:06:11'),
 (3, 'Sale 50% đồng hồ thời trang', 'banner 3.png', '2020-07-24 04:20:29', '2020-07-24 04:20:29'),
 (4, 'Đồng hồ độc quyền', 'banner 2.png', '2020-07-24 04:40:54', '2020-07-24 04:40:54'),
-(7, 'Lễ hội đồng hồ', 'banner 4.png', '2020-07-27 08:49:12', '2020-07-27 08:49:12');
+(7, 'Lễ hội đồng hồ', 'banner 4.png', '2020-07-27 08:49:12', '2020-07-27 08:49:12'),
+(8, 'Giảm giá Casio', 'banner 5.png', '2020-07-29 03:39:14', '2020-07-29 03:39:14'),
+(9, 'Giảm giá Orient', 'banner 6.png', '2020-07-29 03:39:26', '2020-07-29 03:39:26');
 
 -- --------------------------------------------------------
 
@@ -135,8 +137,7 @@ INSERT INTO `customers` (`id`, `name`, `gender`, `email`, `address`, `phone`, `n
 (137, 'Đặng Đình Hùng', 'Nam', 'dinhhung@gmail.com', '67 hàng trống', '03326545', 'Giao hàng trong vòng 7 ngày', 'Chuyển khoản', '2020-07-25 10:36:45', '2020-07-25 10:36:45'),
 (138, 'Bùi Thị Nhàn', 'Nam', 'nhanbui@gmail.com', '55 trần thái tông', '034564564', 'Nhận hàng các buổi chiều trong tuần', 'Trực tiếp', '2020-07-25 10:56:09', '2020-07-25 10:56:09'),
 (139, 'thế tú', 'Nam', 'agdasg@gmail.com', 'sgd', 'sgdg', 'se', 'Trực tiếp', '2020-07-26 04:19:38', '2020-07-26 04:19:38'),
-(140, 'Đoàn Mạnh Khang', 'Nam', 'doankhang@gmail.com', '37 Đội Cấn', '0344613486', 'Nhận hàng từ 8h-11h', 'Chuyển khoản', '2020-07-27 09:29:59', '2020-07-27 09:29:59'),
-(141, 'dfd', 'Nam', 'dfdsfds@gmail', 'dsfsd', 'dfsfd', 'sdfdsfds', 'Trực tiếp', '2020-07-27 09:34:56', '2020-07-27 09:34:56');
+(140, 'Đoàn Mạnh Khang', 'Nam', 'doankhang@gmail.com', '37 Đội Cấn', '0344613486', 'Nhận hàng từ 8h-11h', 'Chuyển khoản', '2020-07-27 09:29:59', '2020-07-27 09:29:59');
 
 -- --------------------------------------------------------
 
@@ -279,10 +280,10 @@ INSERT INTO `products` (`id`, `brand`, `name`, `content`, `price`, `thumbnail`, 
 (54, 'Casio', 'Casio SGW-400H-1BVDR', '<p>Thương hiệu đồng hồ nổi tiếng đến từ Nhật Bản kh&ocirc;ng ngừng cải tiến v&agrave; cho ra mắt những d&ograve;ng sản phẩm chất lượng ph&ugrave; hợp với nhiều đối tượng kh&aacute;ch h&agrave;ng. Những d&ograve;ng sản phẩm nổi tiếng của Casio l&agrave;: G-Shock với thiết kế mạnh mẽ c&ugrave;ng độ bền cao, Edifice thiết kế hiện đại c&ugrave;ng nhiều t&iacute;nh năng vượt trội, Sheen với thiết kế cổ điển v&agrave; sang trọng,&hellip;</p>', 2481000, 'Casio SGW-400H-1BVDR.png', 'Còn hàng', '2020-07-28 10:19:24', '2020-07-28 10:19:24'),
 (55, 'Casio', 'Casio LQ-142E-7ADF', '<p>Thương hiệu đồng hồ nổi tiếng đến từ Nhật Bản kh&ocirc;ng ngừng cải tiến v&agrave; cho ra mắt những d&ograve;ng sản phẩm chất lượng ph&ugrave; hợp với nhiều đối tượng kh&aacute;ch h&agrave;ng. Những d&ograve;ng sản phẩm nổi tiếng của Casio l&agrave;: G-Shock với thiết kế mạnh mẽ c&ugrave;ng độ bền cao, Edifice thiết kế hiện đại c&ugrave;ng nhiều t&iacute;nh năng vượt trội, Sheen với thiết kế cổ điển v&agrave; sang trọng,&hellip;</p>', 338000, 'Casio LQ-142E-7ADF.png', 'Còn hàng', '2020-07-28 10:20:03', '2020-07-28 10:20:03'),
 (56, 'Casio', 'Casio SGW-1000-2BDR', '<p>Thương hiệu đồng hồ nổi tiếng đến từ Nhật Bản kh&ocirc;ng ngừng cải tiến v&agrave; cho ra mắt những d&ograve;ng sản phẩm chất lượng ph&ugrave; hợp với nhiều đối tượng kh&aacute;ch h&agrave;ng. Những d&ograve;ng sản phẩm nổi tiếng của Casio l&agrave;: G-Shock với thiết kế mạnh mẽ c&ugrave;ng độ bền cao, Edifice thiết kế hiện đại c&ugrave;ng nhiều t&iacute;nh năng vượt trội, Sheen với thiết kế cổ điển v&agrave; sang trọng,&hellip;</p>', 4080000, 'Casio SGW-1000-2BDR.png', 'Còn hàng', '2020-07-28 10:36:53', '2020-07-28 10:36:53'),
-(57, 'Orient', 'Orient FGW01001W0', '<p>Đồng hồ Orient đem đến những sản phẩm ấn tượng chinh phục người nh&igrave;n một c&aacute;ch nhanh ch&oacute;ng. Đồng hồ Orient với những chất liệu cao cấp b&oacute;ng bẩy n&acirc;ng tầm đẳng cấp cho người sở hữu, ph&ugrave; hợp với doanh nh&acirc;n th&agrave;nh đạt, d&acirc;n văn ph&ograve;ng hay c&aacute;c gi&aacute;m đốc c&ocirc;ng ty. Phong c&aacute;ch thời thượng, sang trọng đầy sức thu h&uacute;t đến từ đồng hồ Orient chắc chắn sẽ khiến bạn lu&ocirc;n h&atilde;nh diện với những người xung quanh.</p>', 4208000, 'Orient FGW01001W0.png', 'Còn hàng', '2020-07-28 10:40:54', '2020-07-28 10:40:54'),
+(57, 'Orient', 'Orient FGW01001W0', '<p>Đồng hồ Orient đem đến những sản phẩm ấn tượng chinh phục người nh&igrave;n một c&aacute;ch nhanh ch&oacute;ng. Đồng hồ Orient với những chất liệu cao cấp b&oacute;ng bẩy n&acirc;ng tầm đẳng cấp cho người sở hữu, ph&ugrave; hợp với doanh nh&acirc;n th&agrave;nh đạt, d&acirc;n văn ph&ograve;ng hay c&aacute;c gi&aacute;m đốc c&ocirc;ng ty. Phong c&aacute;ch thời thượng, sang trọng đầy sức thu h&uacute;t đến từ đồng hồ Orient chắc chắn sẽ khiến bạn lu&ocirc;n h&atilde;nh diện với những người xung quanh.</p>', 4208000, 'Orient FGW01001W0.png', 'Hết hàng', '2020-07-28 10:40:54', '2020-07-29 03:12:40'),
 (58, 'Orient', 'Orient FAC08002F0', '<p>Đồng hồ Orient đem đến những sản phẩm ấn tượng chinh phục người nh&igrave;n một c&aacute;ch nhanh ch&oacute;ng. Đồng hồ Orient với những chất liệu cao cấp b&oacute;ng bẩy n&acirc;ng tầm đẳng cấp cho người sở hữu, ph&ugrave; hợp với doanh nh&acirc;n th&agrave;nh đạt, d&acirc;n văn ph&ograve;ng hay c&aacute;c gi&aacute;m đốc c&ocirc;ng ty. Phong c&aacute;ch thời thượng, sang trọng đầy sức thu h&uacute;t đến từ đồng hồ Orient chắc chắn sẽ khiến bạn lu&ocirc;n h&atilde;nh diện với những người xung quanh.</p>', 5152000, 'Orient FAC08002F0.png', 'Còn hàng', '2020-07-28 10:43:01', '2020-07-28 10:43:01'),
 (59, 'Orient', 'Orient FAC0000DD0', '<p>Đồng hồ Orient đem đến những sản phẩm ấn tượng chinh phục người nh&igrave;n một c&aacute;ch nhanh ch&oacute;ng. Đồng hồ Orient với những chất liệu cao cấp b&oacute;ng bẩy n&acirc;ng tầm đẳng cấp cho người sở hữu, ph&ugrave; hợp với doanh nh&acirc;n th&agrave;nh đạt, d&acirc;n văn ph&ograve;ng hay c&aacute;c gi&aacute;m đốc c&ocirc;ng ty. Phong c&aacute;ch thời thượng, sang trọng đầy sức thu h&uacute;t đến từ đồng hồ Orient chắc chắn sẽ khiến bạn lu&ocirc;n h&atilde;nh diện với những người xung quanh.</p>', 4792000, 'Orient FAC0000DD0.png', 'Còn hàng', '2020-07-28 10:45:25', '2020-07-28 10:45:25'),
-(60, 'Obaku', 'Obaku V197GXCWRB1', '<p>Đồng hồ Obaku c&oacute; được tỉ lệ v&agrave;ng l&agrave; bởi v&igrave; được s&aacute;ng lập bởi 2 kiến tr&uacute;c sư đại t&agrave;i c&aacute;ch đ&acirc;y 50 năm. Cũng v&igrave; c&oacute; mắt thẩm mỹ cao v&agrave; sự t&agrave;i t&igrave;nh, tỉ mỉ của họ m&agrave; những chiếc đồng hồ Obaku lu&ocirc;n lu&ocirc;n được đ&aacute;nh gi&aacute; rất cao. Vẻ đẹp lu&ocirc;n lu&ocirc;n khiến người kh&aacute;c phải ấn tượng khi tận mắt nh&igrave;n thấy chiếc đồng hồ n&agrave;y v&agrave; c&agrave;ng l&agrave;m t&ocirc;n l&ecirc;n vẻ đẹp của người sử dụng.</p>', 2160000, 'Obaku V197GXCWRB1.png', 'Còn hàng', '2020-07-28 10:48:48', '2020-07-28 10:48:48');
+(60, 'Obaku', 'Obaku V197GXCWRB1', '<p>Đồng hồ Obaku c&oacute; được tỉ lệ v&agrave;ng l&agrave; bởi v&igrave; được s&aacute;ng lập bởi 2 kiến tr&uacute;c sư đại t&agrave;i c&aacute;ch đ&acirc;y 50 năm. Cũng v&igrave; c&oacute; mắt thẩm mỹ cao v&agrave; sự t&agrave;i t&igrave;nh, tỉ mỉ của họ m&agrave; những chiếc đồng hồ Obaku lu&ocirc;n lu&ocirc;n được đ&aacute;nh gi&aacute; rất cao. Vẻ đẹp lu&ocirc;n lu&ocirc;n khiến người kh&aacute;c phải ấn tượng khi tận mắt nh&igrave;n thấy chiếc đồng hồ n&agrave;y v&agrave; c&agrave;ng l&agrave;m t&ocirc;n l&ecirc;n vẻ đẹp của người sử dụng.</p>', 2160000, 'Obaku V197GXCWRB1.png', 'Hết hàng', '2020-07-28 10:48:48', '2020-07-29 03:12:32');
 
 -- --------------------------------------------------------
 
@@ -331,7 +332,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(5, 'Thành Nguyễn', 'thanhnv.hn110@gmail.com', NULL, '$2y$10$ounyvLVjUzL3nUf6ERvoZuz1mVdiQaDf.z4.87uNuiraQXKSnjnLq', 'tlxgha9oqWU1fuXdhXw9bQ9v1pyKlo1BJg0cMc421IfMELiwxMgf8eV4p0j8', '2020-07-15 02:16:17', '2020-07-15 02:16:17', NULL);
+(5, 'Thành Nguyễn', 'thanhnv.hn110@gmail.com', NULL, '$2y$10$ounyvLVjUzL3nUf6ERvoZuz1mVdiQaDf.z4.87uNuiraQXKSnjnLq', 'CpawIRRT1n7fsUrb3QiuyJQwmT8za57vt4sWjlD88DnclvVks2DCJYDue7mG', '2020-07-15 02:16:17', '2020-07-15 02:16:17', NULL);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -415,7 +416,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `banners`
 --
 ALTER TABLE `banners`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT cho bảng `brands`

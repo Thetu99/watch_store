@@ -79,12 +79,10 @@
                 </div>
               </div>
               <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-            </div>
-            <div class="space80">&nbsp;</div>
+            </div>            
           </div>
-          <!-- .beta-products-list -->
-
-          <div class="space50">&nbsp;</div>
+          
+          <div class="space80">&nbsp;</div>
 
           <div class="beta-products-list">
             <h4>Có thể bạn quan tâm</h4>

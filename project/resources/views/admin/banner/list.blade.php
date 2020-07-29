@@ -13,13 +13,14 @@
       <h5 class="m-0">Danh sách Banner</h5>
       <div class="form-search form-inline">
         <form action="{{url('admin/banner/list')}}" method="GET" autocomplete="off">
-          <input type="text" name="keyword" value="{{request()->keyword}}" class="form-control form-search"
+          <input type="search" name="keyword" value="{{request()->keyword}}" class="form-control form-search"
             placeholder="Tìm kiếm">
           <input type="submit" name="btn-search" value="Tìm kiếm" class="btn btn-primary">
         </form>
       </div>
     </div>
     <div class="cart-body">
+      <a href="{{url('admin/banner/add')}}" class="btn btn-primary">Thêm mới</a>
       <table class="table table-striped">
         <thead>
           <th>STT</th>
