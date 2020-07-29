@@ -64,67 +64,91 @@
             <form action="{{route('comment.store', $products->id)}}" method="post" autocomplete="off">
               @csrf
               <div class="comment">
-                {{-- <label for="name">Tên:</label> --}}
-                <input type="text" name="name" id="name" placeholder="Họ tên" required>
-
-                {{-- <label for="content">Phản hồi:</label> --}}
+                <label>Họ tên:</label>
+                <input type="text" name="name" id="name" required>
+                <label>Phản hồi:</label>
                 <textarea name="content" maxlength="200" placeholder="Nội dung giới hạn 200 ký tự" required></textarea>
               </div>
-
               <button type="submit" value="Thêm mới" class="btn btn-primary">Gửi phản hồi</button>
             </form>
 
             <div class="space50">&nbsp;</div>
 
-            <div class="comment">
-              <table class="table table-striped">
+            <div class="card">
+              <div class="card-body">
                 @foreach ($comments as $c)
-                <tr id="space">
-                  <td>
-                    <img width="50px" src="{{asset("image/comment/guest-user.jpg")}}">
-                    {{$c->name}}
-                  </td>
-                  <td id="datetime"><span>{{date("G:i j-n-Y", strtotime($c->created_at))}}</span></td>
-                </tr>
-                <tr>
-                  <td id="comment-content">{{$c->content}}</td>
-                  <td id="comment-reply">
-                    <span id="reply">Trả lời</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td colspan="2">
+                <div class="media mb-1">
+                  <img width="50px" class="mr-3" src="{{asset("image/comment/guest-user.jpg")}}">
+                  <div class="media-body">
+                    <div class="row">
+                      <div class="col-sm-9">
+                        <p class="mt-0 font-weight-bold">{{$c->name}}</p>
+                      </div>
+                      <div class="col-sm-3">
+                        <div class="text-right font-italic">{{date("G:i j-n-Y", strtotime($c->created_at))}}</div>
+                      </div>
+                    </div>
+                    <div class="row mt-3">
+                      <div class="col-sm-9">
+                        <p class="">{{$c->content}}</p>
+                      </div>
+                      <div class="col-sm-3 text-right">
+                        <span id="reply1" class="btn btn-secondary btn-sm text-white">Trả lời</span>
+                      </div>
+                    </div>
+
+                    <div class="space20">&nbsp;</div>
+
                     <div class="reply-form">
                       <form action="{{route('reply.store', $c->id)}}" method="post" autocomplete="off">
                         @csrf
                         <input type="text" name="name" placeholder="Họ tên" required>
-                        <textarea name="content" placeholder="Nội dung giới hạn 200 ký tự" required></textarea>
-                        <button type="submit" class="btn btn-primary">Trả lời</button>
+                        <textarea name="content" maxlength="200" placeholder="Nội dung giới hạn 200 ký tự"
+                          required></textarea>
+                        <button type="submit" class="btn btn-primary btn-sm">Gửi</button>
                       </form>
+                      <div class="space40">&nbsp;</div>
                     </div>
-                  </td>
-                </tr>
-                @php
-                $replies = App\Reply::where('comment_id', $c->id)->orderBy('created_at', 'asc')->get();
-                @endphp
-                @foreach ($replies as $r)
-                <tr>
-                  <td>
-                    <div class="reply-comment">
-                      <img width="50px" src="{{asset("image/comment/guest-user.jpg")}}">
-                      {{$r->name}}
-                    </div>                      
-                  </td>
-                  <td id="datetime">{{date("G:i j-n-Y", strtotime($r->created_at))}}</td>
-                </tr>
-                <tr>
-                  <td id="comment-content"><div class="reply-comment">{{$r->content}}</div></td>
-                </tr>
+
+                    @php
+                    $replies = App\Reply::where('comment_id', $c->id)->orderBy('created_at', 'asc')->get();
+                    @endphp
+
+                    <div class="row">
+                      <div class="col-sm-12">
+                        @foreach ($replies as $r)
+                        <div class="media">
+                          <img width="50px" class="mr-3" src="{{asset("image/comment/guest-user.jpg")}}">
+                          <div class="media-body">
+                            <div class="row">
+                              <div class="col-sm-8">
+                                <p class="font-weight-bold">{{$r->name}}</p>
+                              </div>
+                              <div class="col-sm-4">
+                                <div id="reply1" class="text-right font-italic">{{date("G:i j-n-Y", strtotime($r->created_at))}}
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row mt-3">
+                              <div class="col-sm-8">
+                                <p>{{$r->content}}</p>
+                              </div>
+                              <div class="col-sm-4"></div>
+                            </div>
+                          </div>
+                        </div>
+                        @endforeach
+                      </div>{{-- end col-sm-12 --}}
+                    </div>{{-- end row --}}
+                  </div>
+                </div>
                 @endforeach
-                @endforeach
-              </table>
-              <div class="text-center">{{$comments->links()}}</div>
+              </div>
+
             </div>
+
+            <div class="text-center">{{$comments->links()}}</div>
+
             <div class="space20">&nbsp;</div>
           </div>
         </div>

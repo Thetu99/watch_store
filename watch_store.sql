@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 29, 2020 lúc 05:40 AM
+-- Thời gian đã tạo: Th7 29, 2020 lúc 04:28 PM
 -- Phiên bản máy phục vụ: 10.3.16-MariaDB
 -- Phiên bản PHP: 7.3.7
 
@@ -108,7 +108,8 @@ INSERT INTO `comments` (`id`, `product_id`, `name`, `content`, `created_at`, `up
 (17, 45, 'sdgds', 'dgdsg', '2020-07-26 04:18:59', '2020-07-26 04:18:59'),
 (18, 40, 'phan anh nguyen', 'very good', '2020-07-26 07:30:46', '2020-07-26 07:30:46'),
 (20, 26, 'dfsdfds', 'aaaaaa aaaaaaaa aaaaaaaaaaaa aaaaaaaaaa aaaaaaaaaaaaaa aaaaaaaaaa aaaaaaaaaa aaaaaaa aaaa', '2020-07-28 04:37:56', '2020-07-28 04:37:56'),
-(22, 29, 'Bùi Tiến Thọ', 'chất lượng tuyệt vời, rất đáng tiền', '2020-07-28 18:02:39', '2020-07-28 18:02:39');
+(22, 29, 'Bùi Tiến Thọ', 'chất lượng tuyệt vời, rất đáng tiền', '2020-07-28 18:02:39', '2020-07-28 18:02:39'),
+(23, 58, 'Lê Kim Trang', 'sp này đẹp quá, bao h ms có hàng vậy ạ', '2020-07-29 14:25:52', '2020-07-29 14:25:52');
 
 -- --------------------------------------------------------
 
@@ -307,7 +308,11 @@ CREATE TABLE `replies` (
 INSERT INTO `replies` (`id`, `comment_id`, `name`, `content`, `created_at`, `updated_at`) VALUES
 (2, 12, 'harry carty', 'yes i think so', '2020-07-27 17:52:16', '2020-07-27 17:52:16'),
 (4, 18, 'quân trần việt', 'very very great', '2020-07-28 04:02:20', '2020-07-28 04:02:20'),
-(7, 22, 'Admin', 'Cảm ơn bạn đã quan tâm sản phẩm', '2020-07-28 18:03:17', '2020-07-28 18:03:17');
+(7, 22, 'Admin', 'Cảm ơn bạn đã quan tâm sản phẩm', '2020-07-28 18:03:17', '2020-07-28 18:03:17'),
+(8, 12, 'cao thien van', 'rat hay, toi cung se mua 1 chiec', '2020-07-29 13:25:46', '2020-07-29 13:25:46'),
+(9, 12, 'alex johnson', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type a', '2020-07-29 14:06:07', '2020-07-29 14:06:07'),
+(10, 11, 'kirishima kata', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type a', '2020-07-29 14:15:50', '2020-07-29 14:15:50'),
+(11, 23, 'Badass man', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum accusamus officia iure quidem a officiis, natus amet porro praesentium minus sunt facere quo fugit quaerat cum veniam laborum aspern', '2020-07-29 14:28:00', '2020-07-29 14:28:00');
 
 -- --------------------------------------------------------
 
@@ -428,7 +433,7 @@ ALTER TABLE `brands`
 -- AUTO_INCREMENT cho bảng `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT cho bảng `customers`
@@ -464,7 +469,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT cho bảng `replies`
 --
 ALTER TABLE `replies`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT cho bảng `users`

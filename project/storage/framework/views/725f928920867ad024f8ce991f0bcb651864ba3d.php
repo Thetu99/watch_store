@@ -147,9 +147,13 @@
         }
 
         $(".reply-form").hide();
-        $("span#reply").click(function(){
+        /* $("span#reply").click(function(){
           $(this).closest('tr').next().find(".reply-form").toggle();
-        });      
+        }); */
+        $("span#reply1").click(function(){
+          /* alert($(this).closest(".row").next().next().html()); */
+          $(this).closest(".row").next().next().toggle();
+        });
       });
   </script>
 </body>

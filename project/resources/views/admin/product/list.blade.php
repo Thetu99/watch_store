@@ -54,7 +54,6 @@
             <td>{{date("G:i j-n-Y", strtotime($p->updated_at))}}</td>
             <td>
               <a href="{{route('edit_product', $p->id)}}" class="btn btn-success btn-sm">Sửa</a>
-
               <a href="{{route('delete_product', $p->id)}}" onclick="return confirm('Bạn có chắc chắn muốn xóa?')"
                 class="btn btn-danger btn-sm">Xóa</a>
             </td>
