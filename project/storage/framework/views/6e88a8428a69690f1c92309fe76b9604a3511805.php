@@ -17,7 +17,9 @@
 
         </div>
       </div>
+
       <div class="space60">&nbsp;</div>
+
       <div class="row">
         <div class="col-sm-12">
           <div class="beta-products-list">
@@ -25,19 +27,12 @@
               <?php echo e($t); ?>
 
               <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?></h4>
-            <div class="beta-products-details">
-              <div class="space60">&nbsp;</div>
-            </div>
+
+            <div class="space60">&nbsp;</div>
 
             <div class="row">
-              <?php
-              $i=0;
-              ?>
               <?php if($filter->total()>0): ?>
               <?php $__currentLoopData = $filter; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $f): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-              <?php
-              $i++;
-              ?>
               <div class="col-sm-3">
                 <div class="single-item">
                   <div class="single-item-header">
@@ -50,32 +45,32 @@
                     <p class="single-item-price">
                       <span class="color-gray"><?php echo e(number_format($f->price, 0, '', '.')); ?>đ</span>
                     </p>
-                    <p class="single-item-title"><b style="color: green"><?php echo e($f->status); ?></b></p>
                   </div>
+
+                  <div class="space20">&nbsp;</div>
+
                   <div class="single-item-caption">
+                    <p class="single-item-title"><b style="color: green"><?php echo e($f->status); ?></b></p>
                     <a class="add-to-cart pull-left" href="<?php echo e(route('cart.add', $f->id)); ?>"><i
                         class="fa fa-shopping-cart"></i></a>
                     <a class="beta-btn primary" href="<?php echo e(url("product/$f->id")); ?>">Chi tiết<i
                         class="fa fa-chevron-right"></i></a>
-                    <div class="clearfix"></div>
+                    <div class="space80">&nbsp;</div>
                   </div>
                 </div>
               </div>
-              <?php if($i%4==0): ?>
-              <div class="space40">&nbsp;</div>
-              <?php endif; ?>
               <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
               <?php else: ?>
-              <div class="col-sm-12">
-                <div class="space50">&nbsp;</div>
+              <div class="space60">&nbsp;</div>
+              <div class="col-sm-12">                
                 <div class="filter">
                   <p>Không tìm thấy sản phẩm</p>
-                </div>                
-              </div>              
+                </div>
+              </div>
               <?php endif; ?>
             </div>
+            <div class="text-center"><?php echo e($filter->links()); ?></div>
           </div>
-          <div class="space40">&nbsp;</div>
         </div>
       </div>
     </div>

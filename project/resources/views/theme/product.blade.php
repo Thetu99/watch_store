@@ -74,7 +74,7 @@
 
             <div class="space50">&nbsp;</div>
 
-            <div class="card">
+            <div class="card border-primary">
               <div class="card-body">
                 @foreach ($comments as $c)
                 <div class="media mb-1">

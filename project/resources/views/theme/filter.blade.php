@@ -17,26 +17,21 @@
 
         </div>
       </div>
+
       <div class="space60">&nbsp;</div>
+
       <div class="row">
         <div class="col-sm-12">
           <div class="beta-products-list">
             <h4>@foreach ($title as $t)
               {{$t}}
               @endforeach</h4>
-            <div class="beta-products-details">
-              <div class="space60">&nbsp;</div>
-            </div>
+
+            <div class="space60">&nbsp;</div>
 
             <div class="row">
-              @php
-              $i=0;
-              @endphp
               @if ($filter->total()>0)
               @foreach ($filter as $f)
-              @php
-              $i++;
-              @endphp
               <div class="col-sm-3">
                 <div class="single-item">
                   <div class="single-item-header">
@@ -49,32 +44,32 @@
                     <p class="single-item-price">
                       <span class="color-gray">{{number_format($f->price, 0, '', '.')}}đ</span>
                     </p>
-                    <p class="single-item-title"><b style="color: green">{{$f->status}}</b></p>
                   </div>
+
+                  <div class="space20">&nbsp;</div>
+
                   <div class="single-item-caption">
+                    <p class="single-item-title"><b style="color: green">{{$f->status}}</b></p>
                     <a class="add-to-cart pull-left" href="{{route('cart.add', $f->id)}}"><i
                         class="fa fa-shopping-cart"></i></a>
                     <a class="beta-btn primary" href="{{url("product/$f->id")}}">Chi tiết<i
                         class="fa fa-chevron-right"></i></a>
-                    <div class="clearfix"></div>
+                    <div class="space80">&nbsp;</div>
                   </div>
                 </div>
               </div>
-              @if ($i%4==0)
-              <div class="space40">&nbsp;</div>
-              @endif
               @endforeach
               @else
-              <div class="col-sm-12">
-                <div class="space50">&nbsp;</div>
+              <div class="space60">&nbsp;</div>
+              <div class="col-sm-12">                
                 <div class="filter">
                   <p>Không tìm thấy sản phẩm</p>
-                </div>                
-              </div>              
+                </div>
+              </div>
               @endif
             </div>
+            <div class="text-center">{{$filter->links()}}</div>
           </div>
-          <div class="space40">&nbsp;</div>
         </div>
       </div>
     </div>

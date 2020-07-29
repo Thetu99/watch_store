@@ -75,7 +75,7 @@
 
             <div class="space50">&nbsp;</div>
 
-            <div class="card">
+            <div class="card border-primary">
               <div class="card-body">
                 <?php $__currentLoopData = $comments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $c): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <div class="media mb-1">

@@ -220,6 +220,7 @@
           $("body").css({"display" : "flex", "flex-direction" : "column"});
         }
 
+        $(".reply-form").hide();
         $("span#reply1").click(function(){
           $(this).closest(".row").next().next().toggle();
         });
