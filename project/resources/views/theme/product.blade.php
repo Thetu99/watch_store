@@ -51,107 +51,119 @@
         </div>
 
         <div class="space40">&nbsp;</div>
-        <div class="woocommerce-tabs">
-          <ul class="tabs">
-            <li><a href="#tab-description">Mô tả</a></li>
-            <li><a href="#tab-reviews">Bình luận ({{$comments->total()}})</a></li>
-          </ul>
 
-          <div class="panel" id="tab-description">
-            {!!$products->content!!}
-          </div>
-          <div class="panel" id="tab-reviews">
-            <form action="{{route('comment.store', $products->id)}}" method="post" autocomplete="off">
-              @csrf
-              <div class="comment">
-                <label>Họ tên:</label>
-                <input type="text" name="name" id="name" required>
-                <label>Phản hồi:</label>
-                <textarea name="content" maxlength="200" placeholder="Nội dung giới hạn 200 ký tự" required></textarea>
-              </div>
-              <button type="submit" value="Thêm mới" class="btn btn-primary">Gửi phản hồi</button>
-            </form>
+        <div class="card">
+          <nav>
+            <div class="nav nav-tabs">
+              <a href="#tab-detail" class="nav-item nav-link active font-weight-bold" id="nav-detail" data-toggle="tab">Mô tả</a>
+              <a href="#tab-comment" class="nav-item nav-link" id="nav-comment" data-toggle="tab">Bình luận
+                ({{$comments->total()}})</a>
+            </div>
+          </nav>
+        </div>
 
-            <div class="space50">&nbsp;</div>
+        <div class="card-body">
+          <div class="tab-content">
+            <div class="tab-pane active" id="tab-detail" role="tabpanel" aria-labelledby="nav-home-tab">
+              <div style="color: black">{!!$products->content!!}</div>
+              <div class="space80">&nbsp;</div>
+            </div>            
 
-            <div class="card border-primary">
-              <div class="card-body">
-                @foreach ($comments as $c)
-                <div class="media mb-1">
-                  <img width="50px" class="mr-3" src="{{asset("image/comment/guest-user.jpg")}}">
-                  <div class="media-body">
-                    <div class="row">
-                      <div class="col-sm-9">
-                        <p class="mt-0 font-weight-bold">{{$c->name}}</p>
+            <div class="tab-pane" id="tab-comment" role="tabpanel" aria-labelledby="nav-home-tab">
+              <form action="{{route('comment.store', $products->id)}}" method="post" autocomplete="off">
+                @csrf
+                <div class="comment">
+                  <label>Họ tên:</label>
+                  <input type="text" name="name" id="name" required>
+                  <label>Phản hồi:</label>
+                  <textarea name="content" maxlength="200" placeholder="Nội dung giới hạn 200 ký tự"
+                    required></textarea>
+                </div>
+                <button type="submit" value="Thêm mới" class="btn btn-primary">Gửi phản hồi</button>
+              </form>
+
+              <div class="space50">&nbsp;</div>
+
+              <div class="card border-primary">
+                <div class="card-body">
+                  @foreach ($comments as $c)
+                  <div class="media mb-1">
+                    <img width="50px" class="mr-3" src="{{asset("image/comment/guest-user.jpg")}}">
+                    <div class="media-body">
+                      <div class="row">
+                        <div class="col-sm-9">
+                          <p class="mt-0 font-weight-bold">{{$c->name}}</p>
+                        </div>
+                        <div class="col-sm-3">
+                          <div class="text-right font-italic">{{date("G:i j-n-Y", strtotime($c->created_at))}}</div>
+                        </div>
                       </div>
-                      <div class="col-sm-3">
-                        <div class="text-right font-italic">{{date("G:i j-n-Y", strtotime($c->created_at))}}</div>
+                      <div class="row mt-3">
+                        <div class="col-sm-9">
+                          <p class="">{{$c->content}}</p>
+                        </div>
+                        <div class="col-sm-3 text-right">
+                          <span id="reply1" class="btn btn-secondary btn-sm text-white">Trả lời</span>
+                        </div>
                       </div>
-                    </div>
-                    <div class="row mt-3">
-                      <div class="col-sm-9">
-                        <p class="">{{$c->content}}</p>
+
+                      <div class="space20">&nbsp;</div>
+
+                      <div class="reply-form">
+                        <form action="{{route('reply.store', $c->id)}}" method="post" autocomplete="off">
+                          @csrf
+                          <input type="text" name="name" placeholder="Họ tên" required>
+                          <textarea name="content" maxlength="200" placeholder="Nội dung giới hạn 200 ký tự"
+                            required></textarea>
+                          <button type="submit" class="btn btn-primary btn-sm">Gửi</button>
+                        </form>
+                        <div class="space40">&nbsp;</div>
                       </div>
-                      <div class="col-sm-3 text-right">
-                        <span id="reply1" class="btn btn-secondary btn-sm text-white">Trả lời</span>
-                      </div>
-                    </div>
 
-                    <div class="space20">&nbsp;</div>
+                      @php
+                      $replies = App\Reply::where('comment_id', $c->id)->orderBy('created_at', 'asc')->get();
+                      @endphp
 
-                    <div class="reply-form">
-                      <form action="{{route('reply.store', $c->id)}}" method="post" autocomplete="off">
-                        @csrf
-                        <input type="text" name="name" placeholder="Họ tên" required>
-                        <textarea name="content" maxlength="200" placeholder="Nội dung giới hạn 200 ký tự"
-                          required></textarea>
-                        <button type="submit" class="btn btn-primary btn-sm">Gửi</button>
-                      </form>
-                      <div class="space40">&nbsp;</div>
-                    </div>
-
-                    @php
-                    $replies = App\Reply::where('comment_id', $c->id)->orderBy('created_at', 'asc')->get();
-                    @endphp
-
-                    <div class="row">
-                      <div class="col-sm-12">
-                        @foreach ($replies as $r)
-                        <div class="media">
-                          <img width="50px" class="mr-3" src="{{asset("image/comment/guest-user.jpg")}}">
-                          <div class="media-body">
-                            <div class="row">
-                              <div class="col-sm-8">
-                                <p class="font-weight-bold">{{$r->name}}</p>
-                              </div>
-                              <div class="col-sm-4">
-                                <div id="reply1" class="text-right font-italic">{{date("G:i j-n-Y", strtotime($r->created_at))}}
+                      <div class="row">
+                        <div class="col-sm-12">
+                          @foreach ($replies as $r)
+                          <div class="media">
+                            <img width="50px" class="mr-3" src="{{asset("image/comment/guest-user.jpg")}}">
+                            <div class="media-body">
+                              <div class="row">
+                                <div class="col-sm-8">
+                                  <p class="font-weight-bold">{{$r->name}}</p>
+                                </div>
+                                <div class="col-sm-4">
+                                  <div id="reply1" class="text-right font-italic">
+                                    {{date("G:i j-n-Y", strtotime($r->created_at))}}
+                                  </div>
                                 </div>
                               </div>
-                            </div>
-                            <div class="row mt-3">
-                              <div class="col-sm-8">
-                                <p>{{$r->content}}</p>
+                              <div class="row mt-3">
+                                <div class="col-sm-8">
+                                  <p>{{$r->content}}</p>
+                                </div>
+                                <div class="col-sm-4"></div>
                               </div>
-                              <div class="col-sm-4"></div>
                             </div>
                           </div>
-                        </div>
-                        @endforeach
-                      </div>{{-- end col-sm-12 --}}
-                    </div>{{-- end row --}}
+                          @endforeach
+                        </div>{{-- end col-sm-12 --}}
+                      </div>{{-- end row --}}
+                    </div>
                   </div>
+                  @endforeach
                 </div>
-                @endforeach
               </div>
+              <div class="text-center">{{$comments->links()}}</div>
+
+              <div class="space80">&nbsp;</div>
 
             </div>
-
-            <div class="text-center">{{$comments->links()}}</div>
-
-            <div class="space20">&nbsp;</div>
           </div>
         </div>
+
 
         <div class="beta-products-list">
           <h4>Sản phẩm liên quan</h4>
@@ -176,7 +188,7 @@
                       class="fa fa-shopping-cart"></i></a>
                   <a class="beta-btn primary" href="{{route('product.show', $r->id)}}">Chi tiết<i
                       class="fa fa-chevron-right"></i></a>
-                  <div class="space80">&nbsp;</div>
+                  <div class="space20">&nbsp;</div>
                 </div>
               </div>
             </div>
@@ -218,7 +230,6 @@
                 </div>
               </div>
               @endforeach
-
             </div>
           </div>
         </div> <!-- best sellers widget -->

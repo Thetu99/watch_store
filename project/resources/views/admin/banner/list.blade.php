@@ -21,7 +21,7 @@
 
     <div class="cart-body">
       <a href="{{url('admin/banner/add')}}" class="btn btn-primary">Thêm mới</a>
-      <table class="table table-striped">
+      <table class="table">
         <thead>
           <th>STT</th>
           <th>Tên Banner</th>

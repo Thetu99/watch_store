@@ -224,6 +224,15 @@
         $("span#reply1").click(function(){
           $(this).closest(".row").next().next().toggle();
         });
+
+        $("a#nav-comment").click(function(){
+          $(this).addClass("font-weight-bold");
+          $("a#nav-detail").removeClass("font-weight-bold");
+        });
+        $("a#nav-detail").click(function(){
+          $(this).addClass("font-weight-bold");
+          $("a#nav-comment").removeClass("font-weight-bold");
+        });
       });
   </script>
 </body>
