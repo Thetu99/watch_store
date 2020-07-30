@@ -92,7 +92,7 @@
                   </div>
                   <div class="cart-totals-row">
                     <p class="amount color-gray">{{Cart::total()}}đ</p>
-                    <a href="{{url('checkout')}}" class="beta-btn primary">Thanh toán</a>
+                    <input type="submit" name="pay" value="Thanh toán" class="beta-btn primary">
                   </div>
                 </div>
               </td>

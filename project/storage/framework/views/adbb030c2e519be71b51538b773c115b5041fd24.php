@@ -92,7 +92,7 @@
                   </div>
                   <div class="cart-totals-row">
                     <p class="amount color-gray"><?php echo e(Cart::total()); ?>đ</p>
-                    <a href="<?php echo e(url('checkout')); ?>" class="beta-btn primary">Thanh toán</a>
+                    <input type="submit" name="pay" value="Thanh toán" class="beta-btn primary">
                   </div>
                 </div>
               </td>

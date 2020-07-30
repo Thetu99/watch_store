@@ -17,7 +17,7 @@ class CartController extends Controller
   {
     $product = Product::find($id);
 
-    if ($product->status == 'Còn hàng') {      
+    if ($product->status == 'Còn hàng') {
       Cart::add([
         'id' => $product->id,
         'name' => $product->name,
@@ -25,15 +25,12 @@ class CartController extends Controller
         'price' => $product->price,
         'options' => ['thumbnail' => $product->thumbnail]
       ]);
-      
+
       return redirect('cart');
-    }
-    else{
+    } else {
       echo "<script>alert('Sản phẩm tạm thời hết hàng')</script>";
       return "<script>window.history.back()</script>";
     }
-
-    
   }
 
   function remove($rowId)
@@ -47,6 +44,9 @@ class CartController extends Controller
     $data = $request->qty;
     foreach ($data as $k => $v) {
       Cart::update($k, $v);
+    }
+    if ($request->pay) {
+      return redirect('checkout');
     }
     return redirect('cart');
   }

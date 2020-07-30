@@ -166,7 +166,16 @@
           $("a#nav-comment").removeClass("font-weight-bold");
         });
 
+        $("#number").change(function(){
+          var id = $(this).attr("id", "data-id");
+          var qty = $(this).val();
+          var data = {id: id, qty: qty};
 
+          $.ajax({
+            type: "GET",
+            url: "cart/update/" + value_color,
+          });
+        });
       });
   </script>
 </body>
