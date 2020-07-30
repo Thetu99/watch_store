@@ -104,7 +104,7 @@
                           <p class=""><?php echo e($c->content); ?></p>
                         </div>
                         <div class="col-sm-3 text-right">
-                          <span id="reply1" class="btn btn-secondary btn-sm text-white">Trả lời</span>
+                          <span id="reply1" class="btn btn-secondary btn-sm text-white">Phản hồi</span>
                         </div>
                       </div>
 
