@@ -41,12 +41,16 @@ class CartController extends Controller
 
   function update(Request $request)
   {
+    /* return $request->all(); */
     $data = $request->qty;
     foreach ($data as $k => $v) {
       Cart::update($k, $v);
     }
     if ($request->pay) {
       return redirect('checkout');
+    }
+    if ($request->proceed) {
+      return redirect('home');
     }
     return redirect('cart');
   }

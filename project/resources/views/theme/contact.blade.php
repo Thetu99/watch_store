@@ -4,7 +4,7 @@
 <div class="inner-header">
   <div class="container">
     <div class="pull-left">
-      <h6 class="inner-title">Liên hệ</h6>
+      <h4 class="inner-title">Liên hệ</h4>
     </div>
     <div class="pull-right">
       <div class="beta-breadcrumb font-large">

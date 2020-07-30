@@ -146,11 +146,12 @@
           }
         });
 
-        var title = $("h6.inner-title").text();
+        var title = $(".inner-title").text();
         if(title=="Giỏ hàng" || title=="Liên hệ" || title=="Đặt hàng"){
           $("body").css({"display" : "flex", "flex-direction" : "column"});
         }
 
+        //Hiển thị form trả lời
         $(".reply-form").hide();
         $("span#reply1").click(function(){
           $(this).closest(".row").next().next().toggle();
@@ -166,17 +167,14 @@
           $("a#nav-comment").removeClass("font-weight-bold");
         });
 
-        $("#number").change(function(){
-          var id = $(this).attr("id", "data-id");
-          var qty = $(this).val();
-          var data = {id: id, qty: qty};
-
-          $.ajax({
-            type: "GET",
-            url: "cart/update/" + value_color,
+        //Cập nhật giỏ hàng
+        $("#update-cart").hide();      
+        if($(".qty_number").change(function(){
+          $(this).blur(function(){
+            $("#update-cart").click();
           });
-        });
-      });
+        }));                
+    });
   </script>
 </body>
 

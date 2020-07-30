@@ -4,7 +4,7 @@
 <div class="inner-header">
   <div class="container">
     <div class="pull-left">
-      <h6 class="inner-title">Giỏ hàng</h6>
+      <h4 class="inner-title">Giỏ hàng</h4>
     </div>
 
     <div class="pull-right">
@@ -31,7 +31,7 @@
             <tr>
               <th>STT</th>
               <th>Tên sản phẩm</th>
-              <th>Giá tiền</th>
+              <th>Đơn giá</th>
               <th>Số lượng</th>
               <th>Thành tiền</th>
               <th>Xóa</th>
@@ -61,7 +61,7 @@
               <td class="product-quantity">
                 <span class="amount">
                   <input type="number" min="1" name="qty[<?php echo e($row->rowId); ?>]" value="<?php echo e($row->qty); ?>"
-                    style="width: 50px; text-align: center" id="number">
+                    style="width: 50px; text-align: center" class="qty_number">
                 </span>
               </td>
 
@@ -81,11 +81,13 @@
           <tfoot>
             <tr>
               <td colspan="6" class="actions">
-                <a href="<?php echo e(url('home')); ?>" class="beta-btn primary" name="proceed">                  
+                <button type="submit" class="beta-btn primary" name="proceed" value="proceed">                  
                   <i class="fa fa-chevron-left"></i>
                   Tiếp tục mua hàng
-                </a>
-                <button type="submit" class="beta-btn primary" name="update_cart">Cập nhật giỏ hàng</button>
+                </button>
+                <button type="submit" class="beta-btn primary" name="update" id="update-cart">
+                  Cập nhật giỏ hàng
+                </button>
                 <div class="cart-totals pull-right">
                   <div class="cart-totals-row">
                     <h5>Tổng</h5>
