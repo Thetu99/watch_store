@@ -60,7 +60,7 @@
 
               <td class="product-quantity">
                 <span class="amount">
-                  <input type="number" min="1" name="qty[<?php echo e($row->rowId); ?>]" value="<?php echo e($row->qty); ?>"
+                  <input type="number" min="1" max="99" name="qty[<?php echo e($row->rowId); ?>]" value="<?php echo e($row->qty); ?>"
                     style="width: 50px; text-align: center" class="qty_number">
                 </span>
               </td>

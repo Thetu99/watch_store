@@ -60,7 +60,7 @@
 
               <td class="product-quantity">
                 <span class="amount">
-                  <input type="number" min="1" name="qty[{{$row->rowId}}]" value="{{$row->qty}}"
+                  <input type="number" min="1" max="99" name="qty[{{$row->rowId}}]" value="{{$row->qty}}"
                     style="width: 50px; text-align: center" class="qty_number">
                 </span>
               </td>

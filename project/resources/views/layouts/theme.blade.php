@@ -242,12 +242,13 @@
         });
 
         //Cập nhật giỏ hàng
-        $("#update-cart").hide();      
-        if($(".qty_number").change(function(){
-          $(this).blur(function(){
+        $("#update-cart").hide();
+        
+        $(".qty_number").change(function(){
+          if($(this).on('blur mouseleave', function(){
             $("#update-cart").click();
-          });
-        }));                
+          }));
+        });                
     });
   </script>
 </body>
