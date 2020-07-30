@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 30, 2020 lúc 10:21 AM
+-- Thời gian đã tạo: Th7 30, 2020 lúc 11:17 AM
 -- Phiên bản máy phục vụ: 10.3.16-MariaDB
 -- Phiên bản PHP: 7.3.7
 
@@ -140,7 +140,8 @@ INSERT INTO `customers` (`id`, `name`, `gender`, `email`, `address`, `phone`, `n
 (138, 'Bùi Thị Nhàn', 'Nam', 'nhanbui@gmail.com', '55 trần thái tông', '034564564', 'Nhận hàng các buổi chiều trong tuần', 'Trực tiếp', '2020-07-25 10:56:09', '2020-07-25 10:56:09'),
 (139, 'thế tú', 'Nam', 'agdasg@gmail.com', 'sgd', 'sgdg', 'se', 'Trực tiếp', '2020-07-26 04:19:38', '2020-07-26 04:19:38'),
 (140, 'Đoàn Mạnh Khang', 'Nam', 'doankhang@gmail.com', '37 Đội Cấn', '0344613486', 'Nhận hàng từ 8h-11h', 'Chuyển khoản', '2020-07-27 09:29:59', '2020-07-27 09:29:59'),
-(142, 'Trần Thu Hà', 'Nữ', 'thuhatran@gmail.com', '336 Hồ Tùng Mậu', '0334457652', 'không', 'Chuyển khoản', '2020-07-30 06:31:22', '2020-07-30 06:31:22');
+(142, 'Trần Thu Hà', 'Nữ', 'thuhatran@gmail.com', '336 Hồ Tùng Mậu', '0334457652', 'không', 'Chuyển khoản', '2020-07-30 06:31:22', '2020-07-30 06:31:22'),
+(146, 'nguyen quynh anh', 'Nữ', 'quynhanh@gmail.com', '55 ho tung mau', '03334656', 'dfsdsdgfgfd', 'Trực tiếp', '2020-07-30 09:13:06', '2020-07-30 09:13:06');
 
 -- --------------------------------------------------------
 
@@ -223,7 +224,10 @@ INSERT INTO `orders` (`id`, `customer_id`, `product_name`, `product_qty`, `produ
 (38, 142, 'Orient FAC0000DD0', 6, 4792000, 'Orient FAC0000DD0.png', '2020-07-30 06:31:22', '2020-07-30 06:31:22'),
 (39, 142, 'Casio SGW-400H-1BVDR', 6, 2481000, 'Casio SGW-400H-1BVDR.png', '2020-07-30 06:31:22', '2020-07-30 06:31:22'),
 (40, 142, 'Casio W-S220C-4BVDF', 4, 1654000, 'Casio W-S220C-4BVDF.png', '2020-07-30 06:31:22', '2020-07-30 06:31:22'),
-(41, 142, 'Orient FAC08002F0', 5, 5152000, 'Orient FAC08002F0.png', '2020-07-30 06:31:22', '2020-07-30 06:31:22');
+(41, 142, 'Orient FAC08002F0', 5, 5152000, 'Orient FAC08002F0.png', '2020-07-30 06:31:22', '2020-07-30 06:31:22'),
+(43, 146, 'Casio MRW-400H-9AVDF', 42, 1448000, 'Casio MRW-400H-9AVDF.png', '2020-07-30 09:13:06', '2020-07-30 09:13:06'),
+(44, 146, 'Orient FAC08002F0', 2, 5152000, 'Orient FAC08002F0.png', '2020-07-30 09:13:06', '2020-07-30 09:13:06'),
+(45, 146, 'Fossil FS5305', 1, 2631000, 'Fossil FS5305.png', '2020-07-30 09:13:06', '2020-07-30 09:13:06');
 
 -- --------------------------------------------------------
 
@@ -446,7 +450,7 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT cho bảng `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=146;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
 
 --
 -- AUTO_INCREMENT cho bảng `failed_jobs`
@@ -464,7 +468,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT cho bảng `products`

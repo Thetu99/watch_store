@@ -168,13 +168,20 @@
         });
 
         //Cập nhật giỏ hàng
-        $("#update-cart").hide();
-        
+        $("#update-cart").hide();        
         $(".qty_number").change(function(){
           if($(this).on('blur mouseleave', function(){
             $("#update-cart").click();
           }));
-        });                
+        });
+
+        //Bắt buộc nhập số điện thoại
+        $("#phone").on('keypress keyup blur', function(event){
+          $(this).val($(this).val().replace(/[^\d].+/, ""));
+            if ((event.which < 48 || event.which > 57)) {
+              event.preventDefault();
+            }
+        });
     });
   </script>
 </body>
