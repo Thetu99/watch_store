@@ -3,11 +3,12 @@
 <?php $__env->startSection('content'); ?>
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000" data-pause="false"">
-  <ol class="carousel-indicators">
-    <?php $__currentLoopData = $banners; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $b): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-    <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo e($loop->index); ?>" <?php if($loop->first): ?> class="active" <?php endif; ?>>
-    </li>
-    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+  <ol class=" carousel-indicators">
+  <?php $__currentLoopData = $banners; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $b): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+  <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo e($loop->index); ?>" <?php if($loop->first): ?> class="active"
+    <?php endif; ?>>
+  </li>
+  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
   </ol>
   <div class="carousel-inner">
     <?php $__currentLoopData = $banners; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $b): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -70,18 +71,20 @@
                   <div class="space20">&nbsp;</div>
                   <div class="single-item-caption">
                     <p class="single-item-title"><b style="color: green"><?php echo e($p->status); ?></b></p>
-                    <a class="add-to-cart pull-left" href="<?php echo e(route('cart.add', $p->id)); ?>"><i
-                        class="fa fa-shopping-cart"></i></a>
-                    <a class="beta-btn primary" href="<?php echo e(url("product/$p->id")); ?>">Chi tiết<i
-                        class="fa fa-chevron-right"></i></a>
+                    <a class="add-to-cart pull-left" href="<?php echo e(route('cart.add', $p->id)); ?>">
+                      <i class="fas fa-cart-plus"></i>
+                    </a>
+                    <a class="beta-btn primary" href="<?php echo e(url("product/$p->id")); ?>">Chi tiết
+                      <i class="fa fa-chevron-right"></i>
+                    </a>
                     <div class="space80">&nbsp;</div>
                   </div>
                 </div>
               </div>
               <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-            </div>            
+            </div>
           </div>
-          
+
           <div class="space80">&nbsp;</div>
 
           <div class="beta-products-list">
@@ -106,10 +109,13 @@
                   <div class="space20">&nbsp;</div>
                   <div class="single-item-caption">
                     <p class="single-item-title"><b style="color: green"><?php echo e($r->status); ?></b></p>
-                    <a class="add-to-cart pull-left" href="<?php echo e(route('cart.add', $r->id)); ?>"><i
-                        class="fa fa-shopping-cart"></i></a>
-                    <a class="beta-btn primary" href="<?php echo e(url("product/$r->id")); ?>">Chi tiết<i
-                        class="fa fa-chevron-right"></i></a>
+                    <a class="add-to-cart pull-left" href="<?php echo e(route('cart.add', $r->id)); ?>">
+                      <i class="fas fa-cart-plus"></i>
+                    </a>
+                    <a class="beta-btn primary" href="<?php echo e(url("product/$r->id")); ?>">
+                      Chi tiết
+                      <i class="fa fa-chevron-right"></i>
+                    </a>
                     <div class="space80">&nbsp;</div>
                   </div>
                 </div>

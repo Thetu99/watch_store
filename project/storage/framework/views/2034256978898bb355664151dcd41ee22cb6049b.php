@@ -8,19 +8,16 @@
       <div class="row">
         <div class="beta-products-list">
           <h6 class="inner-title">Tìm kiếm</h6>
+          <div class="space20">&nbsp;</div>
           <div class="beta-products-details">
-            <p class="pull-left"> Tìm thấy <b style="color: red"><?php echo e(count($products)); ?></b> sản phẩm </p>
+            <p class="pull-left"> Tìm thấy <b style="color: red"><?php echo e($products->total()); ?></b> sản phẩm </p>
             <div class="clearfix"></div>
           </div>
 
+          <div class="space80">&nbsp;</div>
+
           <div class="row">
-            <?php
-            $i=0;
-            ?>
             <?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $p): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <?php
-            $i++;
-            ?>
             <div class="col-sm-3">
               <div class="single-item">
                 <div class="single-item-header">
@@ -34,22 +31,23 @@
                     <span class="color-gray"><?php echo e(number_format($p->price, 0, '', '.')); ?>đ</span>
                   </p>
                 </div>
+                <div class="space20">&nbsp;</div>
                 <div class="single-item-caption">
-                  <a class="add-to-cart pull-left" href="<?php echo e(route('cart.add', $p->id)); ?>"><i
-                      class="fa fa-shopping-cart"></i></a>
-                  <a class="beta-btn primary" href="<?php echo e(url("product/$p->id")); ?>">Chi tiết<i
-                      class="fa fa-chevron-right"></i></a>
-                  <div class="clearfix"></div>
+                  <p class="single-item-title"><b style="color: green"><?php echo e($p->status); ?></b></p>
+                  <a class="add-to-cart pull-left" href="<?php echo e(route('cart.add', $p->id)); ?>">
+                    <i class="fas fa-cart-plus"></i>
+                  </a>
+                  <a class="beta-btn primary" href="<?php echo e(url("product/$p->id")); ?>">Chi tiết
+                    <i class="fa fa-chevron-right"></i>
+                  </a>
+                  <div class="space80">&nbsp;</div>
                 </div>
               </div>
             </div>
-            <?php if($i==4): ?>
-            <div class="space40">&nbsp;</div>
-            <?php endif; ?>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
           </div>
+          <div class="text-center"><?php echo e($products->links()); ?></div>
         </div>
-        <!-- .beta-products-list -->
       </div>
     </div>
   </div>

@@ -8,19 +8,16 @@
       <div class="row">
         <div class="beta-products-list">
           <h6 class="inner-title">Tìm kiếm</h6>
+          <div class="space20">&nbsp;</div>
           <div class="beta-products-details">
-            <p class="pull-left"> Tìm thấy <b style="color: red">{{count($products)}}</b> sản phẩm </p>
+            <p class="pull-left"> Tìm thấy <b style="color: red">{{$products->total()}}</b> sản phẩm </p>
             <div class="clearfix"></div>
           </div>
 
+          <div class="space80">&nbsp;</div>
+
           <div class="row">
-            @php
-            $i=0;
-            @endphp
             @foreach ($products as $p)
-            @php
-            $i++;
-            @endphp
             <div class="col-sm-3">
               <div class="single-item">
                 <div class="single-item-header">
@@ -34,22 +31,23 @@
                     <span class="color-gray">{{number_format($p->price, 0, '', '.')}}đ</span>
                   </p>
                 </div>
+                <div class="space20">&nbsp;</div>
                 <div class="single-item-caption">
-                  <a class="add-to-cart pull-left" href="{{route('cart.add', $p->id)}}"><i
-                      class="fa fa-shopping-cart"></i></a>
-                  <a class="beta-btn primary" href="{{url("product/$p->id")}}">Chi tiết<i
-                      class="fa fa-chevron-right"></i></a>
-                  <div class="clearfix"></div>
+                  <p class="single-item-title"><b style="color: green">{{$p->status}}</b></p>
+                  <a class="add-to-cart pull-left" href="{{route('cart.add', $p->id)}}">
+                    <i class="fas fa-cart-plus"></i>
+                  </a>
+                  <a class="beta-btn primary" href="{{url("product/$p->id")}}">Chi tiết
+                    <i class="fa fa-chevron-right"></i>
+                  </a>
+                  <div class="space80">&nbsp;</div>
                 </div>
               </div>
             </div>
-            @if ($i==4)
-            <div class="space40">&nbsp;</div>
-            @endif
             @endforeach
-          </div>
+          </div>{{-- end row --}}
+          <div class="text-center">{{$products->links()}}</div>
         </div>
-        <!-- .beta-products-list -->
       </div>
     </div>
   </div>

@@ -72,10 +72,13 @@
 
                   <div class="single-item-caption">
                     <p class="single-item-title"><b style="color: green">{{$n->status}}</b></p>
-                    <a class="add-to-cart pull-left" href="{{route('cart.add', $n->id)}}"><i
-                        class="fa fa-shopping-cart"></i></a>
-                    <a class="beta-btn primary" href="{{route('product.show', $n->id)}}">Chi tiết <i
-                        class="fa fa-chevron-right"></i></a>
+                    <a class="add-to-cart pull-left" href="{{route('cart.add', $n->id)}}">
+                      <i class="fas fa-cart-plus"></i>
+                    </a>
+                    <a class="beta-btn primary" href="{{route('product.show', $n->id)}}">
+                      Chi tiết
+                      <i class="fa fa-chevron-right"></i>
+                    </a>
                     <div class="space80">&nbsp;</div>
                   </div>
                 </div>
@@ -86,7 +89,7 @@
               <div class="space60">&nbsp;</div>
               <div class="col-sm-12 filter">
                 <p>Không tìm thấy sản phẩm</p>
-              </div>              
+              </div>
               <div class="space80">&nbsp;</div>
               @endif
             </div>

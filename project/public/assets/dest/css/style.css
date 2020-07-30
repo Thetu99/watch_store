@@ -1625,6 +1625,11 @@ ul.children ul.children li:hover>a {
     float: left
 }
 
+.beta-comp i{
+  font-size: medium;
+  color: #000;
+}
+
 /* ==========================================================================
     6.3 BETA CART
 ============================================================================= */
@@ -2003,7 +2008,7 @@ ul.children ul.children li:hover>a {
     margin-right: 2px
 }
 
-.add-to-cart i {
+.add-to-cart i{
     font-size: 22px;
     color: #fff;
     line-height: 35px
@@ -5745,7 +5750,7 @@ li.box-port-filter {
     z-index: 999;
 }
 
-.single-item:hover a.add-to-cart {
+a.add-to-cart:hover {
     background: #f90;
 }
 

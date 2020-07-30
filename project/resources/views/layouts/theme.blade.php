@@ -25,10 +25,16 @@
         <div class="pull-left auto-width-left">
           <ul class="top-menu menu-beta l-inline">
             <li>
-              <a href="#"><i class="fa fa-home"></i>Số 92A - Lê Thanh Nghị – Hai Bà Trưng – Hà Nội</a>
+              <a href="#">
+                <i class="fa fa-home" style="font-size: medium; color: black"></i>
+                Số 92A - Lê Thanh Nghị – Hai Bà Trưng – Hà Nội
+              </a>
             </li>
             <li>
-              <a href="#"><i class="fa fa-phone"></i>0363907265</a>
+              <a href="#">
+                <i class="fa fa-phone" style="font-size: medium; color: black"></i>
+                0363907265
+              </a>
             </li>
           </ul>
         </div>
@@ -46,18 +52,17 @@
         <div class="pull-right beta-components space-left ov">
           <div class="space10">&nbsp;</div>
           <div class="beta-comp">
-            <form role="search" method="get" id="searchform" autocomplete="off" action="{{url('search')}}">
-              <input type="text" value="" name="key" id="s" placeholder="Nhập tên sản phẩm..." />
+            <form method="get" id="searchform" autocomplete="off" action="{{url('search')}}">
+              <input type="text" name="key" id="s" placeholder="Nhập tên sản phẩm..." />
               <button class="fa fa-search" type="submit" id="searchsubmit"></button>
             </form>
           </div>
 
           <div class="beta-comp">
-            <div class="cart">
-              <a href="{{url('cart')}}"><i class="fa fa-shopping-cart"></i>Giỏ hàng (<b style="color: red">
-                  {{Cart::count()}} </b>)</a>
-            </div>
-            <!-- .cart -->
+            <a href="{{url('cart')}}" class="btn">
+              <i class="fas fa-cart-arrow-down"></i>
+              Giỏ hàng (<b style="color: red">{{Cart::count()}}</b>)
+            </a>
           </div>
         </div>
         <div class="clearfix"></div>
@@ -216,7 +221,7 @@
         });
 
         var title = $("h6.inner-title").text();
-        if(title=="Giỏ hàng" || title=="Liên hệ" || title=="Đặt hàng" || title=="Tìm kiếm"){
+        if(title=="Giỏ hàng" || title=="Liên hệ" || title=="Đặt hàng"){
           $("body").css({"display" : "flex", "flex-direction" : "column"});
         }
 
@@ -225,6 +230,7 @@
           $(this).closest(".row").next().next().toggle();
         });
 
+        //Chuyển tab mô tả và bình luận
         $("a#nav-comment").click(function(){
           $(this).addClass("font-weight-bold");
           $("a#nav-detail").removeClass("font-weight-bold");
@@ -233,6 +239,8 @@
           $(this).addClass("font-weight-bold");
           $("a#nav-comment").removeClass("font-weight-bold");
         });
+
+
       });
   </script>
 </body>

@@ -3,11 +3,12 @@
 @section('content')
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000" data-pause="false"">
-  <ol class="carousel-indicators">
-    @foreach ($banners as $b)
-    <li data-target="#carouselExampleIndicators" data-slide-to="{{$loop->index}}" @if ($loop->first) class="active" @endif>
-    </li>
-    @endforeach
+  <ol class=" carousel-indicators">
+  @foreach ($banners as $b)
+  <li data-target="#carouselExampleIndicators" data-slide-to="{{$loop->index}}" @if ($loop->first) class="active"
+    @endif>
+  </li>
+  @endforeach
   </ol>
   <div class="carousel-inner">
     @foreach ($banners as $b)
@@ -70,18 +71,20 @@
                   <div class="space20">&nbsp;</div>
                   <div class="single-item-caption">
                     <p class="single-item-title"><b style="color: green">{{$p->status}}</b></p>
-                    <a class="add-to-cart pull-left" href="{{route('cart.add', $p->id)}}"><i
-                        class="fa fa-shopping-cart"></i></a>
-                    <a class="beta-btn primary" href="{{url("product/$p->id")}}">Chi tiết<i
-                        class="fa fa-chevron-right"></i></a>
+                    <a class="add-to-cart pull-left" href="{{route('cart.add', $p->id)}}">
+                      <i class="fas fa-cart-plus"></i>
+                    </a>
+                    <a class="beta-btn primary" href="{{url("product/$p->id")}}">Chi tiết
+                      <i class="fa fa-chevron-right"></i>
+                    </a>
                     <div class="space80">&nbsp;</div>
                   </div>
                 </div>
               </div>
               @endforeach
-            </div>            
+            </div>
           </div>
-          
+
           <div class="space80">&nbsp;</div>
 
           <div class="beta-products-list">
@@ -106,10 +109,13 @@
                   <div class="space20">&nbsp;</div>
                   <div class="single-item-caption">
                     <p class="single-item-title"><b style="color: green">{{$r->status}}</b></p>
-                    <a class="add-to-cart pull-left" href="{{route('cart.add', $r->id)}}"><i
-                        class="fa fa-shopping-cart"></i></a>
-                    <a class="beta-btn primary" href="{{url("product/$r->id")}}">Chi tiết<i
-                        class="fa fa-chevron-right"></i></a>
+                    <a class="add-to-cart pull-left" href="{{route('cart.add', $r->id)}}">
+                      <i class="fas fa-cart-plus"></i>
+                    </a>
+                    <a class="beta-btn primary" href="{{url("product/$r->id")}}">
+                      Chi tiết
+                      <i class="fa fa-chevron-right"></i>
+                    </a>
                     <div class="space80">&nbsp;</div>
                   </div>
                 </div>

@@ -11,7 +11,7 @@ class SearchController extends Controller
   {
     $products = Product::where('name', 'like', '%' . $request->key . '%')
       ->orWhere('price', $request->key)
-      ->get();
+      ->paginate(8);
     return view('theme.search', compact('products'));
   }
 

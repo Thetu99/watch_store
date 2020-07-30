@@ -38,7 +38,7 @@
             <div class="single-item">
               <p class="single-item-title"><b style="color: green"><?php echo e($products->status); ?></b></p>
               <a class="add-to-cart pull-left" href="<?php echo e(route('cart.add', $products->id)); ?>">
-                <i class="fa fa-shopping-cart"></i>
+                <i class="fas fa-cart-plus"></i>
                 <a class="beta-btn primary" href="<?php echo e(route('cart.add', $products->id)); ?>">Cho vào giỏ hàng</a>
               </a>
 
@@ -55,7 +55,8 @@
         <div class="card">
           <nav>
             <div class="nav nav-tabs">
-              <a href="#tab-detail" class="nav-item nav-link active font-weight-bold" id="nav-detail" data-toggle="tab">Mô tả</a>
+              <a href="#tab-detail" class="nav-item nav-link active font-weight-bold" id="nav-detail"
+                data-toggle="tab">Mô tả</a>
               <a href="#tab-comment" class="nav-item nav-link" id="nav-comment" data-toggle="tab">Bình luận
                 (<?php echo e($comments->total()); ?>)</a>
             </div>
@@ -67,7 +68,7 @@
             <div class="tab-pane active" id="tab-detail" role="tabpanel" aria-labelledby="nav-home-tab">
               <div style="color: black"><?php echo $products->content; ?></div>
               <div class="space80">&nbsp;</div>
-            </div>            
+            </div>
 
             <div class="tab-pane" id="tab-comment" role="tabpanel" aria-labelledby="nav-home-tab">
               <form action="<?php echo e(route('comment.store', $products->id)); ?>" method="post" autocomplete="off">
@@ -84,7 +85,7 @@
 
               <div class="space50">&nbsp;</div>
 
-              <div class="card border-primary">
+              <div class="card border-0">
                 <div class="card-body">
                   <?php $__currentLoopData = $comments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $c): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                   <div class="media mb-1">
@@ -158,9 +159,6 @@
                 </div>
               </div>
               <div class="text-center"><?php echo e($comments->links()); ?></div>
-
-              <div class="space80">&nbsp;</div>
-
             </div>
           </div>
         </div>
@@ -186,7 +184,7 @@
                 <div class="single-item-caption">
                   <p class="single-item-title"><b style="color: green"><?php echo e($r->status); ?></b></p>
                   <a class="add-to-cart pull-left" href="<?php echo e(route('cart.add', $r->id)); ?>"><i
-                      class="fa fa-shopping-cart"></i></a>
+                      class="fas fa-cart-plus"></i></a>
                   <a class="beta-btn primary" href="<?php echo e(route('product.show', $r->id)); ?>">Chi tiết<i
                       class="fa fa-chevron-right"></i></a>
                   <div class="space20">&nbsp;</div>

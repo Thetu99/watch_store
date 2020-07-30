@@ -4,7 +4,7 @@
 <div class="inner-header">
   <div class="container">
     <div class="pull-left">
-      <h6 class="inner-title">Đặt hàng</h6>
+      <h4 class="inner-title">Đặt hàng</h4>
     </div>
     <div class="pull-right">
       <div class="beta-breadcrumb">
@@ -21,7 +21,7 @@
       <?php echo csrf_field(); ?>
       <div class="row">
         <div class="col-sm-6">
-          <h4>Đặt hàng</h4>
+          <h5>Thông tin cá nhân</h5>
           <div class="space20">&nbsp;</div>
 
           <div class="form-block">
