@@ -21,7 +21,7 @@
 
     <div class="table-responsive">
       <p>Hiện tại có<b style="color: red"> {{Cart::count()}} </b>sản phẩm</p>
-      <!-- Shop Products Table -->
+
       <form action="{{url('cart/update')}}" method="post">
         @csrf
         @if (Cart::count()>0)
@@ -71,7 +71,7 @@
 
               <td class="product-remove">
                 <a href="{{route('cart.remove', $row->rowId)}}" class="remove" title="Xóa sản phẩm này">
-                  <i class="fas fa-trash-alt" style="font-size:large"></i>
+                  <i class="fas fa-trash" style="font-size:large"></i>
                 </a>
               </td>
             </tr>
@@ -82,11 +82,15 @@
             <tr>
               <td colspan="6" class="actions">
                 <button type="submit" class="beta-btn primary" name="proceed" value="proceed">                  
-                  <i class="fa fa-chevron-left"></i>
+                  <i class="fa fa-chevron-left" style="font-size: medium"></i>&nbsp;
                   Tiếp tục mua hàng
                 </button>
                 <button type="submit" class="beta-btn primary" name="update" id="update-cart">
                   Cập nhật giỏ hàng
+                </button>
+                <button type="submit" class="beta-btn primary" name="delete" value="delete-cart">                  
+                  <i class="far fa-trash-alt" style="font-size: medium"></i>&nbsp;
+                  Xóa giỏ hàng
                 </button>
                 <div class="cart-totals pull-right">
                   <div class="cart-totals-row">
@@ -94,7 +98,11 @@
                   </div>
                   <div class="cart-totals-row">
                     <p class="amount color-gray">{{Cart::total()}}đ</p>
-                    <input type="submit" name="pay" value="Thanh toán" class="beta-btn primary">
+                    
+                    <button type="submit" name="pay" value="pay" class="beta-btn primary">
+                      Thanh toán
+                      <i class="fas fa-check" style="font-size: medium"></i>
+                    </button>
                   </div>
                 </div>
               </td>
