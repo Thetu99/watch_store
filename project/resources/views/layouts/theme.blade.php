@@ -25,13 +25,13 @@
         <div class="pull-left auto-width-left">
           <ul class="top-menu menu-beta l-inline">
             <li>
-              <a href="#">
+              <a href="{{url('contact')}}">
                 <i class="fa fa-home" style="font-size: medium; color: black"></i>
                 Số 92A - Lê Thanh Nghị – Hai Bà Trưng – Hà Nội
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="{{url('contact')}}">
                 <i class="fa fa-phone" style="font-size: medium; color: black"></i>
                 0363907265
               </a>
