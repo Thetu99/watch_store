@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="{{asset('bootstrap-4.5.0/css/bootstrap.min.css')}}">
   <link rel="stylesheet" href="{{asset('bootstrap-3.4.1/css/bootstrap.min.css')}}">
   <link rel="stylesheet" href="{{asset('fontawesome-5.14.0/css/all.min.css')}}">
+  <link rel="stylesheet" href="{{asset('owlcarousel2-2.3.4\dist\assets\owl.carousel.min.css')}}">
+  <link rel="stylesheet" href="{{asset('owlcarousel2-2.3.4\dist\assets\owl.theme.default.min.css')}}">
   <link rel="stylesheet" href="{{asset('assets/dest/vendors/colorbox/example3/colorbox.css')}}" />
   <link rel="stylesheet" href="{{asset('assets/dest/rs-plugin/css/settings.css')}}" />
   <link rel="stylesheet" href="{{asset('assets/dest/rs-plugin/css/responsive.css')}}" />
@@ -198,6 +200,8 @@
   <script src="{{asset('assets/dest/js/jquery.js')}}"></script>
   <script src="{{asset('assets/dest/vendors/jqueryui/jquery-ui-1.10.4.custom.min.js')}}"></script>
   <script src="{{asset('bootstrap-4.5.0/js/bootstrap.min.js')}}"></script>
+  <script src="{{asset('owlcarousel2-2.3.4\dist\owl.carousel.min.js')}}"></script>
+  <script src="{{asset('owlcarousel2-2.3.4\dist\jquery.mousewheel.min.js')}}"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <script src="{{asset('assets/dest/vendors/bxslider/jquery.bxslider.min.js')}}"></script>
   <script src="{{asset('assets/dest/vendors/colorbox/jquery.colorbox-min.js')}}"></script>
@@ -212,6 +216,7 @@
   <script src="{{asset('assets/dest/js/custom2.js')}}"></script>
   <script>
     $(document).ready(function ($) {
+        //Cố định thanh điều hướng khi cuộn chuột
         $(window).scroll(function () {
           if ($(this).scrollTop() > 150) {
             $(".header-bottom").addClass("fixNav");
@@ -220,6 +225,7 @@
           }
         });
 
+        //Cố định footer ở vài trang
         var title = $(".inner-title").text();
         if(title=="Giỏ hàng" || title=="Liên hệ" || title=="Đặt hàng"){
           $("body").css({"display" : "flex", "flex-direction" : "column"});
@@ -255,6 +261,37 @@
             if ((event.which < 48 || event.which > 57)) {
               event.preventDefault();
             }
+        });
+
+        //Băng chuyền Owl Carousel
+        var owl = $('.owl-carousel');
+        owl.owlCarousel({
+          loop:true,
+          margin:10,
+          autoplay: true,
+          autoplayTimeout:2000,
+          nav:true,
+          navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
+          responsive:{
+            0:{
+              items:1
+            },
+            600:{
+              items:3
+            },
+            1000:{
+              items:4
+            }
+          }
+        });
+        //Cuộn chuột Carousel
+        owl.on('mousewheel', '.owl-stage', function (e) {
+          if (e.deltaY>0) {
+            owl.trigger('next.owl');
+          } else {
+            owl.trigger('prev.owl');
+          }
+          e.preventDefault();
         });
     });
   </script>

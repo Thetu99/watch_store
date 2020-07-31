@@ -166,34 +166,39 @@
         <div class="beta-products-list">
           <h4>Sản phẩm liên quan</h4>
           <div class="space80">&nbsp;</div>
-          <div class="row">
+          <div class="owl-carousel owl-theme">
             @foreach ($relations as $r)
-            <div class="col-sm-4">
+            <div class="item">
               <div class="single-item">
                 <div class="single-item-header">
-                  <a href="{{route('product.show', $r->id)}}"><img src="{{asset("image/product/{$r->thumbnail}")}}"></a>
+                  <a href="{{route('product.show', $r->id)}}">
+                    <img src="{{asset("image/product/{$r->thumbnail}")}}">
+                  </a>
                 </div>
-                <div class="single-item-body">
-                  <p class="single-item-title"><b>{{$r->name}}</b></p>
-                  <p class="single-item-price">
-                    <span class="color-gray">{{number_format($r->price,0,'','.')}}đ</span>
-                  </p>
-                </div>
+              </div>
+              <div class="single-item-body">
+                <p class="single-item-title"><b>{{$r->name}}</b></p>
+                <p class="single-item-price">
+                  <span class="color-gray">{{number_format($r->price,0,'','.')}}đ</span>
+                </p>
+              </div>
+              <div class="space20">&nbsp;</div>
+              <div class="single-item-caption">
+                <p class="single-item-title"><b style="color: green">{{$r->status}}</b></p>
+                <a class="add-to-cart pull-left" href="{{route('cart.add', $r->id)}}">
+                  <i class="fas fa-cart-plus"></i>
+                </a>
+                <a class="beta-btn primary" href="{{route('product.show', $r->id)}}">
+                  Chi tiết
+                  <i class="fa fa-chevron-right"></i>
+                </a>
                 <div class="space20">&nbsp;</div>
-                <div class="single-item-caption">
-                  <p class="single-item-title"><b style="color: green">{{$r->status}}</b></p>
-                  <a class="add-to-cart pull-left" href="{{route('cart.add', $r->id)}}"><i
-                      class="fas fa-cart-plus"></i></a>
-                  <a class="beta-btn primary" href="{{route('product.show', $r->id)}}">Chi tiết<i
-                      class="fa fa-chevron-right"></i></a>
-                  <div class="space20">&nbsp;</div>
-                </div>
               </div>
             </div>
             @endforeach
           </div>
-        </div> <!-- .beta-products-list -->
-      </div>
+        </div>
+      </div> <!-- .beta-products-list -->
 
       <div class="col-sm-3 aside">
         <div class="widget">

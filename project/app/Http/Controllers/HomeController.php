@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Banner;
-use App\Brand;
 use App\Product;
-use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
