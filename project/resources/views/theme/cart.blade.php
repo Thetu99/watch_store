@@ -88,7 +88,7 @@
                 <button type="submit" class="beta-btn primary" name="update" id="update-cart">
                   Cập nhật giỏ hàng
                 </button>
-                <button type="submit" class="beta-btn primary" name="delete" value="delete-cart">                  
+                <button type="submit" class="beta-btn primary pull-right" name="delete" value="delete-cart">                  
                   <i class="far fa-trash-alt" style="font-size: medium"></i>&nbsp;
                   Xóa giỏ hàng
                 </button>

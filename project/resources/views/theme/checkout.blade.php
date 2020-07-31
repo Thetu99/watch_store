@@ -25,7 +25,7 @@
           <div class="space20">&nbsp;</div>
 
           <div class="form-block">
-            <label for="name">Họ tên*</label>
+            <label for="name">Họ tên <span class="input-required">(*)</span></label>
             <input type="text" name="name" id="name" required>
           </div>
           <div class="form-block">
@@ -37,18 +37,18 @@
           </div>
 
           <div class="form-block">
-            <label for="email">Email*</label>
+            <label for="email">Email <span class="input-required">(*)</span></label>
             <input type="email" name="email" id="email" required>
           </div>
 
           <div class="form-block">
-            <label for="address">Địa chỉ*</label>
+            <label for="address">Địa chỉ <span class="input-required">(*)</span></label>
             <input type="text" name="address" id="adress" required>
           </div>
 
 
           <div class="form-block">
-            <label for="phone">Điện thoại*</label>
+            <label for="phone">Điện thoại <span class="input-required">(*)</span></label>
             <input type="text" name="phone" id="phone" required>
           </div>
 
@@ -65,7 +65,6 @@
             <div class="your-order-body" style="padding: 0px 10px">
               <div class="your-order-item">
                 @foreach ($products as $p)
-                <!--  one item	 -->
                 <div class="media">
                   <img width="50px" src="{{asset("image/product/{$p->options->thumbnail}")}}" class="pull-left">
                   <div class="media-body">
@@ -74,7 +73,6 @@
                     Số lượng: {{$p->qty}}
                   </div>
                 </div>
-                <!-- end one item -->
                 @endforeach
 
                 <div class="clearfix"></div>
@@ -96,8 +94,8 @@
             <div class="your-order-body">
               <ul class="payment_methods methods">
                 <li class="payment_method_bacs">
-                  <input id="payment_method_bacs" type="radio" class="input-radio" name="payment_method" value="Trực tiếp"
-                    checked="checked" data-order_button_text="">
+                  <input id="payment_method_bacs" type="radio" class="input-radio" name="payment_method"
+                    value="Trực tiếp" checked="checked" data-order_button_text="">
                   <label for="payment_method_bacs">Thanh toán khi nhận hàng </label>
                   <div class="payment_box payment_method_bacs" style="display: block;">
                     Cửa hàng sẽ gửi hàng đến địa chỉ của bạn, bạn xem hàng rồi thanh toán tiền cho nhân viên giao hàng
@@ -105,8 +103,8 @@
                 </li>
 
                 <li class="payment_method_cheque">
-                  <input id="payment_method_cheque" type="radio" class="input-radio" name="payment_method" value="Chuyển khoản"
-                    data-order_button_text="">
+                  <input id="payment_method_cheque" type="radio" class="input-radio" name="payment_method"
+                    value="Chuyển khoản" data-order_button_text="">
                   <label for="payment_method_cheque">Chuyển khoản </label>
                   <div class="payment_box payment_method_cheque" style="display: none;">
                     Chuyển tiền đến tài khoản sau:

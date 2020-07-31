@@ -6162,3 +6162,8 @@ a.home:hover {
 .carousel-indicators li.active {
     background-color: red;
 }
+
+.input-required{
+  color: red;
+  font-weight: bold;
+}
