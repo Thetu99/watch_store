@@ -41,7 +41,6 @@ class CartController extends Controller
 
   function update(Request $request)
   {
-    /* return $request->all(); */
     $data = $request->qty;
     foreach ($data as $k => $v) {
       Cart::update($k, $v);

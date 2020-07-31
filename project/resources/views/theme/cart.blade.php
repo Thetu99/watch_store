@@ -1,6 +1,7 @@
 @extends('layouts.theme')
 
 @section('content')
+
 <div class="inner-header">
   <div class="container">
     <div class="pull-left">
@@ -51,7 +52,8 @@
 
               <td class="product-name">
                 <div class="media">
-                  <a href="{{url("product/$row->id")}}"><img class="pull-left" src="{{asset("image/product/{$row->options->thumbnail}")}}" width="50px"></a>
+                  <a href="{{url("product/$row->id")}}"><img class="pull-left"
+                      src="{{asset("image/product/{$row->options->thumbnail}")}}" width="50px"></a>
                   <p class="font-large table-title"><span class="amount">{{$row->name}}</span></p>
                 </div>
               </td>
@@ -81,14 +83,14 @@
           <tfoot>
             <tr>
               <td colspan="6" class="actions">
-                <button type="submit" class="beta-btn primary" name="proceed" value="proceed">                  
+                <button type="submit" class="beta-btn primary" name="proceed" value="proceed">
                   <i class="fa fa-chevron-left" style="font-size: medium"></i>&nbsp;
                   Tiếp tục mua hàng
                 </button>
                 <button type="submit" class="beta-btn primary" name="update" id="update-cart">
                   Cập nhật giỏ hàng
                 </button>
-                <button type="submit" class="beta-btn primary pull-right" name="delete" value="delete-cart">                  
+                <button type="submit" class="beta-btn primary pull-right" name="delete" value="delete-cart">
                   <i class="far fa-trash-alt" style="font-size: medium"></i>&nbsp;
                   Xóa giỏ hàng
                 </button>
@@ -98,7 +100,7 @@
                   </div>
                   <div class="cart-totals-row">
                     <p class="amount color-gray">{{Cart::total()}}đ</p>
-                    
+
                     <button type="submit" name="pay" value="pay" class="beta-btn primary">
                       Thanh toán
                       <i class="fas fa-check" style="font-size: medium"></i>
