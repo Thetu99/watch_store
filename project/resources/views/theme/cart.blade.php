@@ -51,7 +51,7 @@
 
               <td class="product-name">
                 <div class="media">
-                  <img class="pull-left" src="{{asset("image/product/{$row->options->thumbnail}")}}" width="50px">
+                  <a href="{{url("product/$row->id")}}"><img class="pull-left" src="{{asset("image/product/{$row->options->thumbnail}")}}" width="50px"></a>
                   <p class="font-large table-title"><span class="amount">{{$row->name}}</span></p>
                 </div>
               </td>

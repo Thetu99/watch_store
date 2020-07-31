@@ -51,7 +51,7 @@
 
               <td class="product-name">
                 <div class="media">
-                  <img class="pull-left" src="<?php echo e(asset("image/product/{$row->options->thumbnail}")); ?>" width="50px">
+                  <a href="<?php echo e(url("product/$row->id")); ?>"><img class="pull-left" src="<?php echo e(asset("image/product/{$row->options->thumbnail}")); ?>" width="50px"></a>
                   <p class="font-large table-title"><span class="amount"><?php echo e($row->name); ?></span></p>
                 </div>
               </td>
