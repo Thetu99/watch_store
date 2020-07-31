@@ -28,25 +28,48 @@
               <li>
                 <h6>Mức giá</h6>
               </li>
+              <?php
+              $price = request()->price;
+              $status = request()->status;
+              ?>
               <li>
-                <input type="radio" name="filter" <?php if(request()->price==null): ?> checked <?php endif; ?>>&nbsp;
-                <a class="filter" href="<?php echo e(url("brand/$b->name")); ?>">Toàn bộ</a>
+                <input type="radio" name="filter-price" <?php if(request()->price=='all'): ?> checked <?php endif; ?>>&nbsp;
+                <a class="filter" href="<?php echo e(url("brand/$b->name/all/$status")); ?>">Tất cả</a>
               </li>
               <li>
-                <input type="radio" name="filter" <?php if(request()->price=='<1'): ?> checked <?php endif; ?>>&nbsp;
-                  <a class="filter" href="<?php echo e(url("brand/$b->name/<1")); ?>">Dưới 1 triệu</a>
+                <input type="radio" name="filter-price" <?php if(request()->price=='<1'): ?> checked <?php endif; ?>>&nbsp;
+                  <a class="filter" href="<?php echo e(url("brand/$b->name/<1/$status")); ?>">Dưới 1 triệu</a>
               </li>
               <li>
-                <input type="radio" name="filter" <?php if(request()->price=='1-3'): ?> checked <?php endif; ?>>&nbsp;
-                <a class="filter" href="<?php echo e(url("brand/$b->name/1-3")); ?>">Từ 1-3 triệu</a>
+                <input type="radio" name="filter-price" <?php if(request()->price=='1-3'): ?> checked <?php endif; ?>>&nbsp;
+                <a class="filter" href="<?php echo e(url("brand/$b->name/1-3/$status")); ?>">Từ 1-3 triệu</a>
               </li>
               <li>
-                <input type="radio" name="filter" <?php if(request()->price=='3-5'): ?> checked <?php endif; ?>>&nbsp;
-                <a class="filter" href="<?php echo e(url("brand/$b->name/3-5")); ?>">Từ 3-5 triệu</a>
+                <input type="radio" name="filter-price" <?php if(request()->price=='3-5'): ?> checked <?php endif; ?>>&nbsp;
+                <a class="filter" href="<?php echo e(url("brand/$b->name/3-5/$status")); ?>">Từ 3-5 triệu</a>
               </li>
               <li>
-                <input type="radio" name="filter" <?php if(request()->price=='>5'): ?> checked <?php endif; ?>>&nbsp;
-                <a class="filter" href="<?php echo e(url("brand/$b->name/>5")); ?>">Trên 5 triệu</a>
+                <input type="radio" name="filter-price" <?php if(request()->price=='>5'): ?> checked <?php endif; ?>>&nbsp;
+                <a class="filter" href="<?php echo e(url("brand/$b->name/>5/$status")); ?>">Trên 5 triệu</a>
+              </li>
+            </ul>
+          </div>
+          <div class="filter">
+            <ul class="aside-menu">
+              <li>
+                <h6>Tình trạng</h6>
+              </li>
+              <li>
+                <input type="radio" name="filter-status" <?php if(request()->status=='all'): ?> checked <?php endif; ?>>&nbsp;
+                <a class="filter" href="<?php echo e(url("brand/$b->name/$price/all")); ?>">Tất cả</a>
+              </li>
+              <li>
+                <input type="radio" name="filter-status" <?php if(request()->status=='yes'): ?> checked <?php endif; ?>>&nbsp;
+                <a class="filter" href="<?php echo e(url("brand/$b->name/$price/yes")); ?>">Còn hàng</a>
+              </li>
+              <li>
+                <input type="radio" name="filter-status" <?php if(request()->status=='no'): ?> checked <?php endif; ?>>&nbsp;
+                <a class="filter" href="<?php echo e(url("brand/$b->name/$price/no")); ?>">Hết hàng</a>
               </li>
             </ul>
           </div>

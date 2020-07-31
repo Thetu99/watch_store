@@ -27,25 +27,48 @@
               <li>
                 <h6>Mức giá</h6>
               </li>
+              @php
+              $price = request()->price;
+              $status = request()->status;
+              @endphp
               <li>
-                <input type="radio" name="filter" @if (request()->price==null) checked @endif>&nbsp;
-                <a class="filter" href="{{url("brand/$b->name")}}">Toàn bộ</a>
+                <input type="radio" name="filter-price" @if (request()->price=='all') checked @endif>&nbsp;
+                <a class="filter" href="{{url("brand/$b->name/all/$status")}}">Tất cả</a>
               </li>
               <li>
-                <input type="radio" name="filter" @if (request()->price=='<1') checked @endif>&nbsp;
-                  <a class="filter" href="{{url("brand/$b->name/<1")}}">Dưới 1 triệu</a>
+                <input type="radio" name="filter-price" @if (request()->price=='<1') checked @endif>&nbsp;
+                  <a class="filter" href="{{url("brand/$b->name/<1/$status")}}">Dưới 1 triệu</a>
               </li>
               <li>
-                <input type="radio" name="filter" @if (request()->price=='1-3') checked @endif>&nbsp;
-                <a class="filter" href="{{url("brand/$b->name/1-3")}}">Từ 1-3 triệu</a>
+                <input type="radio" name="filter-price" @if (request()->price=='1-3') checked @endif>&nbsp;
+                <a class="filter" href="{{url("brand/$b->name/1-3/$status")}}">Từ 1-3 triệu</a>
               </li>
               <li>
-                <input type="radio" name="filter" @if (request()->price=='3-5') checked @endif>&nbsp;
-                <a class="filter" href="{{url("brand/$b->name/3-5")}}">Từ 3-5 triệu</a>
+                <input type="radio" name="filter-price" @if (request()->price=='3-5') checked @endif>&nbsp;
+                <a class="filter" href="{{url("brand/$b->name/3-5/$status")}}">Từ 3-5 triệu</a>
               </li>
               <li>
-                <input type="radio" name="filter" @if (request()->price=='>5') checked @endif>&nbsp;
-                <a class="filter" href="{{url("brand/$b->name/>5")}}">Trên 5 triệu</a>
+                <input type="radio" name="filter-price" @if (request()->price=='>5') checked @endif>&nbsp;
+                <a class="filter" href="{{url("brand/$b->name/>5/$status")}}">Trên 5 triệu</a>
+              </li>
+            </ul>
+          </div>
+          <div class="filter">
+            <ul class="aside-menu">
+              <li>
+                <h6>Tình trạng</h6>
+              </li>
+              <li>
+                <input type="radio" name="filter-status" @if (request()->status=='all') checked @endif>&nbsp;
+                <a class="filter" href="{{url("brand/$b->name/$price/all")}}">Tất cả</a>
+              </li>
+              <li>
+                <input type="radio" name="filter-status" @if (request()->status=='yes') checked @endif>&nbsp;
+                <a class="filter" href="{{url("brand/$b->name/$price/yes")}}">Còn hàng</a>
+              </li>
+              <li>
+                <input type="radio" name="filter-status" @if (request()->status=='no') checked @endif>&nbsp;
+                <a class="filter" href="{{url("brand/$b->name/$price/no")}}">Hết hàng</a>
               </li>
             </ul>
           </div>

@@ -86,7 +86,7 @@
                 @endphp
                 @foreach ($brands as $b)
                 <li>
-                  <a href="{{url("brand/$b->name")}}">{{$b->name}}</a>
+                  <a href="{{url("brand/$b->name/all/all")}}">{{$b->name}}</a>
                 </li>
                 @endforeach
               </ul>

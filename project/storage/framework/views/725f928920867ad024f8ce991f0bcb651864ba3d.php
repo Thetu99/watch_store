@@ -86,7 +86,7 @@
                 ?>
                 <?php $__currentLoopData = $brands; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $b): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <li>
-                  <a href="<?php echo e(url("brand/$b->name")); ?>"><?php echo e($b->name); ?></a>
+                  <a href="<?php echo e(url("brand/$b->name/all/all")); ?>"><?php echo e($b->name); ?></a>
                 </li>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
               </ul>

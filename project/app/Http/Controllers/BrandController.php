@@ -9,22 +9,51 @@ use Illuminate\Support\Facades\DB;
 
 class BrandController extends Controller
 {
-  function show($brand, $price = null)
+  function show($brand, $price = null, $status = null)
   {
     $brands = Brand::where('name', $brand)->get();
-    
-    if ($price == "<1") {
-      $news = Product::where('brand', $brand)->where('price', '<', 1000000)->paginate(8);
-    } elseif ($price == '1-3') {
-      $news = Product::where('brand', $brand)->whereBetween('price', [1000000, 3000000])->paginate(8);
-    } elseif ($price == '3-5') {
-      $news = Product::where('brand', $brand)->whereBetween('price', [3000000, 5000000])->paginate(8);
-    } elseif ($price == '>5') {
-      $news = Product::where('brand', $brand)->where('price', '>', 5000000)->paginate(8);
-    } else {
-      $news = Product::where('brand', $brand)->orderBy('created_at', 'desc')->paginate(8);
-    }
 
+    if ($price == "all") {
+      if ($status == "all") {
+        $news = Product::where('brand', $brand)->orderBy('created_at', 'desc')->paginate(8);
+      } elseif ($status == "yes") {
+        $news = Product::where('brand', $brand)->where('status', 'Còn hàng')->orderBy('created_at', 'desc')->paginate(8);
+      } elseif ($status = "no") {
+        $news = Product::where('brand', $brand)->where('status', 'Hết hàng')->orderBy('created_at', 'desc')->paginate(8);
+      }
+    } elseif ($price == "<1") {
+      if ($status == "all") {
+        $news = Product::where('brand', $brand)->where('price', '<', 1000000)->orderBy('created_at', 'desc')->paginate(8);
+      } elseif ($status == "yes") {
+        $news = Product::where('brand', $brand)->where('price', '<', 1000000)->where('status', 'Còn hàng')->orderBy('created_at', 'desc')->paginate(8);
+      } elseif ($status = "no") {
+        $news = Product::where('brand', $brand)->where('price', '<', 1000000)->where('status', 'Hết hàng')->orderBy('created_at', 'desc')->paginate(8);
+      }
+    } elseif ($price == '1-3') {
+      if ($status == "all") {
+        $news = Product::where('brand', $brand)->whereBetween('price', [1000000, 3000000])->orderBy('created_at', 'desc')->paginate(8);
+      } elseif ($status == "yes") {
+        $news = Product::where('brand', $brand)->whereBetween('price', [1000000, 3000000])->where('status', 'Còn hàng')->orderBy('created_at', 'desc')->paginate(8);
+      } elseif ($status = "no") {
+        $news = Product::where('brand', $brand)->whereBetween('price', [1000000, 3000000])->where('status', 'Hết hàng')->orderBy('created_at', 'desc')->paginate(8);
+      }
+    } elseif ($price == '3-5') {
+      if ($status == "all") {
+        $news = Product::where('brand', $brand)->whereBetween('price', [3000000, 5000000])->orderBy('created_at', 'desc')->paginate(8);
+      } elseif ($status == "yes") {
+        $news = Product::where('brand', $brand)->whereBetween('price', [3000000, 5000000])->where('status', 'Còn hàng')->orderBy('created_at', 'desc')->paginate(8);
+      } elseif ($status = "no") {
+        $news = Product::where('brand', $brand)->whereBetween('price', [3000000, 5000000])->where('status', 'Hết hàng')->orderBy('created_at', 'desc')->paginate(8);
+      }
+    } elseif ($price == '>5') {
+      if ($status == "all") {
+        $news = Product::where('brand', $brand)->where('price', '>', 5000000)->orderBy('created_at', 'desc')->paginate(8);
+      } elseif ($status == "yes") {
+        $news = Product::where('brand', $brand)->where('price', '>', 5000000)->where('status', 'Còn hàng')->orderBy('created_at', 'desc')->paginate(8);
+      } elseif ($status = "no") {
+        $news = Product::where('brand', $brand)->where('price', '>', 5000000)->where('status', 'Hết hàng')->orderBy('created_at', 'desc')->paginate(8);
+      }
+    }
     return view('theme.brand', compact('brands', 'news'));
   }
 
