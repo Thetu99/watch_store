@@ -117,7 +117,7 @@
             </div>
 
             <div class="text-center">
-              <input type="submit" name="btn-submit" value="Đặt hàng" class="beta-btn primary">
+              <button type="submit" class="btn btn-success bg-primary">Đặt hàng</button>
             </div>
           </div> <!-- .your-order -->
         </div>

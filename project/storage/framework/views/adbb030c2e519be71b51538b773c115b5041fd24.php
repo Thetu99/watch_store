@@ -73,7 +73,7 @@
 
               <td class="product-remove">
                 <a href="<?php echo e(route('cart.remove', $row->rowId)); ?>" class="remove" title="Xóa sản phẩm này">
-                  <i class="fas fa-trash" style="font-size:large"></i>
+                  <i class="fas fa-trash text-dark"></i>
                 </a>
               </td>
             </tr>
@@ -83,15 +83,15 @@
           <tfoot>
             <tr>
               <td colspan="6" class="actions">
-                <button type="submit" class="beta-btn primary" name="proceed" value="proceed">
-                  <i class="fa fa-chevron-left" style="font-size: medium"></i>&nbsp;
+                <button type="submit" class="btn btn-primary bg-primary" name="proceed" value="proceed">
+                  <i class="fa fa-chevron-left"></i>&nbsp;
                   Tiếp tục mua hàng
                 </button>
-                <button type="submit" class="beta-btn primary" name="update" id="update-cart">
+                <button type="submit" name="update" id="update-cart">
                   Cập nhật giỏ hàng
                 </button>
-                <button type="submit" class="beta-btn primary pull-right" name="delete" value="delete-cart">
-                  <i class="far fa-trash-alt" style="font-size: medium"></i>&nbsp;
+                <button type="submit" class="btn btn-danger bg-danger pull-right" name="delete" value="delete-cart">
+                  <i class="far fa-trash-alt"></i>&nbsp;
                   Xóa giỏ hàng
                 </button>
                 <div class="cart-totals pull-right">
@@ -99,11 +99,11 @@
                     <h5>Tổng</h5>
                   </div>
                   <div class="cart-totals-row">
-                    <p class="amount color-gray"><?php echo e(Cart::total()); ?>đ</p>
+                    <p class="amount font-weight-bold text-dark"><?php echo e(Cart::total()); ?>đ</p>
 
-                    <button type="submit" name="pay" value="pay" class="beta-btn primary">
+                    <button type="submit" name="pay" value="pay" class="btn btn-success bg-success">                      
+                      <i class="fas fa-check"></i>&nbsp;
                       Thanh toán
-                      <i class="fas fa-check" style="font-size: medium"></i>
                     </button>
                   </div>
                 </div>
