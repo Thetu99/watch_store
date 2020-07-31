@@ -48,7 +48,7 @@
       <div class="row">
         <div class="col-sm-12">
           <div class="beta-products-list">
-            <h4>Sản phẩm mới</h4>
+            <h3 class="text-center">Sản phẩm mới</h3>
             <div class="beta-products-details">
               <div class="space40">&nbsp;</div>
             </div>
@@ -88,7 +88,7 @@
           <div class="space80">&nbsp;</div>
 
           <div class="beta-products-list">
-            <h4>Có thể bạn quan tâm</h4>
+            <h3 class="text-center">Có thể bạn quan tâm</h3>
             <div class="beta-products-details">
               <div class="space40">&nbsp;</div>
             </div>

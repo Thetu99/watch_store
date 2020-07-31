@@ -14,6 +14,7 @@ class ProductController extends Controller
   {
     $products = Product::find($id);
     $relations = Product::where('brand', $products->brand)
+    ->where('id', '!=', $products->id)
     ->whereBetween('price', [$products->price-1000000, $products->price+2000000])
     ->orderBy('price', 'asc')
     ->get();
