@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="<?php echo e(asset('fontawesome-5.14.0/css/all.min.css')); ?>">
   <link rel="stylesheet" href="<?php echo e(asset('owlcarousel2-2.3.4\dist\assets\owl.carousel.min.css')); ?>">
   <link rel="stylesheet" href="<?php echo e(asset('owlcarousel2-2.3.4\dist\assets\owl.theme.default.min.css')); ?>">
+  <link rel="stylesheet" href="<?php echo e(asset('show-more-items\showMoreItems-theme.min.css')); ?>">
   <link rel="stylesheet" href="<?php echo e(asset('assets/dest/vendors/colorbox/example3/colorbox.css')); ?>" />
   <link rel="stylesheet" href="<?php echo e(asset('assets/dest/rs-plugin/css/settings.css')); ?>" />
   <link rel="stylesheet" href="<?php echo e(asset('assets/dest/rs-plugin/css/responsive.css')); ?>" />
@@ -128,6 +129,7 @@
   <script src="<?php echo e(asset('bootstrap-4.5.0/js/bootstrap.min.js')); ?>"></script>
   <script src="<?php echo e(asset('owlcarousel2-2.3.4\dist\owl.carousel.min.js')); ?>"></script>
   <script src="<?php echo e(asset('owlcarousel2-2.3.4\dist\jquery.mousewheel.min.js')); ?>"></script>
+  <script src="<?php echo e(asset('show-more-items\showMoreItems.min.js')); ?>"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <script src="<?php echo e(asset('assets/dest/vendors/bxslider/jquery.bxslider.min.js')); ?>"></script>
   <script src="<?php echo e(asset('assets/dest/vendors/colorbox/jquery.colorbox-min.js')); ?>"></script>

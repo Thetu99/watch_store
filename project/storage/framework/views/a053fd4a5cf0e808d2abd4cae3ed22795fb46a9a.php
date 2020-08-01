@@ -53,35 +53,37 @@
               <div class="space40">&nbsp;</div>
             </div>
 
-            <div class="row">
-              <?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $p): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-              <div class="col-sm-3">
-                <div class="single-item">
-                  <div class="single-item-header">
-                    <a href="<?php echo e(url("product/$p->id")); ?>">
-                      <img src="<?php echo e(asset("image/product/$p->thumbnail")); ?>" />
-                    </a>
-                  </div>
-                  <div class="single-item-body">
-                    <p class="single-item-title"><b><?php echo e($p->name); ?></b></p>
-                    <p class="single-item-price">
-                      <span class="color-gray"><?php echo e(number_format($p->price, 0, '', '.')); ?>đ</span>
-                    </p>
-                  </div>
-                  <div class="space20">&nbsp;</div>
-                  <div class="single-item-caption">
-                    <p class="single-item-title"><b style="color: green"><?php echo e($p->status); ?></b></p>
-                    <a class="add-to-cart pull-left" href="<?php echo e(route('cart.add', $p->id)); ?>">
-                      <i class="fas fa-cart-plus"></i>
-                    </a>
-                    <a class="beta-btn primary" href="<?php echo e(url("product/$p->id")); ?>">Chi tiết
-                      <i class="fa fa-chevron-right"></i>
-                    </a>
-                    <div class="space80">&nbsp;</div>
+            <div class="row d-flex justify-content-center">
+              <div class="list">
+                <?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $p): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <div class="col-sm-3">
+                  <div class="single-item">
+                    <div class="single-item-header">
+                      <a href="<?php echo e(url("product/$p->id")); ?>">
+                        <img src="<?php echo e(asset("image/product/$p->thumbnail")); ?>" />
+                      </a>
+                    </div>
+                    <div class="single-item-body">
+                      <p class="single-item-title"><b><?php echo e($p->name); ?></b></p>
+                      <p class="single-item-price">
+                        <span class="color-gray"><?php echo e(number_format($p->price, 0, '', '.')); ?>đ</span>
+                      </p>
+                    </div>
+                    <div class="space20">&nbsp;</div>
+                    <div class="single-item-caption">
+                      <p class="single-item-title"><b style="color: green"><?php echo e($p->status); ?></b></p>
+                      <a class="add-to-cart pull-left" href="<?php echo e(route('cart.add', $p->id)); ?>">
+                        <i class="fas fa-cart-plus"></i>
+                      </a>
+                      <a class="beta-btn primary" href="<?php echo e(url("product/$p->id")); ?>">Chi tiết
+                        <i class="fa fa-chevron-right"></i>
+                      </a>
+                      <div class="space40">&nbsp;</div>
+                    </div>
                   </div>
                 </div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
               </div>
-              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
           </div>
 
@@ -93,34 +95,37 @@
               <div class="space40">&nbsp;</div>
             </div>
             <div class="row">
-              <?php $__currentLoopData = $randoms; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $r): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-              <div class="col-sm-3">
-                <div class="single-item">
-                  <div class="single-item-header">
-                    <a href="<?php echo e(url("product/$r->id")); ?>"><img src="<?php echo e(asset("image/product/$r->thumbnail")); ?>"
-                        alt="" /></a>
-                  </div>
-                  <div class="single-item-body">
-                    <p class="single-item-title"><b><?php echo e($r->name); ?></b></p>
-                    <p class="single-item-price">
-                      <span class="color-gray"><?php echo e(number_format($r->price, 0, '', '.')); ?>đ</span>
-                    </p>
-                  </div>
-                  <div class="space20">&nbsp;</div>
-                  <div class="single-item-caption">
-                    <p class="single-item-title"><b style="color: green"><?php echo e($r->status); ?></b></p>
-                    <a class="add-to-cart pull-left" href="<?php echo e(route('cart.add', $r->id)); ?>">
-                      <i class="fas fa-cart-plus"></i>
-                    </a>
-                    <a class="beta-btn primary" href="<?php echo e(url("product/$r->id")); ?>">
-                      Chi tiết
-                      <i class="fa fa-chevron-right"></i>
-                    </a>
-                    <div class="space80">&nbsp;</div>
+              <div class="owl-carousel owl-theme">
+                <?php $__currentLoopData = $randoms; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $r): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <div class="item">
+                  <div class="single-item">
+                    <div class="single-item-header">
+                      <a href="<?php echo e(url("product/$r->id")); ?>">
+                        <img src="<?php echo e(asset("image/product/$r->thumbnail")); ?>">
+                      </a>
+                    </div>
+                    <div class="single-item-body">
+                      <p class="single-item-title"><b><?php echo e($r->name); ?></b></p>
+                      <p class="single-item-price">
+                        <span class="color-gray"><?php echo e(number_format($r->price, 0, '', '.')); ?>đ</span>
+                      </p>
+                    </div>
+                    <div class="space20">&nbsp;</div>
+                    <div class="single-item-caption">
+                      <p class="single-item-title"><b style="color: green"><?php echo e($r->status); ?></b></p>
+                      <a class="add-to-cart pull-left" href="<?php echo e(route('cart.add', $r->id)); ?>">
+                        <i class="fas fa-cart-plus"></i>
+                      </a>
+                      <a class="beta-btn primary" href="<?php echo e(url("product/$r->id")); ?>">
+                        Chi tiết
+                        <i class="fa fa-chevron-right"></i>
+                      </a>
+                      <div class="space80">&nbsp;</div>
+                    </div>
                   </div>
                 </div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
               </div>
-              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
           </div>
         </div>

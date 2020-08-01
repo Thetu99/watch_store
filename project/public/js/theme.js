@@ -1,12 +1,12 @@
-$(document).ready(function ($) {
+$(function ($) {
   //Cố định thanh điều hướng khi cuộn chuột
-  $(window).scroll(function () {
+  /* $(window).scroll(function () {
     if ($(this).scrollTop() > 150) {
       $(".header-bottom").addClass("fixNav");
     } else {
       $(".header-bottom").removeClass("fixNav");
     }
-  });
+  }); */
 
   //Cố định footer ở vài trang
   var title = $(".inner-title").text();
@@ -75,5 +75,29 @@ $(document).ready(function ($) {
       owl.trigger('prev.owl');
     }
     e.preventDefault();
+  });
+
+  $(".list").showMoreItems({
+    startNum: 8,
+    afterNum: 4,
+    original: true,
+    moreText: "Xem thêm",
+    backMoreText: "Rút gọn",
+    responsive: [//RWD
+      {
+        breakpoint: 1000,
+        settings: {
+          startNum: 3,//設定值初始筆數(一開始顯示筆數)
+          afterNum: 3,//點擊按鈕顯示筆數
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          startNum: 2,//設定值初始筆數(一開始顯示筆數)
+          afterNum: 2,//點擊按鈕顯示筆數
+        }
+      }
+    ],
   });
 });

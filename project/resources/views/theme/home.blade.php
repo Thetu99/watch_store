@@ -53,35 +53,37 @@
               <div class="space40">&nbsp;</div>
             </div>
 
-            <div class="row">
-              @foreach ($products as $p)
-              <div class="col-sm-3">
-                <div class="single-item">
-                  <div class="single-item-header">
-                    <a href="{{url("product/$p->id")}}">
-                      <img src="{{asset("image/product/$p->thumbnail")}}" />
-                    </a>
-                  </div>
-                  <div class="single-item-body">
-                    <p class="single-item-title"><b>{{$p->name}}</b></p>
-                    <p class="single-item-price">
-                      <span class="color-gray">{{number_format($p->price, 0, '', '.')}}đ</span>
-                    </p>
-                  </div>
-                  <div class="space20">&nbsp;</div>
-                  <div class="single-item-caption">
-                    <p class="single-item-title"><b style="color: green">{{$p->status}}</b></p>
-                    <a class="add-to-cart pull-left" href="{{route('cart.add', $p->id)}}">
-                      <i class="fas fa-cart-plus"></i>
-                    </a>
-                    <a class="beta-btn primary" href="{{url("product/$p->id")}}">Chi tiết
-                      <i class="fa fa-chevron-right"></i>
-                    </a>
-                    <div class="space80">&nbsp;</div>
+            <div class="row d-flex justify-content-center">
+              <div class="list">
+                @foreach ($products as $p)
+                <div class="col-sm-3">
+                  <div class="single-item">
+                    <div class="single-item-header">
+                      <a href="{{url("product/$p->id")}}">
+                        <img src="{{asset("image/product/$p->thumbnail")}}" />
+                      </a>
+                    </div>
+                    <div class="single-item-body">
+                      <p class="single-item-title"><b>{{$p->name}}</b></p>
+                      <p class="single-item-price">
+                        <span class="color-gray">{{number_format($p->price, 0, '', '.')}}đ</span>
+                      </p>
+                    </div>
+                    <div class="space20">&nbsp;</div>
+                    <div class="single-item-caption">
+                      <p class="single-item-title"><b style="color: green">{{$p->status}}</b></p>
+                      <a class="add-to-cart pull-left" href="{{route('cart.add', $p->id)}}">
+                        <i class="fas fa-cart-plus"></i>
+                      </a>
+                      <a class="beta-btn primary" href="{{url("product/$p->id")}}">Chi tiết
+                        <i class="fa fa-chevron-right"></i>
+                      </a>
+                      <div class="space40">&nbsp;</div>
+                    </div>
                   </div>
                 </div>
+                @endforeach
               </div>
-              @endforeach
             </div>
           </div>
 
@@ -93,34 +95,37 @@
               <div class="space40">&nbsp;</div>
             </div>
             <div class="row">
-              @foreach ($randoms as $r)
-              <div class="col-sm-3">
-                <div class="single-item">
-                  <div class="single-item-header">
-                    <a href="{{url("product/$r->id")}}"><img src="{{asset("image/product/$r->thumbnail")}}"
-                        alt="" /></a>
-                  </div>
-                  <div class="single-item-body">
-                    <p class="single-item-title"><b>{{$r->name}}</b></p>
-                    <p class="single-item-price">
-                      <span class="color-gray">{{number_format($r->price, 0, '', '.')}}đ</span>
-                    </p>
-                  </div>
-                  <div class="space20">&nbsp;</div>
-                  <div class="single-item-caption">
-                    <p class="single-item-title"><b style="color: green">{{$r->status}}</b></p>
-                    <a class="add-to-cart pull-left" href="{{route('cart.add', $r->id)}}">
-                      <i class="fas fa-cart-plus"></i>
-                    </a>
-                    <a class="beta-btn primary" href="{{url("product/$r->id")}}">
-                      Chi tiết
-                      <i class="fa fa-chevron-right"></i>
-                    </a>
-                    <div class="space80">&nbsp;</div>
+              <div class="owl-carousel owl-theme">
+                @foreach ($randoms as $r)
+                <div class="item">
+                  <div class="single-item">
+                    <div class="single-item-header">
+                      <a href="{{url("product/$r->id")}}">
+                        <img src="{{asset("image/product/$r->thumbnail")}}">
+                      </a>
+                    </div>
+                    <div class="single-item-body">
+                      <p class="single-item-title"><b>{{$r->name}}</b></p>
+                      <p class="single-item-price">
+                        <span class="color-gray">{{number_format($r->price, 0, '', '.')}}đ</span>
+                      </p>
+                    </div>
+                    <div class="space20">&nbsp;</div>
+                    <div class="single-item-caption">
+                      <p class="single-item-title"><b style="color: green">{{$r->status}}</b></p>
+                      <a class="add-to-cart pull-left" href="{{route('cart.add', $r->id)}}">
+                        <i class="fas fa-cart-plus"></i>
+                      </a>
+                      <a class="beta-btn primary" href="{{url("product/$r->id")}}">
+                        Chi tiết
+                        <i class="fa fa-chevron-right"></i>
+                      </a>
+                      <div class="space80">&nbsp;</div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              @endforeach
+                @endforeach
+              </div>{{-- end owl carousel --}}
             </div>
           </div>
         </div>
