@@ -188,16 +188,16 @@
       <div class="col-sm-12">
         <p class="pull-left">Privacy policy. &copy; 2020</p>
         <p class="pull-right pay-options">
-          <a href="#"><img src="{{asset('assets/dest/images/pay/master.png')}}"></a>
-          <a href="#"><img src="{{asset('assets/dest/images/pay/visa.png')}}"></a>
-          <a href="#"><img src="{{asset('assets/dest/images/pay/paypal.png')}}"></a>
+          <img src="{{asset('assets/dest/images/pay/master.png')}}">
+          <img src="{{asset('assets/dest/images/pay/visa.png')}}">
+          <img src="{{asset('assets/dest/images/pay/paypal.png')}}">
         </p>
       </div>
     </div><!-- .container -->
   </div><!-- .copyright -->
 
   <!-- include js files -->
-  <script src="{{asset('assets/dest/js/jquery.js')}}"></script>
+  <script src="{{asset('js\jquery-3.5.1.min.js')}}"></script>
   <script src="{{asset('assets/dest/vendors/jqueryui/jquery-ui-1.10.4.custom.min.js')}}"></script>
   <script src="{{asset('bootstrap-4.5.0/js/bootstrap.min.js')}}"></script>
   <script src="{{asset('owlcarousel2-2.3.4\dist\owl.carousel.min.js')}}"></script>

@@ -13,14 +13,25 @@ class ProductController extends Controller
   function show($id)
   {
     $products = Product::find($id);
+
     $relations = Product::where('brand', $products->brand)
     ->where('id', '!=', $products->id)
-    ->whereBetween('price', [$products->price-1000000, $products->price+2000000])
     ->orderBy('price', 'asc')
+    ->paginate();
+
+    $news = Product::orderBy('created_at', 'desc')
+    ->limit(4)
     ->get();
-    $news = Product::orderBy('created_at', 'desc')->limit(4)->get();
-    $randoms = Product::inRandomOrder()->limit(3)->get();
-    $comments = Comment::where('product_id', $id)->orderBy('created_at', 'desc')->paginate(5);
+
+    $randoms = Product::where('id', '!=', $products->id)
+    ->inRandomOrder()
+    ->limit(3)
+    ->get();
+
+    $comments = Comment::where('product_id', $id)
+    ->orderBy('created_at', 'desc')
+    ->paginate(5);
+    
     return view('theme.product', compact('products', 'relations', 'randoms', 'news', 'comments'));
   }
 }

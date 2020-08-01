@@ -167,6 +167,7 @@
         <div class="beta-products-list">
           <h4>Sản phẩm liên quan</h4>
           <div class="space80">&nbsp;</div>
+          <?php if($relations->total()>0): ?>
           <div class="owl-carousel owl-theme">
             <?php $__currentLoopData = $relations; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $r): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="item">
@@ -198,6 +199,12 @@
             </div>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
           </div>
+          <?php else: ?>
+          <div class="filter">
+            <p>Không có sản phẩm thích hợp</p>
+          </div>
+          <?php endif; ?>
+
         </div>
       </div> <!-- .beta-products-list -->
 

@@ -166,6 +166,7 @@
         <div class="beta-products-list">
           <h4>Sản phẩm liên quan</h4>
           <div class="space80">&nbsp;</div>
+          @if ($relations->total()>0)
           <div class="owl-carousel owl-theme">
             @foreach ($relations as $r)
             <div class="item">
@@ -197,6 +198,12 @@
             </div>
             @endforeach
           </div>
+          @else
+          <div class="filter">
+            <p>Không có sản phẩm thích hợp</p>
+          </div>
+          @endif
+
         </div>
       </div> <!-- .beta-products-list -->
 
