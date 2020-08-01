@@ -77,25 +77,26 @@ $(function ($) {
     e.preventDefault();
   });
 
+  //Xem thêm sản phẩm
   $(".list").showMoreItems({
     startNum: 8,
     afterNum: 4,
     original: true,
     moreText: "Xem thêm",
     backMoreText: "Rút gọn",
-    responsive: [//RWD
+    responsive: [
       {
         breakpoint: 1000,
         settings: {
-          startNum: 3,//設定值初始筆數(一開始顯示筆數)
-          afterNum: 3,//點擊按鈕顯示筆數
+          startNum: 3,
+          afterNum: 3,
         }
       },
       {
         breakpoint: 600,
         settings: {
-          startNum: 2,//設定值初始筆數(一開始顯示筆數)
-          afterNum: 2,//點擊按鈕顯示筆數
+          startNum: 2,
+          afterNum: 2,
         }
       }
     ],
