@@ -57,7 +57,7 @@
               <div class="list">
                 <?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $p): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <div class="col-sm-3">
-                  <div class="single-item">
+                  <div class="single-item w-75">
                     <div class="single-item-header">
                       <a href="<?php echo e(url("product/$p->id")); ?>">
                         <img src="<?php echo e(asset("image/product/$p->thumbnail")); ?>" />
@@ -95,9 +95,9 @@
               <div class="space40">&nbsp;</div>
             </div>
             <div class="row">
-              <div class="owl-carousel owl-theme">
+              <div class="owl-carousel owl-theme" id="owlHome">
                 <?php $__currentLoopData = $randoms; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $r): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <div class="item">
+                <div class="item w-75">
                   <div class="single-item">
                     <div class="single-item-header">
                       <a href="<?php echo e(url("product/$r->id")); ?>">

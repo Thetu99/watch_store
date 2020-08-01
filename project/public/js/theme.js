@@ -48,11 +48,13 @@ $(function ($) {
 
   //Băng chuyền Owl Carousel
   var owl = $('.owl-carousel');
+
   owl.owlCarousel({
     loop: true,
     margin: 10,
     autoplay: true,
     autoplayTimeout: 2000,
+    /* autoWidth:true, */
     nav: true,
     navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
     responsive: {
@@ -80,7 +82,7 @@ $(function ($) {
   //Xem thêm sản phẩm
   $(".list").showMoreItems({
     startNum: 8,
-    afterNum: 4,
+    afterNum: 8,
     original: true,
     moreText: "Xem thêm",
     backMoreText: "Rút gọn",

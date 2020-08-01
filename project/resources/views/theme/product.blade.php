@@ -167,7 +167,7 @@
           <h4>Sản phẩm liên quan</h4>
           <div class="space80">&nbsp;</div>
           @if ($relations->total()>0)
-          <div class="owl-carousel owl-theme">
+          <div class="owl-carousel owl-theme" id="owlProduct">
             @foreach ($relations as $r)
             <div class="item">
               <div class="single-item">

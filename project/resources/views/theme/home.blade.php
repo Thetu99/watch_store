@@ -57,7 +57,7 @@
               <div class="list">
                 @foreach ($products as $p)
                 <div class="col-sm-3">
-                  <div class="single-item">
+                  <div class="single-item w-75">
                     <div class="single-item-header">
                       <a href="{{url("product/$p->id")}}">
                         <img src="{{asset("image/product/$p->thumbnail")}}" />
@@ -95,9 +95,9 @@
               <div class="space40">&nbsp;</div>
             </div>
             <div class="row">
-              <div class="owl-carousel owl-theme">
+              <div class="owl-carousel owl-theme" id="owlHome">
                 @foreach ($randoms as $r)
-                <div class="item">
+                <div class="item w-75">
                   <div class="single-item">
                     <div class="single-item-header">
                       <a href="{{url("product/$r->id")}}">

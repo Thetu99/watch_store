@@ -168,7 +168,7 @@
           <h4>Sản phẩm liên quan</h4>
           <div class="space80">&nbsp;</div>
           <?php if($relations->total()>0): ?>
-          <div class="owl-carousel owl-theme">
+          <div class="owl-carousel owl-theme" id="owlProduct">
             <?php $__currentLoopData = $relations; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $r): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="item">
               <div class="single-item">
