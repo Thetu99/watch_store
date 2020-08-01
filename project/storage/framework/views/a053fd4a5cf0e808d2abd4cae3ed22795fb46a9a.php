@@ -120,7 +120,6 @@
                         Chi tiết
                         <i class="fa fa-chevron-right"></i>
                       </a>
-                      <div class="space80">&nbsp;</div>
                     </div>
                   </div>
                 </div>

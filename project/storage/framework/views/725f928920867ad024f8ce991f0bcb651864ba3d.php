@@ -2,23 +2,23 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Watch Store</title>
-  <link href="http://fonts.googleapis.com/css?family=Dosis:300,400" rel="stylesheet" type="text/css" />
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" rel="stylesheet" type="text/css" />
+  <link href="http://fonts.googleapis.com/css?family=Dosis:300,400" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="<?php echo e(asset('bootstrap-4.5.0/css/bootstrap.min.css')); ?>">
   <link rel="stylesheet" href="<?php echo e(asset('bootstrap-3.4.1/css/bootstrap.min.css')); ?>">
   <link rel="stylesheet" href="<?php echo e(asset('fontawesome-5.14.0/css/all.min.css')); ?>">
   <link rel="stylesheet" href="<?php echo e(asset('owlcarousel2-2.3.4\dist\assets\owl.carousel.min.css')); ?>">
   <link rel="stylesheet" href="<?php echo e(asset('owlcarousel2-2.3.4\dist\assets\owl.theme.default.min.css')); ?>">
   <link rel="stylesheet" href="<?php echo e(asset('show-more-items\showMoreItems-theme.min.css')); ?>">
-  <link rel="stylesheet" href="<?php echo e(asset('assets/dest/vendors/colorbox/example3/colorbox.css')); ?>" />
-  <link rel="stylesheet" href="<?php echo e(asset('assets/dest/rs-plugin/css/settings.css')); ?>" />
-  <link rel="stylesheet" href="<?php echo e(asset('assets/dest/rs-plugin/css/responsive.css')); ?>" />
-  <link rel="stylesheet" href="<?php echo e(asset('assets/dest/css/style.css')); ?>" />
-  <link rel="stylesheet" href="<?php echo e(asset('assets/dest/css/animate.css')); ?>" />
-  <link rel="stylesheet" href="<?php echo e(asset('assets/dest/css/huong-style.css')); ?>" />
+  <link rel="stylesheet" href="<?php echo e(asset('assets/dest/vendors/colorbox/example3/colorbox.css')); ?>">
+  <link rel="stylesheet" href="<?php echo e(asset('assets/dest/rs-plugin/css/settings.css')); ?>">
+  <link rel="stylesheet" href="<?php echo e(asset('assets/dest/rs-plugin/css/responsive.css')); ?>">
+  <link rel="stylesheet" href="<?php echo e(asset('css/style-theme.min.css')); ?>">
+  <link rel="stylesheet" href="<?php echo e(asset('assets/dest/css/animate.css')); ?>">
+  <link rel="stylesheet" href="<?php echo e(asset('assets/dest/css/huong-style.css')); ?>">
 </head>
 
 <body>

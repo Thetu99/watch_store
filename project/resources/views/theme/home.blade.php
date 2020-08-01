@@ -120,17 +120,16 @@
                         Chi tiết
                         <i class="fa fa-chevron-right"></i>
                       </a>
-                      <div class="space80">&nbsp;</div>
-                    </div>
-                  </div>
-                </div>
+                    </div>{{-- end single-item-caption --}}
+                  </div>{{-- end single-item --}}
+                </div>{{-- end item --}}
                 @endforeach
               </div>{{-- end owl carousel --}}
-            </div>
-          </div>
+            </div>{{-- end row --}}
+          </div>{{-- end beta product list --}}
         </div>
       </div>
     </div>
   </div>
-</div>
+</div>{{-- end container --}}
 @endsection
