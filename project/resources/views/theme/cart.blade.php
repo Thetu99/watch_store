@@ -23,7 +23,7 @@
     <div class="table-responsive">
       <p>Hiện tại có<b style="color: red"> {{Cart::count()}} </b>sản phẩm</p>
 
-      <form action="{{url('cart/update')}}" method="post" id="update-form">
+      <form action="{{url('cart/update')}}" method="post">
         @csrf
         @if (Cart::count()>0)
         <table class="shop_table beta-shopping-cart-table" cellspacing="0">

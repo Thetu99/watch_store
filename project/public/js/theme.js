@@ -1,9 +1,4 @@
 $(function ($) {
-  $.ajaxSetup({
-    headers: {
-      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    }
-  });
   //Cố định thanh điều hướng khi cuộn chuột
   /* $(window).scroll(function () {
     if ($(this).scrollTop() > 150) {
