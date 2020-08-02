@@ -23,7 +23,7 @@
     <div class="table-responsive">
       <p>Hiện tại có<b style="color: red"> {{Cart::count()}} </b>sản phẩm</p>
 
-      <form action="{{url('cart/update')}}" method="post">
+      <form action="{{url('cart/update')}}" method="post" id="update-form">
         @csrf
         @if (Cart::count()>0)
         <table class="shop_table beta-shopping-cart-table" cellspacing="0">
@@ -101,7 +101,7 @@
                   <div class="cart-totals-row">
                     <p class="amount font-weight-bold text-dark">{{Cart::total()}}đ</p>
 
-                    <button type="submit" name="pay" value="pay" class="btn btn-success bg-success">                      
+                    <button type="submit" name="pay" value="pay" class="btn btn-success bg-success">
                       <i class="fas fa-check"></i>&nbsp;
                       Thanh toán
                     </button>

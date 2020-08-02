@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
   <title>Watch Store</title>
   <link href="http://fonts.googleapis.com/css?family=Dosis:300,400" rel="stylesheet" type="text/css">
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" rel="stylesheet" type="text/css">
@@ -130,6 +131,7 @@
   <script src="<?php echo e(asset('owlcarousel2-2.3.4\dist\owl.carousel.min.js')); ?>"></script>
   <script src="<?php echo e(asset('owlcarousel2-2.3.4\dist\jquery.mousewheel.min.js')); ?>"></script>
   <script src="<?php echo e(asset('show-more-items\showMoreItems.min.js')); ?>"></script>
+  <script src="<?php echo e(asset('jquery.form.min.js')); ?>"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <script src="<?php echo e(asset('assets/dest/vendors/bxslider/jquery.bxslider.min.js')); ?>"></script>
   <script src="<?php echo e(asset('assets/dest/vendors/colorbox/jquery.colorbox-min.js')); ?>"></script>

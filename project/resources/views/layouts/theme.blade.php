@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>Watch Store</title>
   <link href="http://fonts.googleapis.com/css?family=Dosis:300,400" rel="stylesheet" type="text/css">
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" rel="stylesheet" type="text/css">
@@ -204,6 +205,7 @@
   <script src="{{asset('owlcarousel2-2.3.4\dist\owl.carousel.min.js')}}"></script>
   <script src="{{asset('owlcarousel2-2.3.4\dist\jquery.mousewheel.min.js')}}"></script>
   <script src="{{asset('show-more-items\showMoreItems.min.js')}}"></script>
+  <script src="{{asset('jquery.form.min.js')}}"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <script src="{{asset('assets/dest/vendors/bxslider/jquery.bxslider.min.js')}}"></script>
   <script src="{{asset('assets/dest/vendors/colorbox/jquery.colorbox-min.js')}}"></script>

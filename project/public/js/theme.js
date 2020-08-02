@@ -1,4 +1,9 @@
 $(function ($) {
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+  });
   //Cố định thanh điều hướng khi cuộn chuột
   /* $(window).scroll(function () {
     if ($(this).scrollTop() > 150) {
@@ -32,10 +37,11 @@ $(function ($) {
 
   //Cập nhật giỏ hàng
   $("#update-cart").hide();
+
   $(".qty_number").change(function () {
-    if ($(this).on('blur mouseleave', function () {
+    $(this).on('blur mouseleave', function () {
       $("#update-cart").click();
-    }));
+    });
   });
 
   //Bắt buộc nhập số điện thoại

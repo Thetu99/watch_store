@@ -51,9 +51,10 @@ class CartController extends Controller
     if ($request->proceed) {
       return redirect('home');
     }
-    if($request->delete){
+    if ($request->delete) {
       Cart::destroy();
     }
+
     return redirect('cart');
   }
 }

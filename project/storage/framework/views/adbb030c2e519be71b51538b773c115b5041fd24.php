@@ -23,7 +23,7 @@
     <div class="table-responsive">
       <p>Hiện tại có<b style="color: red"> <?php echo e(Cart::count()); ?> </b>sản phẩm</p>
 
-      <form action="<?php echo e(url('cart/update')); ?>" method="post">
+      <form action="<?php echo e(url('cart/update')); ?>" method="post" id="update-form">
         <?php echo csrf_field(); ?>
         <?php if(Cart::count()>0): ?>
         <table class="shop_table beta-shopping-cart-table" cellspacing="0">
@@ -101,7 +101,7 @@
                   <div class="cart-totals-row">
                     <p class="amount font-weight-bold text-dark"><?php echo e(Cart::total()); ?>đ</p>
 
-                    <button type="submit" name="pay" value="pay" class="btn btn-success bg-success">                      
+                    <button type="submit" name="pay" value="pay" class="btn btn-success bg-success">
                       <i class="fas fa-check"></i>&nbsp;
                       Thanh toán
                     </button>
