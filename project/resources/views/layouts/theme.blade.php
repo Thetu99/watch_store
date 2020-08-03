@@ -62,7 +62,7 @@
           </div>
 
           <div class="beta-comp">
-            <a href="{{url('cart')}}" class="btn">
+            <a href="{{url('cart')}}" class="btn border border-secondary">
               <i class="fas fa-cart-arrow-down"></i>
               Giỏ hàng (<b style="color: red">{{Cart::count()}}</b>)
             </a>

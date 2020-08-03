@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
   <title>Watch Store</title>
   <link href="http://fonts.googleapis.com/css?family=Dosis:300,400" rel="stylesheet" type="text/css">
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" rel="stylesheet" type="text/css">
@@ -63,7 +62,7 @@
           </div>
 
           <div class="beta-comp">
-            <a href="<?php echo e(url('cart')); ?>" class="btn">
+            <a href="<?php echo e(url('cart')); ?>" class="btn border border-secondary">
               <i class="fas fa-cart-arrow-down"></i>
               Giỏ hàng (<b style="color: red"><?php echo e(Cart::count()); ?></b>)
             </a>

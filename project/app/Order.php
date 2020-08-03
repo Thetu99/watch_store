@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 
 class Order extends Model
 {
+  use Notifiable;
+
   protected $fillable = [
     'product_name',
     'customer_id',
@@ -14,7 +17,8 @@ class Order extends Model
     'product_thumbnail'
   ];
 
-  function customer(){
+  function customer()
+  {
     return $this->belongsTo('App\Customer');
   }
 }

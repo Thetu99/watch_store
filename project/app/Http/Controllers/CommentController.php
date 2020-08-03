@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Comment;
+use App\Notifications\NoticeOrder;
 use App\Product;
 use App\Reply;
 use Illuminate\Http\Request;
@@ -32,6 +33,7 @@ class CommentController extends Controller
       'content' => $request->content,
       'product_id' => $product->id
     ]);
+    
     return redirect()->back();
   }
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Customer;
+use App\Notifications\NoticeOrder;
 use App\Order;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
@@ -19,7 +20,7 @@ class CheckOutController extends Controller
 
   function order(Request $request)
   {
-    Customer::create([
+    $customer = Customer::create([
       'name' => $request->input('name'),
       'gender' => $request->input('gender'),
       'email' => $request->input('email'),

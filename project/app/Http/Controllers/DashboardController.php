@@ -19,13 +19,17 @@ class DashboardController extends Controller
     $customers = Customer::where('name', 'like', "%{$keyword}%")
       ->orderBy('created_at', 'desc')
       ->paginate(10);
+
     return view('admin.dashboard', compact('customers'));
   }
 
   function detail($id)
   {
     $customers = Customer::find($id);
-    $orders = Order::where('customer_id', $id)->paginate();
+
+    $orders = Order::where('customer_id', $id)
+      ->paginate();
+
     return view('admin.order.detail', compact('customers', 'orders'));
   }
 

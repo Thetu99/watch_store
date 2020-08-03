@@ -49,7 +49,7 @@
 
           <div class="form-block">
             <label for="phone">Điện thoại <span class="input-required">(*)</span></label>
-            <input type="text" name="phone" id="phone" required>
+            <input type="text" maxlength="10" name="phone" id="phone" required>
           </div>
 
           <div class="form-block">

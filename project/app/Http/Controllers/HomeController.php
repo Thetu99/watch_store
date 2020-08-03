@@ -11,11 +11,11 @@ class HomeController extends Controller
   {
     $banners = Banner::all();
 
-    $products = Product::orderBy('created_at', 'desc')
+    $products = Product::orderBy('updated_at', 'desc')
       ->get();
 
     $randoms = Product::inRandomOrder()
-      ->limit(16)
+      ->limit(12)
       ->get();
 
     return view('theme.home', compact('banners', 'products', 'randoms'));

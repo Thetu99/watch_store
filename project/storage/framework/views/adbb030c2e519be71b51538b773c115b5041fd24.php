@@ -23,7 +23,7 @@
     <div class="table-responsive">
       <p>Hiện tại có<b style="color: red"> <?php echo e(Cart::count()); ?> </b>sản phẩm</p>
 
-      <form action="<?php echo e(url('cart/update')); ?>" method="post" id="update-form">
+      <form action="<?php echo e(url('cart/update')); ?>" method="post">
         <?php echo csrf_field(); ?>
         <?php if(Cart::count()>0): ?>
         <table class="shop_table beta-shopping-cart-table" cellspacing="0">

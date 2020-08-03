@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Brand;
+use App\Notifications\NoticeOrder;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -39,13 +40,16 @@ class AdminProductController extends Controller
     $input['thumbnail'] = $fileName;
 
     Product::create($input);
+    
     return redirect('admin/product/list')->with('status', 'Đã thêm sản phẩm thành công');
   }
 
   function edit($id)
   {
     $product = Product::find($id);
+    
     $brands = Brand::all();
+
     return view('admin.product.edit', compact('product', 'brands'));
   }
 
