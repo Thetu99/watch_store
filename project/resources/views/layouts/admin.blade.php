@@ -60,10 +60,9 @@
       </div> --}}
 
       <div class="btn-group">
-        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">
+        <a type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <b>{{Auth::user()->name}}</b>
-        </button>
+        </a>
         <div class="dropdown-menu dropdown-menu-right">
           <a class="dropdown-item" href="#">Tài khoản</a>
           <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -82,7 +81,7 @@
   <div id="page-body" class="d-flex">
     <div id="sidebar" class="bg-dark">
       <ul id="sidebar-menu">
-        <li class="nav-link">
+        {{-- <li class="nav-link">
           <a href="{{url('dashboard')}}">
             <div class="nav-link-icon d-inline-flex">
               <i class="far fa-folder"></i>
@@ -90,7 +89,7 @@
             Bảng điều khiển
           </a>
           <i class="arrow fas fa-angle-right"></i>
-        </li>
+        </li> --}}
         <li class="nav-link">
           <a href="{{url('admin')}}">
             <div class="nav-link-icon d-inline-flex">
