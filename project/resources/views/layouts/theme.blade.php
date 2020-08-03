@@ -24,7 +24,7 @@
 <body>
   <div id="header">
     <div class="header-top">
-      <div class="container">
+      <div class="container-fluid">
         <div class="pull-left auto-width-left">
           <ul class="top-menu menu-beta l-inline">
             <li>
@@ -47,7 +47,7 @@
     </div>
     <!-- .header-top -->
     <div class="header-body">
-      <div class="container beta-relative">
+      <div class="container-fluid beta-relative">
         <div class="pull-left">
           <a href="{{url('home')}}" id="logo"><img src="{{asset('assets/dest/images/logo_watch.png')}}" width="200px"
               alt="" /></a>
@@ -74,7 +74,7 @@
     </div>
     <!-- .header-body -->
     <div class="header-bottom" style="background-color: #0277b8;">
-      <div class="container">
+      <div class="container-fluid">
         <a class="visible-xs beta-menu-toggle pull-right" href="#"><span class="beta-menu-toggle-text">Menu</span>
           <i class="fa fa-bars"></i></a>
         <div class="visible-xs clearfix"></div>
@@ -185,7 +185,7 @@
   </div> --}}
   <!-- #footer -->
   <div class="copyright">
-    <div class="container">
+    <div class="container-fluid">
       <div class="col-sm-12">
         <p class="pull-left">Privacy policy. &copy; 2020</p>
         <p class="pull-right pay-options">
