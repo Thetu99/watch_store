@@ -14,6 +14,11 @@
     <div class="clearfix"></div>
   </div>
 </div>
+<div class="beta-map">
+		
+		<div class="abs-fullwidth beta-map wow flipInX"><<iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d14897.576445961628!2d105.82995127957682!3d21.016910976075117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d21.0277644!2d105.8341598!4m5!1s0x3135ac74418bc1af%3A0xc21b51eae3cb1c31!2zOTIgTMOqIFRoYW5oIE5naOG7iywgQsOhY2ggS2hvYSwgSGFpIELDoCBUcsawbmcsIEjDoCBO4buZaQ!3m2!1d21.003479199999997!2d105.8478705!5e0!3m2!1svi!2s!4v1596527054576!5m2!1svi!2s" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
+    </iframe>
+      </div>
 <div class="container">
   <div id="content">
     <div class="our-history">
